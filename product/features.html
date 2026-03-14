@@ -960,10 +960,10 @@
                         Все функции AI Seller 1С в одном месте: от генерации карточек товаров до умного ценообразования и аналитики
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="../index.html#trial" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/25 transition-all duration-300 transform hover:scale-105">
+                        <button class="trial-btn inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/25 transition-all duration-300 transform hover:scale-105">
                             Попробовать бесплатно
                             <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                        </a>
+                        </button>
                         <a href="#features" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300">
                             Узнать больше
                             <i data-lucide="chevron-down" class="w-5 h-5 ml-2"></i>
@@ -1376,13 +1376,103 @@
                 <p class="text-gray-400 text-lg mb-8">
                     Попробуйте все функции бесплатно в течение 14 дней
                 </p>
-                <a href="../index.html#trial" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/25 transition-all duration-300 transform hover:scale-105">
+                <button class="trial-btn inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/25 transition-all duration-300 transform hover:scale-105">
                     Начать бесплатный период
                     <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                </a>
+                </button>
             </div>
         </section>
     </main>
+
+    <!-- Modal for trial signup -->
+    <div id="trial-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-navy-900/80 backdrop-blur-sm modal-overlay"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
+            <div class="relative bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl border border-white/10 shadow-2xl shadow-gold-500/20 overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 to-gold-600"></div>
+                
+                <!-- Close button -->
+                <button id="modal-close" class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                
+                <div class="p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+                            <i data-lucide="gift" class="w-8 h-8 text-navy-900"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Начать бесплатный период</h3>
+                        <p class="text-white/70">14 дней полного доступа ко всем функциям</p>
+                    </div>
+                    
+                    <form id="trial-form" method="POST" class="space-y-4">
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-white/80 mb-2">Ваше имя</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
+                                placeholder="Иван Иванов">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white/80 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
+                                placeholder="ivan@company.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-white/80 mb-2">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all"
+                                placeholder="+7 (999) 000-00-00">
+                        </div>
+                        
+                        <div>
+                            <label for="marketplace" class="block text-sm font-medium text-white/80 mb-2">Площадка</label>
+                            <select id="marketplace" name="marketplace" 
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 transition-all">
+                                <option value="" class="bg-navy-800">Выберите площадку</option>
+                                <option value="wildberries" class="bg-navy-800">Wildberries</option>
+                                <option value="ozon" class="bg-navy-800">Ozon</option>
+                                <option value="both" class="bg-navy-800">Обе площадки</option>
+                                <option value="yandex" class="bg-navy-800">Яндекс.Маркет</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-start gap-3 pt-2">
+                            <input type="checkbox" id="consent" name="consent" required 
+                                class="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-gold-500 focus:ring-gold-400 focus:ring-offset-0">
+                            <label for="consent" class="text-xs text-white/60">
+                                Я согласен на обработку персональных данных в соответствии с 
+                                <a href="#" class="text-gold-400 hover:underline">политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full group relative px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-xl overflow-hidden shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-all transform hover:scale-[1.02]">
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                Получить доступ
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </span>
+                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        </button>
+                    </form>
+                    
+                    <div id="form-success" class="hidden text-center py-8">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
+                            <i data-lucide="check-circle" class="w-10 h-10 text-green-400"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Заявка отправлена!</h4>
+                        <p class="text-white/70 mb-4">Мы свяжемся с вами в течение 15 минут</p>
+                        <button id="close-success" class="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors">
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     
