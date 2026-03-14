@@ -221,28 +221,63 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Form submission handler - теперь форма отправляется через FormSubmit.co напрямую
+    // Form submission handler - отправка через AJAX на send-mail.php
     const trialForm = document.getElementById('trial-form');
-    const formSuccess = document.getElementById('form-success');
+    const formContent = document.getElementById('form-content');
+    const successContent = document.getElementById('form-success');
 
     if (trialForm) {
-        trialForm.addEventListener('submit', (e) => {
-            // Форма отправляется стандартным способом на FormSubmit.co
-            // После успешной отправки FormSubmit перенаправит пользователя на страницу благодарности
-            // или покажет своё сообщение. Мы просто даём форме отправиться.
+        trialForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Показываем индикатор загрузки (опционально)
             const submitBtn = trialForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="flex items-center gap-2"><svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/></svg> Отправка...</span>';
             
-            // Форма отправится автоматически, так как у неё есть action и method
-            // Этот обработчик нужен только для UX (анимация кнопки)
+            // Сбор данных формы
+            const formData = new FormData(trialForm);
+            
+            try {
+                // Отправка на PHP-обработчик
+                const response = await fetch('send-mail.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    // Показываем экран успеха
+                    formContent.classList.add('hidden');
+                    successContent.classList.remove('hidden');
+                    
+                    // Сброс формы
+                    trialForm.reset();
+                    
+                    // Возврат кнопки через 3 секунды и закрытие модального окна
+                    setTimeout(() => {
+                        closeModal();
+                        setTimeout(() => {
+                            formContent.classList.remove('hidden');
+                            successContent.classList.add('hidden');
+                        }, 300);
+                    }, 2000);
+                } else {
+                    alert(result.message || 'Ошибка при отправке. Попробуйте позже.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при отправке. Проверьте подключение к интернету.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
         });
-        
-        // Обработка после отправки (FormSubmit.co перенаправит или покажет свою страницу)
-        // Для кастомного поведения можно использовать AJAX, но тогда нужно убрать action из формы
         
         // Добавляем обработчик для кнопки закрытия окна успеха
         const closeSuccess = document.getElementById('close-success');
