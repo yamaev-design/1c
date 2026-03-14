@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-ассистент для селлеров Wildberries и Ozon в 1С</title>
+    <meta name="description" content="Автоматизируйте продажи на маркетплейсах с помощью ИИ прямо в 1С. Генерация карточек, авто-ответы, ценообразование.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0a0f1c',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Animated Mesh Background -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                        AI Seller 1С
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-gray-300 hover:text-gold-400 transition-colors">Возможности</a>
+                    <a href="#dashboard" class="text-gray-300 hover:text-gold-400 transition-colors">Дашборд</a>
+                    <a href="#team" class="text-gray-300 hover:text-gold-400 transition-colors">Команда</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-gold-400 transition-colors">Тарифы</a>
+                </div>
+
+                <button class="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
+                    <span>Попробовать бесплатно</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#features" class="block px-3 py-2 text-gray-300 hover:text-gold-400">Возможности</a>
+                <a href="#dashboard" class="block px-3 py-2 text-gray-300 hover:text-gold-400">Дашборд</a>
+                <a href="#team" class="block px-3 py-2 text-gray-300 hover:text-gold-400">Команда</a>
+                <button class="w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
+                    Попробовать бесплатно
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8 animate-fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span class="text-sm text-gray-300">Новое: интеграция с ЯндексGPT 3</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Автоматизируйте продажи на <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">Wildberries</span> и <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Ozon</span> прямо в 1С с помощью ИИ
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
+                        Генерация карточек товаров, авто-ответы на отзывы, умное ценообразование и прогноз закупок — без выхода из привычной 1С. Экономьте до <span class="text-gold-400 font-semibold">20 часов в неделю</span> на рутине.
+                    </p>
+
+                    <!-- Key Benefits -->
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gold-400/20 flex items-center justify-center mt-0.5">
+                                <i data-lucide="check" class="w-3 h-3 text-gold-400"></i>
+                            </div>
+                            <span class="text-gray-300">Работает внутри 1С:УТ / 1С:УНФ / 1С:КА — не нужно переключаться между сервисами</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gold-400/20 flex items-center justify-center mt-0.5">
+                                <i data-lucide="check" class="w-3 h-3 text-gold-400"></i>
+                            </div>
+                            <span class="text-gray-300">Российские ИИ-модели (YandexGPT / GigaChat) — соответствие 152-ФЗ</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gold-400/20 flex items-center justify-center mt-0.5">
+                                <i data-lucide="check" class="w-3 h-3 text-gold-400"></i>
+                            </div>
+                            <span class="text-gray-300">Поддержка Wildberries, Ozon, Яндекс.Маркет — из коробки</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-gold-400/20 flex items-center justify-center mt-0.5">
+                                <i data-lucide="check" class="w-3 h-3 text-gold-400"></i>
+                            </div>
+                            <span class="text-gray-300">Первые результаты через 15 минут после подключения</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="group relative px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full overflow-hidden shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-all transform hover:scale-105 animate-pulse-glow">
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                Попробовать бесплатно 14 дней
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </span>
+                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        </button>
+                        
+                        <button class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            <span>Смотреть демо</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-6 text-sm text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i>
+                            <span>Без привязки карты</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-gold-400"></i>
+                            <span>Настройка за 1 визит</span>
+                        </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-white/10">
+                        <div class="flex items-center gap-2">
+                            <div class="flex -space-x-2">
+                                <img src="http://static.photos/people/200x200/1" alt="User" class="w-8 h-8 rounded-full border-2 border-navy-900">
+                                <img src="http://static.photos/people/200x200/2" alt="User" class="w-8 h-8 rounded-full border-2 border-navy-900">
+                                <img src="http://static.photos/people/200x200/3" alt="User" class="w-8 h-8 rounded-full border-2 border-navy-900">
+                            </div>
+                            <span class="text-sm text-gray-400"><span class="text-white font-semibold">500+</span> селлеров уже используют</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                            <div class="flex text-gold-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <span class="text-sm font-semibold">4.9/5</span>
+                            <span class="text-sm text-gray-400">— средняя оценка</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - 3D Dashboard -->
+                <div class="relative lg:h-[600px] flex items-center justify-center perspective-1000">
+                    <div class="relative w-full max-w-lg transform-gpu animate-float" style="transform-style: preserve-3d;">
+                        <!-- Main Dashboard Card -->
+                        <div class="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-6 shadow-2xl shadow-black/50">
+                            <!-- Header -->
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+                                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-navy-900"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-semibold">AI Analytics</div>
+                                        <div class="text-xs text-gray-400">1С:УТ 11.5</div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <span class="px-2 py-1 rounded bg-green-500/20 text-green-400 text-xs">Online</span>
+                                </div>
+                            </div>
+
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                                    <div class="text-xs text-gray-400 mb-1">Выручка (ИИ-прогноз)</div>
+                                    <div class="text-2xl font-bold text-gold-400">₽2.4M</div>
+                                    <div class="text-xs text-green-400 flex items-center gap-1">
+                                        <i data-lucide="trending-up" class="w-3 h-3"></i>
+                                        +47%
+                                    </div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                                    <div class="text-xs text-gray-400 mb-1">Обработано отзывов</div>
+                                    <div class="text-2xl font-bold text-blue-400">1,284</div>
+                                    <div class="text-xs text-green-400 flex items-center gap-1">
+                                        <i data-lucide="check-circle" class="w-3 h-3"></i>
+                                        99.9% uptime
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chart Placeholder -->
+                            <div class="h-32 rounded-xl bg-gradient-to-r from-gold-500/10 to-blue-500/10 border border-white/5 mb-4 flex items-end p-4 gap-2">
+                                <div class="w-1/6 bg-gold-400/60 rounded-t h-[40%]"></div>
+                                <div class="w-1/6 bg-gold-400/60 rounded-t h-[60%]"></div>
+                                <div class="w-1/6 bg-gold-400/60 rounded-t h-[45%]"></div>
+                                <div class="w-1/6 bg-gold-400/60 rounded-t h-[80%]"></div>
+                                <div class="w-1/6 bg-gold-400/60 rounded-t h-[65%]"></div>
+                                <div class="w-1/6 bg-blue-400/60 rounded-t h-[90%]"></div>
+                            </div>
+
+                            <!-- AI Processing Indicator -->
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                                <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center animate-pulse">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">ИИ генерирует карточки товаров...</div>
+                                    <div class="text-xs text-gray-400">Осталось 12 секунд</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-8 -right-8 w-24 h-24 bg-navy-800/90 backdrop-blur-md rounded-xl border border-white/10 p-3 shadow-xl animate-float-delayed">
+                            <div class="text-xs text-gray-400 mb-1">Ozon</div>
+                            <div class="text-lg font-bold text-green-400">+₽340K</div>
+                            <div class="text-[10px] text-gray-500">За сегодня</div>
+                        </div>
+
+                        <div class="absolute -bottom-6 -left-6 w-32 h-20 bg-navy-800/90 backdrop-blur-md rounded-xl border border-white/10 p-3 shadow-xl animate-float">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-xs text-gray-300">WB API</span>
+                            </div>
+                            <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full w-3/4 bg-gradient-to-r from-gold-400 to-gold-600"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Logos -->
+    <section class="py-12 border-y border-white/5 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm mb-8">Интегрирован с ведущими маркетплейсами и ИИ-моделями</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2 text-xl font-bold hover:text-purple-400 transition-colors">
+                    <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+                    <span>Wildberries</span>
+                </div>
+                <div class="flex items-center gap-2 text-xl font-bold hover:text-blue-400 transition-colors">
+                    <i data-lucide="box" class="w-8 h-8"></i>
+                    <span>Ozon</span>
+                </div>
+                <div class="flex items-center gap-2 text-xl font-bold hover:text-yellow-400 transition-colors">
+                    <i data-lucide="search" class="w-8 h-8"></i>
+                    <span>Яндекс.Маркет</span>
+                </div>
+                <div class="flex items-center gap-2 text-xl font-bold hover:text-red-400 transition-colors">
+                    <i data-lucide="brain" class="w-8 h-8"></i>
+                    <span>YandexGPT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Awareness Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm mb-4">
+                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                    <span>Проблемы селлеров</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Знакомо? Вы теряете деньги на рутине, которую можно <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">автоматизировать</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Problem 1 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-red-500/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-red-400">Карточки товаров занимают дни</h3>
+                    <p class="text-gray-400 text-sm">50 товаров = 2–3 дня работы копирайтера или вашего времени. Конкуренты запускаются быстрее.</p>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-red-500/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">Отзывы висят без ответа</h3>
+                    <p class="text-gray-400 text-sm">Низкий рейтинг → меньше показов → падение продаж. Отвечать вручную — скучно и долго.</p>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-red-500/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="tag" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-400">Не знаете, какую цену поставить</h3>
+                    <p class="text-gray-400 text-sm">Демпинг конкурентов загоняет в минус. А завышенная цена убивает конверсию.</p>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-red-500/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-lime-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="package" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-yellow-400">То пусто, то густо на складе</h3>
+                    <p class="text-gray-400 text-sm">Товар закончился — потеряли позиции. Затоважились — платите за хранение.</p>
+                </div>
+
+                <!-- Problem 5 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-red-500/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-lime-500 to-green-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-2" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-lime-400">Отчёты в 1С слишком сложные</h3>
+                    <p class="text-gray-400 text-sm">Владелец не видит реальную картину без помощи программиста или аналитика.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 text-center">
+                <p class="text-lg text-gray-300">
+                    Вы не одиноки. <span class="text-red-400 font-bold">83% селлеров</span> сталкиваются с этими проблемами ежедневно.
+                    <br>Но теперь есть решение, которое работает там, где вы уже ведёте учёт — в <span class="text-gold-400 font-bold">1С</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section (Value Proposition) -->
+    <section class="py-24 bg-navy-800/30 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm mb-4">
+                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                    <span>Решение</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Единое окно для селлера в 1С: <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">ИИ делает рутину</span>, вы принимаете решения
+                </h2>
+                <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+                    Наш модуль встраивается в вашу 1С и добавляет ИИ-функции прямо в карточки товаров, документы и отчёты.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Feature 1 -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i data-lucide="file-text" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                            <span class="text-gold-400">1.</span> Генерация карточек товаров
+                        </h3>
+                        <p class="text-gray-400 mb-3">Выделите товары в списке → нажмите «Сгенерировать описание» → ИИ создаст SEO-текст с ключевыми словами под WB или Ozon.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>Результат: 50 товаров за 30 минут вместо 3 дней</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i data-lucide="message-square" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                            <span class="text-gold-400">2.</span> Авто-ответы на отзывы и вопросы
+                        </h3>
+                        <p class="text-gray-400 mb-3">Новые отзывы загружаются в 1С → ИИ анализирует тональность → генерирует ответ → вы публикуете пакетно.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            <span>Результат: Рейтинг растёт, время на обработку — 10 минут в день</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-navy-900"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                            <span class="text-gold-400">3.</span> Умное ценообразование
+                        </h3>
+                        <p class="text-gray-400 mb-3">ИИ мониторит цены конкурентов + считает вашу реальную маржу в 1С → предлагает оптимальную цену.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            <span>Результат: Никаких продаж в минус, защита Buy Box</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <i data-lucide="package-search" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                            <span class="text-gold-400">4.</span> Прогноз закупок
+                        </h3>
+                        <p class="text-gray-400 mb-3">Анализ истории продаж + сезонность + остатки → рекомендация: «Закажи 100 шт., иначе будет out-of-stock через 12 дней».</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+                            <i data-lucide="wallet" class="w-4 h-4"></i>
+                            <span>Результат: Деньги не замораживаются, товар не заканчивается</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                        <i data-lucide="messages-square" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                            <span class="text-gold-400">5.</span> Аналитический ассистент
+                        </h3>
+                        <p class="text-gray-400 mb-3">Спросите в чате: «Покажи топ-5 товаров по марже за неделю по Ozon» → получите график + текстовый вывод.</p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            <span>Результат: Инсайты без программиста, решения за минуты</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button class="group relative px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full overflow-hidden shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-all transform hover:scale-105">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        Записаться на демо-звонок
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                    </span>
+                </button>
+                <p class="mt-4 text-sm text-gray-400">Покажем на реальном примере, как это работает в вашей конфигурации 1С</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    3 шага до первой <span class="text-gold-400">автоматизированной задачи</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connecting line -->
+                <div class="hidden md:block absolute top-16 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-gold-400/50 to-gold-400/20"></div>
+
+                <!-- Step 1 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-900 font-bold text-2xl relative z-10 border-4 border-navy-900">
+                        1
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 h-full">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="phone-call" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Подключение</h3>
+                        <p class="text-gray-400 text-sm mb-4">Оставляете заявку → наш специалист связывается в течение 2 часов → удалённо подключает модуль к вашей 1С.</p>
+                        <div class="inline-flex items-center gap-1 text-gold-400 text-sm">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>30–60 минут</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-900 font-bold text-2xl relative z-10 border-4 border-navy-900">
+                        2
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 h-full">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="settings" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Настройка</h3>
+                        <p class="text-gray-400 text-sm mb-4">Выбираете маркетплейсы (WB, Ozon, Я.Маркет) → указываете нишу → загружаете API-ключи.</p>
+                        <div class="inline-flex items-center gap-1 text-gold-400 text-sm">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>15 минут</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-900 font-bold text-2xl relative z-10 border-4 border-navy-900">
+                        3
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 h-full">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-green-500/20 flex items-center justify-center">
+                            <i data-lucide="rocket" class="w-6 h-6 text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Запуск</h3>
+                        <p class="text-gray-400 text-sm mb-4">Выделяете товары → нажимаете «Сгенерировать» → проверяете результат → публикуете на площадке.</p>
+                        <div class="inline-flex items-center gap-1 text-gold-400 text-sm">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>5 минут на задачу</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button class="px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
+                    Попробовать бесплатно 14 дней
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Всё для автоматизации вашего бизнеса на маркетплейсах
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    4 модуля искусственного интеллекта работают как единый организм внутри вашей 1С
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="refresh-cw" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Smart Sync</h3>
+                    <p class="text-gray-400 text-sm mb-4">Мгновенная синхронизация остатков и цен между 1С и всеми маркетплейсами</p>
+                    <div class="flex items-center gap-2 text-gold-400 text-sm">
+                        <span>Узнать больше</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="w-6 h-6 text-navy-900"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Auto-List</h3>
+                    <p class="text-gray-400 text-sm mb-4">Генерация SEO-оптимизированных карточек товаров нейросетью за 30 секунд</p>
+                    <div class="flex items-center gap-2 text-gold-400 text-sm">
+                        <span>Узнать больше</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Price Optimizer</h3>
+                    <p class="text-gray-400 text-sm mb-4">Динамическое ценообразование на основе конкурентов и спроса</p>
+                    <div class="flex items-center gap-2 text-gold-400 text-sm">
+                        <span>Узнать больше</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/50 transition-all duration-300 hover:transform hover:-translate-y-2">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Fraud Shield</h3>
+                    <p class="text-gray-400 text-sm mb-4">Защита от недобросовестных покупателей и анализ возвратов</p>
+                    <div class="flex items-center gap-2 text-gold-400 text-sm">
+                        <span>Узнать больше</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Dashboard Preview -->
+    <section id="dashboard" class="py-24 bg-navy-800/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
+                        <img src="http://static.photos/technology/1024x576/42" alt="Dashboard Interface" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity">
+                        
+                        <!-- Overlay UI Elements -->
+                        <div class="absolute top-4 left-4 right-4 flex justify-between items-start">
+                            <div class="px-3 py-1 rounded-full bg-green-500/20 backdrop-blur-md border border-green-500/30 text-green-400 text-xs font-medium">
+                                <span class="flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                    Система активна
+                                </span>
+                            </div>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-navy-900/80 backdrop-blur-md border border-white/10 flex items-center justify-center">
+                                    <i data-lucide="bell" class="w-4 h-4 text-gray-300"></i>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-navy-900/80 backdrop-blur-md border border-white/10 flex items-center justify-center">
+                                    <i data-lucide="settings" class="w-4 h-4 text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stats Card -->
+                        <div class="absolute bottom-4 right-4 w-48 p-4 rounded-xl bg-navy-900/90 backdrop-blur-md border border-white/10 shadow-xl">
+                            <div class="text-xs text-gray-400 mb-2">Экономия времени</div>
+                            <div class="text-2xl font-bold text-gold-400 mb-1">18.5 ч/нед</div>
+                            <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full w-[85%] bg-gradient-to-r from-gold-400 to-gold-600 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-sm">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Умный дашборд</span>
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        Вся аналитика в одном окне 1С
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg">
+                        Не переключайтесь между десятками вкладок. Все данные по продажам, остаткам, отзывам и конкурентам — в привычном интерфейсе 1С с интеллектуальными подсказками ИИ.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold-400/30 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="message-square" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Авто-ответы на отзывы</h4>
+                                <p class="text-sm text-gray-400">ИИ анализирует тональность отзыва и генерирует персонализированный ответ за 2 секунды</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold-400/30 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="package" class="w-5 h-5 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Прогноз закупок</h4>
+                                <p class="text-sm text-gray-400">Нейросеть анализирует сезонность и остатки, предлагая оптимальные объемы закупки</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-gold-400/30 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="badge-check" class="w-5 h-5 text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Соответствие 152-ФЗ</h4>
+                                <p class="text-sm text-gray-400">Все данные хранятся в РФ, используются только сертифицированные российские ИИ-модели</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section (Case Studies) -->
+    <section class="py-24 bg-navy-800/30 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm mb-4">
+                    <i data-lucide="trophy" class="w-4 h-4"></i>
+                    <span>Кейсы клиентов</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Селлеры уже экономят время и деньги с нашим решением
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="shirt" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">ИП Смирнов</h3>
+                            <p class="text-xs text-gray-400">Одежда, 450 SKU</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+                            <div class="text-xs text-red-400 mb-1">До</div>
+                            <div class="text-sm text-gray-300">3 дня на запуск коллекции (100 товаров)</div>
+                        </div>
+                        <div class="flex justify-center">
+                            <i data-lucide="arrow-down" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div class="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                            <div class="text-xs text-green-400 mb-1">После</div>
+                            <div class="text-sm text-gray-300">4 часа с ИИ-генерацией</div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-gold-400/10 border border-gold-400/20 mb-4">
+                        <div class="text-xs text-gold-400 mb-1">Экономия</div>
+                        <div class="text-sm text-gray-300">20 000 ₽/мес на копирайтере + 15 часов/нед</div>
+                    </div>
+
+                    <blockquote class="text-sm text-gray-400 italic border-l-2 border-gold-400 pl-3">
+                        "Сэкономили 20 000 ₽/мес на копирайтере и 15 часов в неделю на рутине. Окупилось за первый месяц."
+                    </blockquote>
+                    <div class="mt-2 text-xs text-gray-500">Оборот 3.5 млн ₽/мес</div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">ООО «ТехноТрейд»</h3>
+                            <p class="text-xs text-gray-400">Электроника, 1200 SKU</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+                            <div class="text-xs text-red-400 mb-1">До</div>
+                            <div class="text-sm text-gray-300">Ручное ценообразование, были продажи в минус</div>
+                        </div>
+                        <div class="flex justify-center">
+                            <i data-lucide="arrow-down" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div class="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                            <div class="text-xs text-green-400 mb-1">После</div>
+                            <div class="text-sm text-gray-300">ИИ защищает маржу, авто-мониторинг конкурентов</div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-gold-400/10 border border-gold-400/20 mb-4">
+                        <div class="text-xs text-gold-400 mb-1">Экономия</div>
+                        <div class="text-sm text-gray-300">Аналитик 2 дня → владелец 1 минута</div>
+                    </div>
+
+                    <blockquote class="text-sm text-gray-400 italic border-l-2 border-gold-400 pl-3">
+                        "Модуль окупился за 3 недели. Теперь менеджер занимается развитием, а не рутиной."
+                    </blockquote>
+                    <div class="mt-2 text-xs text-gray-500">Оборот 12 млн ₽/мес</div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/30 transition-all">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
+                            <i data-lucide="home" class="w-5 h-5 text-amber-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">ИП Козлова</h3>
+                            <p class="text-xs text-gray-400">Товары для дома, 280 SKU</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-4">
+                        <div class="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+                            <div class="text-xs text-red-400 mb-1">До</div>
+                            <div class="text-sm text-gray-300">Рейтинг 4.2 из-за игнорирования вопросов</div>
+                        </div>
+                        <div class="flex justify-center">
+                            <i data-lucide="arrow-down" class="w-5 h-5 text-gold-400"></i>
+                        </div>
+                        <div class="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+                            <div class="text-xs text-green-400 mb-1">После</div>
+                            <div class="text-sm text-gray-300">Рейтинг вырос до 4.7 за 2 месяца</div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-gold-400/10 border border-gold-400/20 mb-4">
+                        <div class="text-xs text-gold-400 mb-1">Экономия</div>
+                        <div class="text-sm text-gray-300">Оптимизация остатков, меньше хранения</div>
+                    </div>
+
+                    <blockquote class="text-sm text-gray-400 italic border-l-2 border-gold-400 pl-3">
+                        "Авто-ответы на отзывы — это магия. Рейтинг вырос, продаж стало больше."
+                    </blockquote>
+                    <div class="mt-2 text-xs text-gray-500">Оборот 1.8 млн ₽/мес</div>
+                </div>
+            </div>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-8 text-center">
+                <div class="flex items-center gap-2 text-gray-300">
+                    <i data-lucide="users" class="w-5 h-5 text-gold-400"></i>
+                    <span>500+ активных клиентов</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                    <i data-lucide="package" class="w-5 h-5 text-gold-400"></i>
+                    <span>2.5 млн товаров обработано</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                    <i data-lucide="clock" class="w-5 h-5 text-gold-400"></i>
+                    <span>15 000+ часов сэкономлено</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-gold-400/5 to-blue-500/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600 mb-2" id="stat-1">500+</div>
+                    <div class="text-gray-400">Активных селлеров</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 mb-2" id="stat-2">2.4M</div>
+                    <div class="text-gray-400">Сгенерировано карточек</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 mb-2" id="stat-3">99.9%</div>
+                    <div class="text-gray-400">Uptime сервиса</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 mb-2" id="stat-4">24/7</div>
+                    <div class="text-gray-400">Техподдержка</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Команда экспертов</h2>
+                <p class="text-gray-400">Мы объединили опыт в 1С, e-commerce и искусственном интеллекте</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group text-center">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-gold-400/50 transition-colors">
+                        <img src="http://static.photos/office/400x400/11" alt="Team Member" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-white hover:text-gold-400 cursor-pointer"></i>
+                                <i data-lucide="twitter" class="w-5 h-5 text-white hover:text-gold-400 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Алексей Воронов</h3>
+                    <p class="text-gold-400 text-sm mb-2">CEO & Основатель</p>
+                    <p class="text-gray-400 text-sm">10 лет в разработке 1С, экс-руководитель отдела интеграций WB</p>
+                </div>
+
+                <div class="group text-center">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-gold-400/50 transition-colors">
+                        <img src="http://static.photos/technology/400x400/22" alt="Team Member" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-white hover:text-gold-400 cursor-pointer"></i>
+                                <i data-lucide="github" class="w-5 h-5 text-white hover:text-gold-400 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Мария Соколова</h3>
+                    <p class="text-gold-400 text-sm mb-2">CTO</p>
+                    <p class="text-gray-400 text-sm">PhD в области ML, разработка ИИ-моделей для YandexGPT</p>
+                </div>
+
+                <div class="group text-center">
+                    <div class="relative w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-gold-400/50 transition-colors">
+                        <img src="http://static.photos/business/400x400/33" alt="Team Member" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                            <div class="flex gap-3">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-white hover:text-gold-400 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Дмитрий Козлов</h3>
+                    <p class="text-gold-400 text-sm mb-2">Head of Customer Success</p>
+                    <p class="text-gray-400 text-sm">Опыт управления 200+ проектами внедрения 1С</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section class="py-24 bg-navy-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm">
+                        <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        <span>Мобильное приложение</span>
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        Управляйте бизнесом с телефона
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg">
+                        Мобильное приложение для iOS и Android синхронизируется с 1С в реальном времени. Получайте уведомления о критичных событиях и управляйте ценами на ходу.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
+                            <i data-lucide="apple" class="w-8 h-8"></i>
+                            <div class="text-left">
+                                <div class="text-xs text-gray-400">Скачать в</div>
+                                <div class="font-semibold">App Store</div>
+                            </div>
+                        </button>
+                        <button class="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
+                            <i data-lucide="play" class="w-8 h-8"></i>
+                            <div class="text-left">
+                                <div class="text-xs text-gray-400">Доступно в</div>
+                                <div class="font-semibold">Google Play</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center">
+                    <div class="relative w-72 h-[600px] bg-navy-900 rounded-[3rem] border-8 border-navy-800 shadow-2xl overflow-hidden">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-navy-800 rounded-b-2xl z-20"></div>
+                        <div class="h-full w-full bg-gradient-to-b from-navy-800 to-navy-900 p-6 pt-12 overflow-y-auto">
+                            <!-- Mobile UI Mock -->
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center mb-6">
+                                    <div class="w-8 h-8 rounded-full bg-gold-400/20"></div>
+                                    <div class="text-xs font-semibold">AI Seller</div>
+                                    <div class="w-8 h-8 rounded-full bg-white/5"></div>
+                                </div>
+                                
+                                <div class="p-4 rounded-2xl bg-gradient-to-br from-gold-400/20 to-gold-600/20 border border-gold-400/20">
+                                    <div class="text-xs text-gold-400 mb-1">Выручка сегодня</div>
+                                    <div class="text-2xl font-bold">₽45,800</div>
+                                    <div class="text-xs text-green-400">+12% к вчера</div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="p-3 rounded-xl bg-white/5 flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                            <i data-lucide="message-circle" class="w-5 h-5 text-blue-400"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm">Новые отзывы</div>
+                                            <div class="text-xs text-gray-400">3 требуют ответа</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-3 rounded-xl bg-white/5 flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                                            <i data-lucide="package" class="w-5 h-5 text-purple-400"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="text-sm">Заказы</div>
+                                            <div class="text-xs text-gray-400">12 новых</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="sparkles" class="w-4 h-4 text-blue-400"></i>
+                                        <span class="text-xs text-blue-400">ИИ Рекомендация</span>
+                                    </div>
+                                    <div class="text-xs text-gray-300">Увеличьте цену на товар "Наушники Pro" на 5% — спрос растет</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-400/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                <div class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="shield-check" class="w-10 h-10"></i>
+                    <span class="text-sm">Сертификат 152-ФЗ</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="lock" class="w-10 h-10"></i>
+                    <span class="text-sm">SSL Шифрование</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="award" class="w-10 h-10"></i>
+                    <span class="text-sm">ISO 27001</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="check-circle" class="w-10 h-10"></i>
+                    <span class="text-sm">Сертифицировано 1С</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-gold-400/10 via-transparent to-blue-500/10"></div>
+        <div class="absolute inset-0 bg-navy-900/90 backdrop-blur-sm"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Начните экономить время уже сегодня
+            </h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Присоединяйтесь к 500+ селлерам, которые уже автоматизировали свои продажи на маркетплейсах
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button class="px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full text-lg hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
+                    Получить доступ на 14 дней бесплатно
+                </button>
+            </div>
+            
+            <p class="text-sm text-gray-500">
+                Без привязки карты • Отмена в любой момент • Техподдержка 24/7
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
+                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
+                        </div>
+                        <span class="font-bold text-lg">AI Seller 1С</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Продукт</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Возможности</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Тарифы</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Обновления</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Поддержка</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Документация</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">API</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">База знаний</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">Связаться с нами</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:hello@aiseller.ru" class="hover:text-gold-400 transition-colors">hello@aiseller.ru</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>8 (800) 555-35-35</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Москва, 1-й Волоколамский пр-д, 10</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors">
+                        <i data-lucide="telegram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors">
+                        <i data-lucide="vk" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
