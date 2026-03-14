@@ -7,60 +7,484 @@
     <meta name="description" content="Полная база знаний DeepSite: руководства по установке, настройке интеграций, использованию ИИ-функций и ответы на частые вопросы.">
     <link rel="canonical" href="https://deepsite.ru/docs">
     <link rel="stylesheet" href="../style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="../index.html" class="logo">DeepSite</a>
-            <nav class="nav">
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Продукт ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="../product/features.html">Возможности</a>
-                        <a href="../product/integrations.html">Интеграции</a>
-                        <a href="../product/security.html">Безопасность</a>
-                        <a href="../product/updates.html">Обновления</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
+                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                            AI Seller 1С
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <!-- Главная -->
+                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
+                        Главная
+                    </a>
+                    
+                    <!-- Продукт -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            Продукт
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="product/features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
+                                        <div>
+                                            <div class="font-medium">Все возможности</div>
+                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="product/integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Интеграции</div>
+                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="product/security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
+                                        <div>
+                                            <div class="font-medium">Безопасность</div>
+                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="product/updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
+                                        <div>
+                                            <div class="font-medium">Обновления</div>
+                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тарифы -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            Тарифы
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
+                                        <div>
+                                            <div class="font-medium">Сравнение тарифов</div>
+                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Калькулятор экономии</div>
+                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
+                                        <div>
+                                            <div class="font-medium">Enterprise</div>
+                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Решения -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            Решения
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
+                                        <div>
+                                            <div class="font-medium">Одежда и обувь</div>
+                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Электроника</div>
+                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
+                                        <div>
+                                            <div class="font-medium">Косметика и красота</div>
+                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
+                                        <div>
+                                            <div class="font-medium">Продукты и FMCG</div>
+                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
+                                        <div>
+                                            <div class="font-medium">Индивидуальные сценарии</div>
+                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Кейсы -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            Кейсы
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
+                                        <div>
+                                            <div class="font-medium">Все кейсы</div>
+                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
+                                        <div>
+                                            <div class="font-medium">Опубликовать кейс</div>
+                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- База знаний -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            База знаний
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                                        <div>
+                                            <div class="font-medium">Быстрый старт</div>
+                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Установка в 1С</div>
+                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
+                                        <div>
+                                            <div class="font-medium">Настройка интеграций</div>
+                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
+                                        <div>
+                                            <div class="font-medium">API</div>
+                                            <div class="text-xs text-gray-500">Для разработчиков</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
+                                        <div>
+                                            <div class="font-medium">FAQ</div>
+                                            <div class="text-xs text-gray-500">Частые вопросы</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Блог -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            Блог
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
+                                        <div>
+                                            <div class="font-medium">Все статьи</div>
+                                            <div class="text-xs text-gray-500">Последние публикации</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Тренды ИИ</div>
+                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
+                                        <div>
+                                            <div class="font-medium">Советы по маркетплейсам</div>
+                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
+                                        <div>
+                                            <div class="font-medium">Автоматизация в 1С</div>
+                                            <div class="text-xs text-gray-500">Технические гайды</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- О компании -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
+                            О компании
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-3 space-y-1">
+                                <a href="about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
+                                        <div>
+                                            <div class="font-medium">О нас</div>
+                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
+                                        <div>
+                                            <div class="font-medium">Команда</div>
+                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
+                                        <div>
+                                            <div class="font-medium">Вакансии</div>
+                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
+                                        <div>
+                                            <div class="font-medium">Контакты</div>
+                                            <div class="text-xs text-gray-500">Как нас найти</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Тарифы ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="../pricing/index.html">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html">Калькулятор</a>
-                        <a href="../pricing/enterprise.html">Enterprise</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Решения ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="../solutions/clothing/index.html">Одежда</a>
-                        <a href="../solutions/electronics/index.html">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html">Косметика</a>
-                        <a href="../solutions/food/index.html">Продукты</a>
-                        <a href="../solutions/custom/index.html">Индивидуальные</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Ресурсы ▾</a>
-                    <div class="dropdown-menu">
-                        <a href="../cases/index.html">Кейсы</a>
-                        <a href="index.html">База знаний</a>
-                        <a href="../blog/index.html">Блог</a>
-                        <a href="../academy/index.html">Академия</a>
-                    </div>
-                </div>
-                <a href="../about/index.html" class="nav-link">О компании</a>
-                <a href="../partners/index.html" class="nav-link">Партнёрам</a>
-            </nav>
-            <div class="header-actions">
-                <a href="../demo/index.html" class="btn btn-outline">Демо</a>
-                <a href="../trial/index.html" class="btn btn-primary">Попробовать бесплатно</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-        </div>
-    </header>
 
-    <main class="docs-main">
+                <!-- CTA Button -->
+                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
+                    <span>Попробовать бесплатно</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
+                
+                <!-- Продукт -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>Продукт</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="product/features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
+                        <a href="product/integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
+                        <a href="product/security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
+                        <a href="product/updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
+                    </div>
+                </div>
+                
+                <!-- Тарифы -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>Тарифы</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
+                        <a href="pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
+                        <a href="pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
+                    </div>
+                </div>
+                
+                <!-- Решения -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>Решения</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
+                        <a href="solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
+                        <a href="solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
+                        <a href="solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
+                        <a href="solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
+                    </div>
+                </div>
+                
+                <!-- Кейсы -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>Кейсы</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
+                        <a href="cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
+                    </div>
+                </div>
+                
+                <!-- База знаний -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>База знаний</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
+                        <a href="docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
+                        <a href="docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
+                        <a href="docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
+                        <a href="docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
+                    </div>
+                </div>
+                
+                <!-- Блог -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>Блог</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
+                        <a href="blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
+                        <a href="blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
+                    </div>
+                </div>
+                
+                <!-- О компании -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                        <span>О компании</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
+                        <a href="about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
+                        <a href="about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
+                        <a href="about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
+                        <a href="about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
+                    </div>
+                </div>
+                
+                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
+                    Попробовать бесплатно
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="docs-main pt-20">
         <div class="container docs-container">
             <aside class="docs-sidebar">
                 <h3>База знаний</h3>
