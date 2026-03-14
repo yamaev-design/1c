@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Активация триала — DeepSite</title>
+    <meta name="description" content="Активируйте бесплатный пробный период DeepSite и начните автоматизировать продажи на маркетплейсах.">
+    <link rel="canonical" href="https://deepsite.ru/trial">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0a0f1c',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+
+<!-- Animated Mesh Background -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+</div>
+
+<header class="relative z-50 bg-navy-900/80 backdrop-blur-md border-b border-white/10">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../index.html" class="text-2xl font-bold text-gold-400">DeepSite</a>
+        <ul class="hidden md:flex space-x-8">
+            <li class="relative group">
+                <a href="#" class="text-white hover:text-gold-400 transition">Продукт ▾</a>
+                <ul class="absolute top-full left-0 mt-2 w-56 bg-navy-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <li><a href="product/features.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-t-lg">Возможности</a></li>
+                    <li><a href="product/integrations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Интеграции</a></li>
+                    <li><a href="product/security.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Безопасность</a></li>
+                    <li><a href="product/updates.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-b-lg">Обновления</a></li>
+                </ul>
+            </li>
+            <li class="relative group">
+                <a href="#" class="text-white hover:text-gold-400 transition">Тарифы ▾</a>
+                <ul class="absolute top-full left-0 mt-2 w-56 bg-navy-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <li><a href="pricing/index.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-t-lg">Сравнение тарифов</a></li>
+                    <li><a href="pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Калькулятор</a></li>
+                    <li><a href="pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-b-lg">Enterprise</a></li>
+                </ul>
+            </li>
+            <li><a href="docs/index.html" class="text-white hover:text-gold-400 transition">База знаний</a></li>
+            <li><a href="blog/index.html" class="text-white hover:text-gold-400 transition">Блог</a></li>
+            <li><a href="about/index.html" class="text-white hover:text-gold-400 transition">О компании</a></li>
+        </ul>
+        <a href="trial/index.html" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold px-6 py-2 rounded-lg transition">Попробовать бесплатно</a>
+    </nav>
+</header>
+
+<main class="relative z-10">
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent text-center">Активация триала</h1>
+                <p class="text-xl text-gray-400 mb-12 text-center">Начните бесплатное использование DeepSite прямо сейчас</p>
+                
+                <div class="bg-navy-800/50 rounded-2xl p-8 border border-white/10">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Рабочий email</label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-3 bg-navy-900 border border-white/20 rounded-lg focus:outline-none focus:border-gold-500 text-white placeholder-gray-500"
+                                placeholder="name@company.ru">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Название компании</label>
+                            <input type="text" id="company" name="company" required 
+                                class="w-full px-4 py-3 bg-navy-900 border border-white/20 rounded-lg focus:outline-none focus:border-gold-500 text-white placeholder-gray-500"
+                                placeholder="ООО «Пример»">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                class="w-full px-4 py-3 bg-navy-900 border border-white/20 rounded-lg focus:outline-none focus:border-gold-500 text-white placeholder-gray-500"
+                                placeholder="+7 (___) ___-__-__">
+                        </div>
+                        
+                        <div>
+                            <label for="marketplace" class="block text-sm font-medium text-gray-300 mb-2">С каким маркетплейсом работаете?</label>
+                            <select id="marketplace" name="marketplace" 
+                                class="w-full px-4 py-3 bg-navy-900 border border-white/20 rounded-lg focus:outline-none focus:border-gold-500 text-white">
+                                <option value="">Выберите вариант</option>
+                                <option value="wildberries">Wildberries</option>
+                                <option value="ozon">Ozon</option>
+                                <option value="yandex">Яндекс.Маркет</option>
+                                <option value="all">Все перечисленные</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="consent" name="consent" required 
+                                class="mt-1 w-4 h-4 bg-navy-900 border-white/20 rounded focus:ring-gold-500">
+                            <label for="consent" class="ml-3 text-sm text-gray-400">
+                                Я согласен с <a href="legal/offer/index.html" class="text-gold-400 hover:underline">условиями оферты</a> и 
+                                <a href="legal/privacy/index.html" class="text-gold-400 hover:underline">политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold px-6 py-4 rounded-lg transition text-lg">
+                            Активировать 14 дней бесплатно
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-gold-400">14</div>
+                                <p class="text-xs text-gray-400">дней триала</p>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gold-400">100%</div>
+                                <p class="text-xs text-gray-400">функционала</p>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gold-400">0₽</div>
+                                <p class="text-xs text-gray-400">без карты</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center text-gray-400 text-sm">
+                    <p>Уже есть аккаунт? <a href="#" class="text-gold-400 hover:underline">Войти</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="relative z-10 bg-navy-800 border-t border-white/10 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 mb-8">
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Продукт</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="product/features.html" class="hover:text-white transition">Возможности</a></li>
+                    <li><a href="product/integrations.html" class="hover:text-white transition">Интеграции</a></li>
+                    <li><a href="product/security.html" class="hover:text-white transition">Безопасность</a></li>
+                    <li><a href="product/updates.html" class="hover:text-white transition">Обновления</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Тарифы</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="pricing/index.html" class="hover:text-white transition">Сравнение</a></li>
+                    <li><a href="pricing/calculator.html" class="hover:text-white transition">Калькулятор</a></li>
+                    <li><a href="pricing/enterprise.html" class="hover:text-white transition">Enterprise</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Решения</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="solutions/clothing/index.html" class="hover:text-white transition">Одежда</a></li>
+                    <li><a href="solutions/electronics/index.html" class="hover:text-white transition">Электроника</a></li>
+                    <li><a href="solutions/cosmetics/index.html" class="hover:text-white transition">Косметика</a></li>
+                    <li><a href="solutions/food/index.html" class="hover:text-white transition">Продукты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Ресурсы</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="docs/index.html" class="hover:text-white transition">База знаний</a></li>
+                    <li><a href="blog/index.html" class="hover:text-white transition">Блог</a></li>
+                    <li><a href="cases/index.html" class="hover:text-white transition">Кейсы</a></li>
+                    <li><a href="academy/index.html" class="hover:text-white transition">Академия</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Академия</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="academy/webinars.html" class="hover:text-white transition">Вебинары</a></li>
+                    <li><a href="academy/courses.html" class="hover:text-white transition">Курсы</a></li>
+                    <li><a href="academy/certification.html" class="hover:text-white transition">Сертификация</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Партнёрам</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="partners/index.html" class="hover:text-white transition">Программа</a></li>
+                    <li><a href="partners/agencies.html" class="hover:text-white transition">Агентства</a></li>
+                    <li><a href="partners/resources.html" class="hover:text-white transition">Материалы</a></li>
+                    <li><a href="partners/join.html" class="hover:text-white transition">Вступить</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">О компании</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="about/index.html" class="hover:text-white transition">О нас</a></li>
+                    <li><a href="about/team.html" class="hover:text-white transition">Команда</a></li>
+                    <li><a href="about/careers.html" class="hover:text-white transition">Карьера</a></li>
+                    <li><a href="about/contacts.html" class="hover:text-white transition">Контакты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Юридическое</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="legal/offer/index.html" class="hover:text-white transition">Оферта</a></li>
+                    <li><a href="legal/privacy/index.html" class="hover:text-white transition">Конфиденциальность</a></li>
+                    <li><a href="legal/152fz/index.html" class="hover:text-white transition">152-ФЗ</a></li>
+                    <li><a href="legal/sla/index.html" class="hover:text-white transition">SLA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 DeepSite. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

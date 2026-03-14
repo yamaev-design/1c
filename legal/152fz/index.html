@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соответствие 152-ФЗ — DeepSite</title>
+    <meta name="description" content="Информация о соответствии сервиса DeepSite требованиям Федерального закона № 152-ФЗ о персональных данных.">
+    <link rel="canonical" href="https://deepsite.ru/legal/152fz">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0a0f1c',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+
+<!-- Animated Mesh Background -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+</div>
+
+<header class="relative z-50 bg-navy-900/80 backdrop-blur-md border-b border-white/10">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="../../index.html" class="text-2xl font-bold text-gold-400">DeepSite</a>
+        <ul class="hidden md:flex space-x-8">
+            <li class="relative group">
+                <a href="#" class="text-white hover:text-gold-400 transition">Продукт ▾</a>
+                <ul class="absolute top-full left-0 mt-2 w-56 bg-navy-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <li><a href="../../product/features.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-t-lg">Возможности</a></li>
+                    <li><a href="../../product/integrations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Интеграции</a></li>
+                    <li><a href="../../product/security.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Безопасность</a></li>
+                    <li><a href="../../product/updates.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-b-lg">Обновления</a></li>
+                </ul>
+            </li>
+            <li class="relative group">
+                <a href="#" class="text-white hover:text-gold-400 transition">Тарифы ▾</a>
+                <ul class="absolute top-full left-0 mt-2 w-56 bg-navy-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <li><a href="../../pricing/index.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-t-lg">Сравнение тарифов</a></li>
+                    <li><a href="../../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400">Калькулятор</a></li>
+                    <li><a href="../../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-navy-700 hover:text-gold-400 rounded-b-lg">Enterprise</a></li>
+                </ul>
+            </li>
+            <li><a href="../../docs/index.html" class="text-white hover:text-gold-400 transition">База знаний</a></li>
+            <li><a href="../../blog/index.html" class="text-white hover:text-gold-400 transition">Блог</a></li>
+            <li><a href="../../about/index.html" class="text-white hover:text-gold-400 transition">О компании</a></li>
+        </ul>
+        <a href="../../trial/index.html" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold px-6 py-2 rounded-lg transition">Попробовать бесплатно</a>
+    </nav>
+</header>
+
+<main class="relative z-10">
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Соответствие 152-ФЗ</h1>
+                <p class="text-xl text-gray-400 mb-12">Гарантия защиты персональных данных в соответствии с Федеральным законом № 152-ФЗ</p>
+                
+                <article class="prose prose-invert prose-lg max-w-none">
+                    <div class="bg-navy-800/50 rounded-2xl p-8 mb-8 border border-white/10">
+                        <h2 class="text-2xl font-bold text-gold-400 mb-4 flex items-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 mr-3"></i>
+                            Общие положения
+                        </h2>
+                        <p class="text-gray-300">Сервис DeepSite полностью соответствует требованиям Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных». Мы обеспечиваем защиту всех обрабатываемых персональных данных пользователей.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-navy-800/50 rounded-xl p-6 border border-white/10">
+                            <h3 class="text-xl font-semibold text-gold-400 mb-3 flex items-center">
+                                <i data-lucide="database" class="w-5 h-5 mr-2"></i>
+                                Локализация данных
+                            </h3>
+                            <p class="text-gray-300 text-sm">Все персональные данные граждан РФ хранятся и обрабатываются на территории Российской Федерации в соответствии с требованиями Роскомнадзора.</p>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-6 border border-white/10">
+                            <h3 class="text-xl font-semibold text-gold-400 mb-3 flex items-center">
+                                <i data-lucide="lock" class="w-5 h-5 mr-2"></i>
+                                Технические меры защиты
+                            </h3>
+                            <p class="text-gray-300 text-sm">Применяются современные методы шифрования, разграничения доступа и мониторинга безопасности для защиты данных от несанкционированного доступа.</p>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-6 border border-white/10">
+                            <h3 class="text-xl font-semibold text-gold-400 mb-3 flex items-center">
+                                <i data-lucide="file-check" class="w-5 h-5 mr-2"></i>
+                                Уведомление Роскомнадзора
+                            </h3>
+                            <p class="text-gray-300 text-sm">ООО «ДипСайт» включено в реестр операторов персональных данных Роскомнадзора (уведомление № [номер]).</p>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-6 border border-white/10">
+                            <h3 class="text-xl font-semibold text-gold-400 mb-3 flex items-center">
+                                <i data-lucide="users" class="w-5 h-5 mr-2"></i>
+                                Права субъектов ПДн
+                            </h3>
+                            <p class="text-gray-300 text-sm">Пользователи имеют право на доступ, уточнение, блокирование и уничтожение своих персональных данных по запросу.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-800/50 rounded-2xl p-8 mb-8 border border-white/10">
+                        <h2 class="text-2xl font-bold text-gold-400 mb-4">Какие данные мы обрабатываем</h2>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Контактная информация (ФИО, email, телефон)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Данные аккаунтов маркетплейсов (для интеграции)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Платёжная информация (через защищённые платёжные шлюзы)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Технические данные (IP-адрес, браузер, устройство)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-navy-800/50 rounded-2xl p-8 mb-8 border border-white/10">
+                        <h2 class="text-2xl font-bold text-gold-400 mb-4">Ваши права</h2>
+                        <p class="text-gray-300 mb-4">Вы имеете право:</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Получить информацию об обработке ваших персональных данных</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Требовать уточнения, блокирования или уничтожения данных</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Отозвать согласие на обработку персональных данных</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="arrow-right" class="w-5 h-5 text-gold-400 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Подать жалобу в Роскомнадзор</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gold-500/20 to-amber-500/20 rounded-2xl p-8 border border-gold-500/30">
+                        <h2 class="text-2xl font-bold text-gold-400 mb-4 flex items-center">
+                            <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+                            Контакты по вопросам ПДн
+                        </h2>
+                        <p class="text-gray-300 mb-4">По всем вопросам, связанным с обработкой персональных данных, вы можете обратиться:</p>
+                        <div class="space-y-2 text-gray-300">
+                            <p><strong>Email:</strong> privacy@deepsite.ru</p>
+                            <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
+                            <p><strong>Адрес:</strong> 123456, г. Москва, ул. Примерная, д. 1</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="relative z-10 bg-navy-800 border-t border-white/10 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 mb-8">
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Продукт</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../product/features.html" class="hover:text-white transition">Возможности</a></li>
+                    <li><a href="../../product/integrations.html" class="hover:text-white transition">Интеграции</a></li>
+                    <li><a href="../../product/security.html" class="hover:text-white transition">Безопасность</a></li>
+                    <li><a href="../../product/updates.html" class="hover:text-white transition">Обновления</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Тарифы</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../pricing/index.html" class="hover:text-white transition">Сравнение</a></li>
+                    <li><a href="../../pricing/calculator.html" class="hover:text-white transition">Калькулятор</a></li>
+                    <li><a href="../../pricing/enterprise.html" class="hover:text-white transition">Enterprise</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Решения</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../solutions/clothing/index.html" class="hover:text-white transition">Одежда</a></li>
+                    <li><a href="../../solutions/electronics/index.html" class="hover:text-white transition">Электроника</a></li>
+                    <li><a href="../../solutions/cosmetics/index.html" class="hover:text-white transition">Косметика</a></li>
+                    <li><a href="../../solutions/food/index.html" class="hover:text-white transition">Продукты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Ресурсы</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../docs/index.html" class="hover:text-white transition">База знаний</a></li>
+                    <li><a href="../../blog/index.html" class="hover:text-white transition">Блог</a></li>
+                    <li><a href="../../cases/index.html" class="hover:text-white transition">Кейсы</a></li>
+                    <li><a href="../../academy/index.html" class="hover:text-white transition">Академия</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Академия</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../academy/webinars.html" class="hover:text-white transition">Вебинары</a></li>
+                    <li><a href="../../academy/courses.html" class="hover:text-white transition">Курсы</a></li>
+                    <li><a href="../../academy/certification.html" class="hover:text-white transition">Сертификация</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Партнёрам</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../partners/index.html" class="hover:text-white transition">Программа</a></li>
+                    <li><a href="../../partners/agencies.html" class="hover:text-white transition">Агентства</a></li>
+                    <li><a href="../../partners/resources.html" class="hover:text-white transition">Материалы</a></li>
+                    <li><a href="../../partners/join.html" class="hover:text-white transition">Вступить</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">О компании</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../../about/index.html" class="hover:text-white transition">О нас</a></li>
+                    <li><a href="../../about/team.html" class="hover:text-white transition">Команда</a></li>
+                    <li><a href="../../about/careers.html" class="hover:text-white transition">Карьера</a></li>
+                    <li><a href="../../about/contacts.html" class="hover:text-white transition">Контакты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gold-400 mb-3">Юридическое</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="../offer/index.html" class="hover:text-white transition">Оферта</a></li>
+                    <li><a href="../privacy/index.html" class="hover:text-white transition">Конфиденциальность</a></li>
+                    <li><a href="index.html" class="text-gold-400">152-ФЗ</a></li>
+                    <li><a href="../sla/index.html" class="hover:text-white transition">SLA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 DeepSite. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
