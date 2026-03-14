@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
-    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование, серверы в РФ, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
-    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
+    <title>Безопасность | AI Seller 1С</title>
+    <meta name="description" content="Безопасность данных и соответствие требованиям">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
-    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
-    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
-    
-    <!-- Breadcrumb Schema.org -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,657 +36,228 @@
     }
     </script>
     
-    <!-- FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Где хранятся данные?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Персональные данные обрабатываются на серверах в РФ (Москва, Яндекс.Облако). Конфиденциальные данные (себестоимость, маржа) не покидают контур вашей 1С."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Соответствуете ли вы 152-ФЗ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да. Мы являемся оператором ПДн, уведомили Роскомнадзор, заключаем ДПД с каждым клиентом. Используем шифрование и разграничение доступа."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли использовать локальное развёртывание?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, для тарифа «Профи» доступна опция установки ИИ-модуля на ваш сервер. Данные не передаются во внешние облака."
-          }
+    <style>
+        /* Стили для страницы безопасности */
+        .security-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 0;
         }
-      ]
-    }
-    </script>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
+        
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .security-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .security-card.dark {
+            background: #1e293b;
+            color: white;
+        }
+        
+        .data-flow-diagram {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .flow-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+        
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        
+        .legend-color.local { background: #10b981; }
+        .legend-color.encrypted { background: #3b82f6; }
+        .legend-color.cloud { background: #8b5cf6; }
+        
+        .doc-card {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        
+        .doc-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        
+        .faq-item summary {
+            padding: 20px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 24px 24px 24px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .flow-legend {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .doc-card {
+                flex-direction: column;
+                text-align: center;
             }
         }
-    </script>
-    
-    <link rel="stylesheet" href="../style.css">
+    </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
-    <!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>AI Seller 1С</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="integrations.html">Интеграции</a>
+                <a href="security.html" class="active">Безопасность</a>
+                <a href="../pricing.html">Тарифы</a>
+            </nav>
+            <button class="btn btn-primary open-modal-btn">Попробовать бесплатно</button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="../cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
+    </header>
+    <!-- Hero Section -->
+    <section class="hero security-hero">
+        <div class="container">
+            <div class="hero-content">
                 <h1>Безопасность и соответствие 152-ФЗ</h1>
-                <p class="hero-subtitle">Ваши данные под надёжной защитой — мы используем только российские технологии и серверы</p>
+                <p class="hero-subtitle">Полная защита ваших данных: шифрование, серверы в РФ, юридическая ответственность</p>
+                <div class="hero-buttons">
+                    <a href="#compliance" class="btn btn-light">Узнать подробнее</a>
+                    <a href="#docs" class="btn btn-outline-light">Скачать документы</a>
+                </div>
             </div>
-        </section>
-
-        <!-- Data Flow Diagram -->
-        <section class="data-flow-diagram">
-            <h2 style="color: #1e293b; margin-bottom: 12px;">Как защищаются ваши данные</h2>
-            <p class="subtitle" style="color: #64748b; margin-bottom: 32px;">Понятная схема: что остаётся у вас, что обрабатывается в облаке</p>
+        </div>
+    </section>
+    <!-- Data Flow Diagram -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Как защищаются ваши данные</h2>
+            <p class="section-subtitle">Понятная схема: что остаётся у вас, что обрабатывается в облаке</p>
             
-            <div class="diagram-container" style="max-width: 800px; margin: 0 auto;">
-                <img src="../images/security/data-flow.svg" 
-                     alt="Схема: Данные 1С → Шифрование → Обработка в РФ → Результат в 1С"
-                     loading="lazy"
-                     style="width: 100%; height: auto;"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                
-                <!-- Fallback diagram if image not available -->
-                <div style="display: none; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
-                        <div style="background: #10b981; color: white; padding: 20px; border-radius: 8px; min-width: 150px; text-align: center;">
-                            <strong>1С:Предприятие</strong><br>
-                            <small>Локальные данные</small>
-                        </div>
-                        <div style="color: #3b82f6; font-size: 24px;">⇄ TLS 1.3 ⇄</div>
-                        <div style="background: #8b5cf6; color: white; padding: 20px; border-radius: 8px; min-width: 150px; text-align: center;">
-                            <strong>AI Seller Core</strong><br>
-                            <small>Обработка в РФ</small>
-                        </div>
-                        <div style="color: #3b82f6; font-size: 24px;">⇄ API ⇄</div>
-                        <div style="background: #3b82f6; color: white; padding: 20px; border-radius: 8px; min-width: 150px; text-align: center;">
-                            <strong>YandexGPT / GigaChat</strong><br>
-                            <small>Серверы в Москве</small>
+            <div class="data-flow-diagram">
+                <div class="diagram-container">
+                    <img src="images/security/data-flow.svg" 
+                         alt="Схема: Данные 1С → Шифрование → Обработка в РФ → Результат в 1С"
+                         loading="lazy"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    
+                    <div class="diagram-fallback" style="display:none;">
+                        <div class="flow-steps">
+                            <div class="step">🏢 Ваша 1С</div>
+                            <div class="arrow">→ 🔒 TLS 1.3 →</div>
+                            <div class="step">☁️ Облако РФ</div>
+                            <div class="arrow">→ 🤖 AI Обработка →</div>
+                            <div class="step">✅ Результат в 1С</div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="flow-legend">
+                    <div class="legend-item">
+                        <span class="legend-color local"></span>
+                        <strong>Локально в 1С:</strong> себестоимость, маржа, контакты клиентов
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color encrypted"></span>
+                        <strong>Передаётся зашифрованным:</strong> публичные описания товаров
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color cloud"></span>
+                        <strong>Обрабатывается в облаке РФ:</strong> YandexGPT / GigaChat API
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    <!-- Compliance 152-FZ -->
+    <section class="section bg-light" id="compliance">
+        <div class="container">
+            <h2 class="section-title">✅ Полное соответствие 152-ФЗ</h2>
             
-            <div class="flow-legend">
-                <div class="legend-item">
-                    <span class="legend-color local"></span>
-                    <strong>Локально в 1С:</strong> себестоимость, маржа, контакты клиентов, финансовые данные
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color encrypted"></span>
-                    <strong>Передаётся зашифрованным:</strong> публичные описания товаров, тексты отзывов (без ПДн)
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color cloud"></span>
-                    <strong>Обрабатывается в облаке РФ:</strong> YandexGPT / GigaChat API, серверы в Москве
-                </div>
-            </div>
-        </section>
-
-        <!-- Compliance 152-FZ -->
-        <section class="compliance-152fz" style="padding: 40px 0;">
-            <h2 style="text-align: center; margin-bottom: 32px;">✅ Полное соответствие 152-ФЗ «О персональных данных»</h2>
-            
-            <div class="compliance-grid">
-                <div class="compliance-card">
+            <div class="security-grid">
+                <div class="security-card">
                     <div class="icon">📋</div>
                     <h3>Оператор ПДн</h3>
-                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора (запись № ______ от __.__.____)</p>
-                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small" style="color: #3b82f6; text-decoration: none; font-weight: 500;">
+                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора</p>
+                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small">
                         Проверить в реестре →
                     </a>
                 </div>
                 
-                <div class="compliance-card">
+                <div class="security-card">
                     <div class="icon">📄</div>
                     <h3>Договор обработки ПДн</h3>
                     <p>Заключаем с каждым клиентом. Определяем цели, состав данных, меры защиты.</p>
-                    <a href="../docs/dpd-template.pdf" download class="link-small" style="color: #3b82f6; text-decoration: none; font-weight: 500;">
+                    <a href="/docs/dpd-template.pdf" download class="link-small">
                         📥 Скачать шаблон ДПД
                     </a>
                 </div>
                 
-                <div class="compliance-card">
+                <div class="security-card">
                     <div class="icon">🗂️</div>
                     <h3>Локализация данных</h3>
                     <p>Все серверы — в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
                 </div>
                 
-                <div class="compliance-card">
+                <div class="security-card">
                     <div class="icon">🔐</div>
                     <h3>Меры защиты</h3>
                     <p>Шифрование при передаче (TLS 1.3) и хранении (AES-256). Разграничение прав доступа.</p>
@@ -703,23 +268,24 @@
                 <strong>📌 Важно:</strong> Мы не передаём в облако данные, позволяющие идентифицировать физическое лицо, без вашего явного согласия. 
                 Публичные данные (описания товаров, отзывы) обрабатываются отдельно от ПДн.
             </div>
-        </section>
-
-        <!-- Security Measures -->
-        <section class="security-measures" style="padding: 40px 0;">
-            <h2 style="text-align: center; margin-bottom: 32px;">🔐 Технические меры защиты</h2>
+        </div>
+    </section>
+    <!-- Technical Measures -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">🔐 Технические меры защиты</h2>
             
-            <div class="measures-grid">
-                <div class="measure-item">
+            <div class="security-grid">
+                <div class="security-card dark">
                     <h3>🔒 Шифрование</h3>
                     <ul>
                         <li><strong>При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</li>
                         <li><strong>При хранении:</strong> AES-256-GCM для чувствительных полей</li>
-                        <li><strong>API-ключи:</strong> Хранятся в зашифрованном виде в 1С, не передаются</li>
+                        <li><strong>API-ключи:</strong> Хранятся в зашифрованном виде в 1С</li>
                     </ul>
                 </div>
                 
-                <div class="measure-item">
+                <div class="security-card dark">
                     <h3>👥 Контроль доступа</h3>
                     <ul>
                         <li><strong>Ролевая модель (RBAC):</strong> Разграничение прав в модуле 1С</li>
@@ -728,7 +294,7 @@
                     </ul>
                 </div>
                 
-                <div class="measure-item">
+                <div class="security-card dark">
                     <h3>📊 Логирование и аудит</h3>
                     <ul>
                         <li><strong>Все действия:</strong> Запись в журнал 1С (кто, что, когда)</li>
@@ -737,7 +303,7 @@
                     </ul>
                 </div>
                 
-                <div class="measure-item">
+                <div class="security-card dark">
                     <h3>🛡️ Инфраструктура</h3>
                     <ul>
                         <li><strong>Серверы:</strong> Яндекс.Облако (Москва), уровень защиты К2</li>
@@ -746,15 +312,16 @@
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Security Team Section -->
-        <section class="security-team-section" style="padding: 40px 0;">
-            <h2 style="text-align: center; margin-bottom: 12px;">🔍 Информация для вашей службы ИБ</h2>
-            <p class="subtitle" style="text-align: center; color: #94a3b8; margin-bottom: 32px;">Готовые материалы для внутренней проверки и аудита</p>
+        </div>
+    </section>
+    <!-- Security Docs -->
+    <section class="section bg-light" id="docs">
+        <div class="container">
+            <h2 class="section-title">🔍 Информация для вашей службы ИБ</h2>
+            <p class="section-subtitle">Готовые материалы для внутренней проверки и аудита</p>
             
             <div class="security-docs">
-                <a href="../docs/security-whitepaper.pdf" class="doc-card" download>
+                <a href="/docs/security-whitepaper.pdf" class="doc-card" download>
                     <div class="doc-icon">📄</div>
                     <div>
                         <h4>Whitepaper по безопасности</h4>
@@ -763,7 +330,7 @@
                     </div>
                 </a>
                 
-                <a href="../docs/security-checklist.pdf" class="doc-card" download>
+                <a href="/docs/security-checklist.pdf" class="doc-card" download>
                     <div class="doc-icon">✅</div>
                     <div>
                         <h4>Чек-лист для проверки</h4>
@@ -772,7 +339,7 @@
                     </div>
                 </a>
                 
-                <a href="../docs/dpa-template.pdf" class="doc-card" download>
+                <a href="/docs/dpa-template.pdf" class="doc-card" download>
                     <div class="doc-icon">📋</div>
                     <div>
                         <h4>Шаблон ДПД (152-ФЗ)</h4>
@@ -781,7 +348,7 @@
                     </div>
                 </a>
                 
-                <a href="../docs/penetration-test-summary.pdf" class="doc-card" download>
+                <a href="/docs/penetration-test-summary.pdf" class="doc-card" download>
                     <div class="doc-icon">🧪</div>
                     <div>
                         <h4>Отчёт о пентесте</h4>
@@ -791,19 +358,20 @@
                 </a>
             </div>
             
-            <div class="security-contact" style="text-align: center; margin-top: 40px; padding: 32px; background: rgba(255,255,255,0.05); border-radius: 12px;">
-                <h4 style="margin-bottom: 12px;">📧 Связь с командой безопасности</h4>
-                <p style="color: #94a3b8; margin-bottom: 16px;">Есть вопросы по ИБ или нашли уязвимость? Напишите нам:</p>
-                <a href="mailto:security@aiseller.ru" class="email-link" style="color: #60a5fa; font-size: 18px; font-weight: 600; text-decoration: none;">security@aiseller.ru</a>
-                <p class="small" style="color: #64748b; margin-top: 16px; font-size: 14px;">Ответ в течение 24 часов. Поддерживаем программу <strong>Bug Bounty</strong>.</p>
+            <div class="security-contact">
+                <h4>📧 Связь с командой безопасности</h4>
+                <p>Есть вопросы по ИБ или нашли уязвимость? Напишите нам:</p>
+                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
+                <p class="small">Ответ в течение 24 часов. Поддерживаем программу <strong>Bug Bounty</strong>.</p>
             </div>
-        </section>
-
-        <!-- Security FAQ -->
-        <section class="security-faq" style="padding: 40px 0;">
-            <h2 style="text-align: center; margin-bottom: 32px;">❓ Частые вопросы по безопасности</h2>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">❓ Частые вопросы по безопасности</h2>
             
-            <div class="faq-grid" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="faq-grid">
                 <details class="faq-item">
                     <summary>Можно ли использовать решение без облака?</summary>
                     <div class="faq-answer">
@@ -831,293 +399,1020 @@
                         <p>Да, ежегодно проводим независимый пентест через аккредитованную компанию. Также выполняем сканирование уязвимостей ежеквартально. Отчёт доступен по запросу под NDA.</p>
                     </div>
                 </details>
-                
-                <details class="faq-item">
-                    <summary>Что при утечке данных?</summary>
-                    <div class="faq-answer">
-                        <p>У нас есть регламент реагирования на инциденты (IRP). В случае инцидента мы уведомляем вас и Роскомнадзор в течение 24 часов, проводим расследование и предоставляем отчёт. Все клиенты тарифа «Бизнес» и выше получают приоритетную поддержку при инцидентах.</p>
-                    </div>
-                </details>
             </div>
-        </section>
-
-        <!-- Guarantees Section -->
-        <section class="guarantees-section" style="padding: 40px 0;">
-            <h2 style="text-align: center; margin-bottom: 32px;">🛡️ Наши гарантии</h2>
+        </div>
+    </section>
+    <!-- Guarantees -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">🛡️ Наши гарантии</h2>
             
-            <div class="guarantees-grid">
-                <div class="guarantee-card">
+            <div class="security-grid">
+                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
                     <div class="guarantee-icon">⏱️</div>
                     <h3>SLA 99.9%</h3>
                     <p>Гарантируем доступность сервиса. При нарушении — компенсация пропорционально простоям.</p>
                 </div>
                 
-                <div class="guarantee-card">
+                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
                     <div class="guarantee-icon">💰</div>
                     <h3>Финансовая ответственность</h3>
                     <p>В договоре прописана ответственность за утечку данных по нашей вине. Страхование киберрисков.</p>
                 </div>
                 
-                <div class="guarantee-card">
+                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
                     <div class="guarantee-icon">🔄</div>
                     <h3>Возврат средств</h3>
                     <p>30 дней на тестирование. Если продукт не подойдёт — вернём деньги без вопросов.</p>
                 </div>
                 
-                <div class="guarantee-card">
+                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
                     <div class="guarantee-icon">📞</div>
                     <h3>Поддержка 24/7</h3>
                     <p>Для тарифа «Профи» — выделенный инженер безопасности на связи круглосуточно.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Original Security Cards -->
-        <section class="security-section" style="padding: 40px 0;">
-            <div class="container">
-                <div class="security-card">
-                    <div class="security-icon">🔒</div>
-                    <h2>Гибридная модель обработки данных</h2>
-                    <p>Мы разделяем данные на два типа:</p>
-                    <ul>
-                        <li><strong>Публичные данные</strong> (описания товаров, отзывы, вопросы) — обрабатываются в облаке российских ИИ-провайдеров</li>
-                        <li><strong>Конфиденциальные данные</strong> (себестоимость, маржа, закупочные цены) — остаются в контуре вашей 1С и никогда не передаются наружу</li>
-                    </ul>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Готовы обеспечить безопасность вашего бизнеса?</h2>
+            <p>Начните использовать AI Seller с полным соответствием требованиям</p>
+            <button class="btn btn-primary btn-lg open-modal-btn">Начать бесплатный период</button>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo">
+                        <i class="fas fa-cube"></i>
+                        <span>AI Seller 1С</span>
+                    </a>
+                    <p>Автоматизация маркетплейсов на базе искусственного интеллекта.</p>
                 </div>
-
-                <div class="security-card">
-                    <div class="security-icon">🇷🇺</div>
-                    <h2>Российские ИИ-модели</h2>
-                    <p>Используем только отечественные решения:</p>
-                    <ul>
-                        <li><strong>YandexGPT</strong> — основная модель для генерации текстов</li>
-                        <li><strong>GigaChat (Sber)</strong> — резервный провайдер</li>
-                        <li>Все серверы расположены на территории РФ</li>
-                        <li>Соответствие требованиям 152-ФЗ о персональных данных</li>
-                    </ul>
+                <div class="footer-col">
+                    <h4>Продукт</h4>
+                    <a href="features.html">Возможности</a>
+                    <a href="integrations.html">Интеграции</a>
+                    <a href="security.html">Безопасность</a>
+                    <a href="../pricing.html">Тарифы</a>
                 </div>
-
-                <div class="security-card">
-                    <div class="security-icon">📜</div>
-                    <h2>Сертификаты и compliance</h2>
-                    <ul>
-                        <li>✅ Сертификат соответствия 152-ФЗ</li>
-                        <li>✅ Реестр российского ПО (Минцифры)</li>
-                        <li>✅ Сертификат ФСТЭК (для Enterprise)</li>
-                        <li>✅ Регулярные аудиты безопасности</li>
-                        <li>✅ Политика обработки персональных данных</li>
-                    </ul>
+                <div class="footer-col">
+                    <h4>Документы</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
                 </div>
-
-                <div class="security-card">
-                    <div class="security-icon">🛡️</div>
-                    <h2>Техническая защита</h2>
-                    <ul>
-                        <li>Шифрование данных по протоколу TLS 1.3</li>
-                        <li>Двухфакторная аутентификация</li>
-                        <li>Разграничение прав доступа (RBAC)</li>
-                        <li>Логирование всех действий</li>
-                        <li>Регулярное резервное копирование</li>
-                        <li>Защита от DDoS-атак</li>
-                    </ul>
-                </div>
-
-                <div class="security-card">
-                    <div class="security-icon">👥</div>
-                    <h2>Контроль доступа</h2>
-                    <ul>
-                        <li>Ролевая модель доступа</li>
-                        <li>Индивидуальные учётные записи</li>
-                        <li>Возможность ограничения по IP</li>
-                        <li>Аудит действий пользователей</li>
-                        <li>Автоматический logout при бездействии</li>
-                    </ul>
-                </div>
-
-                <div class="security-card">
-                    <div class="security-icon">📊</div>
-                    <h2>Прозрачность</h2>
-                    <ul>
-                        <li>Открытая политика конфиденциальности</li>
-                        <li>Публичная оферта с понятными условиями</li>
-                        <li>Возможность экспорта всех ваших данных</li>
-                        <li>Полное удаление данных по запросу</li>
-                        <li>Ежегодные отчёты о безопасности</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Compliance Info -->
-        <section class="compliance-section" style="padding: 40px 0;">
-            <div class="container">
-                <h2>📋 Что говорит 152-ФЗ?</h2>
-                <div class="compliance-info">
-                    <p><strong>Федеральный закон № 152-ФЗ</strong> «О персональных данных» регулирует обработку персональных данных граждан Российской Федерации.</p>
-                    <h3>Наши обязательства:</h3>
-                    <ul>
-                        <li>Сбор и обработка данных только с согласия субъекта</li>
-                        <li>Хранение данных на серверах в России</li>
-                        <li>Защита данных от несанкционированного доступа</li>
-                        <li>Уведомление Роскомнадзора об обработке данных</li>
-                        <li>Предоставление субъекту права на доступ, исправление и удаление данных</li>
-                    </ul>
-                    <h3>Ваши права:</h3>
-                    <ul>
-                        <li>Право на отзыв согласия на обработку данных</li>
-                        <li>Право на получение информации об обработке</li>
-                        <li>Право на блокировку и уничтожение данных</li>
-                        <li>Право на защиту своих прав, включая возмещение убытков</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section" style="padding: 60px 0;">
-            <div class="container">
-                <h2>Остались вопросы по безопасности?</h2>
-                <p>Наши специалисты готовы предоставить подробную консультацию и документы по compliance.</p>
-                <a href="../about/contacts.html" class="btn btn-primary btn-large">Связаться с отделом безопасности</a>
-            </div>
-        </section>
-    </main>
-
-    
-
-    <script src="../script.js"></script>
-
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="mailto:info@aiseller.ru">info@aiseller.ru</a>
+                    <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
                     </div>
                 </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../solutions/food/index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="../cases/index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="about/index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="about/team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="about/careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="about/contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
             </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Seller 1С. Все права защищены.</p>
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal" id="trialModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Попробовать бесплатно</h2>
+            <p>Оставьте заявку, и мы подключим вам пробный период на 14 дней.</p>
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Название компании">
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>` did not appear verbatim in /workspace/product/security.html.
+Shell
+$ cat > /workspace/product/security.html << 'EOF'
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
+    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование TLS 1.3, серверы в РФ, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
+    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
+    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://yamaev-design.github.io/1c/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Продукт",
+          "item": "https://yamaev-design.github.io/1c/product/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Безопасность",
+          "item": "https://yamaev-design.github.io/1c/product/security.html"
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Где хранятся данные?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Персональные данные обрабатываются на серверах в РФ (Москва, Яндекс.Облако). Конфиденциальные данные (себестоимость, маржа) не покидают контур вашей 1С."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Соответствуете ли вы 152-ФЗ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы являемся оператором ПДн, уведомили Роскомнадзор, заключаем ДПД с каждым клиентом. Используем шифрование и разграничение доступа."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>AI Seller 1С</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="integrations.html">Интеграции</a>
+                <a href="security.html" class="active">Безопасность</a>
+                <a href="../pricing.html">Тарифы</a>
+            </nav>
+            <button class="btn btn-primary open-modal-btn">Попробовать бесплатно</button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero security-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Безопасность данных и соответствие 152-ФЗ</h1>
+                <p class="hero-subtitle">Ваши данные под надежной защитой: шифрование, серверы в РФ, юридическая ответственность.</p>
+                <div class="hero-buttons">
+                    <a href="#compliance" class="btn btn-primary">Узнать о соответствии</a>
+                    <a href="#docs" class="btn btn-outline">Скачать документы</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="security-badge-large">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Защищено</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Data Flow Diagram -->
+    <section class="section bg-light" id="data-flow">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Как защищаются ваши данные</h2>
+                <p>Прозрачная схема обработки: что остаётся у вас, что уходит в облако</p>
+            </div>
+            
+            <div class="data-flow-wrapper">
+                <div class="flow-card local">
+                    <div class="flow-icon"><i class="fas fa-server"></i></div>
+                    <h3>Локально в 1С</h3>
+                    <ul>
+                        <li>Себестоимость и маржа</li>
+                        <li>Контакты клиентов (ПДн)</li>
+                        <li>Финансовые отчеты</li>
+                        <li>Пароли и ключи</li>
+                    </ul>
+                    <span class="badge badge-green">Не передается</span>
+                </div>
+                
+                <div class="flow-arrow">
+                    <i class="fas fa-lock"></i>
+                    <span>TLS 1.3</span>
+                </div>
+                
+                <div class="flow-card cloud">
+                    <div class="flow-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Облако РФ</h3>
+                    <ul>
+                        <li>Публичные описания товаров</li>
+                        <li>Тексты отзывов (без ПДн)</li>
+                        <li>Аналитика продаж</li>
+                    </ul>
+                    <span class="badge badge-blue">Шифруется</span>
+                </div>
+                
+                <div class="flow-arrow">
+                    <i class="fas fa-microchip"></i>
+                    <span>AI Processing</span>
+                </div>
+                
+                <div class="flow-card result">
+                    <div class="flow-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Результат в 1С</h3>
+                    <ul>
+                        <li>Готовые карточки</li>
+                        <li>Ответы клиентам</li>
+                        <li>Прогнозы</li>
+                    </ul>
+                    <span class="badge badge-green">Безопасно</span>
+                </div>
+            </div>
+            
+            <div class="alert-box mt-4">
+                <i class="fas fa-info-circle"></i>
+                <strong>Важно:</strong> Мы используем гибридную модель. Чувствительные коммерческие данные и ПДн никогда не покидают периметр вашей 1С без явного согласия.
+            </div>
+        </div>
+    </section>
+    <!-- Compliance 152-FZ -->
+    <section class="section" id="compliance">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Соответствие 152-ФЗ</h2>
+                <p>Полный пакет документов и технических мер для работы с персональными данными</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Оператор ПДн</h3>
+                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора.</p>
+                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small">Проверить в реестре →</a>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>Договор (ДПД)</h3>
+                    <p>Заключаем договор обработки ПДн с каждым клиентом.</p>
+                    <a href="#" class="link-small" download>📥 Скачать шаблон ДПД</a>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Локализация</h3>
+                    <p>Серверы находятся в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Меры защиты</h3>
+                    <p>Шифрование при передаче и хранении. Разграничение прав доступа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Measures -->
+    <section class="section bg-dark text-white" id="tech-measures">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 style="color: white;">Технические меры защиты</h2>
+                <p style="color: rgba(255,255,255,0.7);">Профессиональный уровень безопасности инфраструктуры</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-lock"></i> Шифрование</h3>
+                    <ul class="check-list">
+                        <li><strong>При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</li>
+                        <li><strong>При хранении:</strong> AES-256-GCM для чувствительных полей</li>
+                        <li><strong>API-ключи:</strong> Хранятся зашифрованными в 1С</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-users"></i> Контроль доступа</h3>
+                    <ul class="check-list">
+                        <li><strong>RBAC:</strong> Ролевая модель доступа в модуле 1С</li>
+                        <li><strong>MFA:</strong> Двухфакторная аутентификация для админов</li>
+                        <li><strong>Сессии:</strong> JWT с коротким временем жизни</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-clipboard-list"></i> Логирование</h3>
+                    <ul class="check-list">
+                        <li><strong>Аудит:</strong> Запись всех действий (кто, что, когда)</li>
+                        <li><strong>ПДн:</strong> Отдельный журнал доступа к персональным данным</li>
+                        <li><strong>Хранение:</strong> Логи хранятся 3 года</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-server"></i> Инфраструктура</h3>
+                    <ul class="check-list">
+                        <li><strong>Серверы:</strong> Яндекс.Облако (уровень защиты К2)</li>
+                        <li><strong>DDoS:</strong> Защита от атак любого уровня</li>
+                        <li><strong>Backup:</strong> Ежедневное резервное копирование</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Security Docs for Teams -->
+    <section class="section" id="docs">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Документы для службы безопасности</h2>
+                <p>Готовые материалы для внутренней проверки и аудита вашего предприятия</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Whitepaper по безопасности</h4>
+                        <p>Архитектура, угрозы, контрмеры, соответствие стандартам (14 стр.)</p>
+                        <span class="doc-meta">PDF • 2.1 MB</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Чек-лист для проверки</h4>
+                        <p>Список вопросов и требований для оценки нашего решения</p>
+                        <span class="doc-meta">PDF • 850 KB</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Шаблон ДПД (152-ФЗ)</h4>
+                        <p>Готовый договор обработки персональных данных</p>
+                        <span class="doc-meta">PDF • Юридически значимый</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Отчёт о пентесте</h4>
+                        <p>Резюме независимого тестирования на проникновение (NDA)</p>
+                        <span class="doc-meta">PDF • Доступ по запросу</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="contact-security text-center mt-5">
+                <h3>Есть вопросы по ИБ?</h3>
+                <p>Наша команда безопасности готова ответить на любые вопросы.</p>
+                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
+                <p class="small text-muted">Поддерживаем программу Bug Bounty. Ответ в течение 24 часов.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Частые вопросы</h2>
+            </div>
+            
+            <div class="accordion">
+                <details class="accordion-item">
+                    <summary class="accordion-header">Можно ли использовать решение без облака?</summary>
+                    <div class="accordion-body">
+                        <p>Да, для тарифа «Профи» доступна опция локального развёртывания ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Какие данные передаются в ИИ-сервисы?</summary>
+                    <div class="accordion-body">
+                        <p>Только публичные данные: описания товаров, тексты отзывов. Не передаются: себестоимость, маржа, контакты клиентов, финансовые показатели.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Как долго хранятся данные?</summary>
+                    <div class="accordion-body">
+                        <p>Логи обработки — 3 года. Кэш ИИ-ответов — 30 дней. После расторжения договора все данные удаляются в течение 14 дней.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Что происходит при утечке данных?</summary>
+                    <div class="accordion-body">
+                        <p>У нас есть регламент реагирования (IRP). Мы уведомляем вас и РКН в течение 24 часов, проводим расследование и предоставляем отчёт.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <!-- Guarantees -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Наши гарантии</h2>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-clock"></i></div>
+                    <h3>SLA 99.9%</h3>
+                    <p>Гарантируем доступность сервиса. Компенсация за простой.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Ответственность</h3>
+                    <p>Финансовая ответственность за утечку по нашей вине прописана в договоре.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-undo"></i></div>
+                    <h3>Возврат средств</h3>
+                    <p>30 дней на тестирование. Если не подойдёт — вернём деньги.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Для тарифа «Профи» — выделенный инженер безопасности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Готовы начать безопасную автоматизацию?</h2>
+            <p>Подключите AI Seller к вашей 1С уже сегодня</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-lg open-modal-btn">Начать бесплатный период</button>
+                <a href="../contacts.html" class="btn btn-outline btn-lg">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo">
+                        <i class="fas fa-cube"></i>
+                        <span>AI Seller 1С</span>
+                    </a>
+                    <p>Автоматизация маркетплейсов на базе искусственного интеллекта.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Продукт</h4>
+                    <a href="features.html">Возможности</a>
+                    <a href="integrations.html">Интеграции</a>
+                    <a href="security.html">Безопасность</a>
+                    <a href="../pricing.html">Тарифы</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Документы</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="mailto:info@aiseller.ru">info@aiseller.ru</a>
+                    <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Seller 1С. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal" id="trialModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Попробовать бесплатно</h2>
+            <p>Оставьте заявку, и мы подключим вам пробный период на 14 дней.</p>
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Название компании">
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script.js"></script>
 </body>
 </html>
+EOF
+cat > /workspace/product/security.html << 'EOF'
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
+    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование TLS 1.3, серверы в РФ, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
+    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
+    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://yamaev-design.github.io/1c/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Продукт",
+          "item": "https://yamaev-design.github.io/1c/product/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Безопасность",
+          "item": "https://yamaev-design.github.io/1c/product/security.html"
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Где хранятся данные?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Персональные данные обрабатываются на серверах в РФ (Москва, Яндекс.Облако). Конфиденциальные данные (себестоимость, маржа) не покидают контур вашей 1С."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Соответствуете ли вы 152-ФЗ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы являемся оператором ПДн, уведомили Роскомнадзор, заключаем ДПД с каждым клиентом. Используем шифрование и разграничение доступа."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>AI Seller 1С</span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html">Главная</a>
+                <a href="features.html">Возможности</a>
+                <a href="integrations.html">Интеграции</a>
+                <a href="security.html" class="active">Безопасность</a>
+                <a href="../pricing.html">Тарифы</a>
+            </nav>
+            <button class="btn btn-primary open-modal-btn">Попробовать бесплатно</button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero security-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Безопасность данных и соответствие 152-ФЗ</h1>
+                <p class="hero-subtitle">Ваши данные под надежной защитой: шифрование, серверы в РФ, юридическая ответственность.</p>
+                <div class="hero-buttons">
+                    <a href="#compliance" class="btn btn-primary">Узнать о соответствии</a>
+                    <a href="#docs" class="btn btn-outline">Скачать документы</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="security-badge-large">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Защищено</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Data Flow Diagram -->
+    <section class="section bg-light" id="data-flow">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Как защищаются ваши данные</h2>
+                <p>Прозрачная схема обработки: что остаётся у вас, что уходит в облако</p>
+            </div>
+            
+            <div class="data-flow-wrapper">
+                <div class="flow-card local">
+                    <div class="flow-icon"><i class="fas fa-server"></i></div>
+                    <h3>Локально в 1С</h3>
+                    <ul>
+                        <li>Себестоимость и маржа</li>
+                        <li>Контакты клиентов (ПДн)</li>
+                        <li>Финансовые отчеты</li>
+                        <li>Пароли и ключи</li>
+                    </ul>
+                    <span class="badge badge-green">Не передается</span>
+                </div>
+                
+                <div class="flow-arrow">
+                    <i class="fas fa-lock"></i>
+                    <span>TLS 1.3</span>
+                </div>
+                
+                <div class="flow-card cloud">
+                    <div class="flow-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Облако РФ</h3>
+                    <ul>
+                        <li>Публичные описания товаров</li>
+                        <li>Тексты отзывов (без ПДн)</li>
+                        <li>Аналитика продаж</li>
+                    </ul>
+                    <span class="badge badge-blue">Шифруется</span>
+                </div>
+                
+                <div class="flow-arrow">
+                    <i class="fas fa-microchip"></i>
+                    <span>AI Processing</span>
+                </div>
+                
+                <div class="flow-card result">
+                    <div class="flow-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Результат в 1С</h3>
+                    <ul>
+                        <li>Готовые карточки</li>
+                        <li>Ответы клиентам</li>
+                        <li>Прогнозы</li>
+                    </ul>
+                    <span class="badge badge-green">Безопасно</span>
+                </div>
+            </div>
+            
+            <div class="alert-box mt-4">
+                <i class="fas fa-info-circle"></i>
+                <strong>Важно:</strong> Мы используем гибридную модель. Чувствительные коммерческие данные и ПДн никогда не покидают периметр вашей 1С без явного согласия.
+            </div>
+        </div>
+    </section>
+    <!-- Compliance 152-FZ -->
+    <section class="section" id="compliance">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Соответствие 152-ФЗ</h2>
+                <p>Полный пакет документов и технических мер для работы с персональными данными</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Оператор ПДн</h3>
+                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора.</p>
+                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small">Проверить в реестре →</a>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>Договор (ДПД)</h3>
+                    <p>Заключаем договор обработки ПДн с каждым клиентом.</p>
+                    <a href="#" class="link-small" download>📥 Скачать шаблон ДПД</a>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Локализация</h3>
+                    <p>Серверы находятся в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Меры защиты</h3>
+                    <p>Шифрование при передаче и хранении. Разграничение прав доступа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Measures -->
+    <section class="section bg-dark text-white" id="tech-measures">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 style="color: white;">Технические меры защиты</h2>
+                <p style="color: rgba(255,255,255,0.7);">Профессиональный уровень безопасности инфраструктуры</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-lock"></i> Шифрование</h3>
+                    <ul class="check-list">
+                        <li><strong>При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</li>
+                        <li><strong>При хранении:</strong> AES-256-GCM для чувствительных полей</li>
+                        <li><strong>API-ключи:</strong> Хранятся зашифрованными в 1С</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-users"></i> Контроль доступа</h3>
+                    <ul class="check-list">
+                        <li><strong>RBAC:</strong> Ролевая модель доступа в модуле 1С</li>
+                        <li><strong>MFA:</strong> Двухфакторная аутентификация для админов</li>
+                        <li><strong>Сессии:</strong> JWT с коротким временем жизни</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-clipboard-list"></i> Логирование</h3>
+                    <ul class="check-list">
+                        <li><strong>Аудит:</strong> Запись всех действий (кто, что, когда)</li>
+                        <li><strong>ПДн:</strong> Отдельный журнал доступа к персональным данным</li>
+                        <li><strong>Хранение:</strong> Логи хранятся 3 года</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-darker border-blue">
+                    <h3><i class="fas fa-server"></i> Инфраструктура</h3>
+                    <ul class="check-list">
+                        <li><strong>Серверы:</strong> Яндекс.Облако (уровень защиты К2)</li>
+                        <li><strong>DDoS:</strong> Защита от атак любого уровня</li>
+                        <li><strong>Backup:</strong> Ежедневное резервное копирование</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Security Docs for Teams -->
+    <section class="section" id="docs">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Документы для службы безопасности</h2>
+                <p>Готовые материалы для внутренней проверки и аудита вашего предприятия</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Whitepaper по безопасности</h4>
+                        <p>Архитектура, угрозы, контрмеры, соответствие стандартам (14 стр.)</p>
+                        <span class="doc-meta">PDF • 2.1 MB</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Чек-лист для проверки</h4>
+                        <p>Список вопросов и требований для оценки нашего решения</p>
+                        <span class="doc-meta">PDF • 850 KB</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Шаблон ДПД (152-ФЗ)</h4>
+                        <p>Готовый договор обработки персональных данных</p>
+                        <span class="doc-meta">PDF • Юридически значимый</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="doc-card card" download>
+                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+                    <div class="doc-content">
+                        <h4>Отчёт о пентесте</h4>
+                        <p>Резюме независимого тестирования на проникновение (NDA)</p>
+                        <span class="doc-meta">PDF • Доступ по запросу</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="contact-security text-center mt-5">
+                <h3>Есть вопросы по ИБ?</h3>
+                <p>Наша команда безопасности готова ответить на любые вопросы.</p>
+                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
+                <p class="small text-muted">Поддерживаем программу Bug Bounty. Ответ в течение 24 часов.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Частые вопросы</h2>
+            </div>
+            
+            <div class="accordion">
+                <details class="accordion-item">
+                    <summary class="accordion-header">Можно ли использовать решение без облака?</summary>
+                    <div class="accordion-body">
+                        <p>Да, для тарифа «Профи» доступна опция локального развёртывания ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Какие данные передаются в ИИ-сервисы?</summary>
+                    <div class="accordion-body">
+                        <p>Только публичные данные: описания товаров, тексты отзывов. Не передаются: себестоимость, маржа, контакты клиентов, финансовые показатели.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Как долго хранятся данные?</summary>
+                    <div class="accordion-body">
+                        <p>Логи обработки — 3 года. Кэш ИИ-ответов — 30 дней. После расторжения договора все данные удаляются в течение 14 дней.</p>
+                    </div>
+                </details>
+                
+                <details class="accordion-item">
+                    <summary class="accordion-header">Что происходит при утечке данных?</summary>
+                    <div class="accordion-body">
+                        <p>У нас есть регламент реагирования (IRP). Мы уведомляем вас и РКН в течение 24 часов, проводим расследование и предоставляем отчёт.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <!-- Guarantees -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Наши гарантии</h2>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-clock"></i></div>
+                    <h3>SLA 99.9%</h3>
+                    <p>Гарантируем доступность сервиса. Компенсация за простой.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Ответственность</h3>
+                    <p>Финансовая ответственность за утечку по нашей вине прописана в договоре.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-undo"></i></div>
+                    <h3>Возврат средств</h3>
+                    <p>30 дней на тестирование. Если не подойдёт — вернём деньги.</p>
+                </div>
+                
+                <div class="card guarantee-card text-center">
+                    <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Для тарифа «Профи» — выделенный инженер безопасности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Готовы начать безопасную автоматизацию?</h2>
+            <p>Подключите AI Seller к вашей 1С уже сегодня</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-lg open-modal-btn">Начать бесплатный период</button>
+                <a href="../contacts.html" class="btn btn-outline btn-lg">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo">
+                        <i class="fas fa-cube"></i>
+                        <span>AI Seller 1С</span>
+                    </a>
+                    <p>Автоматизация маркетплейсов на базе искусственного интеллекта.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Продукт</h4>
+                    <a href="features.html">Возможности</a>
+                    <a href="integrations.html">Интеграции</a>
+                    <a href="security.html">Безопасность</a>
+                    <a href="../pricing.html">Тарифы</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Документы</h4>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="mailto:info@aiseller.ru">info@aiseller.ru</a>
+                    <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Seller 1С. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal" id="trialModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Попробовать бесплатно</h2>
+            <p>Оставьте заявку, и мы подключим вам пробный период на 14 дней.</p>
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Название компании">
+                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>    
