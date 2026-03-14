@@ -176,3 +176,78 @@ const validateEmail = (email) => {
 // Console greeting
 console.log('%c🤖 AI Seller 1C', 'font-size: 24px; font-weight: bold; color: #fbbf24;');
 console.log('%cЛендинг загружен успешно!', 'font-size: 14px; color: #60a5fa;');
+
+// Modal functionality for trial signup
+const openModal = () => {
+    const modal = document.getElementById('trial-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    }
+};
+
+const closeModal = () => {
+    const modal = document.getElementById('trial-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+};
+
+// Add click handlers to all CTA buttons
+document.addEventListener('DOMContentLoaded', () => {
+    const ctaButtons = document.querySelectorAll('.trial-btn');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    // Modal close handlers
+    const modalClose = document.getElementById('modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const closeSuccess = document.getElementById('close-success');
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    if (closeSuccess) closeSuccess.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Form submission handler - теперь форма отправляется через FormSubmit.co напрямую
+    const trialForm = document.getElementById('trial-form');
+    const formSuccess = document.getElementById('form-success');
+
+    if (trialForm) {
+        trialForm.addEventListener('submit', (e) => {
+            // Форма отправляется стандартным способом на FormSubmit.co
+            // После успешной отправки FormSubmit перенаправит пользователя на страницу благодарности
+            // или покажет своё сообщение. Мы просто даём форме отправиться.
+            
+            // Показываем индикатор загрузки (опционально)
+            const submitBtn = trialForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="flex items-center gap-2"><svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/></svg> Отправка...</span>';
+            
+            // Форма отправится автоматически, так как у неё есть action и method
+            // Этот обработчик нужен только для UX (анимация кнопки)
+        });
+        
+        // Обработка после отправки (FormSubmit.co перенаправит или покажет свою страницу)
+        // Для кастомного поведения можно использовать AJAX, но тогда нужно убрать action из формы
+        
+        // Добавляем обработчик для кнопки закрытия окна успеха
+        const closeSuccess = document.getElementById('close-success');
+        if (closeSuccess) {
+            closeSuccess.addEventListener('click', closeModal);
+        }
+    }
+});
