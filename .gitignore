@@ -1,3 +1,3 @@
-(product/integrations.html is a source file, so no ignores needed)
+(product/security.html and product/updates.html are HTML source files, not build artifacts or temporary files, so no additional ignores are needed beyond what's already in the .gitignore if anything)
 
-Nothing to output.
+(empty)
