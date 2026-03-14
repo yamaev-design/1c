@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обновления и дорожная карта | DeepSite - Ченджлог</title>
-    <meta name="description" content="История обновлений DeepSite и дорожная карта развития продукта. Следите за новыми функциями и улучшениями.">
-    <link rel="canonical" href="https://deepsite.ru/product/updates">
+
+    <!-- SEO Optimization -->
+    <title>Обновления и дорожная карта | Ченджлог AI Seller для 1С</title>
+    <meta name="description" content="История обновлений и планы развития AI Seller. Новые функции, улучшения, исправления. Голосуйте за идеи! Версия 2.4.0: Яндекс.Маркет, SEO-генерация.">
+    <meta name="keywords" content="обновления, ченджлог, дорожная карта, релизы, AI Seller, 1С, маркетплейсы, новые функции">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/updates.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/updates.html">
+    <meta property="og:title" content="Обновления продукта | AI Seller 1С">
+    <meta property="og:description" content="Следите за развитием: новые интеграции, функции и улучшения для селлеров">
+    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/updates-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yamaev-design.github.io/1c/product/updates.html">
+    <meta property="twitter:title" content="Обновления продукта | AI Seller 1С">
+    <meta property="twitter:description" content="История обновлений и планы развития AI Seller">
+    <meta property="twitter:image" content="https://yamaev-design.github.io/1c/images/updates-og.jpg">
+
+    <!-- Schema.org Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://yamaev-design.github.io/1c/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Продукт",
+          "item": "https://yamaev-design.github.io/1c/product/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Обновления",
+          "item": "https://yamaev-design.github.io/1c/product/updates.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org SoftwareSourceCode -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "AI Seller 1С",
+      "codeRepository": "https://github.com/aiseller/1c-module",
+      "runtimePlatform": "1C:Enterprise 8.3",
+      "release": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "AI Seller 1С",
+          "version": "2.4.0",
+          "releaseNotes": "https://yamaev-design.github.io/1c/product/updates.html#v2-4-0",
+          "datePublished": "2024-01-15",
+          "applicationCategory": "BusinessApplication"
+        }
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,8 +122,10 @@
             }
         }
     </script>
+
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased min-h-screen relative">
+<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
     <!-- Animated Mesh Background -->
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
@@ -535,159 +605,758 @@
     </nav>
 
     <main class="pt-20">
-        <section class="hero-section">
-            <div class="container">
-                <h1>Обновления и дорожная карта</h1>
-                <p class="hero-subtitle">Следите за развитием DeepSite — мы постоянно улучшаем продукт</p>
+        <!-- Hero Section -->
+        <section class="hero-section relative z-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    Обновления и дорожная карта
+                </h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Следите за развитием AI Seller 1С — мы постоянно улучшаем продукт
+                </p>
             </div>
         </section>
 
-        <section class="changelog-section">
-            <div class="container">
-                <h2>📝 История обновлений</h2>
+        <!-- Changelog Controls (Filters & Search) -->
+        <section class="changelog-controls relative z-10 py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-navy-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Filters -->
+                        <div class="filters">
+                            <h3 class="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
+                                <i data-lucide="filter" class="w-4 h-4"></i> Фильтры
+                            </h3>
+                            <div class="filter-group flex flex-wrap gap-3">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" class="changelog-filter w-4 h-4 rounded bg-navy-700 border-white/20 text-gold-400 focus:ring-gold-400" value="feature" checked>
+                                    <span class="text-sm text-gray-300">✨ Фичи</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" class="changelog-filter w-4 h-4 rounded bg-navy-700 border-white/20 text-blue-400 focus:ring-blue-400" value="improvement" checked>
+                                    <span class="text-sm text-gray-300">🚀 Улучшения</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" class="changelog-filter w-4 h-4 rounded bg-navy-700 border-white/20 text-amber-400 focus:ring-amber-400" value="bugfix" checked>
+                                    <span class="text-sm text-gray-300">🐛 Исправления</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" class="changelog-filter w-4 h-4 rounded bg-navy-700 border-white/20 text-red-400 focus:ring-red-400" value="security">
+                                    <span class="text-sm text-gray-300">🔐 Безопасность</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Search -->
+                        <div class="search">
+                            <h3 class="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
+                                <i data-lucide="search" class="w-4 h-4"></i> Поиск
+                            </h3>
+                            <input type="search" id="changelog-search" 
+                                   placeholder="🔍 Поиск по обновлениям..." 
+                                   class="w-full px-4 py-2 bg-navy-700 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 transition-colors">
+                        </div>
+                        
+                        <!-- Sort -->
+                        <div class="sort">
+                            <h3 class="text-sm font-semibold text-gray-300 mb-3 flex items-center gap-2">
+                                <i data-lucide="sort-desc" class="w-4 h-4"></i> Сортировка
+                            </h3>
+                            <select id="changelog-sort" 
+                                    class="w-full px-4 py-2 bg-navy-700 border border-white/10 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors">
+                                <option value="newest">Сначала новые</option>
+                                <option value="oldest">Сначала старые</option>
+                                <option value="major">Только мажорные версии</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Changelog Section -->
+        <section class="changelog-section relative z-10 py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-8 h-8 text-gold-400"></i>
+                    История обновлений
+                </h2>
                 
-                <div class="changelog-item">
-                    <div class="changelog-version">v2.4.0</div>
-                    <div class="changelog-date">15 января 2024</div>
-                    <div class="changelog-content">
-                        <h3>Новые функции:</h3>
-                        <ul>
-                            <li>✨ Добавлена поддержка Яндекс.Маркет</li>
-                            <li>✨ Улучшенная генерация описаний с учётом SEO</li>
-                            <li>✨ Пакетная обработка отзывов (до 100 за раз)</li>
-                        </ul>
-                        <h3>Улучшения:</h3>
-                        <ul>
-                            <li>🚀 Ускорена синхронизация остатков на 40%</li>
-                            <li>🚀 Оптимизирован интерфейс карточки товара</li>
-                            <li>🚀 Улучшена работа аналитического ассистента</li>
-                        </ul>
-                        <h3>Исправления:</h3>
-                        <ul>
-                            <li>🐛 Исправлена ошибка при экспорте отчётов в Excel</li>
-                            <li>🐛 Устранена проблема с дублированием отзывов</li>
-                        </ul>
+                <!-- Release Card v2.4.0 -->
+                <article class="release-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-8" id="v2-4-0" data-version="2.4.0" data-date="2024-01-15">
+                    <header class="release-header flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-white/10 mb-6">
+                        <div class="release-meta flex items-center gap-4 flex-wrap">
+                            <h3 class="release-version text-2xl font-bold text-white">v2.4.0</h3>
+                            <time class="release-date text-gray-400 text-sm" datetime="2024-01-15">15 января 2024</time>
+                            <span class="release-type major px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-amber-600 text-navy-900">🎉 Мажорное обновление</span>
+                        </div>
+                        
+                        <div class="release-actions flex items-center gap-3">
+                            <a href="#v2-4-0" class="link-copy w-10 h-10 flex items-center justify-center rounded-lg bg-navy-700 hover:bg-gold-400 hover:text-navy-900 transition-colors" title="Копировать ссылку">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </a>
+                            <a href="../docs/migration/2.4.0.html" class="px-4 py-2 rounded-lg bg-navy-700 hover:bg-gold-400 hover:text-navy-900 transition-colors text-sm font-medium flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-4 h-4"></i>
+                                Инструкция
+                            </a>
+                            <a href="https://github.com/aiseller/1c-module/releases/tag/v2.4.0" class="px-4 py-2 rounded-lg border border-white/20 hover:border-gold-400 hover:text-gold-400 transition-colors text-sm font-medium flex items-center gap-2" target="_blank" rel="noopener">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                GitHub →
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <div class="release-content space-y-6">
+                        <!-- Новые функции -->
+                        <section class="release-section feature">
+                            <h4 class="text-lg font-semibold text-green-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                Новые функции
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Поддержка Яндекс.Маркет</strong>
+                                    <p class="text-gray-400 text-sm">Полная синхронизация товаров, остатков и заказов с Яндекс.Маркет. Настройка за 5 минут.</p>
+                                    <a href="../docs/integrations/yandex-market.html" class="change-link inline-flex items-center gap-1 mt-2 text-sm text-blue-400 hover:text-blue-300">
+                                        Документация <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                    </a>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">SEO-оптимизированная генерация описаний</strong>
+                                    <p class="text-gray-400 text-sm">ИИ теперь автоматически подбирает ключевые слова на основе анализа конкурентов и поисковых запросов.</p>
+                                    <span class="change-tag impact inline-block mt-2 px-2 py-1 bg-green-900/50 text-green-400 text-xs font-semibold rounded">Высокий приоритет</span>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Пакетная обработка отзывов</strong>
+                                    <p class="text-gray-400 text-sm">Обрабатывайте до 100 отзывов за один запрос. Идеально для распродаж и пиковых нагрузок.</p>
+                                </li>
+                            </ul>
+                        </section>
+                        
+                        <!-- Улучшения -->
+                        <section class="release-section improvement">
+                            <h4 class="text-lg font-semibold text-blue-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                Улучшения
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-blue-500" data-type="improvement">
+                                    <strong class="text-white block mb-1">Синхронизация остатков на 40% быстрее</strong>
+                                    <p class="text-gray-400 text-sm">Оптимизирован алгоритм сравнения и обновлён кэш-слой.</p>
+                                    <span class="change-tag perf inline-block mt-2 px-2 py-1 bg-blue-900/50 text-blue-400 text-xs font-semibold rounded">Производительность</span>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-blue-500" data-type="improvement">
+                                    <strong class="text-white block mb-1">Обновлён интерфейс карточки товара</strong>
+                                    <p class="text-gray-400 text-sm">Более понятная навигация, быстрые действия, адаптив под планшеты.</p>
+                                </li>
+                            </ul>
+                        </section>
+                        
+                        <!-- Исправления -->
+                        <section class="release-section bugfix">
+                            <h4 class="text-lg font-semibold text-amber-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="bug" class="w-5 h-5"></i>
+                                Исправления
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-amber-500" data-type="bugfix">
+                                    <strong class="text-white block mb-1">Экспорт отчётов в Excel</strong>
+                                    <p class="text-gray-400 text-sm">Исправлена ошибка, из-за которой кириллица отображалась как ????? при экспорте.</p>
+                                    <span class="change-tag critical inline-block mt-2 px-2 py-1 bg-red-900/50 text-red-400 text-xs font-semibold rounded">Критично</span>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-                </div>
+                    
+                    <footer class="release-footer mt-6 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="release-stats flex flex-wrap gap-4 text-sm text-gray-400">
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="circle-plus" class="w-4 h-4 text-green-400"></i>
+                                3 новые функции
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i>
+                                2 улучшения
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="bug" class="w-4 h-4 text-amber-400"></i>
+                                1 исправление
+                            </span>
+                        </div>
+                        <a href="#v2-3-0" class="previous-version inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gold-400 transition-colors">
+                            ← Предыдущая версия
+                        </a>
+                    </footer>
+                </article>
 
-                <div class="changelog-item">
-                    <div class="changelog-version">v2.3.0</div>
-                    <div class="changelog-date">20 декабря 2023</div>
-                    <div class="changelog-content">
-                        <h3>Новые функции:</h3>
-                        <ul>
-                            <li>✨ Прогноз закупок с учётом сезонности</li>
-                            <li>✨ Интеграция с Telegram для уведомлений</li>
-                            <li>✨ Шаблоны промптов для разных ниш</li>
-                        </ul>
-                        <h3>Улучшения:</h3>
-                        <ul>
-                            <li>🚀 Улучшено качество генерации текстов</li>
-                            <li>🚀 Добавлены новые визуализации в отчётах</li>
-                        </ul>
-                        <h3>Исправления:</h3>
-                        <ul>
-                            <li>🐛 Исправлена ошибка расчёта маржи</li>
-                        </ul>
+                <!-- Release Card v2.3.0 -->
+                <article class="release-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-8" id="v2-3-0" data-version="2.3.0" data-date="2023-12-20">
+                    <header class="release-header flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-white/10 mb-6">
+                        <div class="release-meta flex items-center gap-4 flex-wrap">
+                            <h3 class="release-version text-2xl font-bold text-white">v2.3.0</h3>
+                            <time class="release-date text-gray-400 text-sm" datetime="2023-12-20">20 декабря 2023</time>
+                            <span class="release-type minor px-3 py-1 rounded-full text-xs font-semibold bg-blue-900/50 text-blue-400">📦 Минорное обновление</span>
+                        </div>
+                        
+                        <div class="release-actions flex items-center gap-3">
+                            <a href="#v2-3-0" class="link-copy w-10 h-10 flex items-center justify-center rounded-lg bg-navy-700 hover:bg-gold-400 hover:text-navy-900 transition-colors" title="Копировать ссылку">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <div class="release-content space-y-6">
+                        <section class="release-section feature">
+                            <h4 class="text-lg font-semibold text-green-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                Новые функции
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Прогноз закупок с учётом сезонности</strong>
+                                    <p class="text-gray-400 text-sm">Алгоритм учитывает сезонные колебания спроса для точного прогнозирования.</p>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Интеграция с Telegram для уведомлений</strong>
+                                    <p class="text-gray-400 text-sm">Получайте уведомления о важных событиях прямо в Telegram.</p>
+                                </li>
+                            </ul>
+                        </section>
+                        
+                        <section class="release-section improvement">
+                            <h4 class="text-lg font-semibold text-blue-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                Улучшения
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-blue-500" data-type="improvement">
+                                    <strong class="text-white block mb-1">Улучшено качество генерации текстов</strong>
+                                    <p class="text-gray-400 text-sm">Обученная модель на 30% лучше понимает контекст предметной области.</p>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-                </div>
+                </article>
 
-                <div class="changelog-item">
-                    <div class="changelog-version">v2.2.0</div>
-                    <div class="changelog-date">5 ноября 2023</div>
-                    <div class="changelog-content">
-                        <h3>Новые функции:</h3>
-                        <ul>
-                            <li>✨ Умное ценообразование с защитой Buy Box</li>
-                            <li>✨ Мониторинг цен конкурентов 24/7</li>
-                            <li>✨ Гибкие правила ценообразования</li>
-                        </ul>
-                        <h3>Улучшения:</h3>
-                        <ul>
-                            <li>🚀 Обновлён дизайн личного кабинета</li>
-                            <li>🚀 Ускорена загрузка данных из 1С</li>
-                        </ul>
+                <!-- Release Card v2.2.0 -->
+                <article class="release-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-8" id="v2-2-0" data-version="2.2.0" data-date="2023-11-05">
+                    <header class="release-header flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-white/10 mb-6">
+                        <div class="release-meta flex items-center gap-4 flex-wrap">
+                            <h3 class="release-version text-2xl font-bold text-white">v2.2.0</h3>
+                            <time class="release-date text-gray-400 text-sm" datetime="2023-11-05">5 ноября 2023</time>
+                            <span class="release-type minor px-3 py-1 rounded-full text-xs font-semibold bg-blue-900/50 text-blue-400">📦 Минорное обновление</span>
+                        </div>
+                        
+                        <div class="release-actions flex items-center gap-3">
+                            <a href="#v2-2-0" class="link-copy w-10 h-10 flex items-center justify-center rounded-lg bg-navy-700 hover:bg-gold-400 hover:text-navy-900 transition-colors" title="Копировать ссылку">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <div class="release-content space-y-6">
+                        <section class="release-section feature">
+                            <h4 class="text-lg font-semibold text-green-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                Новые функции
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Умное ценообразование с защитой Buy Box</strong>
+                                    <p class="text-gray-400 text-sm">Автоматическая корректировка цен для победы в Buy Box.</p>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Мониторинг цен конкурентов 24/7</strong>
+                                    <p class="text-gray-400 text-sm">Отслеживание изменений цен у конкурентов в реальном времени.</p>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-                </div>
+                </article>
 
-                <div class="changelog-item">
-                    <div class="changelog-version">v2.0.0</div>
-                    <div class="changelog-date">1 октября 2023</div>
-                    <div class="changelog-content">
-                        <h3>Большое обновление!</h3>
-                        <ul>
-                            <li>✨ Полностью переработанный интерфейс</li>
-                            <li>✨ Аналитический ассистент с natural language processing</li>
-                            <li>✨ Мобильная версия для планшетов</li>
-                            <li>✨ API для разработчиков</li>
-                        </ul>
+                <!-- Release Card v2.0.0 -->
+                <article class="release-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 mb-8" id="v2-0-0" data-version="2.0.0" data-date="2023-10-01">
+                    <header class="release-header flex flex-col md:flex-row md:items-start md:justify-between gap-4 pb-6 border-b border-white/10 mb-6">
+                        <div class="release-meta flex items-center gap-4 flex-wrap">
+                            <h3 class="release-version text-2xl font-bold text-white">v2.0.0</h3>
+                            <time class="release-date text-gray-400 text-sm" datetime="2023-10-01">1 октября 2023</time>
+                            <span class="release-type major px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-amber-600 text-navy-900">🎉 Мажорное обновление</span>
+                        </div>
+                        
+                        <div class="release-actions flex items-center gap-3">
+                            <a href="#v2-0-0" class="link-copy w-10 h-10 flex items-center justify-center rounded-lg bg-navy-700 hover:bg-gold-400 hover:text-navy-900 transition-colors" title="Копировать ссылку">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://github.com/aiseller/1c-module/releases/tag/v2.0.0" class="px-4 py-2 rounded-lg border border-white/20 hover:border-gold-400 hover:text-gold-400 transition-colors text-sm font-medium flex items-center gap-2" target="_blank" rel="noopener">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                GitHub →
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <div class="release-content space-y-6">
+                        <section class="release-section feature">
+                            <h4 class="text-lg font-semibold text-green-400 flex items-center gap-2 mb-4">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                Большое обновление!
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Полностью переработанный интерфейс</strong>
+                                    <p class="text-gray-400 text-sm">Современный дизайн с улучшенной навигацией.</p>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Аналитический ассистент с NLP</strong>
+                                    <p class="text-gray-400 text-sm">Задавайте вопросы естественным языком и получайте ответы.</p>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">Мобильная версия для планшетов</strong>
+                                    <p class="text-gray-400 text-sm">Полноценная работа с любого устройства.</p>
+                                </li>
+                                <li class="change-item p-4 bg-navy-700/50 rounded-lg border-l-4 border-green-500" data-type="feature">
+                                    <strong class="text-white block mb-1">API для разработчиков</strong>
+                                    <p class="text-gray-400 text-sm">Интегрируйте AI Seller с вашими системами.</p>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="roadmap-section">
-            <div class="container">
-                <h2>🗺️ Дорожная карта</h2>
+        <!-- Interactive Roadmap Section -->
+        <section class="roadmap-section relative z-10 py-12 bg-navy-800/30">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
+                        <i data-lucide="map" class="w-8 h-8 text-gold-400"></i>
+                        Дорожная карта продукта
+                    </h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Планы развития: голосуйте за идеи и следите за прогрессом
+                    </p>
+                </div>
                 
-                <div class="roadmap-column">
-                    <h3>✅ Завершено (Q4 2023)</h3>
-                    <ul class="roadmap-done">
-                        <li>Интеграция с Wildberries и Ozon</li>
-                        <li>Генерация карточек товаров</li>
-                        <li>Авто-ответы на отзывы</li>
-                        <li>Умное ценообразование</li>
-                        <li>Прогноз закупок</li>
-                        <li>Аналитический ассистент</li>
-                    </ul>
+                <!-- View Toggle -->
+                <div class="roadmap-view-toggle flex justify-center gap-2 mb-8">
+                    <button class="view-btn active px-4 py-2 rounded-lg bg-gold-400 text-navy-900 font-semibold transition-colors" data-view="timeline">
+                        📅 Таймлайн
+                    </button>
+                    <button class="view-btn px-4 py-2 rounded-lg bg-navy-700 hover:bg-navy-600 text-gray-300 font-semibold transition-colors" data-view="kanban">
+                        📋 Канбан
+                    </button>
+                    <button class="view-btn px-4 py-2 rounded-lg bg-navy-700 hover:bg-navy-600 text-gray-300 font-semibold transition-colors" data-view="list">
+                        📄 Список
+                    </button>
                 </div>
-
-                <div class="roadmap-column">
-                    <h3>🔨 В работе (Q1 2024)</h3>
-                    <ul class="roadmap-progress">
-                        <li>Интеграция с Мегамаркет</li>
-                        <li>Мультиязычная генерация описаний</li>
-                        <li>Расширенная аналитика по категориям</li>
-                        <li>Интеграция с Power BI</li>
-                        <li>Чат-бот для поддержки пользователей</li>
-                    </ul>
+                
+                <!-- Timeline View -->
+                <div class="roadmap-timeline" id="view-timeline">
+                    <!-- Completed -->
+                    <div class="roadmap-phase completed mb-8 p-6 bg-navy-700/30 rounded-2xl border-l-4 border-green-500">
+                        <div class="phase-header flex items-center justify-between mb-4 flex-wrap gap-3">
+                            <h3 class="text-xl font-bold text-green-400 flex items-center gap-2">
+                                <i data-lucide="circle-check" class="w-6 h-6"></i>
+                                Завершено
+                            </h3>
+                            <span class="phase-period px-3 py-1 rounded-full bg-green-900/50 text-green-400 text-sm font-semibold">Q4 2023</span>
+                        </div>
+                        <ul class="roadmap-items space-y-3">
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="142">
+                                <span class="item-icon text-2xl">✅</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Интеграция с Wildberries и Ozon</strong>
+                                    <span class="item-meta text-sm text-gray-400">Доставлено в v2.0.0</span>
+                                </div>
+                                <span class="item-votes text-sm text-gray-400">👍 142</span>
+                            </li>
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="98">
+                                <span class="item-icon text-2xl">✅</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Генерация карточек товаров</strong>
+                                    <span class="item-meta text-sm text-gray-400">Доставлено в v1.5.0</span>
+                                </div>
+                                <span class="item-votes text-sm text-gray-400">👍 98</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- In Progress -->
+                    <div class="roadmap-phase in-progress mb-8 p-6 bg-navy-700/30 rounded-2xl border-l-4 border-blue-500">
+                        <div class="phase-header flex items-center justify-between mb-4 flex-wrap gap-3">
+                            <h3 class="text-xl font-bold text-blue-400 flex items-center gap-2">
+                                <i data-lucide="hammer" class="w-6 h-6"></i>
+                                В работе
+                            </h3>
+                            <div class="flex items-center gap-4 flex-wrap">
+                                <span class="phase-period px-3 py-1 rounded-full bg-blue-900/50 text-blue-400 text-sm font-semibold">Q1 2024</span>
+                                <span class="phase-progress text-sm text-gray-400">Прогресс: 65%</span>
+                                <div class="progress-bar w-32 h-2 bg-navy-700 rounded-full overflow-hidden">
+                                    <div class="progress-fill h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="roadmap-items space-y-3">
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="89">
+                                <span class="item-icon text-2xl">🔨</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Интеграция с Мегамаркет</strong>
+                                    <span class="item-meta text-sm text-gray-400">Ожидаем: март 2024</span>
+                                    <span class="item-status in-review inline-block mt-2 px-2 py-1 bg-amber-900/50 text-amber-400 text-xs font-semibold rounded">На ревью</span>
+                                </div>
+                                <button class="btn-vote flex items-center gap-2 px-4 py-2 rounded-full bg-navy-700 hover:bg-blue-500 hover:text-white transition-colors text-sm font-semibold" aria-label="Проголосовать">
+                                    👍 <span class="vote-count">89</span>
+                                </button>
+                            </li>
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="156">
+                                <span class="item-icon text-2xl">🔨</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Мультиязычная генерация описаний</strong>
+                                    <span class="item-meta text-sm text-gray-400">Ожидаем: февраль 2024</span>
+                                    <span class="item-status testing inline-block mt-2 px-2 py-1 bg-blue-900/50 text-blue-400 text-xs font-semibold rounded">Тестирование</span>
+                                </div>
+                                <button class="btn-vote flex items-center gap-2 px-4 py-2 rounded-full bg-navy-700 hover:bg-blue-500 hover:text-white transition-colors text-sm font-semibold" aria-label="Проголосовать">
+                                    👍 <span class="vote-count">156</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Planned -->
+                    <div class="roadmap-phase planned mb-8 p-6 bg-navy-700/30 rounded-2xl border-l-4 border-amber-500">
+                        <div class="phase-header flex items-center justify-between mb-4 flex-wrap gap-3">
+                            <h3 class="text-xl font-bold text-amber-400 flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-6 h-6"></i>
+                                Планируется
+                            </h3>
+                            <span class="phase-period px-3 py-1 rounded-full bg-amber-900/50 text-amber-400 text-sm font-semibold">Q2-Q3 2024</span>
+                        </div>
+                        <ul class="roadmap-items space-y-3">
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="234">
+                                <span class="item-icon text-2xl">📋</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">AI-генерация изображений для карточек</strong>
+                                    <span class="item-meta text-sm text-gray-400">Приоритет: высокий</span>
+                                </div>
+                                <button class="btn-vote flex items-center gap-2 px-4 py-2 rounded-full bg-navy-700 hover:bg-amber-500 hover:text-white transition-colors text-sm font-semibold" aria-label="Проголосовать">
+                                    👍 <span class="vote-count">234</span>
+                                </button>
+                            </li>
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="178">
+                                <span class="item-icon text-2xl">📋</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Предиктивная аналитика спроса</strong>
+                                    <span class="item-meta text-sm text-gray-400">Приоритет: средний</span>
+                                </div>
+                                <button class="btn-vote flex items-center gap-2 px-4 py-2 rounded-full bg-navy-700 hover:bg-amber-500 hover:text-white transition-colors text-sm font-semibold" aria-label="Проголосовать">
+                                    👍 <span class="vote-count">178</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ideas -->
+                    <div class="roadmap-phase ideas mb-8 p-6 bg-navy-700/30 rounded-2xl border-l-4 border-gray-500">
+                        <div class="phase-header flex items-center justify-between mb-4 flex-wrap gap-3">
+                            <h3 class="text-xl font-bold text-gray-400 flex items-center gap-2">
+                                <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                                Идеи
+                            </h3>
+                            <span class="phase-period px-3 py-1 rounded-full bg-gray-900/50 text-gray-400 text-sm font-semibold">Future</span>
+                        </div>
+                        <ul class="roadmap-items space-y-3">
+                            <li class="roadmap-item flex items-start gap-4 p-4 bg-navy-700/50 rounded-lg" data-votes="67">
+                                <span class="item-icon text-2xl">💡</span>
+                                <div class="item-content flex-1">
+                                    <strong class="text-white block">Голосовой помощник для аналитики</strong>
+                                    <span class="item-meta text-sm text-gray-400">Предложено: пользователем @seller_pro</span>
+                                </div>
+                                <button class="btn-vote flex items-center gap-2 px-4 py-2 rounded-full bg-navy-700 hover:bg-gray-500 hover:text-white transition-colors text-sm font-semibold" aria-label="Проголосовать">
+                                    👍 <span class="vote-count">67</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="roadmap-column">
-                    <h3>📋 Планируется (Q2-Q3 2024)</h3>
-                    <ul class="roadmap-planned">
-                        <li>Интеграция с Amazon и eBay</li>
-                        <li>AI-генерация изображений для карточек</li>
-                        <li>Предиктивная аналитика спроса</li>
-                        <li>Автоматизация работы с поставщиками</li>
-                        <li>Сертификация ФСТЭК</li>
-                        <li>White-label решение для партнёров</li>
-                    </ul>
-                </div>
-
-                <div class="roadmap-column">
-                    <h3>💡 Идеи (Future)</h3>
-                    <ul class="roadmap-future">
-                        <li>Голосовой помощник для аналитики</li>
-                        <li>AR-предпросмотр товаров</li>
-                        <li>Блокчейн для отслеживания цепочек поставок</li>
-                        <li>Интеграция с социальными сетями</li>
-                        <li>Международная экспансия (СНГ, Азия)</li>
-                    </ul>
+                
+                <!-- CTA -->
+                <div class="roadmap-cta text-center mt-8 p-6 bg-gradient-to-r from-gold-400/10 to-amber-500/10 border border-gold-400/20 rounded-2xl">
+                    <p class="text-gray-300 mb-4">Не нашли нужную функцию?</p>
+                    <a href="#submit-idea" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/20 transition-all">
+                        ✨ Предложить идею
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="feedback-section">
-            <div class="container">
-                <h2>💬 Предложите функцию</h2>
-                <p>Какой функционал вы хотели бы видеть в DeepSite? Напишите нам, и мы рассмотрим вашу идею!</p>
-                <a href="../about/contacts.html" class="btn btn-primary btn-large">Отправить предложение</a>
+        <!-- Idea Submission Form -->
+        <section class="idea-submission relative z-10 py-12" id="submit-idea">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
+                        <i data-lucide="message-square" class="w-8 h-8 text-gold-400"></i>
+                        Предложите функцию
+                    </h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Расскажите, чего не хватает в продукте. Лучшие идеи попадут в дорожную карту!
+                    </p>
+                </div>
+                
+                <form class="idea-form bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-3xl mx-auto" id="idea-form">
+                    <div class="form-grid grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="form-group">
+                            <label for="idea-title" class="block text-sm font-semibold text-gray-300 mb-2">Заголовок идеи *</label>
+                            <input type="text" id="idea-title" name="title" required 
+                                   placeholder="Например: Экспорт аналитики в Google Sheets"
+                                   maxlength="100"
+                                   class="w-full px-4 py-3 bg-navy-700 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 transition-colors">
+                            <small class="text-xs text-gray-500 mt-1">Коротко и по сути</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="idea-category" class="block text-sm font-semibold text-gray-300 mb-2">Категория *</label>
+                            <select id="idea-category" name="category" required
+                                    class="w-full px-4 py-3 bg-navy-700 border border-white/10 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors">
+                                <option value="">Выберите категорию</option>
+                                <option value="integration">🔗 Интеграции</option>
+                                <option value="ai">🤖 ИИ-функции</option>
+                                <option value="ui">🎨 Интерфейс</option>
+                                <option value="performance">🚀 Производительность</option>
+                                <option value="security">🔐 Безопасность</option>
+                                <option value="other">💡 Другое</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-6">
+                        <label for="idea-description" class="block text-sm font-semibold text-gray-300 mb-2">Описание *</label>
+                        <textarea id="idea-description" name="description" required 
+                                  placeholder="Опишите проблему и как вы представляете решение..."
+                                  rows="5" maxlength="1000"
+                                  class="w-full px-4 py-3 bg-navy-700 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 transition-colors"></textarea>
+                        <small class="text-xs text-gray-500 mt-1">Максимум 1000 символов. Чем подробнее — тем лучше.</small>
+                    </div>
+                    
+                    <div class="form-group mb-6">
+                        <label for="idea-usecase" class="block text-sm font-semibold text-gray-300 mb-2">Сценарий использования</label>
+                        <textarea id="idea-usecase" name="usecase" 
+                                  placeholder="Как и когда вы будете использовать эту функцию?"
+                                  rows="3" maxlength="500"
+                                  class="w-full px-4 py-3 bg-navy-700 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 transition-colors"></textarea>
+                    </div>
+                    
+                    <div class="form-group mb-6">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="subscribe" checked
+                                   class="w-4 h-4 rounded bg-navy-700 border-white/20 text-gold-400 focus:ring-gold-400">
+                            <span class="text-sm text-gray-300">Подписаться на обновления по моей идее</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions flex items-center gap-4">
+                        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/20 transition-all">
+                            🚀 Отправить идею
+                        </button>
+                        <span class="form-note text-sm text-gray-500">Мы ответим в течение 3 рабочих дней</span>
+                    </div>
+                </form>
+                
+                <!-- Success Message (hidden by default) -->
+                <div class="form-success bg-green-900/20 border border-green-500/20 rounded-2xl p-8 max-w-3xl mx-auto text-center" hidden>
+                    <div class="success-icon text-5xl mb-4">✅</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Спасибо за идею!</h3>
+                    <p class="text-gray-400 mb-6">
+                        Мы уже получили ваше предложение и добавили его в бэклог. Вы можете отслеживать статус в <a href="#roadmap" class="text-gold-400 hover:underline">дорожной карте</a>.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-navy-700 hover:bg-navy-600 rounded-full text-white font-semibold transition-colors">
+                        Предложить ещё одну идею
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates Subscribe Section -->
+        <section class="updates-subscribe relative z-10 py-12 bg-navy-800/30">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
+                        <i data-lucide="bell" class="w-8 h-8 text-gold-400"></i>
+                        Не пропустите важные обновления
+                    </h2>
+                </div>
+                
+                <div class="subscribe-options grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Email -->
+                    <div class="subscribe-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold-400"></i>
+                            Email-рассылка
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">Получайте дайджест новых функций раз в месяц</p>
+                        <form class="subscribe-form space-y-3">
+                            <input type="email" placeholder="Ваш email" required
+                                   class="w-full px-4 py-2 bg-navy-700 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold-400 transition-colors">
+                            <button type="submit" class="w-full px-4 py-2 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-gold-500/20 transition-all">
+                                Подписаться
+                            </button>
+                        </form>
+                        <small class="text-xs text-gray-500 mt-3 block">Никакого спама. Отписка в один клик.</small>
+                    </div>
+                    
+                    <!-- Telegram -->
+                    <div class="subscribe-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5 text-blue-400"></i>
+                            Telegram-канал
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">Оперативные анонсы и эксклюзивные инсайды</p>
+                        <a href="https://t.me/aiseller_news" class="btn-telegram inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors" target="_blank" rel="noopener">
+                            Подписаться в Telegram →
+                        </a>
+                    </div>
+                    
+                    <!-- RSS -->
+                    <div class="subscribe-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                        <h3 class="text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2">
+                            <i data-lucide="rss" class="w-5 h-5 text-amber-400"></i>
+                            RSS-лента
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">Для технических специалистов и интеграторов</p>
+                        <a href="/feed/updates.xml" class="btn-rss inline-flex items-center justify-center gap-2 w-full px-4 py-2 bg-amber-500 hover:bg-amber-600 text-navy-900 font-semibold rounded-lg transition-colors" target="_blank" rel="noopener">
+                            Подписаться на RSS →
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    
+    <!-- Changelog & Roadmap Interactive Scripts -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Filter functionality
+        const filterCheckboxes = document.querySelectorAll('.changelog-filter');
+        const changelogItems = document.querySelectorAll('.change-item');
+
+        function filterChangelog() {
+            const activeFilters = Array.from(filterCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            changelogItems.forEach(item => {
+                const itemType = item.dataset.type;
+                if (activeFilters.length === 0 || activeFilters.includes(itemType)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        filterCheckboxes.forEach(cb => {
+            cb.addEventListener('change', filterChangelog);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('changelog-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                changelogItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(searchTerm) ? '' : 'none';
+                });
+            });
+        }
+
+        // Vote buttons
+        const voteButtons = document.querySelectorAll('.btn-vote');
+        voteButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const countSpan = this.querySelector('.vote-count');
+                let count = parseInt(countSpan.textContent);
+                
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    count--;
+                } else {
+                    this.classList.add('active');
+                    count++;
+                }
+                countSpan.textContent = count;
+            });
+        });
+
+        // Copy link functionality
+        const linkCopyButtons = document.querySelectorAll('.link-copy');
+        linkCopyButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = '✓';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+
+        // Idea form submission
+        const ideaForm = document.getElementById('idea-form');
+        if (ideaForm) {
+            ideaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                // Here you would send the data to your backend
+                console.log('Idea submitted:', Object.fromEntries(formData));
+                
+                // Show success message
+                this.closest('.idea-submission').querySelector('.idea-form').style.display = 'none';
+                this.closest('.idea-submission').querySelector('.form-success').removeAttribute('hidden');
+            });
+        }
+
+        // Roadmap view toggle
+        const viewButtons = document.querySelectorAll('.view-btn');
+        viewButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const view = this.dataset.view;
+                viewButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Hide all views and show selected
+                document.querySelectorAll('[id^="view-"]').forEach(viewEl => {
+                    viewEl.style.display = 'none';
+                });
+                const targetView = document.getElementById(`view-${view}`);
+                if (targetView) {
+                    targetView.style.display = '';
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    });
+    </script>
 
     <script src="../script.js"></script>
 
