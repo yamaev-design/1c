@@ -29,6 +29,65 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// FAQ Toggle functionality
+document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        answer.classList.toggle('hidden');
+        icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+});
+
+// Set offer dates
+const setOfferDates = () => {
+    const today = new Date();
+    const offerEndDate = new Date(today);
+    offerEndDate.setDate(today.getDate() + 14);
+    
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = offerEndDate.toLocaleDateString('ru-RU', options);
+    
+    const offerDateEl = document.getElementById('offer-date');
+    const offerEndDateEl = document.getElementById('offer-end-date');
+    
+    if (offerDateEl) offerDateEl.textContent = formattedDate;
+    if (offerEndDateEl) offerEndDateEl.textContent = formattedDate;
+};
+
+// Countdown Timer
+const startCountdown = () => {
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 14);
+    
+    const updateTimer = () => {
+        const now = new Date().getTime();
+        const distance = endDate - now;
+        
+        if (distance < 0) {
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+            return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    };
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+};
+
 // Counter animation for stats
 const animateCounter = (element, target, duration = 2000) => {
     let start = 0;
@@ -60,6 +119,12 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 // Initialize counters
 document.addEventListener('DOMContentLoaded', () => {
+    // Set offer dates
+    setOfferDates();
+    
+    // Start countdown timer
+    startCountdown();
+    
     // Setup stat counters
     const stats = [
         { id: 'stat-1', target: 500, suffix: '+' },
@@ -120,6 +185,47 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transform = 'translateY(0)';
         });
     }, 100);
+    
+    // Contact form handler
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="flex items-center gap-2"><svg class="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/></svg> Отправка...</span>';
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('send-mail.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+                    contactForm.reset();
+                } else {
+                    alert(result.message || 'Ошибка при отправке. Попробуйте позже.');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при отправке. Проверьте подключение к интернету.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                lucide.createIcons();
+            }
+        });
+    }
 });
 
 // Navbar scroll effect
