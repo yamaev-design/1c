@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интеграции | AI Seller 1С - 1С, маркетплейсы и сервисы</title>
-    <meta name="description" content="Полная интеграция AI Seller 1С с 1С:УТ, 1С:УНФ, 1С:КА, Wildberries, Ozon, Яндекс.Маркет и другими сервисами для автоматизации продаж.">
-    <link rel="canonical" href="https://deepsite.ru/product/integrations">
+    
+    <!-- SEO Meta Tags -->
+    <title>Интеграции AI Seller 1С | 1С, Wildberries, Ozon, YandexGPT, GigaChat</title>
+    <meta name="description" content="Готовые интеграции с 1С:УТ, 1С:УНФ, Wildberries, Ozon, Яндекс.Маркет, YandexGPT, GigaChat. API, вебхуки, документация. Подключение за 15 минут.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/integrations.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Интеграции | AI Seller 1С">
+    <meta property="og:description" content="Подключайте 1С, маркетплейсы и ИИ-сервисы в единой экосистеме">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/integrations.html">
+    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/integrations-og.jpg">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,6 +67,72 @@
     </script>
 
     <link rel="stylesheet" href="../style.css">
+    
+    <!-- Breadcrumb Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://yamaev-design.github.io/1c/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Продукт",
+          "item": "https://yamaev-design.github.io/1c/product/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Интеграции",
+          "item": "https://yamaev-design.github.io/1c/product/integrations.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- SoftwareApplication + API Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Seller 1С: Интеграции",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "1C:Enterprise 8.3",
+      "offers": {
+        "@type": "Offer",
+        "price": "1490",
+        "priceCurrency": "RUB"
+      },
+      "integration": [
+        {
+          "@type": "Thing",
+          "name": "1C:Enterprise",
+          "description": "Полная совместимость с УТ, УНФ, КА, ERP"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wildberries API",
+          "description": "Синхронизация товаров, остатков, заказов, отзывов"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ozon API",
+          "description": "Полный цикл работы с карточками и аналитикой"
+        },
+        {
+          "@type": "Thing",
+          "name": "YandexGPT API",
+          "description": "Генерация контента через российские нейросети"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
 
@@ -538,169 +615,596 @@
     </nav>
 
     <main class="pt-20">
+        <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1>Интеграции DeepSite</h1>
+                <h1>Интеграции AI Seller 1С</h1>
                 <p class="hero-subtitle">Работаем со всеми популярными платформами и сервисами для e-commerce</p>
             </div>
         </section>
 
+        <!-- Якорная навигация -->
+        <nav class="integrations-nav sticky top-24 z-40 bg-navy-800/90 backdrop-blur-md border border-white/10 rounded-xl p-6 mb-12 max-w-7xl mx-auto">
+            <h2 class="text-lg font-semibold mb-4 text-gold-400">Навигация по интеграциям</h2>
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                <li><a href="#1c-configs" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🗄️</span> Конфигурации 1С</a></li>
+                <li><a href="#marketplaces" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🛒</span> Маркетплейсы</a></li>
+                <li><a href="#ai-providers" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🤖</span> ИИ-провайдеры</a></li>
+                <li><a href="#other-services" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔗</span> Другие сервисы</a></li>
+                <li><a href="#developers" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔧</span> Для разработчиков</a></li>
+                <li><a href="#security" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔐</span> Безопасность</a></li>
+            </ul>
+        </nav>
+
+        <!-- Схема архитектуры -->
+        <section class="architecture-section py-16">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Как работает интеграция</h2>
+                
+                <div class="diagram-container bg-navy-800/50 border border-white/10 rounded-2xl p-8 mb-8">
+                    <div class="diagram-interactive flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                        <div class="node node-1c bg-blue-600/20 border-2 border-blue-500 rounded-xl p-6 text-center min-w-[180px]">
+                            <div class="text-4xl mb-2">🏢</div>
+                            <div class="font-semibold">1С:Предприятие</div>
+                            <div class="text-xs text-gray-400 mt-1">УТ, УНФ, КА, ERP</div>
+                        </div>
+                        
+                        <div class="connector flex flex-col items-center">
+                            <div class="text-gold-400 text-2xl">⇄</div>
+                            <div class="text-xs text-gray-400 mt-1">HTTPS + JSON</div>
+                            <div class="text-xs text-green-400">TLS 1.3</div>
+                        </div>
+                        
+                        <div class="node node-core bg-gradient-to-br from-gold-400/20 to-gold-600/20 border-2 border-gold-500 rounded-xl p-6 text-center min-w-[180px]">
+                            <div class="text-4xl mb-2">🧠</div>
+                            <div class="font-semibold">AI Seller Core</div>
+                            <div class="text-xs text-gray-400 mt-1">Модуль обработки</div>
+                        </div>
+                        
+                        <div class="connector flex flex-col items-center">
+                            <div class="text-gold-400 text-2xl">⇄</div>
+                            <div class="text-xs text-gray-400 mt-1">API Requests</div>
+                        </div>
+                        
+                        <div class="nodes-group flex flex-col gap-4">
+                            <div class="node node-marketplace bg-purple-600/20 border-2 border-purple-500 rounded-xl p-4 text-center min-w-[150px]">
+                                <div class="text-2xl mb-1">🛒</div>
+                                <div class="font-semibold text-sm">Маркетплейсы</div>
+                                <div class="text-xs text-gray-400 mt-1">WB, Ozon, YM</div>
+                            </div>
+                            <div class="node node-ai bg-green-600/20 border-2 border-green-500 rounded-xl p-4 text-center min-w-[150px]">
+                                <div class="text-2xl mb-1">🤖</div>
+                                <div class="font-semibold text-sm">ИИ-сервисы</div>
+                                <div class="text-xs text-gray-400 mt-1">YandexGPT, GigaChat</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="diagram-legend flex flex-wrap justify-center gap-6">
+                    <div class="legend-item flex items-center gap-2">
+                        <span class="legend-color w-4 h-4 rounded bg-green-500/50 border border-green-400"></span>
+                        <span class="text-sm text-gray-300">Зашифрованное соединение (TLS 1.3)</span>
+                    </div>
+                    <div class="legend-item flex items-center gap-2">
+                        <span class="legend-color w-4 h-4 rounded bg-blue-500/20 border border-blue-400"></span>
+                        <span class="text-sm text-gray-300">Данные остаются в контуре 1С</span>
+                    </div>
+                    <div class="legend-item flex items-center gap-2">
+                        <span class="legend-color w-4 h-4 rounded bg-purple-500/20 border border-purple-400"></span>
+                        <span class="text-sm text-gray-300">Облачная обработка (публичные данные)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="integrations-section">
-            <div class="container">
-                <h2>🔗 Интеграция с 1С</h2>
-                <div class="integration-grid">
-                    <div class="integration-card">
-                        <div class="integration-icon">📊</div>
-                        <h3>1С:Управление торговлей</h3>
-                        <p>Версии 10.3, 11.x</p>
-                        <ul>
-                            <li>Полная совместимость</li>
-                            <li>Встраивание в карточку товара</li>
-                            <li>Работа через обработки</li>
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 id="1c-configs" class="text-2xl font-bold mb-6">🗄️ Интеграция с 1С</h2>
+                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">📊</div>
+                            <div>
+                                <h3 class="font-semibold">1С:Управление торговлей</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Версии 10.3, 11.x</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Полная совместимость</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Встраивание в карточку товара</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Работа через обработки</li>
                         </ul>
                     </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">📈</div>
-                        <h3>1С:УНФ</h3>
-                        <p>Все актуальные версии</p>
-                        <ul>
-                            <li>Готовые обработки</li>
-                            <li>Интеграция в документы</li>
-                            <li>Отчёты в интерфейсе УНФ</li>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">📈</div>
+                            <div>
+                                <h3 class="font-semibold">1С:УНФ</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Все актуальные версии</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Готовые обработки</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Интеграция в документы</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Отчёты в интерфейсе УНФ</li>
                         </ul>
                     </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">⚙️</div>
-                        <h3>1С:Комплексная автоматизация</h3>
-                        <p>Версии 2.x</p>
-                        <ul>
-                            <li>Работа с КА 2.4, 2.5</li>
-                            <li>Синхронизация с УТ</li>
-                            <li>Единое информационное пространство</li>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">⚙️</div>
+                            <div>
+                                <h3 class="font-semibold">1С:Комплексная автоматизация</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Версии 2.x</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Работа с КА 2.4, 2.5</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Синхронизация с УТ</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Единое инфопространство</li>
                         </ul>
                     </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🏭</div>
-                        <h3>1С:ERP</h3>
-                        <p>По индивидуальному запросу</p>
-                        <ul>
-                            <li>Кастомная интеграция</li>
-                            <li>Адаптация под процессы</li>
-                            <li>Выделенная поддержка</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h2>🛒 Маркетплейсы</h2>
-                <div class="integration-grid">
-                    <div class="integration-card">
-                        <div class="integration-icon">🟣</div>
-                        <h3>Wildberries</h3>
-                        <p>Официальный API Partner</p>
-                        <ul>
-                            <li>Загрузка и обновление карточек</li>
-                            <li>Синхронизация остатков</li>
-                            <li>Работа с отзывами и вопросами</li>
-                            <li>Мониторинг цен конкурентов</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🔵</div>
-                        <h3>Ozon</h3>
-                        <p>Сертифицированный партнёр</p>
-                        <ul>
-                            <li>Full API интеграция</li>
-                            <li>Управление поставками</li>
-                            <li>Аналитика продаж</li>
-                            <li>Работа с FBO и FBS</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🟡</div>
-                        <h3>Яндекс.Маркет</h3>
-                        <p>API интеграция</p>
-                        <ul>
-                            <li>Выгрузка товаров</li>
-                            <li>Обновление цен и остатков</li>
-                            <li>Заказ наряды</li>
-                            <li>Отзывы и рейтинги</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🟠</div>
-                        <h3>Мегамаркет</h3>
-                        <p>Поддержка в разработке</p>
-                        <ul>
-                            <li>Планируется в Q2 2024</li>
-                            <li>Early access для тарифа Профи</li>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">🏭</div>
+                            <div>
+                                <h3 class="font-semibold">1С:ERP</h3>
+                                <span class="status-badge coming text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full">🔜 По запросу</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Индивидуально</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Кастомная интеграция</li>
+                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Адаптация под процессы</li>
+                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Выделенная поддержка</li>
                         </ul>
                     </div>
                 </div>
 
-                <h2>☁️ ИИ-провайдеры</h2>
-                <div class="integration-grid">
-                    <div class="integration-card">
-                        <div class="integration-icon">🟡</div>
-                        <h3>YandexGPT</h3>
-                        <p>Основной провайдер</p>
-                        <ul>
-                            <li>Соответствие 152-ФЗ</li>
-                            <li>Серверы в России</li>
-                            <li>Высокое качество генерации</li>
+                <h2 id="marketplaces" class="text-2xl font-bold mb-6">🛒 Маркетплейсы</h2>
+                
+                <!-- Wildberries Card - Enhanced -->
+                <div id="wildberries" class="integration-card-enhanced bg-gradient-to-br from-navy-800 to-navy-900 border border-purple-500/30 rounded-2xl p-8 mb-8 hover:border-purple-500/60 transition-all">
+                    <div class="integration-header flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="integration-logo w-16 h-16 bg-purple-600/20 rounded-xl flex items-center justify-center">
+                                <span class="text-3xl">🟣</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Wildberries</h3>
+                                <span class="status-badge available text-sm px-3 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <a href="#wb-setup" class="setup-link text-gold-400 hover:text-gold-300 font-medium">Настроить →</a>
+                    </div>
+                    
+                    <div class="integration-content grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-3 text-gold-400">Возможности</h4>
+                            <ul class="capabilities space-y-2">
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Синхронизация номенклатуры (двусторонняя)</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Обновление остатков в реальном времени</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Загрузка заказов и статусов доставки</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Импорт отзывов и вопросов для ИИ-обработки</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Автоматическое обновление цен с учётом маржи</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Аналитика продаж и рейтингов карточек</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 text-gold-400">Техническая информация</h4>
+                            <dl class="tech-grid space-y-2 text-sm">
+                                <div class="flex justify-between"><dt class="text-gray-400">API версия:</dt><dd class="text-white">WB API v3.0</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Аутентификация:</dt><dd class="text-white">API-ключ + OAuth 2.0</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Синхронизация:</dt><dd class="text-white">Остатки: 5 мин | Заказы: realtime</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Лимиты:</dt><dd class="text-white">Авто-соблюдение лимитов WB</dd></div>
+                            </dl>
+                            
+                            <div class="integration-status mt-6 pt-4 border-t border-white/10">
+                                <div class="uptime flex items-center gap-2">
+                                    <span class="status-dot w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    <span class="text-sm text-gray-300">Статус API: <strong class="text-green-400">Работает</strong> (99.9% uptime)</span>
+                                </div>
+                                <a href="https://status.aiseller.ru" target="_blank" class="status-link text-xs text-gold-400 hover:text-gold-300 mt-2 inline-block">Статус-страница →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Setup -->
+                    <div id="wb-setup" class="quick-setup mt-8 pt-6 border-t border-white/10">
+                        <h4 class="font-semibold mb-4 text-gold-400">Подключение за 3 шага</h4>
+                        <ol class="setup-steps space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                                <div>
+                                    <strong class="text-white">Получите API-ключ в ЛК селлера</strong>
+                                    <p class="text-sm text-gray-400">Настройки → Доступ к API → Создать ключ</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                                <div>
+                                    <strong class="text-white">Введите ключ в модуле 1С</strong>
+                                    <p class="text-sm text-gray-400">Раздел «Интеграции» → Wildberries → Подключить</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+                                <div>
+                                    <strong class="text-white">Выберите параметры синхронизации</strong>
+                                    <p class="text-sm text-gray-400">Остатки, цены, заказы — настройте под ваш процесс</p>
+                                </div>
+                            </li>
+                        </ol>
+                        <a href="/docs/integrations/wildberries.html" class="docs-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">📚 Полная инструкция в базе знаний</a>
+                    </div>
+                </div>
+                
+                <!-- Ozon Card - Enhanced -->
+                <div id="ozon" class="integration-card-enhanced bg-gradient-to-br from-navy-800 to-navy-900 border border-blue-500/30 rounded-2xl p-8 mb-8 hover:border-blue-500/60 transition-all">
+                    <div class="integration-header flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="integration-logo w-16 h-16 bg-blue-600/20 rounded-xl flex items-center justify-center">
+                                <span class="text-3xl">🔵</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Ozon</h3>
+                                <span class="status-badge available text-sm px-3 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <a href="#ozon-setup" class="setup-link text-gold-400 hover:text-gold-300 font-medium">Настроить →</a>
+                    </div>
+                    
+                    <div class="integration-content grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-3 text-gold-400">Возможности</h4>
+                            <ul class="capabilities space-y-2">
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Full API интеграция</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Управление поставками</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Аналитика продаж</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Работа с FBO и FBS</span></li>
+                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Импорт отзывов для ИИ-ответов</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 text-gold-400">Техническая информация</h4>
+                            <dl class="tech-grid space-y-2 text-sm">
+                                <div class="flex justify-between"><dt class="text-gray-400">API версия:</dt><dd class="text-white">Ozon API v3</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Аутентификация:</dt><dd class="text-white">Client-ID + API-Key</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Синхронизация:</dt><dd class="text-white">Realtime</dd></div>
+                                <div class="flex justify-between"><dt class="text-gray-400">Лимиты:</dt><dd class="text-white">Авто-контроль запросов</dd></div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Marketplaces Grid -->
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">🟡</div>
+                            <div>
+                                <h3 class="font-semibold">Яндекс.Маркет</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">API интеграция</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Выгрузка товаров</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Обновление цен и остатков</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Заказ наряды</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Отзывы и рейтинги</li>
                         </ul>
                     </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🟢</div>
-                        <h3>GigaChat (Sber)</h3>
-                        <p>Альтернативный провайдер</p>
-                        <ul>
-                            <li>Резервный канал</li>
-                            <li>Соответствие 152-ФЗ</li>
-                            <li>Дополнительные модели</li>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">🟠</div>
+                            <div>
+                                <h3 class="font-semibold">Мегамаркет</h3>
+                                <span class="status-badge coming text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full">🔜 В разработке</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Планируется Q2 2024</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Early access для тарифа Профи</li>
+                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Базовая синхронизация</li>
                         </ul>
                     </div>
                 </div>
 
-                <h2>📦 Дополнительные сервисы</h2>
-                <div class="integration-grid">
-                    <div class="integration-card">
-                        <div class="integration-icon">📧</div>
-                        <h3>Email уведомления</h3>
-                        <p>SMTP / SendPulse / UniSender</p>
-                        <ul>
-                            <li>Оповещения о событиях</li>
-                            <li>Рассылки клиентам</li>
+                <!-- Таблица сравнения интеграций -->
+                <div class="comparison-section mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Сравните возможности интеграций</h2>
+                    
+                    <div class="comparison-table-wrapper overflow-x-auto">
+                        <table class="integrations-table w-full border-collapse bg-navy-800/30 rounded-xl overflow-hidden">
+                            <thead>
+                                <tr class="bg-navy-900">
+                                    <th class="text-left p-4 font-semibold">Функция</th>
+                                    <th class="text-center p-4 font-semibold">Wildberries</th>
+                                    <th class="text-center p-4 font-semibold">Ozon</th>
+                                    <th class="text-center p-4 font-semibold">Яндекс.Маркет</th>
+                                    <th class="text-center p-4 font-semibold">Мегамаркет</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Синхронизация товаров</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-yellow-400">🟡 Частично</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Обновление остатков</td>
+                                    <td class="text-center p-4 text-green-400">✅ Realtime</td>
+                                    <td class="text-center p-4 text-green-400">✅ Realtime</td>
+                                    <td class="text-center p-4 text-green-400">✅ 5 мин</td>
+                                    <td class="text-center p-4 text-red-400">❌</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Загрузка заказов</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Импорт отзывов</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-yellow-400">🟡 Только вопросы</td>
+                                    <td class="text-center p-4 text-red-400">❌</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Авто-ответы через ИИ</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-blue-400">🔜 Скоро</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Динамическое ценообразование</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-yellow-400">🟡 Бета</td>
+                                    <td class="text-center p-4 text-red-400">❌</td>
+                                </tr>
+                                <tr class="border-t border-white/5">
+                                    <td class="p-4 text-gray-300">Аналитика в 1С</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-green-400">✅</td>
+                                    <td class="text-center p-4 text-blue-400">🔜 Скоро</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="table-legend flex flex-wrap gap-4 mt-4 text-sm">
+                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-green-400"></span> Полная поддержка</span>
+                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-yellow-400"></span> Частично / Бета</span>
+                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-blue-400"></span> В разработке</span>
+                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-red-400"></span> Не поддерживается</span>
+                    </div>
+                </div>
+
+                <h2 id="ai-providers" class="text-2xl font-bold mb-6">☁️ ИИ-провайдеры</h2>
+                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">🟡</div>
+                            <div>
+                                <h3 class="font-semibold">YandexGPT</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Основной</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Основной провайдер</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Соответствие 152-ФЗ</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Серверы в России</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Высокое качество генерации</li>
                         </ul>
                     </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">💬</div>
-                        <h3>Messengers</h3>
-                        <p>Telegram / WhatsApp</p>
-                        <ul>
-                            <li>Уведомления менеджерам</li>
-                            <li>Оповещения о критических событиях</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">📊</div>
-                        <h3>BI-системы</h3>
-                        <p>Power BI / Tableau / Yandex DataLens</p>
-                        <ul>
-                            <li>Экспорт данных</li>
-                            <li>Готовые дашборды</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card">
-                        <div class="integration-icon">🔌</div>
-                        <h3>REST API</h3>
-                        <p>Для разработчиков</p>
-                        <ul>
-                            <li>Полный доступ к данным</li>
-                            <li>Webhooks</li>
-                            <li>Документация</li>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-header flex items-center gap-3 mb-4">
+                            <div class="integration-icon text-3xl">🟢</div>
+                            <div>
+                                <h3 class="font-semibold">GigaChat (Sber)</h3>
+                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Альтернатива</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-3">Альтернативный провайдер</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Резервный канал</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Соответствие 152-ФЗ</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Дополнительные модели</li>
                         </ul>
                     </div>
                 </div>
+
+                <h2 id="other-services" class="text-2xl font-bold mb-6">📦 Дополнительные сервисы</h2>
+                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-icon text-3xl mb-3">📧</div>
+                        <h3 class="font-semibold mb-2">Email уведомления</h3>
+                        <p class="text-sm text-gray-400 mb-3">SMTP / SendPulse / UniSender</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Оповещения о событиях</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Рассылки клиентам</li>
+                        </ul>
+                    </div>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-icon text-3xl mb-3">💬</div>
+                        <h3 class="font-semibold mb-2">Messengers</h3>
+                        <p class="text-sm text-gray-400 mb-3">Telegram / WhatsApp</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Уведомления менеджерам</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Оповещения о критических событиях</li>
+                        </ul>
+                    </div>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-icon text-3xl mb-3">📊</div>
+                        <h3 class="font-semibold mb-2">BI-системы</h3>
+                        <p class="text-sm text-gray-400 mb-3">Power BI / Tableau / DataLens</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Экспорт данных</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Готовые дашборды</li>
+                        </ul>
+                    </div>
+                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
+                        <div class="integration-icon text-3xl mb-3">🔌</div>
+                        <h3 class="font-semibold mb-2">REST API</h3>
+                        <p class="text-sm text-gray-400 mb-3">Для разработчиков</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Полный доступ к данным</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Webhooks</li>
+                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Документация</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Раздел для разработчиков -->
+                <section id="developers" class="developer-section py-12 border-t border-white/10">
+                    <h2 class="text-2xl font-bold mb-6">🔧 Для разработчиков и интеграторов</h2>
+                    
+                    <div class="dev-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="dev-card bg-navy-900 border-l-4 border-blue-500 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-2">📡 REST API</h3>
+                            <p class="text-sm text-gray-400 mb-3">Управляйте интеграциями программно через наш API</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>Base URL: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">api.aiseller.ru/v1</code></li>
+                                <li>Аутентификация: Bearer Token</li>
+                                <li>Формат: JSON</li>
+                                <li>Rate limit: 1000 запросов/час</li>
+                            </ul>
+                            <a href="/docs/api" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Документация API →</a>
+                        </div>
+                        
+                        <div class="dev-card bg-navy-900 border-l-4 border-purple-500 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-2">🪝 Webhooks</h3>
+                            <p class="text-sm text-gray-400 mb-3">Получайте уведомления о событиях в реальном времени</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>События: заказ, остаток, отзыв</li>
+                                <li>Доставка: HTTPS POST + HMAC</li>
+                                <li>Повторные попытки: экспоненциальный бэк-офф</li>
+                            </ul>
+                            <a href="/docs/webhooks" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Настройка вебхуков →</a>
+                        </div>
+                        
+                        <div class="dev-card bg-navy-900 border-l-4 border-green-500 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-2">📦 SDK и примеры</h3>
+                            <p class="text-sm text-gray-400 mb-3">Готовые библиотеки для быстрой интеграции</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>1С: встроенный модуль</li>
+                                <li>Python: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">pip install aiseller-sdk</code></li>
+                                <li>Node.js: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">npm install @aiseller/sdk</code></li>
+                            </ul>
+                            <a href="https://github.com/aiseller" target="_blank" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">GitHub →</a>
+                        </div>
+                        
+                        <div class="dev-card bg-navy-900 border-l-4 border-gold-500 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold mb-2">🧪 Песочница</h3>
+                            <p class="text-sm text-gray-400 mb-3">Тестируйте интеграции без риска для боевых данных</p>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>Тестовые аккаунты МП</li>
+                                <li>Mock-данные для ИИ</li>
+                                <li>Логирование всех запросов</li>
+                                <li>Бесплатно для всех тарифов</li>
+                            </ul>
+                            <a href="/sandbox" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Открыть песочницу →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Пример кода -->
+                    <div class="code-example bg-navy-900 rounded-xl p-6">
+                        <h4 class="font-semibold mb-4">Пример: получение списка товаров из Wildberries</h4>
+                        
+                        <div class="code-tabs flex gap-2 mb-4">
+                            <button class="tab active bg-gold-500 text-navy-900 px-4 py-2 rounded-lg text-sm font-medium">cURL</button>
+                            <button class="tab bg-navy-800 text-gray-400 px-4 py-2 rounded-lg text-sm">Python</button>
+                            <button class="tab bg-navy-800 text-gray-400 px-4 py-2 rounded-lg text-sm">1С</button>
+                        </div>
+                        
+                        <pre class="code-block bg-navy-950 rounded-lg p-4 overflow-x-auto text-sm"><code class="language-curl text-gray-300"># Запрос к нашему API (прокси к WB)
+curl -X GET https://api.aiseller.ru/v1/marketplaces/wildberries/products \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "X-1C-Config: UT11" \
+  -G \
+  -d "limit=50" \
+  -d "offset=0"
+
+# Ответ:
+{
+  "products": [
+    {
+      "id": "12345678",
+      "name": "Футболка мужская",
+      "wb_id": "987654321",
+      "price": 1490,
+      "stock": 42,
+      "rating": 4.8,
+      "reviews_count": 156
+    }
+  ],
+  "pagination": {
+    "total": 234,
+    "limit": 50,
+    "offset": 0
+  }
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Блок безопасности -->
+                <section id="security" class="security-section py-12 border-t border-white/10">
+                    <h2 class="text-2xl font-bold mb-6">🔐 Безопасность и соответствие требованиям</h2>
+                    
+                    <div class="security-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
+                            <div class="security-icon text-4xl mb-3">🔒</div>
+                            <h3 class="font-semibold mb-2">Шифрование данных</h3>
+                            <p class="text-sm text-gray-400">TLS 1.3 для всех соединений. API-ключи хранятся в зашифрованном виде.</p>
+                        </div>
+                        
+                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
+                            <div class="security-icon text-4xl mb-3">🏢</div>
+                            <h3 class="font-semibold mb-2">152-ФЗ и локализация</h3>
+                            <p class="text-sm text-gray-400">Персональные данные обрабатываются на серверах в РФ. Соответствие требованиям регуляторов.</p>
+                        </div>
+                        
+                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
+                            <div class="security-icon text-4xl mb-3">🗂️</div>
+                            <h3 class="font-semibold mb-2">Разделение данных</h3>
+                            <p class="text-sm text-gray-400">Чувствительные данные (себестоимость, маржа) не покидают контур вашей 1С. В облако передаются только публичные данные.</p>
+                        </div>
+                        
+                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
+                            <div class="security-icon text-4xl mb-3">♻️</div>
+                            <h3 class="font-semibold mb-2">Резервное копирование</h3>
+                            <p class="text-sm text-gray-400">Ежедневные бэкапы конфигураций. Возможность восстановления за 15 минут.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certifications text-center">
+                        <h4 class="font-semibold mb-4">Сертификаты и соответствие:</h4>
+                        <div class="cert-logos flex flex-wrap justify-center gap-6">
+                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
+                                <span class="text-sm text-gray-300">152-ФЗ</span>
+                            </div>
+                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
+                                <span class="text-sm text-gray-300">ГОСТ Р 57580</span>
+                            </div>
+                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
+                                <span class="text-sm text-gray-300">1С:Партнёр</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -709,6 +1213,35 @@
                 <h2>Не нашли нужную интеграцию?</h2>
                 <p>Мы постоянно расширяем список поддерживаемых сервисов. Напишите нам, и мы рассмотрим вашу заявку.</p>
                 <a href="../about/contacts.html" class="btn btn-primary btn-large">Связаться с нами</a>
+            </div>
+        </section>
+        
+        <!-- Связанные страницы -->
+        <section class="related-pages py-12">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6">Полезные материалы</h2>
+                
+                <div class="related-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="/docs/integrations/setup-guide.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
+                        <h3 class="font-semibold mb-2">📚 Гайд по подключению</h3>
+                        <p class="text-sm text-gray-400">Пошаговая инструкция: настройка всех интеграций за 30 минут</p>
+                    </a>
+                    
+                    <a href="/docs/api" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
+                        <h3 class="font-semibold mb-2">📡 Документация API</h3>
+                        <p class="text-sm text-gray-400">Полное описание endpoints, параметров и примеров кода</p>
+                    </a>
+                    
+                    <a href="/cases/integration-success.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
+                        <h3 class="font-semibold mb-2">🏆 Кейс: интеграция за 1 день</h3>
+                        <p class="text-sm text-gray-400">Как магазин электроники подключил 3 площадки за 24 часа</p>
+                    </a>
+                    
+                    <a href="/support/integration-help.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
+                        <h3 class="font-semibold mb-2">💬 Помощь с интеграцией</h3>
+                        <p class="text-sm text-gray-400">Чат с инженером, удалённая настройка, видео-консультация</p>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
