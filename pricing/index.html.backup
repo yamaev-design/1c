@@ -584,222 +584,217 @@
         </div>
     </nav>
 
-    <main class="relative z-10">
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-4xl mx-auto space-y-8 animate-fade-in">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                        <span class="flex h-2 w-2 rounded-full bg-gold-400 animate-pulse"></span>
-                        <span class="text-sm text-gray-300">14 дней бесплатно • Без привязки карты</span>
+    <main class="pt-20">
+        <section class="hero-section">
+            <div class="container">
+                <h1>Прозрачные тарифы без скрытых платежей</h1>
+                <p class="hero-subtitle">Выберите план, который подходит вашему бизнесу. 14 дней бесплатно на любом тарифе.</p>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-toggle">
+                    <span>Ежемесячно</span>
+                    <label class="switch">
+                        <input type="checkbox" id="billing-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Ежегодно <span class="discount-badge">-15%</span></span>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Старт</h3>
+                            <p class="pricing-description">Для начинающих селлеров</p>
+                            <div class="pricing-price">
+                                <span class="price monthly">1 490 ₽</span>
+                                <span class="price yearly hidden">1 267 ₽</span>
+                                <span class="period">/мес</span>
+                            </div>
+                            <p class="pricing-license">Лицензия: 9 900 ₽ (единоразово)</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Генерация описаний: до 30 товаров/мес</li>
+                            <li>✅ Авто-ответы на отзывы: до 50/мес</li>
+                            <li>✅ Количество площадок: 1</li>
+                            <li>❌ Прогноз закупок</li>
+                            <li>❌ Умное ценообразование</li>
+                            <li>❌ Аналитический ассистент</li>
+                            <li>❌ Приоритетная поддержка</li>
+                            <li>❌ Выделенный менеджер</li>
+                        </ul>
+                        <a href="../index.html#trial" class="btn btn-outline">Попробовать бесплатно</a>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        Прозрачные тарифы для <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">автоматизации</span> продаж на маркетплейсах
-                    </h1>
-
-                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                        Выберите план, который подходит вашему бизнесу. Все функции доступны сразу, никаких скрытых платежей. Экономьте до <span class="text-gold-400 font-semibold">20 часов в неделю</span> на рутине.
-                    </p>
-
-                    <!-- Billing Toggle -->
-                    <div class="flex items-center justify-center gap-4 pt-4">
-                        <span class="text-gray-300" id="monthly-label">Ежемесячно</span>
-                        <button id="billing-toggle" class="relative w-16 h-8 bg-navy-700 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400" role="switch" aria-checked="false" aria-labelledby="monthly-label yearly-label">
-                            <span class="absolute left-1 top-1 w-6 h-6 bg-gold-400 rounded-full transition-transform transform" id="toggle-slider"></span>
-                        </button>
-                        <span class="text-gray-300" id="yearly-label">Ежегодно <span class="text-gold-400 font-semibold">-15%</span></span>
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">⭐ Популярный</div>
+                        <div class="pricing-header">
+                            <h3>Бизнес</h3>
+                            <p class="pricing-description">Для растущего бизнеса</p>
+                            <div class="pricing-price">
+                                <span class="price monthly">3 990 ₽</span>
+                                <span class="price yearly hidden">3 392 ₽</span>
+                                <span class="period">/мес</span>
+                            </div>
+                            <p class="pricing-license">Лицензия: 9 900 ₽ (единоразово)</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Генерация описаний: до 150 товаров/мес</li>
+                            <li>✅ Авто-ответы на отзывы: до 300/мес</li>
+                            <li>✅ Количество площадок: 3</li>
+                            <li>✅ Прогноз закупок</li>
+                            <li>✅ Умное ценообразование</li>
+                            <li>✅ Аналитический ассистент: 10 запросов/мес</li>
+                            <li>❌ Приоритетная поддержка</li>
+                            <li>❌ Выделенный менеджер</li>
+                        </ul>
+                        <a href="../index.html#trial" class="btn btn-primary">Попробовать бесплатно</a>
                     </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Профи</h3>
+                            <p class="pricing-description">Для крупных селлеров</p>
+                            <div class="pricing-price">
+                                <span class="price monthly">7 990 ₽</span>
+                                <span class="price yearly hidden">6 792 ₽</span>
+                                <span class="period">/мес</span>
+                            </div>
+                            <p class="pricing-license">Лицензия: 9 900 ₽ (единоразово)</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Генерация описаний: безлимит</li>
+                            <li>✅ Авто-ответы на отзывы: безлимит</li>
+                            <li>✅ Количество площадок: безлимит</li>
+                            <li>✅ Прогноз закупок</li>
+                            <li>✅ Умное ценообразование</li>
+                            <li>✅ Аналитический ассистент: безлимит</li>
+                            <li>✅ Приоритетная поддержка</li>
+                            <li>✅ Выделенный менеджер</li>
+                        </ul>
+                        <a href="../index.html#trial" class="btn btn-outline">Попробовать бесплатно</a>
+                    </div>
+                </div>
+
+                <div class="pricing-comparison">
+                    <h2>📊 Подробное сравнение тарифов</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Функция</th>
+                                <th>Старт</th>
+                                <th>Бизнес</th>
+                                <th>Профи</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Генерация описаний</td>
+                                <td>до 30/мес</td>
+                                <td>до 150/мес</td>
+                                <td>безлимит</td>
+                            </tr>
+                            <tr>
+                                <td>Авто-ответы на отзывы</td>
+                                <td>до 50/мес</td>
+                                <td>до 300/мес</td>
+                                <td>безлимит</td>
+                            </tr>
+                            <tr>
+                                <td>Количество площадок</td>
+                                <td>1</td>
+                                <td>3</td>
+                                <td>безлимит</td>
+                            </tr>
+                            <tr>
+                                <td>Прогноз закупок</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Умное ценообразование</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Аналитический ассистент</td>
+                                <td>❌</td>
+                                <td>10 запросов/мес</td>
+                                <td>безлимит</td>
+                            </tr>
+                            <tr>
+                                <td>Приоритетная поддержка</td>
+                                <td>❌</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>Выделенный менеджер</td>
+                                <td>❌</td>
+                                <td>❌</td>
+                                <td>✅</td>
+                            </tr>
+                            <tr>
+                                <td>SLA</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>99.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="special-offer">
+                    <h2>🎁 Специальное предложение</h2>
+                    <ul>
+                        <li>Скидка 15% при оплате за год</li>
+                        <li>Бесплатная установка при заказе до <span id="offer-date"></span></li>
+                        <li>14 дней бесплатного доступа на любом тарифе</li>
+                        <li>Отмена подписки в любой момент</li>
+                    </ul>
+                </div>
+
+                <div class="guarantee">
+                    <h2>🛡️ Гарантия возврата</h2>
+                    <p>30 дней на возврат, если продукт не подойдёт. Без вопросов и бюрократии.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Cards Section -->
-        <section class="relative py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Start Plan -->
-                    <article class="relative bg-navy-800/50 border border-navy-600 rounded-2xl p-8 hover:border-gold-500 transition-all duration-300 hover-lift group" id="start">
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">Старт</h3>
-                                <p class="text-gray-400">Для начинающих селлеров</p>
-                            </div>
-                            
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-bold text-white price-monthly">1 490 ₽</span>
-                                <span class="text-gray-400 period-monthly">/мес</span>
-                                <span class="text-4xl font-bold text-white price-yearly hidden">1 267 ₽</span>
-                                <span class="text-gray-400 period-yearly hidden">/мес</span>
-                            </div>
-                            <p class="text-sm text-gray-500 billing-note hidden">при оплате за год</p>
-                            <p class="text-sm text-gray-400">Лицензия: <span class="text-white">9 900 ₽</span> (единоразово)</p>
-
-                            <ul class="space-y-3 text-gray-300">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Генерация описаний: до 30 товаров/мес</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Авто-ответы на отзывы: до 50/мес</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Количество площадок: 1</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Прогноз закупок</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Умное ценообразование</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Аналитический ассистент</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Приоритетная поддержка</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Выделенный менеджер</span>
-                                </li>
-                            </ul>
-
-                            <a href="../index.html#trial" class="block w-full px-6 py-4 border border-gold-500 text-gold-400 hover:text-white hover:bg-gold-500 font-semibold rounded-xl text-center transition-all">
-                                Попробовать бесплатно
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Business Plan (Featured) -->
-                    <article class="relative bg-navy-800/80 border-2 border-gold-500 rounded-2xl p-8 hover:border-gold-400 transition-all duration-300 hover-lift group scale-105 shadow-2xl shadow-gold-500/20" id="business">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <span class="bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
-                                ⭐ Популярный выбор
-                            </span>
-                        </div>
-
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">Бизнес</h3>
-                                <p class="text-gray-400">Для растущего бизнеса</p>
-                            </div>
-                            
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-bold text-white price-monthly">3 990 ₽</span>
-                                <span class="text-gray-400 period-monthly">/мес</span>
-                                <span class="text-4xl font-bold text-white price-yearly hidden">3 392 ₽</span>
-                                <span class="text-gray-400 period-yearly hidden">/мес</span>
-                            </div>
-                            <p class="text-sm text-gray-500 billing-note hidden">при оплате за год</p>
-                            <p class="text-sm text-gray-400">Лицензия: <span class="text-white">9 900 ₽</span> (единоразово)</p>
-
-                            <ul class="space-y-3 text-gray-300">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Генерация описаний: до 150 товаров/мес</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Авто-ответы на отзывы: до 300/мес</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Количество площадок: 3</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Прогноз закупок</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Умное ценообразование</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Аналитический ассистент: 10 запросов/мес</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Приоритетная поддержка</span>
-                                </li>
-                                <li class="flex items-start gap-3 opacity-50">
-                                    <i data-lucide="x" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
-                                    <span class="text-gray-500">Выделенный менеджер</span>
-                                </li>
-                            </ul>
-
-                            <a href="../index.html#trial" class="block w-full px-6 py-4 bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-700 text-navy-900 font-bold rounded-xl text-center transition-all shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50">
-                                Попробовать бесплатно
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Pro Plan -->
-                    <article class="relative bg-navy-800/50 border border-navy-600 rounded-2xl p-8 hover:border-gold-500 transition-all duration-300 hover-lift group" id="pro">
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">Профи</h3>
-                                <p class="text-gray-400">Для крупных селлеров</p>
-                            </div>
-                            
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-bold text-white price-monthly">7 990 ₽</span>
-                                <span class="text-gray-400 period-monthly">/мес</span>
-                                <span class="text-4xl font-bold text-white price-yearly hidden">6 792 ₽</span>
-                                <span class="text-gray-400 period-yearly hidden">/мес</span>
-                            </div>
-                            <p class="text-sm text-gray-500 billing-note hidden">при оплате за год</p>
-                            <p class="text-sm text-gray-400">Лицензия: <span class="text-white">9 900 ₽</span> (единоразово)</p>
-
-                            <ul class="space-y-3 text-gray-300">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Генерация описаний: безлимит</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Авто-ответы на отзывы: безлимит</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Количество площадок: безлимит</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Прогноз закупок</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Умное ценообразование</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Аналитический ассистент: безлимит</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Приоритетная поддержка</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5"></i>
-                                    <span>Выделенный менеджер</span>
-                                </li>
-                            </ul>
-
-                            <a href="../index.html#trial" class="block w-full px-6 py-4 border border-gold-500 text-gold-400 hover:text-white hover:bg-gold-500 font-semibold rounded-xl text-center transition-all">
-                                Попробовать бесплатно
-                            </a>
-                        </div>
-                    </article>
+        <section class="faq-section">
+            <div class="container">
+                <h2>❓ Частые вопросы о тарифах</h2>
+                <div class="faq-item">
+                    <h3>Можно ли изменить тариф позже?</h3>
+                    <p>Да, вы можете перейти на другой тариф в любой момент. Перерасчёт производится автоматически.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Что входит в стоимость лицензии?</h3>
+                    <p>Лицензия 9 900 ₽ включает установку модуля в вашу 1С, базовую настройку и обучение персонала (1 час).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Есть ли скидки для крупных клиентов?</h3>
+                    <p>Да, для клиентов с оборотом от 50 млн ₽/мес мы предлагаем индивидуальные условия. Свяжитесь с нами.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как происходит оплата?</h3>
+                    <p>Оплата производится по счёту для юридических лиц или банковской картой для ИП и физических лиц.</p>
                 </div>
             </div>
         </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Готовы начать?</h2>
+                <p>Попробуйте AI Seller 1С бесплатно в течение 14 дней</p>
+                <a href="../index.html#trial" class="btn btn-primary btn-large">Начать бесплатный период</a>
+            </div>
+        </section>
+    </main>
 
     
 
