@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +18,33 @@
     <meta property="og:url" content="https://yamaev-design.github.io/1c/product/integrations.html">
     <meta property="og:image" content="https://yamaev-design.github.io/1c/images/integrations-og.jpg">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+        /* Critical above-the-fold styles */
+        body{margin:0;padding:0;background-color:#0a0f1c;color:#fff;font-family:system-ui,-apple-system,sans-serif}
+        .fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}
+        .z-0{z-index:0}.z-50{z-index:50}.inset-0{top:0;right:0;bottom:0;left:0}
+        .w-full{width:100%}.h-20{height:5rem}.max-w-7xl{max-width:80rem}
+        .mx-auto{margin-left:auto;margin-right:auto}.px-4{padding-left:1rem;padding-right:1rem}
+        .flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
+        .gap-3{gap:0.75rem}.gap-1{gap:0.25rem}
+        .hidden{display:none}.block{display:block}
+        .text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}
+        .transition-colors{transition-property:color;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}
+        .hover\\:text-gold-400:hover{color:#fbbf24}
+        @keyframes float{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-20px) rotateX(5deg)}}
+        .animate-float{animation:float 6s ease-in-out infinite}
+        .animate-float-delayed{animation:float 6s ease-in-out 3s infinite}
+        .scroll-smooth{scroll-behavior:smooth}
+    </style>
+    
+    <!-- Tailwind CSS with production config -->
+    <script src="https://cdn.tailwindcss.com?cache=true"></script>
+    
     <!-- Custom Config -->
     <script>
         tailwind.config = {
@@ -65,8 +86,14 @@
             }
         }
     </script>
-
+    
+    <!-- Lucide Icons - loaded asynchronously -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    
     <link rel="stylesheet" href="../style.css">
+    
+    <!-- DNS Prefetch for analytics/external resources -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
     
     <!-- Breadcrumb Schema.org -->
     <script type="application/ld+json">
