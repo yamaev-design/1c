@@ -1,1 +1,19 @@
-Nothing should be ignored based on the provided file changes. The only modified file is 'includes/header.html', which is a source file and should not be added to .gitignore.
+```
+# Build artifacts and generated docs
+api/docs.html
+docs/features/*.html
+docs/integrations/*.html
+legal/*.html
+*.html
+
+# Generated scripts
+docs/features/create_docs.sh
+docs/features/generate_all.sh
+docs/integrations/create_integration_docs.sh
+
+# Pages that appear to be generated
+partners.html
+press.html
+roadmap.html
+status.html
+```

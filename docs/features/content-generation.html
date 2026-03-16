@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генерация контента | Документация AI Seller 1С</title>
+  <meta name="description" content="Документация по функции генерации контента: карточки товаров, заголовки, описания, инфографика">
+  
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js ', 'ym');
+
+      ym(97440235, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/97440235 " style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--color-text); background: var(--color-bg); line-height: 1.7; }
+    a { color: var(--color-primary-light); text-decoration: none; transition: all 0.3s ease; }
+    a:hover { color: var(--color-primary); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .page-header { padding: 72px 0 56px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; border-radius: 0 0 24px 24px; margin-bottom: 56px; }
+    .page-header h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 700; margin-bottom: 16px; }
+    .content-section { background: white; border-radius: 16px; padding: 40px; margin-bottom: 32px; border: 1px solid var(--color-border); }
+    .content-section h2 { font-size: 24px; margin-bottom: 20px; color: var(--color-primary); }
+    .content-section h3 { font-size: 20px; margin: 24px 0 16px; }
+    .content-section p { margin-bottom: 16px; color: var(--color-text-muted); }
+    .content-section ul { margin-bottom: 16px; padding-left: 20px; }
+    .content-section li { margin-bottom: 8px; color: var(--color-text-muted); }
+    code { font-family: 'JetBrains Mono', monospace; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    pre { background: #1e293b; color: #f8fafc; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 20px 0; }
+    pre code { background: transparent; padding: 0; color: inherit; }
+    .badge { display: inline-block; padding: 4px 12px; background: #eff6ff; color: var(--color-primary); border-radius: 12px; font-size: 12px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header id="header-placeholder"></header>
+  
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <span class="badge">Функции</span>
+        <h1>Генерация контента с ИИ</h1>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto">Автоматическое создание карточек товаров, заголовков, описаний и инфографики для маркетплейсов</p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <nav class="mb-8 text-sm text-gray-600">
+        <a href="/" class="hover:text-blue-600">Главная</a> → 
+        <a href="/docs/" class="hover:text-blue-600">Документация</a> → 
+        <a href="/docs/features" class="hover:text-blue-600">Функции</a> → 
+        <span class="text-gray-900">Генерация контента</span>
+      </nav>
+      
+      <section class="content-section">
+        <h2>📝 Обзор функции</h2>
+        <p>Модуль генерации контента использует искусственный интеллект для автоматического создания продающих карточек товаров на основе минимальных входных данных.</p>
+        <ul>
+          <li><strong>Время генерации:</strong> 30-60 секунд на товар</li>
+          <li><strong>Поддерживаемые языки:</strong> Русский, Английский, Казахский, Армянский</li>
+          <li><strong>ИИ-провайдеры:</strong> GPT-4, Claude, YandexGPT, собственные модели</li>
+        </ul>
+      </section>
+      
+      <section class="content-section">
+        <h2>🎯 Возможности</h2>
+        <h3>1. Генерация заголовков</h3>
+        <p>Автоматическое создание SEO-оптимизированных заголовков с учётом требований маркетплейсов.</p>
+        <pre><code>Пример: "Платье женское летнее хлопковое с цветочным принтом, размер M-XXL, синий"</code></pre>
+        
+        <h3>2. Создание описаний</h3>
+        <p>Развёрнутые описания с преимуществами, характеристиками и призывами к действию.</p>
+        <ul>
+          <li>Уникальность текста > 95%</li>
+          <li>Оптимальная длина для Wildberries и Ozon</li>
+          <li>Включение ключевых слов</li>
+        </ul>
+        
+        <h3>3. Инфографика с текстом</h3>
+        <p>Автоматическое размещение текста на изображениях товара в соответствии с дизайн-макетами.</p>
+        
+        <h3>4. Мультиязычность</h3>
+        <p>Генерация контента на нескольких языках для расширения на новые рынки.</p>
+      </section>
+      
+      <section class="content-section">
+        <h2>⚙️ Настройка</h2>
+        <h3>Требования</h3>
+        <ul>
+          <li>1C:Enterprise 8.3.20+</li>
+          <li>Подключенный API ключ ИИ-провайдера</li>
+          <li>Тариф: <strong>Старт</strong> или выше</li>
+        </ul>
+        
+        <h3>Шаги подключения</h3>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-600">
+          <li>Откройте раздел <code>Настройки → ИИ-сервисы</code></li>
+          <li>Выберите провайдера (GPT-4, Claude, YandexGPT)</li>
+          <li>Введите API-ключ</li>
+          <li>Настройте шаблоны генерации</li>
+          <li>Запустите тестовую генерацию</li>
+        </ol>
+      </section>
+      
+      <section class="content-section">
+        <h2>📊 Примеры использования</h2>
+        <h3>Кейс 1: Массовая загрузка коллекции</h3>
+        <p>За 2 часа обработано 500 товаров одежды. Экономия времени: 40 часов ручной работы.</p>
+        
+        <h3>Кейс 2: Выход на новый маркетплейс</h3>
+        <p>Адаптация 1200 карточек под требования KazanExpress с переводом на казахский язык.</p>
+      </section>
+      
+      <section class="content-section">
+        <h2>❓ FAQ</h2>
+        <h3>Насколько уникален生成的 текст?</h3>
+        <p>Уникальность составляет 95-98% по сервисам Antiplagiat и Text.ru.</p>
+        
+        <h3>Можно ли редактировать сгенерированный контент?</h3>
+        <p>Да, все сгенерированные тексты доступны для ручного редактирования перед публикацией.</p>
+        
+        <h3>Как часто обновляются модели ИИ?</h3>
+        <p>Обновление происходит автоматически при выходе новых версий у провайдеров.</p>
+      </section>
+      
+      <div class="text-center mt-12 mb-12">
+        <a href="/trial" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition mr-4">🚀 Попробовать бесплатно</a>
+        <a href="/docs/features" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-lg transition">← Все функции</a>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer-placeholder"></footer>
+  
+  <script>
+    // Load header and footer
+    fetch('/includes/header.html').then(r => r.text()).then(html => document.getElementById('header-placeholder').innerHTML = html);
+    fetch('/includes/footer.html').then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>
