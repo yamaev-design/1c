@@ -1,731 +1,1068 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании DeepSite — Миссия, команда, ценности</title>
-    <meta name="description" content="DeepSite — команда разработчиков 1С и AI-инженеров с опытом в e-commerce более 7 лет. Наша миссия — автоматизировать рутину селлеров.">
-    <link rel="canonical" href="https://deepsite.ru/about/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>О компании AI Seller 1С | Автоматизация маркетплейсов с 2021 года</title>
+  <meta name="description" content="AI Seller — команда экспертов по автоматизации продаж в 1С. 500+ клиентов, 4.9/5 рейтинг, соответствие 152-ФЗ. Узнайте нашу историю и ценности.">
+  <meta name="keywords" content="о компании, команда, история, автоматизация 1С, маркетплейсы, ИИ, экспертиза">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="О компании | AI Seller 1С">
+  <meta property="og:description" content="Команда экспертов по автоматизации продаж в 1С. 500+ довольных клиентов.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/about/">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/about-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="О компании | AI Seller 1С">
+  <meta name="twitter:description" content="Команда экспертов по автоматизации продаж в 1С">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/about/">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Seller",
+    "alternateName": "AI Seller 1С",
+    "url": "https://yamaev-design.github.io/1c/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yamaev-design.github.io/1c/images/logo.png",
+      "width": 200,
+      "height": 60
+    },
+    "description": "Автоматизация продаж на маркетплейсах с помощью ИИ и 1С",
+    "foundingDate": "2021",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Команда экспертов 1С и маркетплейсов"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU",
+      "addressRegion": "Москва"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "support@aiseller.ru",
+      "telephone": "+7 (495) XXX-XX-XX",
+      "availableLanguage": "Russian"
+    },
+    "sameAs": [
+      "https://t.me/aiseller",
+      "https://vk.com/aiseller"
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "О компании", "item": "https://yamaev-design.github.io/1c/about/" }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-enterprise: 0 25px 50px rgba(30, 58, 138, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
     
-    <link rel="stylesheet" href="../style.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 72px 0 56px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* ===== HERO STATS ===== */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .stat-value {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-accent-light);
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== MISSION SECTION ===== */
+    .mission-section {
+      margin: 56px 0;
+    }
+    
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    
+    .mission-content h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+    
+    .mission-content p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    
+    .mission-visual {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      color: white;
+      text-align: center;
+    }
+    
+    .mission-visual .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    
+    .mission-visual p {
+      font-size: 16px;
+      opacity: 0.95;
+      margin: 0;
+    }
+    
+    /* ===== TIMELINE SECTION ===== */
+    .timeline-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 56px 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .timeline-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: var(--color-border);
+    }
+    
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: calc(50% + 30px);
+      position: relative;
+      margin-bottom: 40px;
+    }
+    
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 30px);
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: var(--color-primary);
+      border: 4px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--color-primary-light);
+      z-index: 1;
+    }
+    
+    .timeline-content {
+      background: var(--color-bg);
+      padding: 20px 24px;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-primary-light);
+      max-width: 350px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      border-left: none;
+      border-right: 4px solid var(--color-primary-light);
+    }
+    
+    .timeline-year {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .timeline-content h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .timeline-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== VALUES SECTION ===== */
+    .values-section {
+      margin: 56px 0;
+    }
+    
+    .values-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    
+    .value-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .value-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .value-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .value-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .value-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== TEAM SECTION ===== */
+    .team-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 56px 48px;
+      margin: 56px 0;
+    }
+    
+    .team-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .team-section .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 48px;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .team-member {
+      text-align: center;
+    }
+    
+    .member-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      font-weight: 600;
+    }
+    
+    .team-member h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .team-member .role {
+      display: block;
+      font-size: 14px;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    
+    .team-member p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== TRUST SECTION ===== */
+    .trust-section {
+      margin: 56px 0;
+      text-align: center;
+    }
+    
+    .trust-section h2 {
+      font-size: 28px;
+      margin-bottom: 48px;
+    }
+    
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    
+    .trust-item {
+      padding: 24px;
+    }
+    
+    .trust-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .trust-value {
+      display: block;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    
+    .trust-label {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    
+    /* Client Logos */
+    .client-logos {
+      padding-top: 48px;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .client-logos p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+    
+    .logos-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+    
+    .logos-grid .logo-placeholder {
+      background: var(--color-bg);
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+    
+    .logos-grid .logo-placeholder:hover {
+      opacity: 1;
+      border-color: var(--color-primary-light);
+    }
+    
+    /* ===== CERTIFICATIONS SECTION ===== */
+    .certifications-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .certifications-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .cert-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    
+    .cert-card h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .cert-card p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .about-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 56px 0;
+      color: white;
+    }
+    
+    .about-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .about-cta p {
+      opacity: 0.95;
+      margin-bottom: 32px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .timeline::before {
+        left: 20px;
+      }
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        padding-left: 50px;
+        padding-right: 0;
+        justify-content: flex-start;
+      }
+      .timeline-dot {
+        left: 20px;
+      }
+      .timeline-content {
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .timeline-section,
+      .team-section,
+      .certifications-section {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .values-grid,
+      .trust-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+<body>
 
-<!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">👋 О нас</span>
+      <h1>AI Seller 1С</h1>
+      <p class="subtitle">Автоматизируем продажи на маркетплейсах с 2021 года. Помогаем селлерам экономить время, снижать возвраты и увеличивать прибыль с помощью ИИ и 1С.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-value">500+</span>
+          <span class="stat-label">активных клиентов</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">4.9/5</span>
+          <span class="stat-label">средняя оценка</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">95%</span>
+          <span class="stat-label">продлевают подписку</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">14–21 дн</span>
+          <span class="stat-label">средняя окупаемость</span>
+        </div>
+      </div>
     </div>
+  </header>
 
+  <div class="container">
+    
+    <!-- Mission Section -->
+    <section class="mission-section" aria-labelledby="mission-heading">
+      <div class="mission-grid">
+        <div class="mission-content">
+          <h2 id="mission-heading">Наша миссия</h2>
+          <p>Мы верим, что автоматизация должна быть доступной каждому селлеру — от начинающего ИП до федерального бренда.</p>
+          <p>Наша цель — освободить ваше время от рутины, чтобы вы могли фокусироваться на стратегии, развитии бренда и общении с клиентами. ИИ и 1С — наши инструменты, ваш успех — наш результат.</p>
+          <p>Мы не просто продаём софт. Мы становимся партнёром на пути роста вашего бизнеса на маркетплейсах.</p>
+        </div>
+        <div class="mission-visual">
+          <span class="icon" aria-hidden="true">🎯</span>
+          <p><strong>Миссия:</strong><br>Сделать автоматизацию маркетплейсов простой, доступной и эффективной для каждого селлера в России.</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../product/features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Timeline Section -->
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">Наш путь</h2>
+      
+      <div class="timeline">
+        
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2021</span>
+            <h3>Старт проекта</h3>
+            <p>Запуск первого модуля для генерации карточек товаров. Первые 10 клиентов.</p>
+          </div>
+        </article>
+        
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2022</span>
+            <h3>Расширение функционала</h3>
+            <p>Добавили авто-ответы на отзывы и интеграцию с Wildberries. 100+ клиентов.</p>
+          </div>
+        </article>
+        
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2023</span>
+            <h3>ИИ и аналитика</h3>
+            <p>Внедрили ИИ на базе YandexGPT, прогноз закупок, умное ценообразование.</p>
+          </div>
+        </article>
+        
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h3>Масштабирование</h3>
+            <p>500+ клиентов, поддержка 3 маркетплейсов, команда 25+ человек.</p>
+          </div>
+        </article>
+        
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2026</span>
+            <h3>Сегодня</h3>
+            <p>Полная автоматизация продаж в 1С: от карточек до аналитики. Работаем по всей России.</p>
+          </div>
+        </article>
+        
+      </div>
+    </section>
 
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
+    <!-- Values Section -->
+    <section class="values-section" aria-labelledby="values-heading">
+      <h2 id="values-heading">Наши ценности</h2>
+      
+      <div class="values-grid">
+        
+        <article class="value-card">
+          <span class="value-icon" aria-hidden="true">🤝</span>
+          <h3>Партнёрство</h3>
+          <p>Мы не просто поставщик софта — мы партнёр в росте вашего бизнеса. Ваш успех — наш приоритет.</p>
+        </article>
+        
+        <article class="value-card">
+          <span class="value-icon" aria-hidden="true">🔐</span>
+          <h3>Безопасность</h3>
+          <p>Ваши данные защищены: соответствие 152-ФЗ, шифрование, локализация серверов в РФ.</p>
+        </article>
+        
+        <article class="value-card">
+          <span class="value-icon" aria-hidden="true">⚡</span>
+          <h3>Простота</h3>
+          <p>Сложные технологии — простой интерфейс. Настройка за 15 минут, работа без глубоких знаний 1С.</p>
+        </article>
+        
+        <article class="value-card">
+          <span class="value-icon" aria-hidden="true">📈</span>
+          <h3>Результат</h3>
+          <p>Мы измеряем успех не фичами, а вашими метриками: снижение возвратов, экономия времени, рост прибыли.</p>
+        </article>
+        
+      </div>
+    </section>
 
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+    <!-- Team Section -->
+    <section class="team-section" aria-labelledby="team-heading">
+      <h2 id="team-heading">Наша команда</h2>
+      <p class="subtitle">Эксперты в 1С, маркетплейсах и ИИ, которые делают ваш бизнес эффективнее</p>
+      
+      <div class="team-grid">
+        
+        <article class="team-member">
+          <div class="member-avatar" aria-hidden="true">АД</div>
+          <h3>Анна Дмитриева</h3>
+          <span class="role">CEO & Основатель</span>
+          <p>10+ лет в 1С и автоматизации. Инициатор проекта.</p>
+        </article>
+        
+        <article class="team-member">
+          <div class="member-avatar" aria-hidden="true">МС</div>
+          <h3>Максим Соколов</h3>
+          <span class="role">CTO</span>
+          <p>Архитектор решений. Эксперт по интеграциям и ИИ.</p>
+        </article>
+        
+        <article class="team-member">
+          <div class="member-avatar" aria-hidden="true">ЕК</div>
+          <h3>Елена Козлова</h3>
+          <span class="role">Head of Support</span>
+          <p>Заботится о каждом клиенте. Ответ за 15 минут.</p>
+        </article>
+        
+        <article class="team-member">
+          <div class="member-avatar" aria-hidden="true">ПВ</div>
+          <h3>Павел Волков</h3>
+          <span class="role">Lead Developer</span>
+          <p>Разрабатывает модуль. Фанат чистого кода и 1С.</p>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section" aria-labelledby="trust-heading">
+      <h2 id="trust-heading">Нам доверяют</h2>
+      
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon">👥</span>
+          <span class="trust-value">500+</span>
+          <span class="trust-label">активных клиентов</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⭐</span>
+          <span class="trust-value">4.9/5</span>
+          <span class="trust-label">средняя оценка</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🔄</span>
+          <span class="trust-value">95%</span>
+          <span class="trust-label">продлевают подписку</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🛡️</span>
+          <span class="trust-value">100%</span>
+          <span class="trust-label">соответствие 152-ФЗ</span>
+        </div>
+      </div>
+      
+      <!-- Client Logos -->
+      <div class="client-logos">
+        <p>Среди наших клиентов:</p>
+        <div class="logos-grid">
+          <div class="logo-placeholder">Бренд 1</div>
+          <div class="logo-placeholder">Бренд 2</div>
+          <div class="logo-placeholder">Бренд 3</div>
+          <div class="logo-placeholder">Бренд 4</div>
+          <div class="logo-placeholder">Бренд 5</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications-section" aria-labelledby="cert-heading">
+      <h2 id="cert-heading">Безопасность и соответствие</h2>
+      
+      <div class="cert-grid">
+        
+        <div class="cert-card">
+          <span class="cert-icon" aria-hidden="true">🔐</span>
+          <div>
+            <h3>152-ФЗ</h3>
+            <p>Полное соответствие закону о персональных данных</p>
+          </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../product/features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="../product/integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../product/security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="../product/updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="../cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
+        <div class="cert-card">
+          <span class="cert-icon" aria-hidden="true">🇷🇺</span>
+          <div>
+            <h3>Локализация</h3>
+            <p>Серверы в РФ, данные не покидают страну</p>
+          </div>
         </div>
-    </nav>
+        
+        <div class="cert-card">
+          <span class="cert-icon" aria-hidden="true">🔒</span>
+          <div>
+            <h3>Шифрование</h3>
+            <p>TLS 1.3 при передаче, AES-256 при хранении</p>
+          </div>
+        </div>
+        
+        <div class="cert-card">
+          <span class="cert-icon" aria-hidden="true">📋</span>
+          <div>
+            <h3>NDA</h3>
+            <p>Готовы подписать соглашение о неразглашении</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
-    <main class="pt-20">
-        <section class="hero">
-            <div class="container">
-                <h1>О компании DeepSite</h1>
-                <p class="hero-subtitle">Мы делаем автоматизацию доступной для каждого селлера</p>
-            </div>
-        </section>
+  </div> <!-- /container -->
 
-        <section class="section">
-            <div class="container">
-                <h2>Наша миссия</h2>
-                <p>Мы — команда разработчиков 1С и AI-инженеров с опытом работы в e-commerce более 7 лет. Сами были селлерами, поэтому знаем все боли «изнутри».</p>
-                <p><strong>Наша миссия:</strong> сделать так, чтобы каждый селлер в России мог конкурировать с крупными игроками, используя те же технологии автоматизации.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>🎯 Цель</h3>
-                        <p>Автоматизировать 80% рутины селлеров к 2026 году</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>💡 Ценности</h3>
-                        <p>Прозрачность, инновации, клиентоориентированность</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🚀 Результат</h3>
-                        <p>500+ клиентов, 2.5 млн обработанных товаров</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- CTA Section -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>Готовы автоматизировать ваш бизнес?</h2>
+      <p>14 дней бесплатно • Настройка за 15 минут • Без привязки карты • Поддержка 24/7</p>
+      
+      <div class="cta-buttons">
+        <a href="/trial" class="btn-primary">
+          <span>🚀</span>
+          <span>Начать бесплатный триал</span>
+        </a>
+        <a href="/contact" class="btn-secondary">
+          <span>💬</span>
+          <span>Связаться с нами</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <section class="section bg-light">
-            <div class="container">
-                <h2>Партнёры и сертификаты</h2>
-                <div class="partners-logos">
-                    <div class="partner-logo">1С-Партнёр</div>
-                    <div class="partner-logo">Yandex Cloud</div>
-                    <div class="partner-logo">GigaChat</div>
-                    <div class="partner-logo">Wildberries API</div>
-                    <div class="partner-logo">Ozon API</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Готовы автоматизировать свой бизнес?</h2>
-                <a href="../trial/index.html" class="btn btn-primary btn-large">Попробовать бесплатно 14 дней</a>
-            </div>
-        </section>
-    </main>
-
+  <!-- JavaScript -->
+  <script>
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
     
-    <script src="../script.js"></script>
-
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../product/features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="../product/integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="../product/security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="../product/updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../solutions/food/index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="../cases/index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
-            </div>
-        </div>
-    </footer>
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'about',
+          'event_label': 'about_page',
+          'page_title': 'О компании'
+        });
+      }
+    });
+  </script>
+  
 </body>
 </html>

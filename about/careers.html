@@ -1,719 +1,1564 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вакансии DeepSite — Присоединяйтесь к команде</title>
-    <meta name="description" content="Открытые вакансии в DeepSite. Разработчики 1С, Python-инженеры, специалисты поддержки.">
-    <link rel="canonical" href="https://deepsite.ru/about/careers">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Вакансии в AI Seller 1С | Работа в команде экспертов по автоматизации</title>
+  <meta name="description" content="Присоединяйтесь к команде AI Seller 1С! Удалённая работа, конкурентная зарплата, обучение, ДМС. Вакансии для разработчиков, аналитиков, поддержки.">
+  <meta name="keywords" content="вакансии, работа, карьера, разработчик 1С, аналитик, поддержка, удалённая работа, ИИ, маркетплейсы">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Вакансии | AI Seller 1С">
+  <meta property="og:description" content="Присоединяйтесь к команде, которая меняет рынок автоматизации маркетплейсов">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/about/careers.html">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/careers-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Вакансии | AI Seller 1С">
+  <meta name="twitter:description" content="Работа в команде экспертов по автоматизации маркетплейсов">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/about/careers.html">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "О компании", "item": "https://yamaev-design.github.io/1c/about/" },
+      { "@type": "ListItem", "position": 3, "name": "Вакансии", "item": "https://yamaev-design.github.io/1c/about/careers.html" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Seller",
+    "url": "https://yamaev-design.github.io/1c/",
+    "sameAs": [
+      "https://t.me/aiseller",
+      "https://vk.com/aiseller"
+    ]
+  }
+  </script>
+  
+  <!-- Example JobPosting Schema (repeat for each job) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Разработчик 1С (удалённо)",
+    "description": "Разработка и поддержка модулей автоматизации для маркетплейсов",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "AI Seller",
+      "url": "https://yamaev-design.github.io/1c/"
+    },
+    "employmentType": "FULL_TIME",
+    "jobLocationType": "TELECOMMUTE",
+    "datePosted": "2026-03-01",
+    "validThrough": "2026-06-01",
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "RUB",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 120000,
+        "maxValue": 200000,
+        "unitText": "MONTH"
+      }
+    },
+    "skills": "1С:Предприятие 8.3, интеграции, API, SQL",
+    "experienceRequirements": {
+      "@type": "OccupationalExperienceRequirements",
+      "monthsOfExperience": 24
+    }
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-enterprise: 0 25px 50px rgba(30, 58, 138, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
     
-    <link rel="stylesheet" href="../style.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 72px 0 56px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stat {
+      text-align: center;
+    }
+    
+    .header-stat .value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-accent-light);
+    }
+    
+    .header-stat .label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== BENEFITS SECTION ===== */
+    .benefits-section {
+      margin: 56px 0;
+    }
+    
+    .benefits-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    
+    .benefit-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .benefit-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .benefit-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .benefit-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .benefit-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== CULTURE SECTION ===== */
+    .culture-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 56px 48px;
+      margin: 56px 0;
+    }
+    
+    .culture-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .culture-section .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+    }
+    
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .culture-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border-left: 4px solid var(--color-primary-light);
+    }
+    
+    .culture-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .culture-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== JOBS FILTER ===== */
+    .jobs-filter {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .jobs-filter h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 14px;
+    }
+    
+    .filter-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: inherit;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .filter-group select:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .results-count {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      text-align: right;
+    }
+    
+    /* ===== JOBS LIST ===== */
+    .jobs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0;
+    }
+    
+    .job-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .job-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .job-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 0;
+    }
+    
+    .job-title a {
+      color: inherit;
+    }
+    
+    .job-title a:hover {
+      color: var(--color-primary);
+    }
+    
+    .job-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    
+    .job-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .job-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .job-tag {
+      padding: 6px 12px;
+      background: var(--color-bg);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+    
+    .job-tag.remote {
+      background: #dbeafe;
+      color: var(--color-primary);
+    }
+    
+    .job-tag.urgent {
+      background: #fef3c7;
+      color: var(--color-warning);
+    }
+    
+    .job-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    
+    .job-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .job-salary {
+      font-weight: 600;
+      color: var(--color-success);
+      font-size: 16px;
+    }
+    
+    .btn-apply {
+      background: var(--color-primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      font-size: 14px;
+    }
+    
+    .btn-apply:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+    
+    .btn-apply.secondary {
+      background: transparent;
+      border: 2px solid var(--color-border);
+      color: var(--color-text);
+    }
+    
+    .btn-apply.secondary:hover {
+      border-color: var(--color-primary-light);
+      background: #eff6ff;
+    }
+    
+    /* ===== PROCESS SECTION ===== */
+    .process-section {
+      margin: 56px 0;
+    }
+    
+    .process-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .process-steps::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: var(--color-border);
+      z-index: 0;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 8px;
+    }
+    
+    .process-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .process-step h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .process-step p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .faq-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      border-color: var(--color-primary-light);
+    }
+    
+    .faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .faq-item summary::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: var(--color-text-muted);
+    }
+    
+    .faq-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px 24px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    
+    .faq-answer a {
+      font-weight: 500;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .careers-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 56px 0;
+      color: white;
+    }
+    
+    .careers-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .careers-cta p {
+      opacity: 0.95;
+      margin-bottom: 32px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    /* ===== APPLICATION MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+    }
+    
+    .modal {
+      background: white;
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalSlide 0.3s ease;
+    }
+    
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      transition: var(--transition);
+    }
+    
+    .modal-close:hover {
+      color: var(--color-text);
+    }
+    
+    .modal h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .modal .job-title {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 14px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+    
+    .form-consent input {
+      margin-top: 3px;
+      accent-color: var(--color-primary-light);
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .btn-submit:hover {
+      background: var(--color-primary-light);
+    }
+    
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .process-steps::before {
+        display: none;
+      }
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .culture-section,
+      .faq-section {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .job-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      .modal {
+        padding: 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+      .job-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+    
+    /* Hidden state for filtered items */
+    .job-card[style*="display: none"] {
+      display: none !important;
+    }
+  </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+<body>
 
-<!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
-    </div>
-
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../product/features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+  <!-- Application Modal -->
+  <div class="modal-overlay" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+      <h3 id="modal-title">Откликнуться на вакансию</h3>
+      <p class="job-title" id="modal-job-title">Название вакансии</p>
+      
+      <form id="applyForm">
+        <div class="form-group">
+          <label for="name">ФИО *</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../product/features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="../product/integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../product/security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="../product/updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="../cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
         </div>
-    </nav>
-    <main class="pt-20">
-        <section class="hero">
-            <div class="container">
-                <h1>Вакансии</h1>
-                <p class="hero-subtitle">Присоединяйтесь к команде, которая меняет e-commerce</p>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div class="vacancies-list">
-                    <div class="vacancy-card">
-                        <h3>Разработчик 1С (Middle/Senior)</h3>
-                        <p><strong>Задачи:</strong> Разработка и поддержка модуля интеграции, доработка конфигураций 1С:УТ, 1С:УНФ.</p>
-                        <p><strong>Требования:</strong> Опыт от 3 лет, знание платформ 8.3, опыт работы с HTTP-запросами.</p>
-                        <p><strong>Условия:</strong> Удалённо, гибкий график, зарплата от 150 000 ₽.</p>
-                        <a href="contacts.html" class="btn btn-secondary">Откликнуться</a>
-                    </div>
-                    <div class="vacancy-card">
-                        <h3>Python-разработчик (AI/ML)</h3>
-                        <p><strong>Задачи:</strong> Интеграция с YandexGPT/GigaChat, разработка промптов, валидация результатов.</p>
-                        <p><strong>Требования:</strong> Опыт с NLP, работа с API LLM, Python 3.9+.</p>
-                        <p><strong>Условия:</strong> Удалённо, интересные задачи, зарплата от 180 000 ₽.</p>
-                        <a href="contacts.html" class="btn btn-secondary">Откликнуться</a>
-                    </div>
-                    <div class="vacancy-card">
-                        <h3>Специалист поддержки клиентов</h3>
-                        <p><strong>Задачи:</strong> Консультации пользователей, решение технических вопросов, онбординг.</p>
-                        <p><strong>Требования:</strong> Грамотная речь, опыт в поддержке, знание 1С будет плюсом.</p>
-                        <p><strong>Условия:</strong> Офис/удалённо, обучение, зарплата от 80 000 ₽.</p>
-                        <a href="contacts.html" class="btn btn-secondary">Откликнуться</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cta-section">
-            <div class="container">
-                <h2>Не нашли подходящую вакансию?</h2>
-                <p>Отправьте резюме на hr@deepsite.ru — мы рассмотрим вашу кандидатуру.</p>
-            </div>
-        </section>
-    </main>
-    
-    <script src="../script.js"></script>
+        
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+        
+        <div class="form-group">
+          <label for="experience">Опыт работы</label>
+          <select id="experience" name="experience">
+            <option value="">Выберите</option>
+            <option value="<1">Менее 1 года</option>
+            <option value="1-3">1–3 года</option>
+            <option value="3-5">3–5 лет</option>
+            <option value="5+">5+ лет</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="resume">Ссылка на резюме / портфолио</label>
+          <input type="url" id="resume" name="resume" placeholder="https://hh.ru/... или GitHub">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Почему вы хотите к нам? *</label>
+          <textarea id="message" name="message" required placeholder="Расскажите о себе и мотивации..."></textarea>
+        </div>
+        
+        <div class="form-consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Я согласен на обработку персональных данных в соответствии с <a href="/legal/152fz" target="_blank">152-ФЗ</a> *</label>
+        </div>
+        
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span>📤</span>
+          <span>Отправить отклик</span>
+        </button>
+      </form>
+    </div>
+  </div>
 
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../product/features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="../product/integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="../product/security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="../product/updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../solutions/food/index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="../cases/index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="about/index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="about/team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="about/careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="about/contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
-            </div>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">💼 Карьера</span>
+      <h1>Присоединяйтесь к команде AI Seller</h1>
+      <p class="subtitle">Мы создаём будущее автоматизации маркетплейсов. Ищем талантливых людей, которые хотят менять рынок вместе с нами.</p>
+      
+      <div class="header-stats">
+        <div class="header-stat">
+          <span class="value">25+</span>
+          <span class="label">в команде</span>
         </div>
-    </footer>
+        <div class="header-stat">
+          <span class="value">100%</span>
+          <span class="label">удалённо</span>
+        </div>
+        <div class="header-stat">
+          <span class="value">4.9/5</span>
+          <span class="label">на Glassdoor</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- Benefits Section -->
+    <section class="benefits-section" aria-labelledby="benefits-heading">
+      <h2 id="benefits-heading">Почему стоит работать с нами</h2>
+      
+      <div class="benefits-grid">
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">🏠</span>
+          <h3>Полная удалёнка</h3>
+          <p>Работайте из любой точки мира. Гибкий график и доверие вместо контроля.</p>
+        </article>
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">💰</span>
+          <h3>Конкурентная зарплата</h3>
+          <p>Рыночный уровень + бонусы за результаты. Пересмотр каждые 6 месяцев.</p>
+        </article>
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">📚</span>
+          <h3>Обучение и рост</h3>
+          <p>Бюджет на курсы, конференции, книги. Карьерный трек внутри компании.</p>
+        </article>
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">🏥</span>
+          <h3>ДМС и забота</h3>
+          <p>Полис ДМС, компенсация спорта, психологическая поддержка.</p>
+        </article>
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">🤝</span>
+          <h3>Крутая команда</h3>
+          <p>Эксперты в 1С, ИИ и маркетплейсах. Регулярные митапы и неформальное общение.</p>
+        </article>
+        
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">🚀</span>
+          <h3>Влияние на продукт</h3>
+          <p>Ваши идеи реализуются. Мы слушаем команду и быстро внедряем улучшения.</p>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section" aria-labelledby="culture-heading">
+      <h2 id="culture-heading">Наша культура</h2>
+      <p class="subtitle">Мы ценим людей, которые делают разницу</p>
+      
+      <div class="culture-grid">
+        
+        <article class="culture-card">
+          <h3>🎯 Результат важнее процесса</h3>
+          <p>Мы не следим за часами в офисе. Важны итоги, а не присутствие. Дедлайны — наши друзья, микроменеджмент — нет.</p>
+        </article>
+        
+        <article class="culture-card">
+          <h3>💬 Открытая коммуникация</h3>
+          <p>Любой может задать вопрос основателю. Регулярные все-ручные, прозрачные метрики, честная обратная связь.</p>
+        </article>
+        
+        <article class="culture-card">
+          <h3>🧠 Непрерывное обучение</h3>
+          <p>Мы растём, когда растёт команда. Бюджет на обучение, внутренние воркшопы, обмен знаниями.</p>
+        </article>
+        
+        <article class="culture-card">
+          <h3>🤗 Баланс работы и жизни</h3>
+          <p>Мы за устойчивый темп. Никаких ночных дедлайнов «на вчера». Отпуск — это святое.</p>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Jobs Filter -->
+    <section class="jobs-filter" aria-labelledby="jobs-heading">
+      <h2 id="jobs-heading">Открытые вакансии</h2>
+      
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label for="filter-department">Направление</label>
+          <select id="filter-department">
+            <option value="">Все направления</option>
+            <option value="dev">Разработка</option>
+            <option value="analytics">Аналитика</option>
+            <option value="support">Поддержка</option>
+            <option value="sales">Продажи</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-type">Тип занятости</label>
+          <select id="filter-type">
+            <option value="">Любой</option>
+            <option value="full">Полная</option>
+            <option value="part">Частичная</option>
+            <option value="intern">Стажировка</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="filter-level">Уровень</label>
+          <select id="filter-level">
+            <option value="">Любой</option>
+            <option value="junior">Junior</option>
+            <option value="middle">Middle</option>
+            <option value="senior">Senior</option>
+          </select>
+        </div>
+      </div>
+      
+      <p class="results-count">Найдено: <strong id="jobs-count">5</strong> вакансий</p>
+    </section>
+
+    <!-- Jobs List -->
+    <section class="jobs-list" id="jobs-list" aria-label="Список вакансий">
+      
+      <!-- Job 1: 1C Developer -->
+      <article class="job-card" data-department="dev" data-type="full" data-level="middle">
+        <div class="job-header">
+          <h3 class="job-title"><a href="#applyModal" data-job="Разработчик 1С (удалённо)">Разработчик 1С (удалённо)</a></h3>
+          <div class="job-tags">
+            <span class="job-tag remote">🏠 Удалённо</span>
+            <span class="job-tag urgent">🔥 Срочно</span>
+          </div>
+        </div>
+        <div class="job-meta">
+          <span>📊 Разработка</span>
+          <span>💼 Полная занятость</span>
+          <span>📈 Middle</span>
+        </div>
+        <p class="job-description">Разработка и поддержка модулей автоматизации для маркетплейсов. Интеграции с API, работа с ИИ-провайдерами, оптимизация производительности.</p>
+        <div class="job-footer">
+          <span class="job-salary">120–200 тыс. ₽</span>
+          <a href="#applyModal" class="btn-apply" data-job="Разработчик 1С (удалённо)">
+            <span>📤</span>
+            <span>Откликнуться</span>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Job 2: Support Specialist -->
+      <article class="job-card" data-department="support" data-type="full" data-level="junior">
+        <div class="job-header">
+          <h3 class="job-title"><a href="#applyModal" data-job="Специалист поддержки (удалённо)">Специалист поддержки (удалённо)</a></h3>
+          <div class="job-tags">
+            <span class="job-tag remote">🏠 Удалённо</span>
+          </div>
+        </div>
+        <div class="job-meta">
+          <span>💬 Поддержка</span>
+          <span>💼 Полная занятость</span>
+          <span>🌱 Junior</span>
+        </div>
+        <p class="job-description">Помощь клиентам в настройке и использовании модуля. Ответы на вопросы в чате и email, ведение базы знаний, эскалация сложных случаев.</p>
+        <div class="job-footer">
+          <span class="job-salary">60–90 тыс. ₽</span>
+          <a href="#applyModal" class="btn-apply" data-job="Специалист поддержки (удалённо)">
+            <span>📤</span>
+            <span>Откликнуться</span>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Job 3: Product Analyst -->
+      <article class="job-card" data-department="analytics" data-type="full" data-level="senior">
+        <div class="job-header">
+          <h3 class="job-title"><a href="#applyModal" data-job="Product Analyst (удалённо)">Product Analyst (удалённо)</a></h3>
+          <div class="job-tags">
+            <span class="job-tag remote">🏠 Удалённо</span>
+          </div>
+        </div>
+        <div class="job-meta">
+          <span>📊 Аналитика</span>
+          <span>💼 Полная занятость</span>
+          <span>🚀 Senior</span>
+        </div>
+        <p class="job-description">Анализ поведения пользователей, A/B-тесты, метрики продукта. Формирование гипотез для развития функционала и роста конверсий.</p>
+        <div class="job-footer">
+          <span class="job-salary">150–250 тыс. ₽</span>
+          <a href="#applyModal" class="btn-apply" data-job="Product Analyst (удалённо)">
+            <span>📤</span>
+            <span>Откликнуться</span>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Job 4: Sales Manager -->
+      <article class="job-card" data-department="sales" data-type="full" data-level="middle">
+        <div class="job-header">
+          <h3 class="job-title"><a href="#applyModal" data-job="Менеджер по продажам (удалённо)">Менеджер по продажам (удалённо)</a></h3>
+          <div class="job-tags">
+            <span class="job-tag remote">🏠 Удалённо</span>
+          </div>
+        </div>
+        <div class="job-meta">
+          <span>💼 Продажи</span>
+          <span>💼 Полная занятость</span>
+          <span>📈 Middle</span>
+        </div>
+        <p class="job-description">Привлечение и сопровождение клиентов: демо-звонки, работа с возражениями, закрытие сделок. Опыт в B2B и маркетплейсах — плюс.</p>
+        <div class="job-footer">
+          <span class="job-salary">80–150 тыс. ₽ + %</span>
+          <a href="#applyModal" class="btn-apply" data-job="Менеджер по продажам (удалённо)">
+            <span>📤</span>
+            <span>Откликнуться</span>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Job 5: Intern Developer -->
+      <article class="job-card" data-department="dev" data-type="intern" data-level="junior">
+        <div class="job-header">
+          <h3 class="job-title"><a href="#applyModal" data-job="Стажёр-разработчик 1С">Стажёр-разработчик 1С</a></h3>
+          <div class="job-tags">
+            <span class="job-tag remote">🏠 Удалённо</span>
+          </div>
+        </div>
+        <div class="job-meta">
+          <span>📊 Разработка</span>
+          <span>🕐 Стажировка</span>
+          <span>🌱 Junior</span>
+        </div>
+        <p class="job-description">Помощь в разработке и тестировании модуля. Обучение от старших разработчиков, реальные задачи, возможность роста до Middle.</p>
+        <div class="job-footer">
+          <span class="job-salary">40–60 тыс. ₽</span>
+          <a href="#applyModal" class="btn-apply secondary" data-job="Стажёр-разработчик 1С">
+            <span>📤</span>
+            <span>Откликнуться</span>
+          </a>
+        </div>
+      </article>
+      
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" aria-labelledby="process-heading">
+      <h2 id="process-heading">Как проходит отбор</h2>
+      
+      <div class="process-steps">
+        
+        <article class="process-step">
+          <div class="process-number">1</div>
+          <h3>Отклик</h3>
+          <p>Заполните форму или напишите нам в Telegram</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="process-number">2</div>
+          <h3>Скрининг</h3>
+          <p>Короткий звонок с HR (15–20 минут)</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="process-number">3</div>
+          <h3>Тестовое</h3>
+          <p>Небольшое задание на 2–4 часа</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="process-number">4</div>
+          <h3>Интервью</h3>
+          <p>Встреча с командой и техническим лидом</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="process-number">5</div>
+          <h3>Оффер</h3>
+          <p>Предложение, обсуждение условий, старт</p>
+        </article>
+        
+      </div>
+      
+      <p style="text-align: center; margin-top: 32px; color: var(--color-text-muted);">
+        <small>⏱️ Среднее время от отклика до оффера: 7–10 дней</small>
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">❓ Частые вопросы</h2>
+      
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Можно ли работать из другого города / страны?</summary>
+          <div class="faq-answer">
+            <p>Да, мы полностью удалённая компания. Главное — стабильный интернет и возможность работать в часовом поясе МСК ±3 часа для синхронизации с командой.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Какой график работы?</summary>
+          <div class="faq-answer">
+            <p>Гибкий график в рамках 6-часового окна (10:00–16:00 МСК) для синхронизации. Важно быть на связи в рабочее время, остальное — на ваше усмотрение.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Есть ли испытательный срок?</summary>
+          <div class="faq-answer">
+            <p>Да, 3 месяца. В это время вы получаете полную поддержку, регулярную обратную связь и возможность скорректировать задачи. Зарплата не меняется.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Какие технологии используете?</summary>
+          <div class="faq-answer">
+            <p>1С:Предприятие 8.3, Python для бэкенда, React для фронтенда, YandexGPT/GigaChat для ИИ, PostgreSQL, Docker. Полный стек — в описании вакансии.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Можно ли совмещать с другой работой / учёбой?</summary>
+          <div class="faq-answer">
+            <p>Для полных ставок — нет, мы ожидаем полной вовлечённости. Для стажировок и частичной занятости — да, обсудим индивидуальный график.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </div> <!-- /container -->
+
+  <!-- CTA Section -->
+  <section class="careers-cta">
+    <div class="container">
+      <h2>Не нашли подходящую вакансию?</h2>
+      <p>Мы всегда открыты к талантливым людям. Отправьте резюме в общий пул — свяжемся, когда появится подходящая роль.</p>
+      
+      <div class="cta-buttons">
+        <a href="#applyModal" class="btn-primary" data-job="Общий отклик">
+          <span>📤</span>
+          <span>Отправить резюме</span>
+        </a>
+        <a href="mailto:hr@aiseller.ru" class="btn-secondary">
+          <span>✉️</span>
+          <span>hr@aiseller.ru</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== MODAL HANDLING =====
+    const modal = $('#applyModal');
+    const modalClose = $('#modalClose');
+    const modalJobTitle = $('#modal-job-title');
+    const applyButtons = $$('.btn-apply, [data-job]');
+    
+    // Open modal
+    applyButtons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const jobTitle = this.dataset.job || 'Общий отклик';
+        modalJobTitle.textContent = jobTitle;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+        
+        // Track event
+        if (typeof gtag === 'function') {
+          gtag('event', 'apply_click', {
+            'event_category': 'careers',
+            'event_label': 'apply_modal',
+            'job_title': jobTitle
+          });
+        }
+      });
+    });
+    
+    // Close modal
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    modalClose?.addEventListener('click', closeModal);
+    
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+    
+    // ===== FORM SUBMISSION =====
+    const applyForm = $('#applyForm');
+    
+    applyForm?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btn = $('#submitBtn');
+      const originalText = btn.innerHTML;
+      
+      // Validate
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+      
+      // Show loading
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner" style="width:20px;height:20px;border-width:2px"></span> Отправка...';
+      
+      try {
+        // Collect data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        data.job = modalJobTitle.textContent;
+        data.timestamp = new Date().toISOString();
+        
+        // Simulate API call (replace with real endpoint)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Show success
+        alert('✅ Спасибо за отклик!\n\nМы свяжемся с вами в течение 2 рабочих дней.');
+        
+        // Reset and close
+        this.reset();
+        closeModal();
+        
+        // Track conversion
+        if (typeof gtag === 'function') {
+          gtag('event', 'application_submit', {
+            'event_category': 'careers',
+            'event_label': 'application_form',
+            'job_title': data.job,
+            'experience': data.experience
+          });
+        }
+        
+      } catch (error) {
+        console.error('Application error:', error);
+        alert('❌ Произошла ошибка. Пожалуйста, попробуйте ещё раз или напишите на hr@aiseller.ru');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
+    
+    // ===== JOBS FILTERING =====
+    const filterDepartment = $('#filter-department');
+    const filterType = $('#filter-type');
+    const filterLevel = $('#filter-level');
+    const jobsCount = $('#jobs-count');
+    
+    function filterJobs() {
+      const department = filterDepartment.value;
+      const type = filterType.value;
+      const level = filterLevel.value;
+      
+      let visibleCount = 0;
+      
+      $$('.job-card').forEach(card => {
+        const cardDept = card.dataset.department;
+        const cardType = card.dataset.type;
+        const cardLevel = card.dataset.level;
+        
+        const matchesDept = !department || cardDept === department;
+        const matchesType = !type || cardType === type;
+        const matchesLevel = !level || cardLevel === level;
+        
+        if (matchesDept && matchesType && matchesLevel) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      jobsCount.textContent = visibleCount;
+    }
+    
+    filterDepartment?.addEventListener('change', filterJobs);
+    filterType?.addEventListener('change', filterJobs);
+    filterLevel?.addEventListener('change', filterJobs);
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'careers',
+          'event_label': 'careers_page',
+          'page_title': 'Вакансии'
+        });
+      }
+      
+      // Prefill filters from URL params
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('dept')) filterDepartment.value = params.get('dept');
+      if (params.get('type')) filterType.value = params.get('type');
+      if (params.get('level')) filterLevel.value = params.get('level');
+      
+      // Apply filters if params exist
+      if (params.toString()) filterJobs();
+    });
+  </script>
+  
 </body>
 </html>
