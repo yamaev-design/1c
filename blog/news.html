@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Новости AI Seller 1С | Новости 1С и ИИ, обновления продукта</title>
+  <meta name="description" content="Актуальные новости мира 1С и искусственного интеллекта. Обновления продукта AI Seller, изменения в API маркетплейсов, новые функции ИИ. Подпишитесь на рассылку.">
+  <meta name="keywords" content="новости 1С, новости ИИ, искусственный интеллект, обновления 1С, маркетплейсы, AI Seller, релизы, API">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Новости | AI Seller 1С">
+  <meta property="og:description" content="Новости мира 1С и ИИ, обновления продукта, изменения в API">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/blog/news.html">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/news-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Новости | AI Seller 1С">
+  <meta name="twitter:description" content="Новости мира 1С и ИИ, обновления продукта">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/blog/news.html">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://yamaev-design.github.io/1c/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Новости", "item": "https://yamaev-design.github.io/1c/blog/news.html" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Новости AI Seller 1С",
+    "description": "Новости мира 1С и искусственного интеллекта",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Seller",
+      "url": "https://yamaev-design.github.io/1c/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yamaev-design.github.io/1c/images/logo.png"
+      }
+    },
+    "url": "https://yamaev-design.github.io/1c/blog/news.html",
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "1С выпустила обновление платформы 8.3.24",
+        "datePublished": "2026-03-15",
+        "author": { "@type": "Organization", "name": "AI Seller" }
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-info: #0ea5e9;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-enterprise: 0 25px 50px rgba(30, 58, 138, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 72px 0 56px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stat {
+      text-align: center;
+    }
+    
+    .header-stat .value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-accent-light);
+    }
+    
+    .header-stat .label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== NEWS FILTERS ===== */
+    .news-filters {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin: 0 0 48px 0;
+      border: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 10px 20px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+    }
+    
+    .filter-btn .count {
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+    
+    .filter-btn.active .count {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .search-box {
+      position: relative;
+      min-width: 250px;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 10px 40px 10px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: inherit;
+    }
+    
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .search-box .icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== NEWS GRID ===== */
+    .news-section {
+      margin: 56px 0;
+    }
+    
+    .news-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    
+    .news-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .news-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .news-card.important {
+      border: 2px solid var(--color-warning);
+      background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+    }
+    
+    .news-card.urgent {
+      border: 2px solid var(--color-danger);
+      background: linear-gradient(135deg, #fef2f2 0%, #fff 100%);
+    }
+    
+    .news-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    .news-badge.1c {
+      background: #dbeafe;
+      color: var(--color-primary);
+    }
+    
+    .news-badge.ai {
+      background: #d1fae5;
+      color: var(--color-success);
+    }
+    
+    .news-badge.product {
+      background: #fef3c7;
+      color: var(--color-warning);
+    }
+    
+    .news-badge.important {
+      background: var(--color-warning);
+      color: #78350f;
+    }
+    
+    .news-badge.urgent {
+      background: var(--color-danger);
+      color: white;
+    }
+    
+    .news-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .news-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+    
+    .news-card h3 a {
+      color: inherit;
+    }
+    
+    .news-card h3 a:hover {
+      color: var(--color-primary);
+    }
+    
+    .news-excerpt {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      flex: 1;
+      line-height: 1.6;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    .news-date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .news-read-time {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .news-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    
+    .news-tag {
+      padding: 4px 10px;
+      background: var(--color-bg);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== FEATURED NEWS ===== */
+    .featured-news {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      margin: 0 0 48px 0;
+      border: 2px solid var(--color-primary-light);
+      box-shadow: var(--shadow-enterprise);
+    }
+    
+    .featured-news .news-badge {
+      position: static;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    
+    .featured-news h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    
+    .featured-news .news-excerpt {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .featured-news .news-meta {
+      margin-bottom: 24px;
+      padding-top: 0;
+      border-top: none;
+    }
+    
+    .btn-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .btn-read-more:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+    
+    /* ===== PAGINATION ===== */
+    .news-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 48px 0;
+      flex-wrap: wrap;
+    }
+    
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      transition: var(--transition);
+    }
+    
+    .page-link:hover,
+    .page-link.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+    
+    .page-link.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* ===== SUBSCRIBE SECTION ===== */
+    .subscribe-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      text-align: center;
+    }
+    
+    .subscribe-section h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .subscribe-section p {
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .subscribe-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .subscribe-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+    }
+    
+    .subscribe-form input:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .btn-subscribe {
+      padding: 12px 24px;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-subscribe:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+    
+    .subscribe-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== CATEGORIES SIDEBAR ===== */
+    .news-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      margin: 56px 0;
+    }
+    
+    .news-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    
+    .sidebar-section {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .sidebar-section h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .category-list li {
+      margin-bottom: 8px;
+    }
+    
+    .category-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      color: var(--color-text-muted);
+      transition: var(--transition);
+    }
+    
+    .category-list a:hover,
+    .category-list a.active {
+      background: #eff6ff;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+    
+    .category-count {
+      background: var(--color-bg);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    /* ===== ARCHIVE SECTION ===== */
+    .archive-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .archive-section h2 {
+      font-size: 28px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    
+    .archive-item {
+      padding: 16px;
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .archive-item:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+    
+    .archive-item:hover a {
+      color: white;
+    }
+    
+    .archive-item h4 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    
+    .archive-item span {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .news-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 56px 0;
+      color: white;
+    }
+    
+    .news-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .news-cta p {
+      opacity: 0.95;
+      margin-bottom: 32px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .news-layout {
+        grid-template-columns: 1fr;
+      }
+      .news-sidebar {
+        position: static;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .news-filters {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-tabs {
+        justify-content: center;
+      }
+      .search-box {
+        min-width: 100%;
+      }
+      .featured-news,
+      .archive-section,
+      .subscribe-section {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+    
+    /* Hidden state for filtered items */
+    .news-card[style*="display: none"] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">📰 Новости</span>
+      <h1>Новости мира 1С и ИИ</h1>
+      <p class="subtitle">Актуальные обновления платформы 1С, изменения в API маркетплейсов, новые функции искусственного интеллекта и релизы нашего продукта</p>
+      
+      <div class="header-stats">
+        <div class="header-stat">
+          <span class="value">156</span>
+          <span class="label">новостей</span>
+        </div>
+        <div class="header-stat">
+          <span class="value">24</span>
+          <span class="label">за март 2026</span>
+        </div>
+        <div class="header-stat">
+          <span class="value">5000+</span>
+          <span class="label">подписчиков</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- News Filters -->
+    <nav class="news-filters" aria-label="Фильтрация новостей">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">
+          <span>📋</span> Все <span class="count">156</span>
+        </button>
+        <button class="filter-btn" data-filter="1c">
+          <span>🧩</span> 1С <span class="count">64</span>
+        </button>
+        <button class="filter-btn" data-filter="ai">
+          <span>🤖</span> ИИ <span class="count">52</span>
+        </button>
+        <button class="filter-btn" data-filter="product">
+          <span>📦</span> Продукт <span class="count">28</span>
+        </button>
+        <button class="filter-btn" data-filter="marketplaces">
+          <span>🛒</span> Маркетплейсы <span class="count">12</span>
+        </button>
+      </div>
+      
+      <div class="search-box">
+        <input type="search" id="news-search" placeholder="🔍 Поиск новостей..." aria-label="Поиск новостей">
+        <span class="icon" aria-hidden="true">🔍</span>
+      </div>
+    </nav>
+
+    <div class="news-layout">
+      
+      <!-- Main News Content -->
+      <main class="news-main" aria-label="Список новостей">
+        
+        <!-- Featured News -->
+        <article class="featured-news" data-category="product">
+          <span class="news-badge important">🔥 Важное</span>
+          <h2><a href="/news/ai-seller-2.4.0-release">Вышло крупное обновление AI Seller 2.4.0 с аналитическим ассистентом</a></h2>
+          <p class="news-excerpt">Представляем версию 2.4.0 с революционными функциями: аналитический ассистент на базе ИИ, сценарии автоматизации без кода, мультиязычность описаний и webhooks для интеграций. Обновление уже доступно для всех подписчиков.</p>
+          <div class="news-meta">
+            <span class="news-date">📅 16 марта 2026</span>
+            <span class="news-read-time">⏱️ 8 мин чтения</span>
+          </div>
+          <div class="news-tags">
+            <span class="news-tag">Релиз</span>
+            <span class="news-tag">ИИ</span>
+            <span class="news-tag">Аналитика</span>
+          </div>
+          <a href="/news/ai-seller-2.4.0-release" class="btn-read-more" style="margin-top: 24px;">
+            <span>📖</span>
+            <span>Читать подробнее</span>
+          </a>
+        </article>
+
+        <!-- News Grid -->
+        <div class="news-grid" id="news-grid">
+          
+          <!-- News Item 1 -->
+          <article class="news-card" data-category="1c">
+            <span class="news-badge 1c">1С</span>
+            <div class="news-category">🧩 Платформа 1С</div>
+            <h3><a href="/news/1c-platform-8.3.24">1С выпустила платформу 8.3.24 с улучшениями производительности</a></h3>
+            <p class="news-excerpt">Фирма 1С объявила о выходе платформы 8.3.24. Основные изменения: ускорение работы с большими базами на 30%, улучшенная работа с HTTPS, новые функции мобильного приложения.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 15 марта 2026</span>
+              <span class="news-read-time">⏱️ 5 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">Платформа</span>
+              <span class="news-tag">Обновление</span>
+            </div>
+          </article>
+          
+          <!-- News Item 2 -->
+          <article class="news-card urgent" data-category="ai">
+            <span class="news-badge urgent">Срочно</span>
+            <div class="news-category">🤖 Искусственный интеллект</div>
+            <h3><a href="/news/yandexgpt-api-changes">YandexGPT изменил лимиты API: что нужно знать</a></h3>
+            <p class="news-excerpt">YandexGPT ввёл новые лимиты на количество запросов: с 1000 до 500 в час для бесплатного тарифа. Платные тарифы остались без изменений. Рекомендуем обновить настройки модуля.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 14 марта 2026</span>
+              <span class="news-read-time">⏱️ 3 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">YandexGPT</span>
+              <span class="news-tag">API</span>
+              <span class="news-tag">Лимиты</span>
+            </div>
+          </article>
+          
+          <!-- News Item 3 -->
+          <article class="news-card" data-category="marketplaces">
+            <span class="news-badge product">Маркетплейсы</span>
+            <div class="news-category">🛒 Wildberries</div>
+            <h3><a href="/news/wildberries-new-api-march">Wildberries обновил API: новые обязательные поля</a></h3>
+            <p class="news-excerpt">С 1 апреля 2026 Wildberries требует заполнять новые поля в карточках товаров: состав, страна производства, срок годности. Без этих данных товары не будут проходить модерацию.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 12 марта 2026</span>
+              <span class="news-read-time">⏱️ 6 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">Wildberries</span>
+              <span class="news-tag">API</span>
+              <span class="news-tag">Требования</span>
+            </div>
+          </article>
+          
+          <!-- News Item 4 -->
+          <article class="news-card" data-category="ai">
+            <span class="news-badge ai">ИИ</span>
+            <div class="news-category">🤖 GigaChat</div>
+            <h3><a href="/news/gigachat-new-model">Сбер представил GigaChat 2.0 с улучшенным пониманием контекста</a></h3>
+            <p class="news-excerpt">GigaChat 2.0 показывает на 40% лучшее понимание сложных запросов и контекста диалога. Поддерживает работу с документами до 100 страниц. Интеграция в AI Seller запланирована на апрель.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 10 марта 2026</span>
+              <span class="news-read-time">⏱️ 4 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">GigaChat</span>
+              <span class="news-tag">Сбер</span>
+              <span class="news-tag">LLM</span>
+            </div>
+          </article>
+          
+          <!-- News Item 5 -->
+          <article class="news-card" data-category="1c">
+            <span class="news-badge 1c">1С</span>
+            <div class="news-category">🧩 1С:УТ</div>
+            <h3><a href="/news/1c-ut-11.5.15">Вышло обновление 1С:УТ 11.5.15 с исправлениями</a></h3>
+            <p class="news-excerpt">Релиз 11.5.15 содержит исправления критических ошибок: корректный расчёт себестоимости при возврате товаров, исправление дублей в отчётах, оптимизация работы с большими каталогами.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 8 марта 2026</span>
+              <span class="news-read-time">⏱️ 3 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">УТ</span>
+              <span class="news-tag">Обновление</span>
+              <span class="news-tag">Исправления</span>
+            </div>
+          </article>
+          
+          <!-- News Item 6 -->
+          <article class="news-card important" data-category="product">
+            <span class="news-badge important">Важное</span>
+            <div class="news-category">📦 AI Seller</div>
+            <h3><a href="/news/api-v2-announcement">API v2: готовьтесь к миграции до 1 июня</a></h3>
+            <p class="news-excerpt">Запускаем API v2 с улучшенной документацией, вебхуками и rate limiting. API v1 будет отключён 1 июня 2026. Публикуем гайд по миграции и примеры кода для популярных языков.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 5 марта 2026</span>
+              <span class="news-read-time">⏱️ 10 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">API</span>
+              <span class="news-tag">Миграция</span>
+              <span class="news-tag">Разработчикам</span>
+            </div>
+          </article>
+          
+          <!-- News Item 7 -->
+          <article class="news-card" data-category="ai">
+            <span class="news-badge ai">ИИ</span>
+            <div class="news-category">🤖 Нейросети</div>
+            <h3><a href="/news/openai-gpt5-rumors">GPT-5: что известно о новой модели OpenAI</a></h3>
+            <p class="news-excerpt">По слухам, OpenAI готовит GPT-5 к лету 2026. Ожидается улучшение мультимодальности, снижение галлюцинаций на 60%, поддержка 1M токенов контекста. Следим за анонсами.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 3 марта 2026</span>
+              <span class="news-read-time">⏱️ 5 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">OpenAI</span>
+              <span class="news-tag">GPT</span>
+              <span class="news-tag">Прогнозы</span>
+            </div>
+          </article>
+          
+          <!-- News Item 8 -->
+          <article class="news-card" data-category="marketplaces">
+            <span class="news-badge product">Маркетплейсы</span>
+            <div class="news-category">🛒 Ozon</div>
+            <h3><a href="/news/ozon-fbo-changes">Ozon изменил правила FBO: новые тарифы с апреля</a></h3>
+            <p class="news-excerpt">Ozon повысит тарифы на хранение на складах FBO на 15-25% с 1 апреля. Одновременно вводится новая система скидок за оборот. Рассчитываем, как изменения повлияют на вашу маржу.</p>
+            <div class="news-meta">
+              <span class="news-date">📅 1 марта 2026</span>
+              <span class="news-read-time">⏱️ 7 мин</span>
+            </div>
+            <div class="news-tags">
+              <span class="news-tag">Ozon</span>
+              <span class="news-tag">FBO</span>
+              <span class="news-tag">Тарифы</span>
+            </div>
+          </article>
+          
+        </div>
+
+        <!-- Pagination -->
+        <nav class="news-pagination" aria-label="Навигация по страницам новостей">
+          <a href="#" class="page-link disabled" aria-disabled="true">← Назад</a>
+          <a href="#" class="page-link active" aria-current="page">1</a>
+          <a href="?page=2" class="page-link">2</a>
+          <a href="?page=3" class="page-link">3</a>
+          <span class="page-ellipsis">…</span>
+          <a href="?page=16" class="page-link">16</a>
+          <a href="?page=2" class="page-link">Вперёд →</a>
+        </nav>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="news-sidebar" aria-label="Боковая панель">
+        
+        <!-- Categories -->
+        <div class="sidebar-section">
+          <h3>📂 Категории</h3>
+          <ul class="category-list">
+            <li><a href="#" class="active">Все новости <span class="category-count">156</span></a></li>
+            <li><a href="#">🧩 Новости 1С <span class="category-count">64</span></a></li>
+            <li><a href="#">🤖 Искусственный интеллект <span class="category-count">52</span></a></li>
+            <li><a href="#">📦 Продукт AI Seller <span class="category-count">28</span></a></li>
+            <li><a href="#">🛒 Маркетплейсы <span class="category-count">12</span></a></li>
+          </ul>
+        </div>
+        
+        <!-- Archive -->
+        <div class="sidebar-section">
+          <h3>📅 Архив</h3>
+          <ul class="category-list">
+            <li><a href="#">Март 2026 <span class="category-count">24</span></a></li>
+            <li><a href="#">Февраль 2026 <span class="category-count">18</span></a></li>
+            <li><a href="#">Январь 2026 <span class="category-count">22</span></a></li>
+            <li><a href="#">Декабрь 2025 <span class="category-count">16</span></a></li>
+            <li><a href="#">Ноябрь 2025 <span class="category-count">14</span></a></li>
+          </ul>
+        </div>
+        
+        <!-- Popular Tags -->
+        <div class="sidebar-section">
+          <h3>🏷️ Популярные теги</h3>
+          <div class="news-tags" style="margin-top: 0;">
+            <a href="#" class="news-tag">1С</a>
+            <a href="#" class="news-tag">ИИ</a>
+            <a href="#" class="news-tag">Wildberries</a>
+            <a href="#" class="news-tag">Ozon</a>
+            <a href="#" class="news-tag">API</a>
+            <a href="#" class="news-tag">YandexGPT</a>
+            <a href="#" class="news-tag">GigaChat</a>
+            <a href="#" class="news-tag">Обновления</a>
+            <a href="#" class="news-tag">Маркировка</a>
+            <a href="#" class="news-tag">Аналитика</a>
+          </div>
+        </div>
+        
+      </aside>
+      
+    </div>
+
+    <!-- Archive Section -->
+    <section class="archive-section" aria-labelledby="archive-heading">
+      <h2 id="archive-heading">📚 Архив новостей по годам</h2>
+      
+      <div class="archive-grid">
+        <div class="archive-item">
+          <h4>2026</h4>
+          <span>64 новости</span>
+        </div>
+        <div class="archive-item">
+          <h4>2025</h4>
+          <span>52 новости</span>
+        </div>
+        <div class="archive-item">
+          <h4>2024</h4>
+          <span>28 новостей</span>
+        </div>
+        <div class="archive-item">
+          <h4>2023</h4>
+          <span>12 новостей</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section" aria-labelledby="subscribe-heading">
+      <h2 id="subscribe-heading">🔔 Подпишитесь на новости</h2>
+      <p>Получайте важные обновления мира 1С и ИИ, анонсы новых функций и изменения в API маркетплейсов. Никакого спама — только важное.</p>
+      
+      <form class="subscribe-form" onsubmit="event.preventDefault(); alert('✅ Спасибо за подписку!');">
+        <input type="email" placeholder="Ваш email" required aria-label="Email для подписки на новости">
+        <button type="submit" class="btn-subscribe">
+          <span>🔔</span>
+          <span>Подписаться</span>
+        </button>
+      </form>
+      
+      <p class="subscribe-note">
+        <small>📧 Вы также можете следить за новостями в нашем <a href="/blog">блоге</a> или <a href="https://t.me/aiseller" target="_blank">Telegram-канале</a></small>
+      </p>
+    </section>
+
+  </div> <!-- /container -->
+
+  <!-- CTA Section -->
+  <section class="news-cta">
+    <div class="container">
+      <h2>Готовы автоматизировать работу с новостями?</h2>
+      <p>AI Seller автоматически отслеживает изменения в API маркетплейсов и адаптирует ваш модуль. Вы получаете уведомления только о критических изменениях.</p>
+      
+      <div class="cta-buttons">
+        <a href="/trial" class="btn-primary">
+          <span>🚀</span>
+          <span>Начать бесплатный триал</span>
+        </a>
+        <a href="/contact" class="btn-secondary">
+          <span>💬</span>
+          <span>Задать вопрос</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== NEWS FILTERING =====
+    const filterButtons = $$('.filter-btn');
+    const searchInput = $('#news-search');
+    const newsCards = $$('.news-card');
+    
+    function filterNews() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+      
+      newsCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const excerpt = card.querySelector('.news-excerpt').textContent.toLowerCase();
+        const category = card.dataset.category;
+        const tags = Array.from(card.querySelectorAll('.news-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+        
+        const matchesSearch = !searchTerm || 
+                             title.includes(searchTerm) || 
+                             excerpt.includes(searchTerm) || 
+                             tags.includes(searchTerm);
+        
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        
+        card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+      });
+    }
+    
+    // Filter buttons
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        filterNews();
+        
+        // Track filter usage
+        if (typeof gtag === 'function') {
+          gtag('event', 'news_filter', {
+            'event_category': 'engagement',
+            'event_label': 'news_page',
+            'filter': this.dataset.filter
+          });
+        }
+      });
+    });
+    
+    // Search input
+    searchInput?.addEventListener('input', filterNews);
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'blog',
+          'event_label': 'news_page',
+          'page_title': 'Новости'
+        });
+      }
+      
+      // Prefill filters from URL params
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('category')) {
+        const targetBtn = $(`.filter-btn[data-filter="${params.get('category')}"]`);
+        if (targetBtn) targetBtn.click();
+      }
+      if (params.get('search')) {
+        searchInput.value = params.get('search');
+        filterNews();
+      }
+      
+      // Track news card clicks
+      $$('.news-card h3 a').forEach(link => {
+        link.addEventListener('click', function() {
+          const category = this.closest('.news-card').dataset.category;
+          const title = this.textContent;
+          if (typeof gtag === 'function') {
+            gtag('event', 'news_click', {
+              'event_category': 'engagement',
+              'event_label': 'news_page',
+              'category': category,
+              'title': title
+            });
+          }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>
