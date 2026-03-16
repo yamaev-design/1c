@@ -986,11 +986,20 @@
      Usage: Include after opening <body> tag on all pages
 ====================================================== -->
 
+<!-- =====================================================
+HEADER COMPONENT — projmo.ru | AI Seller 1С
+Version: 1.4 | Last updated: 2026-03-17
+Usage: Include after opening <body> tag on all pages
+====================================================== -->
+<!-- =====================================================
+HEADER COMPONENT — projmo.ru | AI Seller 1С
+Version: 1.4 | Last updated: 2026-03-17
+Usage: Include after opening <body> tag on all pages
+====================================================== -->
 <header class="site-header" role="banner">
   <div class="header-container">
-    
     <!-- Logo -->
-    <a href="/" class="header-logo" aria-label="PROjmo — на главную">
+    <a href="/" class="header-logo" aria-label="PROjmo — AI Seller 1С — на главную">
       <svg width="180" height="50" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
         <title id="logoTitle">PROjmo — AI Seller 1С</title>
         <defs>
@@ -1005,29 +1014,42 @@
         <line x1="148" y1="28" x2="148" y2="48" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     </a>
-    
+
     <!-- Desktop Navigation -->
     <nav class="header-nav" role="navigation" aria-label="Основная навигация">
       <ul class="nav-list">
-        <li class="nav-item">
-          <a href="/product/features.html" class="nav-link">
+        <li class="nav-item has-dropdown">
+          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-features">
             <span class="nav-icon">✨</span>
             <span class="nav-text">Возможности</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/product/pricing.html" class="nav-link">
-            <span class="nav-icon">💰</span>
-            <span class="nav-text">Тарифы</span>
-          </a>
+            <span class="nav-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav-dropdown" id="dropdown-features" role="menu">
+            <li role="none"><a href="/product/features.html" role="menuitem">⚡ Основные функции</a></li>
+            <li role="none"><a href="/product/integrations.html" role="menuitem">🔗 Интеграции</a></li>
+            <li role="none"><a href="/product/security.html" role="menuitem">🔒 Безопасность</a></li>
+            <li role="none"><a href="/product/updates.html" role="menuitem">🔄 Обновления</a></li>
+          </ul>
         </li>
         <li class="nav-item has-dropdown">
-          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-pricing">
+            <span class="nav-icon">💰</span>
+            <span class="nav-text">Тарифы</span>
+            <span class="nav-arrow" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav-dropdown" id="dropdown-pricing" role="menu">
+            <li role="none"><a href="/pricing/index.html" role="menuitem">📋 Все тарифы</a></li>
+            <li role="none"><a href="/pricing/calculator.html" role="menuitem">🧮 Калькулятор</a></li>
+            <li role="none"><a href="/pricing/enterprise.html" role="menuitem">🏢 Для предприятия</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-solutions">
             <span class="nav-icon">📦</span>
             <span class="nav-text">Решения</span>
             <span class="nav-arrow" aria-hidden="true">▾</span>
           </button>
-          <ul class="nav-dropdown" role="menu">
+          <ul class="nav-dropdown" id="dropdown-solutions" role="menu">
             <li role="none"><a href="/solutions/clothing/" role="menuitem">👗 Для одежды</a></li>
             <li role="none"><a href="/solutions/electronics/" role="menuitem">🔌 Для электроники</a></li>
             <li role="none"><a href="/solutions/cosmetics/" role="menuitem">💄 Для косметики</a></li>
@@ -1043,12 +1065,12 @@
           </a>
         </li>
         <li class="nav-item has-dropdown">
-          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-blog">
             <span class="nav-icon">📚</span>
             <span class="nav-text">Блог</span>
             <span class="nav-arrow" aria-hidden="true">▾</span>
           </button>
-          <ul class="nav-dropdown" role="menu">
+          <ul class="nav-dropdown" id="dropdown-blog" role="menu">
             <li role="none"><a href="/blog/" role="menuitem">📝 Статьи</a></li>
             <li role="none"><a href="/blog/news.html" role="menuitem">📰 Новости 1С и ИИ</a></li>
             <li role="none"><a href="/docs/" role="menuitem">📖 Документация</a></li>
@@ -1062,10 +1084,10 @@
         </li>
       </ul>
     </nav>
-    
+
     <!-- Header Actions -->
     <div class="header-actions">
-      <a href="/blog/news.html" class="btn-icon" aria-label="Новости" title="Новости">
+      <a href="/blog/news.html" class="btn-icon" aria-label="Новости 1С и ИИ" title="Новости">
         <span class="icon">📰</span>
       </a>
       <a href="/trial" class="btn-trial">
@@ -1073,31 +1095,51 @@
         <span class="btn-text">Бесплатный триал</span>
       </a>
     </div>
-    
+
     <!-- Mobile Menu Toggle -->
     <button class="mobile-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="hamburger">
+      <span class="hamburger" aria-hidden="true">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </span>
     </button>
-    
   </div>
-  
+
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Мобильное меню">
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Мобильное меню" hidden>
     <div class="mobile-menu-container">
       <nav>
         <ul class="mobile-nav-list">
-          <li><a href="/product/features.html" class="mobile-nav-link">✨ Возможности</a></li>
-          <li><a href="/product/pricing.html" class="mobile-nav-link">💰 Тарифы</a></li>
           <li class="mobile-has-submenu">
-            <button class="mobile-nav-toggle" aria-expanded="false">
-              <span>📦 Решения</span>
-              <span class="mobile-arrow">▾</span>
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-features">
+              <span>✨ Возможности</span>
+              <span class="mobile-arrow" aria-hidden="true">▾</span>
             </button>
-            <ul class="mobile-submenu">
+            <ul class="mobile-submenu" id="mobile-features" hidden>
+              <li><a href="/product/features.html">⚡ Основные функции</a></li>
+              <li><a href="/product/integrations.html">🔗 Интеграции</a></li>
+              <li><a href="/product/security.html">🔒 Безопасность</a></li>
+              <li><a href="/product/updates.html">🔄 Обновления</a></li>
+            </ul>
+          </li>
+          <li class="mobile-has-submenu">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-pricing">
+              <span>💰 Тарифы</span>
+              <span class="mobile-arrow" aria-hidden="true">▾</span>
+            </button>
+            <ul class="mobile-submenu" id="mobile-pricing" hidden>
+              <li><a href="/pricing/index.html">📋 Все тарифы</a></li>
+              <li><a href="/pricing/calculator.html">🧮 Калькулятор</a></li>
+              <li><a href="/pricing/enterprise.html">🏢 Для предприятия</a></li>
+            </ul>
+          </li>
+          <li class="mobile-has-submenu">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-solutions">
+              <span>📦 Решения</span>
+              <span class="mobile-arrow" aria-hidden="true">▾</span>
+            </button>
+            <ul class="mobile-submenu" id="mobile-solutions" hidden>
               <li><a href="/solutions/clothing/">👗 Для одежды</a></li>
               <li><a href="/solutions/electronics/">🔌 Для электроники</a></li>
               <li><a href="/solutions/cosmetics/">💄 Для косметики</a></li>
@@ -1108,11 +1150,11 @@
           </li>
           <li><a href="/cases/" class="mobile-nav-link">🏆 Кейсы</a></li>
           <li class="mobile-has-submenu">
-            <button class="mobile-nav-toggle" aria-expanded="false">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-blog">
               <span>📚 Блог</span>
-              <span class="mobile-arrow">▾</span>
+              <span class="mobile-arrow" aria-hidden="true">▾</span>
             </button>
-            <ul class="mobile-submenu">
+            <ul class="mobile-submenu" id="mobile-blog" hidden>
               <li><a href="/blog/">📝 Статьи</a></li>
               <li><a href="/blog/news.html">📰 Новости 1С и ИИ</a></li>
               <li><a href="/docs/">📖 Документация</a></li>
@@ -1125,22 +1167,19 @@
       </nav>
     </div>
   </div>
-  
 </header>
 
 <!-- =====================================================
-     HEADER STYLES
+HEADER STYLES
 ====================================================== -->
 <style>
-/* ===== CSS Variables (add to your main CSS if not exists) ===== */
 :root {
   --header-height: 70px;
   --header-bg: #ffffff;
   --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --header-sticky-bg: rgba(255, 255, 255, 0.98);
+  --transition: all 0.2s ease;
 }
 
-/* ===== Header Base ===== */
 .site-header {
   background: var(--header-bg);
   box-shadow: var(--header-shadow);
@@ -1148,6 +1187,11 @@
   top: 0;
   z-index: 1000;
   height: var(--header-height);
+  transition: box-shadow 0.2s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
@@ -1161,7 +1205,6 @@
   gap: 24px;
 }
 
-/* ===== Logo ===== */
 .header-logo {
   flex-shrink: 0;
   display: flex;
@@ -1178,9 +1221,9 @@
 .header-logo svg {
   height: 45px;
   width: auto;
+  display: block;
 }
 
-/* ===== Desktop Navigation ===== */
 .header-nav {
   flex: 1;
   display: flex;
@@ -1217,34 +1260,39 @@
   font-family: inherit;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
   color: #1e40af;
   background: #f1f5f9;
   text-decoration: none;
+  outline: none;
 }
 
-.nav-link.active {
+.nav-link.active,
+.nav-link[aria-current="page"] {
   color: #1e40af;
   background: #e0f2fe;
+  font-weight: 600;
 }
 
 .nav-icon {
   font-size: 16px;
+  line-height: 1;
 }
 
 .nav-text {
   white-space: nowrap;
 }
 
-/* Dropdown */
 .nav-dropdown-toggle {
   position: relative;
 }
 
 .nav-arrow {
   font-size: 10px;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
   margin-left: 2px;
+  display: inline-block;
 }
 
 .nav-dropdown-toggle[aria-expanded="true"] .nav-arrow {
@@ -1264,7 +1312,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   list-style: none;
   z-index: 1001;
 }
@@ -1288,12 +1336,13 @@
   transition: var(--transition);
 }
 
-.nav-dropdown a:hover {
+.nav-dropdown a:hover,
+.nav-dropdown a:focus {
   background: #f1f5f9;
   color: #1e40af;
+  outline: none;
 }
 
-/* ===== Header Actions ===== */
 .header-actions {
   display: flex;
   align-items: center;
@@ -1314,11 +1363,14 @@
   transition: var(--transition);
   border: none;
   cursor: pointer;
+  color: inherit;
 }
 
-.btn-icon:hover {
+.btn-icon:hover,
+.btn-icon:focus {
   background: #e2e8f0;
   transform: translateY(-2px);
+  outline: none;
 }
 
 .btn-trial {
@@ -1337,16 +1389,14 @@
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.btn-trial:hover {
+.btn-trial:hover,
+.btn-trial:focus {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  outline: none;
+  color: white;
 }
 
-.btn-icon {
-  font-size: 16px;
-}
-
-/* ===== Mobile Toggle ===== */
 .mobile-toggle {
   display: none;
   width: 40px;
@@ -1356,6 +1406,8 @@
   cursor: pointer;
   padding: 8px;
   z-index: 1002;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger {
@@ -1372,7 +1424,7 @@
   height: 2px;
   background: #1e293b;
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
@@ -1387,7 +1439,6 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ===== Mobile Menu ===== */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -1400,20 +1451,14 @@
   overflow-y: auto;
 }
 
-.mobile-menu.active {
+.mobile-menu:not([hidden]) {
   display: block;
   animation: slideDown 0.3s ease;
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .mobile-menu-container {
@@ -1438,11 +1483,25 @@
   border-radius: 8px;
   transition: var(--transition);
   margin-bottom: 4px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.mobile-nav-link:hover {
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
   background: #f1f5f9;
   color: #1e40af;
+  outline: none;
+}
+
+.mobile-nav-link.active,
+.mobile-nav-link[aria-current="page"] {
+  background: #e0f2fe;
+  color: #1e40af;
+  font-weight: 600;
 }
 
 .mobile-nav-link.mobile-cta {
@@ -1450,10 +1509,14 @@
   color: white;
   justify-content: center;
   margin-top: 16px;
+  font-weight: 600;
 }
 
-.mobile-nav-link.mobile-cta:hover {
+.mobile-nav-link.mobile-cta:hover,
+.mobile-nav-link.mobile-cta:focus {
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  outline: none;
+  color: white;
 }
 
 .mobile-divider {
@@ -1462,7 +1525,6 @@
   margin: 16px 0;
 }
 
-/* Mobile Submenu */
 .mobile-has-submenu {
   margin-bottom: 4px;
 }
@@ -1481,10 +1543,13 @@
   cursor: pointer;
   border-radius: 8px;
   transition: var(--transition);
+  text-align: left;
 }
 
-.mobile-nav-toggle:hover {
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:focus {
   background: #f1f5f9;
+  outline: none;
 }
 
 .mobile-nav-toggle[aria-expanded="true"] {
@@ -1494,7 +1559,8 @@
 
 .mobile-arrow {
   font-size: 12px;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .mobile-nav-toggle[aria-expanded="true"] .mobile-arrow {
@@ -1505,10 +1571,9 @@
   list-style: none;
   padding: 0 0 0 16px;
   margin: 0;
-  display: none;
 }
 
-.mobile-submenu.active {
+.mobile-submenu:not([hidden]) {
   display: block;
   animation: fadeIn 0.2s ease;
 }
@@ -1530,57 +1595,31 @@
   transition: var(--transition);
 }
 
-.mobile-submenu a:hover {
+.mobile-submenu a:hover,
+.mobile-submenu a:focus {
   background: #f1f5f9;
   color: #1e40af;
+  outline: none;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .header-nav {
-    display: none;
-  }
-  
-  .header-actions .btn-trial .btn-text {
-    display: none;
-  }
-  
-  .mobile-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .header-nav { display: none; }
+  .header-actions .btn-trial .btn-text { display: none; }
+  .mobile-toggle { display: flex; }
 }
 
 @media (max-width: 768px) {
-  .header-container {
-    padding: 0 16px;
-  }
-  
-  .header-logo svg {
-    height: 40px;
-  }
-  
-  .header-actions .btn-icon {
-    display: none;
-  }
+  .header-container { padding: 0 16px; }
+  .header-logo svg { height: 40px; }
+  .header-actions .btn-icon { display: none; }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --header-height: 60px;
-  }
-  
-  .header-logo svg {
-    height: 35px;
-  }
-  
-  .mobile-menu-container {
-    padding: 16px;
-  }
+  :root { --header-height: 60px; }
+  .header-logo svg { height: 35px; }
+  .mobile-menu-container { padding: 16px; }
 }
 
-/* ===== Accessibility ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1594,161 +1633,116 @@
   outline-offset: 2px;
 }
 
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .site-header {
     background: #0f172a;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
-  
-  .nav-link {
-    color: #cbd5e1;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    color: #60a5fa;
-    background: #1e293b;
-  }
-  
-  .nav-dropdown {
-    background: #1e293b;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  }
-  
-  .nav-dropdown a {
-    color: #cbd5e1;
-  }
-  
-  .nav-dropdown a:hover {
-    background: #334155;
-    color: #60a5fa;
-  }
-  
-  .btn-icon {
-    background: #1e293b;
-    color: #cbd5e1;
-  }
-  
-  .btn-icon:hover {
-    background: #334155;
-  }
-  
-  .hamburger-line {
-    background: #cbd5e1;
-  }
-  
-  .mobile-menu {
-    background: #0f172a;
-  }
-  
-  .mobile-nav-link {
-    color: #cbd5e1;
-  }
-  
-  .mobile-nav-link:hover {
-    background: #1e293b;
-    color: #60a5fa;
-  }
-  
-  .mobile-nav-toggle {
-    color: #cbd5e1;
-  }
-  
-  .mobile-nav-toggle:hover {
-    background: #1e293b;
-  }
-  
-  .mobile-submenu a {
-    color: #94a3b8;
-  }
-  
-  .mobile-submenu a:hover {
-    background: #1e293b;
-    color: #60a5fa;
-  }
-  
-  .mobile-divider {
-    background: #334155;
-  }
+  .nav-link { color: #cbd5e1; }
+  .nav-link:hover, .nav-link.active { color: #60a5fa; background: #1e293b; }
+  .nav-dropdown { background: #1e293b; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); }
+  .nav-dropdown a { color: #cbd5e1; }
+  .nav-dropdown a:hover { background: #334155; color: #60a5fa; }
+  .btn-icon { background: #1e293b; color: #cbd5e1; }
+  .btn-icon:hover { background: #334155; }
+  .hamburger-line { background: #cbd5e1; }
+  .mobile-menu { background: #0f172a; }
+  .mobile-nav-link { color: #cbd5e1; }
+  .mobile-nav-link:hover { background: #1e293b; color: #60a5fa; }
+  .mobile-nav-toggle { color: #cbd5e1; }
+  .mobile-nav-toggle:hover { background: #1e293b; }
+  .mobile-submenu a { color: #94a3b8; }
+  .mobile-submenu a:hover { background: #1e293b; color: #60a5fa; }
+  .mobile-divider { background: #334155; }
 }
 
-/* Print styles */
 @media print {
-  .site-header {
-    position: static;
-    box-shadow: none;
-  }
-  
-  .header-actions,
-  .mobile-toggle {
-    display: none;
-  }
+  .site-header { position: static; box-shadow: none; }
+  .header-actions, .mobile-toggle { display: none; }
 }
 </style>
 
 <!-- =====================================================
-     HEADER JAVASCRIPT
+HEADER JAVASCRIPT
 ====================================================== -->
 <script>
 (function() {
   'use strict';
-  
-  // ===== Mobile Menu Toggle =====
+
+  const header = document.querySelector('.site-header');
   const mobileToggle = document.querySelector('.mobile-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileToggles = document.querySelectorAll('.mobile-nav-toggle');
-  
+  const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+  // ===== Mobile Menu Toggle =====
   function toggleMobileMenu() {
-    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-    mobileToggle.setAttribute('aria-expanded', !isExpanded);
-    mobileMenu.classList.toggle('active');
+    const isExpanded = mobileToggle?.getAttribute('aria-expanded') === 'true';
+    mobileToggle?.setAttribute('aria-expanded', String(!isExpanded));
+    mobileMenu?.classList.toggle('active');
+    mobileMenu?.toggleAttribute('hidden', isExpanded);
     document.body.style.overflow = isExpanded ? '' : 'hidden';
   }
-  
-  mobileToggle?.addEventListener('click', toggleMobileMenu);
-  
-  // Close mobile menu on link click
-  mobileMenu?.querySelectorAll('a[href]').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileToggle.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
+
+  function closeMobileMenu() {
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    mobileMenu?.classList.remove('active');
+    mobileMenu?.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    mobileToggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.nextElementSibling?.setAttribute('hidden', '');
     });
+    mobileToggle?.focus();
+  }
+
+  mobileToggle?.addEventListener('click', toggleMobileMenu);
+
+  mobileMenu?.querySelectorAll('a[href]:not(.mobile-nav-toggle)').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
   });
-  
-  // Mobile submenu toggles
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
+      e.preventDefault();
+      closeMobileMenu();
+    }
+  });
+
+  // ===== Mobile Submenu Toggles =====
   mobileToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
       const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
       const submenu = toggle.nextElementSibling;
       
-      // Close all other submenus
       mobileToggles.forEach(otherToggle => {
         if (otherToggle !== toggle) {
           otherToggle.setAttribute('aria-expanded', 'false');
-          otherToggle.nextElementSibling?.classList.remove('active');
+          otherToggle.nextElementSibling?.setAttribute('hidden', '');
         }
       });
       
-      toggle.setAttribute('aria-expanded', !isExpanded);
-      submenu?.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+      submenu?.toggleAttribute('hidden', !isExpanded);
     });
   });
-  
-  // Desktop dropdown keyboard navigation
-  const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
-  
+
+  // ===== Desktop Dropdown Keyboard Navigation =====
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !isExpanded);
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+      }
+      if (e.key === 'Escape') {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
       }
     });
-    
-    // Close dropdown on escape
+
     const dropdown = toggle.nextElementSibling;
     dropdown?.querySelectorAll('a').forEach(link => {
       link.addEventListener('keydown', (e) => {
@@ -1759,8 +1753,8 @@
       });
     });
   });
-  
-  // Close dropdowns when clicking outside
+
+  // Close desktop dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-item.has-dropdown')) {
       dropdownToggles.forEach(toggle => {
@@ -1768,33 +1762,50 @@
       });
     }
   });
+
+  // ===== Active Link Highlighting (FIXED LOGIC) =====
+  const currentPath = window.location.pathname.replace(/\/$/, '');
   
-  // Active link highlighting
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+  navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href && currentPath.includes(href) && href !== '/') {
+    if (!href) return;
+    
+    const normalizedHref = href.replace(/\/$/, '');
+    
+    if (normalizedHref !== '/' && (currentPath === normalizedHref || currentPath.startsWith(normalizedHref + '/'))) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else if (normalizedHref === '/' && (currentPath === '' || currentPath === '/')) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
-  
-  // Sticky header shadow on scroll
-  const header = document.querySelector('.site-header');
-  
+
+  // ===== Sticky Header Shadow on Scroll =====
   function handleScroll() {
+    if (!header) return;
     if (window.scrollY > 10) {
-      header?.classList.add('scrolled');
+      header.classList.add('scrolled');
     } else {
-      header?.classList.remove('scrolled');
+      header.classList.remove('scrolled');
     }
   }
-  
+
   window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial check
-  
+  handleScroll();
+
+  // ===== Prevent scroll jump on mobile menu =====
+  if (mobileMenu) {
+    mobileMenu.addEventListener('touchmove', (e) => {
+      if (e.target === mobileMenu) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
 })();
 </script>
-  <!-- Page Header -->
+<!-- Page Header -->
   <header class="page-header">
     <div class="container">
       <span class="badge">🚀 Обновления</span>
