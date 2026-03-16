@@ -1,1413 +1,1695 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Интеграции AI Seller 1С | 1С, Wildberries, Ozon, YandexGPT, GigaChat</title>
-    <meta name="description" content="Готовые интеграции с 1С:УТ, 1С:УНФ, Wildberries, Ozon, Яндекс.Маркет, YandexGPT, GigaChat. API, вебхуки, документация. Подключение за 15 минут.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/integrations.html">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Интеграции | AI Seller 1С">
-    <meta property="og:description" content="Подключайте 1С, маркетплейсы и ИИ-сервисы в единой экосистеме">
-    <meta property="og:type" content="product">
-    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/integrations.html">
-    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/integrations-og.jpg">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    
-    <!-- Critical CSS inline for faster FCP -->
-    <style>
-        /* Critical above-the-fold styles */
-        body{margin:0;padding:0;background-color:#0a0f1c;color:#fff;font-family:system-ui,-apple-system,sans-serif}
-        .fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}
-        .z-0{z-index:0}.z-50{z-index:50}.inset-0{top:0;right:0;bottom:0;left:0}
-        .w-full{width:100%}.h-20{height:5rem}.max-w-7xl{max-width:80rem}
-        .mx-auto{margin-left:auto;margin-right:auto}.px-4{padding-left:1rem;padding-right:1rem}
-        .flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
-        .gap-3{gap:0.75rem}.gap-1{gap:0.25rem}
-        .hidden{display:none}.block{display:block}
-        .text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}
-        .transition-colors{transition-property:color;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}
-        .hover\\:text-gold-400:hover{color:#fbbf24}
-        @keyframes float{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-20px) rotateX(5deg)}}
-        .animate-float{animation:float 6s ease-in-out infinite}
-        .animate-float-delayed{animation:float 6s ease-in-out 3s infinite}
-        .scroll-smooth{scroll-behavior:smooth}
-    </style>
-    
-    <!-- Tailwind CSS with production config -->
-    <script src="https://cdn.tailwindcss.com?cache=true"></script>
-    
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Lucide Icons - loaded asynchronously -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    
-    <link rel="stylesheet" href="../style.css">
-    
-    <!-- DNS Prefetch for analytics/external resources -->
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    
-    <!-- Breadcrumb Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Главная",
-          "item": "https://yamaev-design.github.io/1c/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Продукт",
-          "item": "https://yamaev-design.github.io/1c/product/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Интеграции",
-          "item": "https://yamaev-design.github.io/1c/product/integrations.html"
-        }
-      ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Интеграции AI Seller 1С | 1С, маркетплейсы, ИИ, маркировка</title>
+  <meta name="description" content="Полный список интеграций: 1С:УТ, УНФ, КА, ERP; Wildberries, Ozon, Яндекс.Маркет; YandexGPT, GigaChat; Честный ЗНАК, Меркурий. Быстрая настройка за 15 минут.">
+  <meta name="keywords" content="интеграции 1С, маркетплейсы, ИИ провайдеры, маркировка, Честный ЗНАК, Меркурий, API, автоматизация">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Интеграции | AI Seller 1С">
+  <meta property="og:description" content="Работаем с вашей инфраструктурой: 1С, маркетплейсы, ИИ, системы маркировки">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/product/integrations.html">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/integrations-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Интеграции | AI Seller 1С">
+  <meta name="twitter:description" content="Работаем с вашей инфраструктурой: 1С, маркетплейсы, ИИ, системы маркировки">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/product/integrations.html">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "Продукт", "item": "https://yamaev-design.github.io/1c/product/" },
+      { "@type": "ListItem", "position": 3, "name": "Интеграции", "item": "https://yamaev-design.github.io/1c/product/integrations.html" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Seller 1С",
+    "applicationCategory": "BusinessApplication",
+    "description": "Интеграции с 1С, маркетплейсами, ИИ-провайдерами и системами маркировки",
+    "offers": {
+      "@type": "Offer",
+      "price": "1490",
+      "priceCurrency": "RUB"
+    },
+    "softwareRequirements": "1C:Enterprise 8.3.20+",
+    "integrationWith": [
+      "1C:Enterprise",
+      "Wildberries",
+      "Ozon",
+      "Yandex.Market",
+      "YandexGPT",
+      "GigaChat",
+      "Честный ЗНАК",
+      "Меркурий"
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-enterprise: 0 25px 50px rgba(30, 58, 138, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
-    </script>
     
-    <!-- SoftwareApplication + API Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "AI Seller 1С: Интеграции",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "1C:Enterprise 8.3",
-      "offers": {
-        "@type": "Offer",
-        "price": "1490",
-        "priceCurrency": "RUB"
-      },
-      "integration": [
-        {
-          "@type": "Thing",
-          "name": "1C:Enterprise",
-          "description": "Полная совместимость с УТ, УНФ, КА, ERP"
-        },
-        {
-          "@type": "Thing",
-          "name": "Wildberries API",
-          "description": "Синхронизация товаров, остатков, заказов, отзывов"
-        },
-        {
-          "@type": "Thing",
-          "name": "Ozon API",
-          "description": "Полный цикл работы с карточками и аналитикой"
-        },
-        {
-          "@type": "Thing",
-          "name": "YandexGPT API",
-          "description": "Генерация контента через российские нейросети"
-        }
-      ]
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    </script>
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    code, pre {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: var(--color-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 72px 0 56px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .header-stat {
+      text-align: center;
+    }
+    
+    .header-stat .value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-accent-light);
+    }
+    
+    .header-stat .label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== INTEGRATION FILTERS ===== */
+    .integration-filters {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin: 0 0 48px 0;
+      border: 1px solid var(--color-border);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 10px 20px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+    }
+    
+    .filter-btn .count {
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+    
+    .filter-btn.active .count {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    /* ===== SEARCH BAR ===== */
+    .integration-search {
+      max-width: 600px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    
+    .integration-search input {
+      width: 100%;
+      padding: 14px 48px 14px 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      font-size: 15px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--color-bg-white);
+    }
+    
+    .integration-search input:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .integration-search .search-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+      font-size: 18px;
+      pointer-events: none;
+    }
+    
+    /* ===== INTEGRATION CATEGORIES ===== */
+    .integrations-section {
+      margin: 56px 0;
+    }
+    
+    .integrations-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .category-section {
+      margin-bottom: 64px;
+      scroll-margin-top: 100px;
+    }
+    
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--color-border);
+    }
+    
+    .category-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    
+    .category-header h3 {
+      font-size: 22px;
+      color: var(--color-text);
+      margin: 0;
+    }
+    
+    .category-description {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+      max-width: 800px;
+    }
+    
+    /* ===== INTEGRATION GRID ===== */
+    .integration-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    
+    .integration-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .integration-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .integration-card.new::before {
+      content: "✨ Новое";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      color: #78350f;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    .integration-card.popular::before {
+      content: "🔥 Популярное";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    .integration-logo {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+      text-align: center;
+    }
+    
+    .integration-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+      text-align: center;
+    }
+    
+    .integration-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      flex: 1;
+      line-height: 1.6;
+      text-align: center;
+    }
+    
+    .integration-meta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+    }
+    
+    .integration-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .integration-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    
+    .integration-tag {
+      padding: 4px 10px;
+      background: var(--color-bg);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    
+    .integration-tag.ready {
+      background: #d1fae5;
+      color: var(--color-success);
+    }
+    
+    .integration-tag.beta {
+      background: #fef3c7;
+      color: var(--color-warning);
+    }
+    
+    .integration-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .btn-setup {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-setup:hover {
+      gap: 10px;
+    }
+    
+    /* ===== ARCHITECTURE DIAGRAM ===== */
+    .architecture-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .architecture-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .architecture-diagram {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--color-bg);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--color-border);
+    }
+    
+    .architecture-layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .architecture-layer:last-child {
+      margin-bottom: 0;
+    }
+    
+    .layer-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    
+    .layer-content {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .layer-content h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .layer-content p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    .layer-connector {
+      text-align: center;
+      font-size: 20px;
+      color: var(--color-text-muted);
+      padding: 8px 0;
+    }
+    
+    /* ===== SETUP GUIDE ===== */
+    .setup-section {
+      margin: 56px 0;
+    }
+    
+    .setup-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .setup-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .setup-step {
+      text-align: center;
+      padding: 24px;
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+    
+    .setup-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    
+    .setup-step h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .setup-step p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    .setup-time {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #dbeafe;
+      color: var(--color-primary);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    
+    /* ===== API DOCUMENTATION ===== */
+    .api-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+    }
+    
+    .api-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .api-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    
+    .api-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--color-border);
+    }
+    
+    .api-card h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .api-card code {
+      display: block;
+      background: var(--color-bg);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      margin: 12px 0;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+    
+    .api-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .api-card li {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .api-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+    
+    .btn-api-docs {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 16px;
+      transition: var(--transition);
+    }
+    
+    .btn-api-docs:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+    }
+    
+    /* ===== WEBHOOKS SECTION ===== */
+    .webhooks-section {
+      margin: 56px 0;
+    }
+    
+    .webhooks-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .webhooks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    
+    .webhook-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    
+    .webhook-card h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .webhook-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+    
+    .webhook-example {
+      background: var(--color-bg);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+    
+    .webhook-events {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .webhook-event {
+      padding: 4px 10px;
+      background: #eff6ff;
+      color: var(--color-primary);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .faq-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      border-color: var(--color-primary-light);
+    }
+    
+    .faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .faq-item summary::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: var(--color-text-muted);
+    }
+    
+    .faq-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px 24px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    
+    .faq-answer a {
+      font-weight: 500;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .integrations-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 56px 0;
+      color: white;
+    }
+    
+    .integrations-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .integrations-cta p {
+      opacity: 0.95;
+      margin-bottom: 32px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .architecture-section,
+      .api-section,
+      .faq-section {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .integration-grid,
+      .setup-steps,
+      .api-grid,
+      .webhooks-grid {
+        grid-template-columns: 1fr;
+      }
+      .architecture-layer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+    
+    /* Hidden state for filtered items */
+    .integration-card[style*="display: none"] {
+      display: none !important;
+    }
+  </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+<body>
 
-    <!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">🔗 Интеграции</span>
+      <h1>Работаем с вашей инфраструктурой</h1>
+      <p class="subtitle">Подключаем 1С, маркетплейсы, ИИ-провайдеров и системы маркировки за 15 минут. Без промежуточного ПО, без сложных настроек.</p>
+      
+      <div class="header-stats">
+        <div class="header-stat">
+          <span class="value">15+</span>
+          <span class="label">интеграций</span>
+        </div>
+        <div class="header-stat">
+          <span class="value">15 мин</span>
+          <span class="label">на настройку</span>
+        </div>
+        <div class="header-stat">
+          <span class="value">100%</span>
+          <span class="label">в 1С</span>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="../cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
-        </div>
+  <div class="container">
+    
+    <!-- Search & Filters -->
+    <div class="integration-search">
+      <input type="search" id="integration-search" placeholder="🔍 Поиск интеграций (например: 1С, Wildberries, YandexGPT)..." aria-label="Поиск интеграций">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+    </div>
+    
+    <nav class="integration-filters" aria-label="Фильтрация интеграций">
+      <button class="filter-btn active" data-filter="all">
+        <span>📋</span> Все <span class="count">15</span>
+      </button>
+      <button class="filter-btn" data-filter="1c">
+        <span>🧩</span> 1С <span class="count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="marketplaces">
+        <span>🛒</span> Маркетплейсы <span class="count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="ai">
+        <span>🤖</span> ИИ-провайдеры <span class="count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="marking">
+        <span>🏷️</span> Маркировка <span class="count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="other">
+        <span>🔌</span> Другое <span class="count">2</span>
+      </button>
     </nav>
 
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <h1>Интеграции AI Seller 1С</h1>
-                <p class="hero-subtitle">Работаем со всеми популярными платформами и сервисами для e-commerce</p>
-            </div>
-        </section>
-
-        <!-- Якорная навигация -->
-        <nav class="integrations-nav sticky top-24 z-40 bg-navy-800/90 backdrop-blur-md border border-white/10 rounded-xl p-6 mb-12 max-w-7xl mx-auto">
-            <h2 class="text-lg font-semibold mb-4 text-gold-400">Навигация по интеграциям</h2>
-            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <li><a href="#1c-configs" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🗄️</span> Конфигурации 1С</a></li>
-                <li><a href="#marketplaces" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🛒</span> Маркетплейсы</a></li>
-                <li><a href="#ai-providers" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🤖</span> ИИ-провайдеры</a></li>
-                <li><a href="#other-services" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔗</span> Другие сервисы</a></li>
-                <li><a href="#developers" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔧</span> Для разработчиков</a></li>
-                <li><a href="#security" class="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors"><span class="text-xl">🔐</span> Безопасность</a></li>
-            </ul>
-        </nav>
-
-        <!-- Схема архитектуры -->
-        <section class="architecture-section py-16">
-            <div class="container max-w-7xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Как работает интеграция</h2>
-                
-                <div class="diagram-container bg-navy-800/50 border border-white/10 rounded-2xl p-8 mb-8">
-                    <div class="diagram-interactive flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                        <div class="node node-1c bg-blue-600/20 border-2 border-blue-500 rounded-xl p-6 text-center min-w-[180px]">
-                            <div class="text-4xl mb-2">🏢</div>
-                            <div class="font-semibold">1С:Предприятие</div>
-                            <div class="text-xs text-gray-400 mt-1">УТ, УНФ, КА, ERP</div>
-                        </div>
-                        
-                        <div class="connector flex flex-col items-center">
-                            <div class="text-gold-400 text-2xl">⇄</div>
-                            <div class="text-xs text-gray-400 mt-1">HTTPS + JSON</div>
-                            <div class="text-xs text-green-400">TLS 1.3</div>
-                        </div>
-                        
-                        <div class="node node-core bg-gradient-to-br from-gold-400/20 to-gold-600/20 border-2 border-gold-500 rounded-xl p-6 text-center min-w-[180px]">
-                            <div class="text-4xl mb-2">🧠</div>
-                            <div class="font-semibold">AI Seller Core</div>
-                            <div class="text-xs text-gray-400 mt-1">Модуль обработки</div>
-                        </div>
-                        
-                        <div class="connector flex flex-col items-center">
-                            <div class="text-gold-400 text-2xl">⇄</div>
-                            <div class="text-xs text-gray-400 mt-1">API Requests</div>
-                        </div>
-                        
-                        <div class="nodes-group flex flex-col gap-4">
-                            <div class="node node-marketplace bg-purple-600/20 border-2 border-purple-500 rounded-xl p-4 text-center min-w-[150px]">
-                                <div class="text-2xl mb-1">🛒</div>
-                                <div class="font-semibold text-sm">Маркетплейсы</div>
-                                <div class="text-xs text-gray-400 mt-1">WB, Ozon, YM</div>
-                            </div>
-                            <div class="node node-ai bg-green-600/20 border-2 border-green-500 rounded-xl p-4 text-center min-w-[150px]">
-                                <div class="text-2xl mb-1">🤖</div>
-                                <div class="font-semibold text-sm">ИИ-сервисы</div>
-                                <div class="text-xs text-gray-400 mt-1">YandexGPT, GigaChat</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="diagram-legend flex flex-wrap justify-center gap-6">
-                    <div class="legend-item flex items-center gap-2">
-                        <span class="legend-color w-4 h-4 rounded bg-green-500/50 border border-green-400"></span>
-                        <span class="text-sm text-gray-300">Зашифрованное соединение (TLS 1.3)</span>
-                    </div>
-                    <div class="legend-item flex items-center gap-2">
-                        <span class="legend-color w-4 h-4 rounded bg-blue-500/20 border border-blue-400"></span>
-                        <span class="text-sm text-gray-300">Данные остаются в контуре 1С</span>
-                    </div>
-                    <div class="legend-item flex items-center gap-2">
-                        <span class="legend-color w-4 h-4 rounded bg-purple-500/20 border border-purple-400"></span>
-                        <span class="text-sm text-gray-300">Облачная обработка (публичные данные)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="integrations-section">
-            <div class="container max-w-7xl mx-auto px-4">
-                <h2 id="1c-configs" class="text-2xl font-bold mb-6">🗄️ Интеграция с 1С</h2>
-                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">📊</div>
-                            <div>
-                                <h3 class="font-semibold">1С:Управление торговлей</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Версии 10.3, 11.x</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Полная совместимость</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Встраивание в карточку товара</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Работа через обработки</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">📈</div>
-                            <div>
-                                <h3 class="font-semibold">1С:УНФ</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Все актуальные версии</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Готовые обработки</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Интеграция в документы</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Отчёты в интерфейсе УНФ</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">⚙️</div>
-                            <div>
-                                <h3 class="font-semibold">1С:Комплексная автоматизация</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Версии 2.x</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Работа с КА 2.4, 2.5</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Синхронизация с УТ</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Единое инфопространство</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">🏭</div>
-                            <div>
-                                <h3 class="font-semibold">1С:ERP</h3>
-                                <span class="status-badge coming text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full">🔜 По запросу</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Индивидуально</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Кастомная интеграция</li>
-                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Адаптация под процессы</li>
-                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Выделенная поддержка</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h2 id="marketplaces" class="text-2xl font-bold mb-6">🛒 Маркетплейсы</h2>
-                
-                <!-- Wildberries Card - Enhanced -->
-                <div id="wildberries" class="integration-card-enhanced bg-gradient-to-br from-navy-800 to-navy-900 border border-purple-500/30 rounded-2xl p-8 mb-8 hover:border-purple-500/60 transition-all">
-                    <div class="integration-header flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-                        <div class="flex items-center gap-4">
-                            <div class="integration-logo w-16 h-16 bg-purple-600/20 rounded-xl flex items-center justify-center">
-                                <span class="text-3xl">🟣</span>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold">Wildberries</h3>
-                                <span class="status-badge available text-sm px-3 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <a href="#wb-setup" class="setup-link text-gold-400 hover:text-gold-300 font-medium">Настроить →</a>
-                    </div>
-                    
-                    <div class="integration-content grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-semibold mb-3 text-gold-400">Возможности</h4>
-                            <ul class="capabilities space-y-2">
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Синхронизация номенклатуры (двусторонняя)</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Обновление остатков в реальном времени</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Загрузка заказов и статусов доставки</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Импорт отзывов и вопросов для ИИ-обработки</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Автоматическое обновление цен с учётом маржи</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Аналитика продаж и рейтингов карточек</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-3 text-gold-400">Техническая информация</h4>
-                            <dl class="tech-grid space-y-2 text-sm">
-                                <div class="flex justify-between"><dt class="text-gray-400">API версия:</dt><dd class="text-white">WB API v3.0</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Аутентификация:</dt><dd class="text-white">API-ключ + OAuth 2.0</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Синхронизация:</dt><dd class="text-white">Остатки: 5 мин | Заказы: realtime</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Лимиты:</dt><dd class="text-white">Авто-соблюдение лимитов WB</dd></div>
-                            </dl>
-                            
-                            <div class="integration-status mt-6 pt-4 border-t border-white/10">
-                                <div class="uptime flex items-center gap-2">
-                                    <span class="status-dot w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                    <span class="text-sm text-gray-300">Статус API: <strong class="text-green-400">Работает</strong> (99.9% uptime)</span>
-                                </div>
-                                <a href="https://status.aiseller.ru" target="_blank" class="status-link text-xs text-gold-400 hover:text-gold-300 mt-2 inline-block">Статус-страница →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Quick Setup -->
-                    <div id="wb-setup" class="quick-setup mt-8 pt-6 border-t border-white/10">
-                        <h4 class="font-semibold mb-4 text-gold-400">Подключение за 3 шага</h4>
-                        <ol class="setup-steps space-y-3">
-                            <li class="flex items-start gap-3">
-                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                                <div>
-                                    <strong class="text-white">Получите API-ключ в ЛК селлера</strong>
-                                    <p class="text-sm text-gray-400">Настройки → Доступ к API → Создать ключ</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                                <div>
-                                    <strong class="text-white">Введите ключ в модуле 1С</strong>
-                                    <p class="text-sm text-gray-400">Раздел «Интеграции» → Wildberries → Подключить</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="step-num w-6 h-6 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                                <div>
-                                    <strong class="text-white">Выберите параметры синхронизации</strong>
-                                    <p class="text-sm text-gray-400">Остатки, цены, заказы — настройте под ваш процесс</p>
-                                </div>
-                            </li>
-                        </ol>
-                        <a href="/docs/integrations/wildberries.html" class="docs-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">📚 Полная инструкция в базе знаний</a>
-                    </div>
-                </div>
-                
-                <!-- Ozon Card - Enhanced -->
-                <div id="ozon" class="integration-card-enhanced bg-gradient-to-br from-navy-800 to-navy-900 border border-blue-500/30 rounded-2xl p-8 mb-8 hover:border-blue-500/60 transition-all">
-                    <div class="integration-header flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-                        <div class="flex items-center gap-4">
-                            <div class="integration-logo w-16 h-16 bg-blue-600/20 rounded-xl flex items-center justify-center">
-                                <span class="text-3xl">🔵</span>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold">Ozon</h3>
-                                <span class="status-badge available text-sm px-3 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <a href="#ozon-setup" class="setup-link text-gold-400 hover:text-gold-300 font-medium">Настроить →</a>
-                    </div>
-                    
-                    <div class="integration-content grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="font-semibold mb-3 text-gold-400">Возможности</h4>
-                            <ul class="capabilities space-y-2">
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Full API интеграция</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Управление поставками</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Аналитика продаж</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Работа с FBO и FBS</span></li>
-                                <li class="flex items-start gap-2"><span class="check text-green-400">✓</span> <span>Импорт отзывов для ИИ-ответов</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-3 text-gold-400">Техническая информация</h4>
-                            <dl class="tech-grid space-y-2 text-sm">
-                                <div class="flex justify-between"><dt class="text-gray-400">API версия:</dt><dd class="text-white">Ozon API v3</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Аутентификация:</dt><dd class="text-white">Client-ID + API-Key</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Синхронизация:</dt><dd class="text-white">Realtime</dd></div>
-                                <div class="flex justify-between"><dt class="text-gray-400">Лимиты:</dt><dd class="text-white">Авто-контроль запросов</dd></div>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Other Marketplaces Grid -->
-                <div class="grid md:grid-cols-2 gap-6 mb-12">
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">🟡</div>
-                            <div>
-                                <h3 class="font-semibold">Яндекс.Маркет</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Доступно</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">API интеграция</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Выгрузка товаров</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Обновление цен и остатков</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Заказ наряды</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Отзывы и рейтинги</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">🟠</div>
-                            <div>
-                                <h3 class="font-semibold">Мегамаркет</h3>
-                                <span class="status-badge coming text-xs px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded-full">🔜 В разработке</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Планируется Q2 2024</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Early access для тарифа Профи</li>
-                            <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Базовая синхронизация</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Таблица сравнения интеграций -->
-                <div class="comparison-section mb-12">
-                    <h2 class="text-2xl font-bold mb-6">Сравните возможности интеграций</h2>
-                    
-                    <div class="comparison-table-wrapper overflow-x-auto">
-                        <table class="integrations-table w-full border-collapse bg-navy-800/30 rounded-xl overflow-hidden">
-                            <thead>
-                                <tr class="bg-navy-900">
-                                    <th class="text-left p-4 font-semibold">Функция</th>
-                                    <th class="text-center p-4 font-semibold">Wildberries</th>
-                                    <th class="text-center p-4 font-semibold">Ozon</th>
-                                    <th class="text-center p-4 font-semibold">Яндекс.Маркет</th>
-                                    <th class="text-center p-4 font-semibold">Мегамаркет</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Синхронизация товаров</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-yellow-400">🟡 Частично</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Обновление остатков</td>
-                                    <td class="text-center p-4 text-green-400">✅ Realtime</td>
-                                    <td class="text-center p-4 text-green-400">✅ Realtime</td>
-                                    <td class="text-center p-4 text-green-400">✅ 5 мин</td>
-                                    <td class="text-center p-4 text-red-400">❌</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Загрузка заказов</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Импорт отзывов</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-yellow-400">🟡 Только вопросы</td>
-                                    <td class="text-center p-4 text-red-400">❌</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Авто-ответы через ИИ</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-blue-400">🔜 Скоро</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Динамическое ценообразование</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-yellow-400">🟡 Бета</td>
-                                    <td class="text-center p-4 text-red-400">❌</td>
-                                </tr>
-                                <tr class="border-t border-white/5">
-                                    <td class="p-4 text-gray-300">Аналитика в 1С</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-green-400">✅</td>
-                                    <td class="text-center p-4 text-blue-400">🔜 Скоро</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="table-legend flex flex-wrap gap-4 mt-4 text-sm">
-                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-green-400"></span> Полная поддержка</span>
-                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-yellow-400"></span> Частично / Бета</span>
-                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-blue-400"></span> В разработке</span>
-                        <span class="legend-item flex items-center gap-2"><span class="dot w-3 h-3 rounded-full bg-red-400"></span> Не поддерживается</span>
-                    </div>
-                </div>
-
-                <h2 id="ai-providers" class="text-2xl font-bold mb-6">☁️ ИИ-провайдеры</h2>
-                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">🟡</div>
-                            <div>
-                                <h3 class="font-semibold">YandexGPT</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Основной</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Основной провайдер</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Соответствие 152-ФЗ</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Серверы в России</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Высокое качество генерации</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-header flex items-center gap-3 mb-4">
-                            <div class="integration-icon text-3xl">🟢</div>
-                            <div>
-                                <h3 class="font-semibold">GigaChat (Sber)</h3>
-                                <span class="status-badge available text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full">✅ Альтернатива</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-400 mb-3">Альтернативный провайдер</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Резервный канал</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Соответствие 152-ФЗ</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Дополнительные модели</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h2 id="other-services" class="text-2xl font-bold mb-6">📦 Дополнительные сервисы</h2>
-                <div class="integration-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-icon text-3xl mb-3">📧</div>
-                        <h3 class="font-semibold mb-2">Email уведомления</h3>
-                        <p class="text-sm text-gray-400 mb-3">SMTP / SendPulse / UniSender</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Оповещения о событиях</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Рассылки клиентам</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-icon text-3xl mb-3">💬</div>
-                        <h3 class="font-semibold mb-2">Messengers</h3>
-                        <p class="text-sm text-gray-400 mb-3">Telegram / WhatsApp</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Уведомления менеджерам</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Оповещения о критических событиях</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-icon text-3xl mb-3">📊</div>
-                        <h3 class="font-semibold mb-2">BI-системы</h3>
-                        <p class="text-sm text-gray-400 mb-3">Power BI / Tableau / DataLens</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Экспорт данных</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Готовые дашборды</li>
-                        </ul>
-                    </div>
-                    <div class="integration-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all">
-                        <div class="integration-icon text-3xl mb-3">🔌</div>
-                        <h3 class="font-semibold mb-2">REST API</h3>
-                        <p class="text-sm text-gray-400 mb-3">Для разработчиков</p>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Полный доступ к данным</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Webhooks</li>
-                            <li class="flex items-start gap-2"><span class="text-green-400">✓</span> Документация</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Раздел для разработчиков -->
-                <section id="developers" class="developer-section py-12 border-t border-white/10">
-                    <h2 class="text-2xl font-bold mb-6">🔧 Для разработчиков и интеграторов</h2>
-                    
-                    <div class="dev-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="dev-card bg-navy-900 border-l-4 border-blue-500 rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-2">📡 REST API</h3>
-                            <p class="text-sm text-gray-400 mb-3">Управляйте интеграциями программно через наш API</p>
-                            <ul class="text-sm text-gray-300 space-y-1">
-                                <li>Base URL: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">api.aiseller.ru/v1</code></li>
-                                <li>Аутентификация: Bearer Token</li>
-                                <li>Формат: JSON</li>
-                                <li>Rate limit: 1000 запросов/час</li>
-                            </ul>
-                            <a href="/docs/api" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Документация API →</a>
-                        </div>
-                        
-                        <div class="dev-card bg-navy-900 border-l-4 border-purple-500 rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-2">🪝 Webhooks</h3>
-                            <p class="text-sm text-gray-400 mb-3">Получайте уведомления о событиях в реальном времени</p>
-                            <ul class="text-sm text-gray-300 space-y-1">
-                                <li>События: заказ, остаток, отзыв</li>
-                                <li>Доставка: HTTPS POST + HMAC</li>
-                                <li>Повторные попытки: экспоненциальный бэк-офф</li>
-                            </ul>
-                            <a href="/docs/webhooks" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Настройка вебхуков →</a>
-                        </div>
-                        
-                        <div class="dev-card bg-navy-900 border-l-4 border-green-500 rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-2">📦 SDK и примеры</h3>
-                            <p class="text-sm text-gray-400 mb-3">Готовые библиотеки для быстрой интеграции</p>
-                            <ul class="text-sm text-gray-300 space-y-1">
-                                <li>1С: встроенный модуль</li>
-                                <li>Python: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">pip install aiseller-sdk</code></li>
-                                <li>Node.js: <code class="bg-navy-800 px-2 py-0.5 rounded text-gold-400">npm install @aiseller/sdk</code></li>
-                            </ul>
-                            <a href="https://github.com/aiseller" target="_blank" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">GitHub →</a>
-                        </div>
-                        
-                        <div class="dev-card bg-navy-900 border-l-4 border-gold-500 rounded-xl p-6">
-                            <h3 class="text-lg font-semibold mb-2">🧪 Песочница</h3>
-                            <p class="text-sm text-gray-400 mb-3">Тестируйте интеграции без риска для боевых данных</p>
-                            <ul class="text-sm text-gray-300 space-y-1">
-                                <li>Тестовые аккаунты МП</li>
-                                <li>Mock-данные для ИИ</li>
-                                <li>Логирование всех запросов</li>
-                                <li>Бесплатно для всех тарифов</li>
-                            </ul>
-                            <a href="/sandbox" class="dev-link text-sm text-blue-400 hover:text-blue-300 mt-4 inline-block">Открыть песочницу →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Пример кода -->
-                    <div class="code-example bg-navy-900 rounded-xl p-6">
-                        <h4 class="font-semibold mb-4">Пример: получение списка товаров из Wildberries</h4>
-                        
-                        <div class="code-tabs flex gap-2 mb-4">
-                            <button class="tab active bg-gold-500 text-navy-900 px-4 py-2 rounded-lg text-sm font-medium">cURL</button>
-                            <button class="tab bg-navy-800 text-gray-400 px-4 py-2 rounded-lg text-sm">Python</button>
-                            <button class="tab bg-navy-800 text-gray-400 px-4 py-2 rounded-lg text-sm">1С</button>
-                        </div>
-                        
-                        <pre class="code-block bg-navy-950 rounded-lg p-4 overflow-x-auto text-sm"><code class="language-curl text-gray-300"># Запрос к нашему API (прокси к WB)
-curl -X GET https://api.aiseller.ru/v1/marketplaces/wildberries/products \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "X-1C-Config: UT11" \
-  -G \
-  -d "limit=50" \
-  -d "offset=0"
-
-# Ответ:
-{
-  "products": [
-    {
-      "id": "12345678",
-      "name": "Футболка мужская",
-      "wb_id": "987654321",
-      "price": 1490,
-      "stock": 42,
-      "rating": 4.8,
-      "reviews_count": 156
-    }
-  ],
-  "pagination": {
-    "total": 234,
-    "limit": 50,
-    "offset": 0
-  }
-}</code></pre>
-                    </div>
-                </section>
-
-                <!-- Блок безопасности -->
-                <section id="security" class="security-section py-12 border-t border-white/10">
-                    <h2 class="text-2xl font-bold mb-6">🔐 Безопасность и соответствие требованиям</h2>
-                    
-                    <div class="security-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
-                            <div class="security-icon text-4xl mb-3">🔒</div>
-                            <h3 class="font-semibold mb-2">Шифрование данных</h3>
-                            <p class="text-sm text-gray-400">TLS 1.3 для всех соединений. API-ключи хранятся в зашифрованном виде.</p>
-                        </div>
-                        
-                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
-                            <div class="security-icon text-4xl mb-3">🏢</div>
-                            <h3 class="font-semibold mb-2">152-ФЗ и локализация</h3>
-                            <p class="text-sm text-gray-400">Персональные данные обрабатываются на серверах в РФ. Соответствие требованиям регуляторов.</p>
-                        </div>
-                        
-                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
-                            <div class="security-icon text-4xl mb-3">🗂️</div>
-                            <h3 class="font-semibold mb-2">Разделение данных</h3>
-                            <p class="text-sm text-gray-400">Чувствительные данные (себестоимость, маржа) не покидают контур вашей 1С. В облако передаются только публичные данные.</p>
-                        </div>
-                        
-                        <div class="security-item bg-navy-800/50 border border-white/10 rounded-xl p-6 text-center">
-                            <div class="security-icon text-4xl mb-3">♻️</div>
-                            <h3 class="font-semibold mb-2">Резервное копирование</h3>
-                            <p class="text-sm text-gray-400">Ежедневные бэкапы конфигураций. Возможность восстановления за 15 минут.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="certifications text-center">
-                        <h4 class="font-semibold mb-4">Сертификаты и соответствие:</h4>
-                        <div class="cert-logos flex flex-wrap justify-center gap-6">
-                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
-                                <span class="text-sm text-gray-300">152-ФЗ</span>
-                            </div>
-                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
-                                <span class="text-sm text-gray-300">ГОСТ Р 57580</span>
-                            </div>
-                            <div class="cert-item bg-navy-800/50 border border-white/10 rounded-lg px-6 py-3">
-                                <span class="text-sm text-gray-300">1С:Партнёр</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Не нашли нужную интеграцию?</h2>
-                <p>Мы постоянно расширяем список поддерживаемых сервисов. Напишите нам, и мы рассмотрим вашу заявку.</p>
-                <a href="../about/contacts.html" class="btn btn-primary btn-large">Связаться с нами</a>
-            </div>
-        </section>
+    <!-- 1C Integrations Category -->
+    <section id="1c" class="integrations-section category-section">
+      <div class="category-header">
+        <span class="category-icon" aria-hidden="true">🧩</span>
+        <h3>Интеграции с 1С:Предприятие</h3>
+      </div>
+      <p class="category-description">Нативная работа внутри 1С: не нужно переключаться между системами. Полная совместимость с популярными конфигурациями.</p>
+      
+      <div class="integration-grid">
         
-        <!-- Связанные страницы -->
-        <section class="related-pages py-12">
-            <div class="container max-w-7xl mx-auto px-4">
-                <h2 class="text-2xl font-bold mb-6">Полезные материалы</h2>
-                
-                <div class="related-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <a href="/docs/integrations/setup-guide.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
-                        <h3 class="font-semibold mb-2">📚 Гайд по подключению</h3>
-                        <p class="text-sm text-gray-400">Пошаговая инструкция: настройка всех интеграций за 30 минут</p>
-                    </a>
-                    
-                    <a href="/docs/api" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
-                        <h3 class="font-semibold mb-2">📡 Документация API</h3>
-                        <p class="text-sm text-gray-400">Полное описание endpoints, параметров и примеров кода</p>
-                    </a>
-                    
-                    <a href="/cases/integration-success.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
-                        <h3 class="font-semibold mb-2">🏆 Кейс: интеграция за 1 день</h3>
-                        <p class="text-sm text-gray-400">Как магазин электроники подключил 3 площадки за 24 часа</p>
-                    </a>
-                    
-                    <a href="/support/integration-help.html" class="related-card bg-navy-800/50 border border-white/10 rounded-xl p-6 hover:border-gold-500/50 transition-all block">
-                        <h3 class="font-semibold mb-2">💬 Помощь с интеграцией</h3>
-                        <p class="text-sm text-gray-400">Чат с инженером, удалённая настройка, видео-консультация</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <article class="integration-card popular" data-category="1c">
+          <span class="integration-logo" aria-hidden="true">🧩</span>
+          <h4>1С:Управление торговлей 11.5+</h4>
+          <p>Полная интеграция с УТ 11.5: товары, остатки, цены, заказы, контрагенты. Двусторонний обмен в реальном времени.</p>
+          <div class="integration-meta">
+            <span>⚡ Real-time</span>
+            <span>🔄 Двусторонний</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/1c-ut" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="1c">
+          <span class="integration-logo" aria-hidden="true">🧩</span>
+          <h4>1С:УНФ 1.6+</h4>
+          <p>Интеграция с УНФ для малого бизнеса: товары, заказы, контрагенты, взаиморасчёты. Оптимизировано для скорости.</p>
+          <div class="integration-meta">
+            <span>⚡ Real-time</span>
+            <span>🎯 Для МСБ</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/1c-unf" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="1c">
+          <span class="integration-logo" aria-hidden="true">🧩</span>
+          <h4>1С:Комплексная автоматизация 2.4+</h4>
+          <p>Поддержка КА 2.4+: управление производством, складом, продажами. Интеграция через расширенные возможности платформы.</p>
+          <div class="integration-meta">
+            <span>⚙️ Расширенная</span>
+            <span>🏭 Производство</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/1c-ka" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card new" data-category="1c">
+          <span class="integration-logo" aria-hidden="true">🧩</span>
+          <h4>1С:ERP 2.5+</h4>
+          <p>Интеграция с корпоративной версией: сложные структуры, много филиалов, распределённые базы. Поддержка кластеризации.</p>
+          <div class="integration-meta">
+            <span>🏢 Enterprise</span>
+            <span>🌐 Распределённые</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag beta">🧪 Beta</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/1c-erp" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
 
-    
+    <!-- Marketplaces Category -->
+    <section id="marketplaces" class="integrations-section category-section">
+      <div class="category-header">
+        <span class="category-icon" aria-hidden="true">🛒</span>
+        <h3>Маркетплейсы</h3>
+      </div>
+      <p class="category-description">Автоматический обмен данными с популярными площадками: выгрузка товаров, обновление цен/остатков, получение заказов и отзывов.</p>
+      
+      <div class="integration-grid">
+        
+        <article class="integration-card popular" data-category="marketplaces">
+          <span class="integration-logo" aria-hidden="true">🟣</span>
+          <h4>Wildberries</h4>
+          <p>Полная интеграция с API WB: товары, цены, остатки, заказы, отзывы, аналитика. Поддержка FBS и FBO.</p>
+          <div class="integration-meta">
+            <span>📦 FBS/FBO</span>
+            <span>📊 Аналитика</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/wildberries" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="marketplaces">
+          <span class="integration-logo" aria-hidden="true">🔵</span>
+          <h4>Ozon</h4>
+          <p>Интеграция с Ozon Seller API: карточки, цены, остатки, заказы, отзывы, отчёты. Поддержка всех схем работы.</p>
+          <div class="integration-meta">
+            <span>📦 FBS/FBO/rFBS</span>
+            <span>📈 Отчёты</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/ozon" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="marketplaces">
+          <span class="integration-logo" aria-hidden="true">🟡</span>
+          <h4>Яндекс.Маркет</h4>
+          <p>Работа с Маркетом: выгрузка товаров, управление ценами, обработка заказов, отзывы. Поддержка ДБС и ФБУ.</p>
+          <div class="integration-meta">
+            <span>📦 ДБС/ФБУ</span>
+            <span>💳 Оплата</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/yandex-market" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card new" data-category="marketplaces">
+          <span class="integration-logo" aria-hidden="true">🟢</span>
+          <h4>СберМегаМаркет</h4>
+          <p>Интеграция со СберМегаМаркет: товары, цены, остатки, заказы. Поддержка экосистемы Сбера.</p>
+          <div class="integration-meta">
+            <span>🏦 Сбер</span>
+            <span>🔗 Экосистема</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag beta">🧪 Beta</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/sbermegamarket" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
 
-    <script src="../script.js"></script>
+    <!-- AI Providers Category -->
+    <section id="ai" class="integrations-section category-section">
+      <div class="category-header">
+        <span class="category-icon" aria-hidden="true">🤖</span>
+        <h3>ИИ-провайдеры</h3>
+      </div>
+      <p class="category-description">Гибкая работа с ИИ: выбор провайдера, автоматическое переключение при ошибках, кэширование ответов для экономии.</p>
+      
+      <div class="integration-grid">
+        
+        <article class="integration-card popular" data-category="ai">
+          <span class="integration-logo" aria-hidden="true">🟡</span>
+          <h4>YandexGPT</h4>
+          <p>Основной провайдер для генерации контента. Серверы в РФ, соответствие 152-ФЗ, высокое качество русского языка.</p>
+          <div class="integration-meta">
+            <span>🇷🇺 Серверы в РФ</span>
+            <span>🔐 152-ФЗ</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/yandexgpt" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="ai">
+          <span class="integration-logo" aria-hidden="true">🔵</span>
+          <h4>GigaChat (Сбер)</h4>
+          <p>Альтернативный провайдер от Сбера. Хорошее качество, серверы в РФ, интеграция с экосистемой Сбера.</p>
+          <div class="integration-meta">
+            <span>🇷🇺 Серверы в РФ</span>
+            <span>🏦 Сбер</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/gigachat" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card new" data-category="ai">
+          <span class="integration-logo" aria-hidden="true">⚙️</span>
+          <h4>Собственные модели</h4>
+          <p>Возможность подключения собственных LLM через API. Для Enterprise-клиентов с особыми требованиями к данным.</p>
+          <div class="integration-meta">
+            <span>🔧 Custom API</span>
+            <span>🏢 Enterprise</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag beta">🧪 Beta</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/custom-ai" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
 
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../solutions/food/index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="../cases/index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="about/index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="about/team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="about/careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="about/contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
-            </div>
+    <!-- Marking Systems Category -->
+    <section id="marking" class="integrations-section category-section">
+      <div class="category-header">
+        <span class="category-icon" aria-hidden="true">🏷️</span>
+        <h3>Системы маркировки</h3>
+      </div>
+      <p class="category-description">Автоматизация работы с обязательной маркировкой: получение кодов, выгрузка на маркетплейсы, контроль остатков.</p>
+      
+      <div class="integration-grid">
+        
+        <article class="integration-card popular" data-category="marking">
+          <span class="integration-logo" aria-hidden="true">🏷️</span>
+          <h4>«Честный ЗНАК»</h4>
+          <p>Полная интеграция с системой маркировки: получение кодов, выгрузка на маркетплейсы, контроль оборота, формирование документов.</p>
+          <div class="integration-meta">
+            <span>✅ Все категории</span>
+            <span>📄 Документы</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/honest-sign" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card" data-category="marking">
+          <span class="integration-logo" aria-hidden="true">🐄</span>
+          <h4>ФГИС «Меркурий»</h4>
+          <p>Интеграция с системой ветеринарной сертификации: оформление ВСД, контроль остатков, интеграция с 1С для продуктов животного происхождения.</p>
+          <div class="integration-meta">
+            <span>🥩 Продукты</span>
+            <span>📋 ВСД</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/mercury" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Other Integrations Category -->
+    <section id="other" class="integrations-section category-section">
+      <div class="category-header">
+        <span class="category-icon" aria-hidden="true">🔌</span>
+        <h3>Другие интеграции</h3>
+      </div>
+      <p class="category-description">Дополнительные сервисы для расширения возможностей: бухгалтерия, доставка, аналитика.</p>
+      
+      <div class="integration-grid">
+        
+        <article class="integration-card" data-category="other">
+          <span class="integration-logo" aria-hidden="true">📊</span>
+          <h4>1С:Бухгалтерия</h4>
+          <p>Синхронизация данных для бухгалтерского учёта: проводки, документы, отчёты. Интеграция через универсальный обмен.</p>
+          <div class="integration-meta">
+            <span>📑 Проводки</span>
+            <span>📈 Отчёты</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag ready">✓ Готово</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/1c-buh" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+        <article class="integration-card new" data-category="other">
+          <span class="integration-logo" aria-hidden="true">🚚</span>
+          <h4>Службы доставки</h4>
+          <p>Интеграция с СДЭК, Почтой России, Boxberry: расчёт стоимости, создание накладных, отслеживание статусов.</p>
+          <div class="integration-meta">
+            <span>📦 Накладные</span>
+            <span>📍 Трекинг</span>
+          </div>
+          <div class="integration-tags">
+            <span class="integration-tag beta">🧪 Beta</span>
+          </div>
+          <div class="integration-footer">
+            <a href="/docs/integrations/delivery" class="btn-setup">Настройка →</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Architecture Diagram -->
+    <section class="architecture-section" aria-labelledby="architecture-heading">
+      <h2 id="architecture-heading">Как это работает</h2>
+      
+      <div class="architecture-diagram">
+        
+        <div class="architecture-layer">
+          <span class="layer-icon" aria-hidden="true">🧩</span>
+          <div class="layer-content">
+            <h4>Ваша 1С</h4>
+            <p>Товары, остатки, цены, заказы</p>
+          </div>
         </div>
-    </footer>
+        
+        <div class="layer-connector">↓</div>
+        
+        <div class="architecture-layer">
+          <span class="layer-icon" aria-hidden="true">⚙️</span>
+          <div class="layer-content">
+            <h4>AI Seller Модуль</h4>
+            <p>Обработка, ИИ-генерация, бизнес-логика</p>
+          </div>
+        </div>
+        
+        <div class="layer-connector">↓</div>
+        
+        <div class="architecture-layer">
+          <span class="layer-icon" aria-hidden="true">🔗</span>
+          <div class="layer-content">
+            <h4>Внешние сервисы</h4>
+            <p>Маркетплейсы, ИИ-провайдеры, маркировка</p>
+          </div>
+        </div>
+        
+        <div class="layer-connector">↓</div>
+        
+        <div class="architecture-layer">
+          <span class="layer-icon" aria-hidden="true">🔄</span>
+          <div class="layer-content">
+            <h4>Обратно в 1С</h4>
+            <p>Результаты, заказы, аналитика</p>
+          </div>
+        </div>
+        
+      </div>
+      
+      <p style="text-align: center; margin-top: 24px; font-size: 14px; color: var(--color-text-muted);">
+        <small>🔐 Все данные шифруются при передаче (TLS 1.3) и хранении (AES-256). Серверы в РФ, соответствие 152-ФЗ.</small>
+      </p>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="setup-section" aria-labelledby="setup-heading">
+      <h2 id="setup-heading">Настройка за 4 шага</h2>
+      
+      <div class="setup-steps">
+        
+        <article class="setup-step">
+          <div class="setup-number">1</div>
+          <h4>Установите модуль</h4>
+          <p>Загрузите внешнюю компоненту в 1С через Конфигуратор</p>
+          <span class="setup-time">⏱️ 3 минуты</span>
+        </article>
+        
+        <article class="setup-step">
+          <div class="setup-number">2</div>
+          <h4>Активируйте лицензию</h4>
+          <p>Введите ключ из личного кабинета в настройках модуля</p>
+          <span class="setup-time">⏱️ 1 минута</span>
+        </article>
+        
+        <article class="setup-step">
+          <div class="setup-number">3</div>
+          <h4>Подключите интеграции</h4>
+          <p>Добавьте API-ключи маркетплейсов и ИИ-провайдеров</p>
+          <span class="setup-time">⏱️ 10 минут</span>
+        </article>
+        
+        <article class="setup-step">
+          <div class="setup-number">4</div>
+          <h4>Запустите синхронизацию</h4>
+          <p>Проверьте подключение и начните работу</p>
+          <span class="setup-time">⏱️ 1 минута</span>
+        </article>
+        
+      </div>
+      
+      <p style="text-align: center; margin-top: 32px;">
+        <a href="/docs/getting-started" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+          <span>📖</span>
+          <span>Полная инструкция по установке</span>
+        </a>
+      </p>
+    </section>
+
+    <!-- API Documentation -->
+    <section class="api-section" aria-labelledby="api-heading">
+      <h2 id="api-heading">API для разработчиков</h2>
+      
+      <div class="api-grid">
+        
+        <div class="api-card">
+          <h3>🔑 Аутентификация</h3>
+          <p>API-ключи с ограничением по правам и IP. Поддержка OAuth 2.0 для корпоративных клиентов.</p>
+          <code>Authorization: Bearer YOUR_API_KEY</code>
+          <ul>
+            <li>Rate limiting: 1000 запросов/час</li>
+            <li>Webhook-подписки</li>
+            <li>Версионирование API</li>
+          </ul>
+          <a href="/api/docs" class="btn-api-docs">📚 Документация API →</a>
+        </div>
+        
+        <div class="api-card">
+          <h3>📡 Webhooks</h3>
+          <p>Получайте уведомления о событиях в реальном времени: новые заказы, изменения цен, отзывы.</p>
+          <code>POST https://your-server.com/webhook</code>
+          <ul>
+            <li>Подпись запросов (HMAC)</li>
+            <li>Повторные попытки доставки</li>
+            <li>Фильтрация событий</li>
+          </ul>
+          <a href="/docs/webhooks" class="btn-api-docs">📚 Настройка webhooks →</a>
+        </div>
+        
+        <div class="api-card">
+          <h3>🔧 Расширения</h3>
+          <p>Создавайте свои интеграции через модульную архитектуру. Документация и примеры кода.</p>
+          <code>Module.RegisterExtension("my-extension")</code>
+          <ul>
+            <li>SDK для 1С и Python</li>
+            <li>Примеры на GitHub</li>
+            <li>Тестовый контур</li>
+          </ul>
+          <a href="/docs/extensions" class="btn-api-docs">📚 Разработка расширений →</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Webhooks Section -->
+    <section class="webhooks-section" aria-labelledby="webhooks-heading">
+      <h2 id="webhooks-heading">Webhooks: события в реальном времени</h2>
+      
+      <div class="webhooks-grid">
+        
+        <div class="webhook-card">
+          <h4>📦 Заказы</h4>
+          <p>Получайте уведомления о новых заказах, изменениях статусов, отменах.</p>
+          <div class="webhook-example">
+            <small>Пример payload:</small><br>
+            <code>{"event": "order.created", "order_id": "12345", "marketplace": "wildberries"}</code>
+          </div>
+          <div class="webhook-events">
+            <span class="webhook-event">order.created</span>
+            <span class="webhook-event">order.updated</span>
+            <span class="webhook-event">order.cancelled</span>
+          </div>
+        </div>
+        
+        <div class="webhook-card">
+          <h4>💬 Отзывы</h4>
+          <p>Мгновенное уведомление о новых отзывах для быстрой реакции.</p>
+          <div class="webhook-example">
+            <small>Пример payload:</small><br>
+            <code>{"event": "review.new", "rating": 5, "text": "Отлично!", "product_id": "67890"}</code>
+          </div>
+          <div class="webhook-events">
+            <span class="webhook-event">review.new</span>
+            <span class="webhook-event">review.updated</span>
+          </div>
+        </div>
+        
+        <div class="webhook-card">
+          <h4>📊 Аналитика</h4>
+          <p>События для интеграции с внешними BI-системами: продажи, маржа, возвраты.</p>
+          <div class="webhook-example">
+            <small>Пример payload:</small><br>
+            <code>{"event": "analytics.daily", "date": "2026-03-16", "metrics": {...}}</code>
+          </div>
+          <div class="webhook-events">
+            <span class="webhook-event">analytics.daily</span>
+            <span class="webhook-event">analytics.weekly</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">❓ Частые вопросы об интеграциях</h2>
+      
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Сколько времени занимает настройка интеграции?</summary>
+          <div class="faq-answer">
+            <p>Базовая настройка занимает 10–15 минут: ввод API-ключей, проверка подключения. Для сложных сценариев (кастомные поля, правила) может потребоваться до 1 часа с поддержкой.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Что если маркетплейс изменит API?</summary>
+          <div class="faq-answer">
+            <p>Мы отслеживаем изменения в API маркетплейсов и оперативно обновляем интеграции. Все обновления модуля бесплатны для подписчиков и устанавливаются автоматически.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Можно ли отключить отдельную интеграцию?</summary>
+          <div class="faq-answer">
+            <p>Да, в настройках модуля можно включать/отключать любые интеграции независимо. Например, использовать только 1С и Wildberries, не подключая ИИ-провайдеров.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Как обеспечивается безопасность данных при интеграции?</summary>
+          <div class="faq-answer">
+            <p>Все соединения используют TLS 1.3, API-ключи шифруются, данные не сохраняются на наших серверах после обработки. Полное соответствие 152-ФЗ и локализация в РФ.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Можно ли запросить новую интеграцию?</summary>
+          <div class="faq-answer">
+            <p>Да, мы рассматриваем запросы на новые интеграции. Оставьте заявку в поддержке или проголосуйте за нужную интеграцию в нашем <a href="/roadmap">roadmap</a>.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </div> <!-- /container -->
+
+  <!-- CTA Section -->
+  <section class="integrations-cta">
+    <div class="container">
+      <h2>Готовы подключить вашу инфраструктуру?</h2>
+      <p>14 дней бесплатно • Настройка за 15 минут • Без привязки карты • Поддержка 24/7</p>
+      
+      <div class="cta-buttons">
+        <a href="/trial" class="btn-primary">
+          <span>🚀</span>
+          <span>Начать бесплатный триал</span>
+        </a>
+        <a href="/contact?dept=sales" class="btn-secondary">
+          <span>💬</span>
+          <span>Обсудить интеграции</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== SEARCH & FILTER LOGIC =====
+    const searchInput = $('#integration-search');
+    const filterButtons = $$('.filter-btn');
+    const integrationCards = $$('.integration-card');
+    
+    function filterIntegrations() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+      
+      integrationCards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        const category = card.dataset.category;
+        
+        const matchesSearch = !searchTerm || title.includes(searchTerm) || desc.includes(searchTerm);
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        
+        card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+      });
+    }
+    
+    // Search input
+    searchInput?.addEventListener('input', filterIntegrations);
+    
+    // Filter buttons
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        filterIntegrations();
+        
+        // Track filter usage
+        if (typeof gtag === 'function') {
+          gtag('event', 'integration_filter', {
+            'event_category': 'engagement',
+            'event_label': 'integrations_page',
+            'filter': this.dataset.filter
+          });
+        }
+      });
+    });
+    
+    // ===== FAQ: Close others when one opens =====
+    $$('.faq-item').forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          $$('.faq-item').forEach(other => {
+            if (other !== this) other.open = false;
+          });
+        }
+      });
+    });
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'product',
+          'event_label': 'integrations_page',
+          'page_title': 'Интеграции'
+        });
+      }
+      
+      // Prefill filter from URL params
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('category')) {
+        const targetBtn = $(`.filter-btn[data-filter="${params.get('category')}"]`);
+        if (targetBtn) {
+          targetBtn.click();
+        }
+      }
+      
+      // Track integration card clicks
+      $$('.btn-setup').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const integration = this.closest('.integration-card').querySelector('h4').textContent;
+          if (typeof gtag === 'function') {
+            gtag('event', 'integration_setup_click', {
+              'event_category': 'conversion',
+              'event_label': 'integrations_page',
+              'integration_name': integration
+            });
+          }
+        });
+      });
+    });
+  </script>
+  
 </body>
 </html>

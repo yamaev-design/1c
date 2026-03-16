@@ -1,1625 +1,1483 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Optimization -->
-    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
-    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование TLS 1.3, серверы в Москве, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
-    <meta name="keywords" content="152-ФЗ, безопасность, защита данных, шифрование, персональные данные, ДПД, AI Seller, 1С">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
-    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
-    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
-    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yamaev-design.github.io/1c/product/security.html">
-    <meta property="twitter:title" content="Безопасность данных | AI Seller 1С">
-    <meta property="twitter:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности.">
-    <meta property="twitter:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Schema.org Breadcrumb -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Главная",
-          "item": "https://yamaev-design.github.io/1c/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Продукт",
-          "item": "https://yamaev-design.github.io/1c/product/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Безопасность",
-          "item": "https://yamaev-design.github.io/1c/product/security.html"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Schema.org FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Можно ли использовать решение без облака?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, для тарифа «Профи» доступна опция локального развёртывания ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Какие данные передаются в ИИ-сервисы?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Только публичные данные: описания товаров, тексты отзывов, вопросы покупателей. Не передаются: себестоимость, маржа, контакты клиентов, финансовые показатели."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как долго хранятся данные?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Логи обработки — 3 года (требование 152-ФЗ). Кэш ИИ-ответов — 30 дней. После расторжения договора все ваши данные удаляются из наших систем в течение 14 дней."
-          }
-        }
-      ]
-    }
-    </script>
-    
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
-
-    <!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="../index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <a href="../index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Главная</a>
-                    
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="security.html" class="block px-4 py-3 text-gold-400 bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="../pricing/index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Тарифы</a>
-                    <a href="../cases/index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">Кейсы</a>
-                    <a href="../docs/index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">База знаний</a>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="../index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                <a href="features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Возможности</a>
-                <a href="integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Интеграции</a>
-                <a href="security.html" class="block px-4 py-3 text-gold-400 bg-white/5 rounded-lg">Безопасность</a>
-                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Тарифы</a>
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto space-y-8 animate-fade-in">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-sm text-gray-300">Полное соответствие 152-ФЗ</span>
-                </div>
-
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    Безопасность и защита <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">ваших данных</span>
-                </h1>
-
-                <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
-                    Шифрование TLS 1.3, серверы в России, договор обработки ПДн. Ваши данные под надёжной защитой с юридической ответственностью.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                    <a href="#compliance" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                        <span>Узнать подробнее</span>
-                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#docs" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        <span>Скачать документы</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Data Flow Diagram -->
-    <section class="py-20 bg-navy-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Как защищаются ваши данные</h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Понятная схема: что остаётся у вас, что обрабатывается в облаке</p>
-            </div>
-            
-            <div class="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 md:p-12 mb-8">
-                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-green-500 rounded-xl flex items-center justify-center mb-3">
-                            <i data-lucide="building" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <span class="font-semibold text-navy-900">Ваша 1С</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-navy-900">
-                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                        <span class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full">
-                            <i data-lucide="lock" class="w-4 h-4"></i>
-                            TLS 1.3
-                        </span>
-                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-purple-500 rounded-xl flex items-center justify-center mb-3">
-                            <i data-lucide="cloud" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <span class="font-semibold text-navy-900">Облако РФ</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-navy-900">
-                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                        <span class="flex items-center gap-2 bg-indigo-500 text-white px-4 py-2 rounded-full">
-                            <i data-lucide="cpu" class="w-4 h-4"></i>
-                            AI Обработка
-                        </span>
-                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-green-500 rounded-xl flex items-center justify-center mb-3">
-                            <i data-lucide="circle-check" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <span class="font-semibold text-navy-900">Результат в 1С</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-4 h-4 bg-green-500 rounded"></div>
-                        <h4 class="font-semibold text-white">Локально в 1С</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Себестоимость, маржа, контакты клиентов, финансовые данные</p>
-                </div>
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-4 h-4 bg-blue-500 rounded"></div>
-                        <h4 class="font-semibold text-white">Передаётся зашифрованным</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">Публичные описания товаров, тексты отзывов (без ПДн)</p>
-                </div>
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-4 h-4 bg-purple-500 rounded"></div>
-                        <h4 class="font-semibold text-white">Обрабатывается в облаке РФ</h4>
-                    </div>
-                    <p class="text-gray-400 text-sm">YandexGPT / GigaChat API, серверы в Москве</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance 152-FZ -->
-    <section class="py-20" id="compliance">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">✅ Полное соответствие 152-ФЗ</h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Юридическая защита и технические меры соответствия требованиям</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6 hover:border-green-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-all">
-                        <i data-lucide="file-text" class="w-6 h-6 text-green-400"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Оператор ПДн</h3>
-                    <p class="text-gray-400 text-sm mb-4">ООО «[Название]» внесено в реестр операторов Роскомнадзора</p>
-                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="text-gold-400 hover:text-gold-300 text-sm font-medium inline-flex items-center gap-1">
-                        Проверить в реестре
-                        <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6 hover:border-blue-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-all">
-                        <i data-lucide="signature" class="w-6 h-6 text-blue-400"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Договор обработки ПДн</h3>
-                    <p class="text-gray-400 text-sm mb-4">Заключаем с каждым клиентом. Определяем цели, состав данных, меры защиты.</p>
-                    <a href="/docs/dpd-template.pdf" download class="text-gold-400 hover:text-gold-300 text-sm font-medium inline-flex items-center gap-1">
-                        <i data-lucide="download" class="w-3 h-3"></i>
-                        Скачать шаблон ДПД
-                    </a>
-                </div>
-                
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-all">
-                        <i data-lucide="server" class="w-6 h-6 text-purple-400"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Локализация данных</h3>
-                    <p class="text-gray-400 text-sm mb-4">Все серверы — в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
-                </div>
-                
-                <div class="bg-navy-800 border border-white/10 rounded-xl p-6 hover:border-amber-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-all">
-                        <i data-lucide="shield" class="w-6 h-6 text-amber-400"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Меры защиты</h3>
-                    <p class="text-gray-400 text-sm mb-4">Шифрование при передаче (TLS 1.3) и хранении (AES-256). Разграничение прав доступа.</p>
-                </div>
-            </div>
-            
-            <div class="mt-8 bg-amber-500/10 border-l-4 border-amber-500 rounded-r-xl p-6">
-                <p class="text-amber-200">
-                    <strong class="text-amber-400">📌 Важно:</strong> Мы не передаём в облако данные, позволяющие идентифицировать физическое лицо, без вашего явного согласия. Публичные данные (описания товаров, отзывы) обрабатываются отдельно от ПДн.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Measures -->
-    <section class="py-20 bg-navy-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">🔐 Технические меры защиты</h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Современные технологии шифрования и контроля доступа</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-navy-900 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                            <i data-lucide="lock" class="w-5 h-5 text-blue-400"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Шифрование</h3>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">При хранении:</strong> AES-256-GCM для чувствительных полей</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">API-ключи:</strong> Хранятся в зашифрованном виде в 1С</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-navy-900 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-                            <i data-lucide="users" class="w-5 h-5 text-green-400"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Контроль доступа</h3>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Ролевая модель (RBAC):</strong> Разграничение прав в модуле 1С</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">MFA:</strong> Двухфакторная аутентификация для администраторов</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Сессии:</strong> JWT с коротким TTL, автоматический логаут</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-navy-900 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                            <i data-lucide="clipboard-list" class="w-5 h-5 text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Логирование и аудит</h3>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Все действия:</strong> Запись в журнал 1С (кто, что, когда)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Доступ к данным:</strong> Отдельный аудит-лог для ПДн</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Хранение логов:</strong> 3 года, защита от модификации</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-navy-900 border border-white/10 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
-                            <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Инфраструктура</h3>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Серверы:</strong> Яндекс.Облако (Москва), уровень защиты К2</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">DDoS-защита:</strong> Яндекс.Cloud Shield</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"></i>
-                            <span><strong class="text-white">Резервное копирование:</strong> Ежедневно, гео-репликация</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-                <a href="/docs/security-whitepaper.pdf" class="doc-card" download>
-                    <div class="doc-icon">📄</div>
-                    <div>
-                        <h4>Whitepaper по безопасности</h4>
-                        <p>Архитектура, угрозы, контрмеры, соответствие стандартам (14 страниц)</p>
-                        <span class="doc-meta">PDF • 2.1 MB • Обновлено: март 2026</span>
-                    </div>
-                </a>
-                
-                <a href="/docs/security-checklist.pdf" class="doc-card" download>
-                    <div class="doc-icon">✅</div>
-                    <div>
-                        <h4>Чек-лист для проверки</h4>
-                        <p>Список вопросов и требований для оценки нашего решения (5 страниц)</p>
-                        <span class="doc-meta">PDF • 850 KB • Обновлено: март 2026</span>
-                    </div>
-                </a>
-                
-                <a href="/docs/dpa-template.pdf" class="doc-card" download>
-                    <div class="doc-icon">📋</div>
-                    <div>
-                        <h4>Шаблон ДПД (152-ФЗ)</h4>
-                        <p>Готовый договор обработки персональных данных для подписания</p>
-                        <span class="doc-meta">PDF • 1.3 MB • Юридически значимый</span>
-                    </div>
-                </a>
-                
-                <a href="/docs/penetration-test-summary.pdf" class="doc-card" download>
-                    <div class="doc-icon">🧪</div>
-                    <div>
-                        <h4>Отчёт о пентесте</h4>
-                        <p>Резюме независимого тестирования на проникновение (Q4 2025)</p>
-                        <span class="doc-meta">PDF • 3.4 MB • NDA по запросу</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="security-contact">
-                <h4>📧 Связь с командой безопасности</h4>
-                <p>Есть вопросы по ИБ или нашли уязвимость? Напишите нам:</p>
-                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
-                <p class="small">Ответ в течение 24 часов. Поддерживаем программу <strong>Bug Bounty</strong>.</p>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">❓ Частые вопросы по безопасности</h2>
-            
-            <div class="faq-grid">
-                <details class="faq-item">
-                    <summary>Можно ли использовать решение без облака?</summary>
-                    <div class="faq-answer">
-                        <p>Да, для тарифа «Профи» доступна опция <strong>локального развёртывания</strong> ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур. Свяжитесь с нами для обсуждения архитектуры.</p>
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>Какие данные передаются в ИИ-сервисы?</summary>
-                    <div class="faq-answer">
-                        <p>Только публичные данные: описания товаров, тексты отзывов, вопросы покупателей. <strong>Не передаются:</strong> себестоимость, маржа, контакты клиентов, финансовые показатели. Мы используем гибридную модель: чувствительные данные остаются в 1С.</p>
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>Как долго хранятся данные?</summary>
-                    <div class="faq-answer">
-                        <p>Логи обработки — 3 года (требование 152-ФЗ). Кэш ИИ-ответов — 30 дней. После расторжения договора все ваши данные удаляются из наших систем в течение 14 дней по вашему запросу.</p>
-                    </div>
-                </details>
-                
-                <details class="faq-item">
-                    <summary>Проводите ли вы аудит безопасности?</summary>
-                    <div class="faq-answer">
-                        <p>Да, ежегодно проводим независимый пентест через аккредитованную компанию. Также выполняем сканирование уязвимостей ежеквартально. Отчёт доступен по запросу под NDA.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-    <!-- Guarantees -->
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">🛡️ Наши гарантии</h2>
-            
-            <div class="security-grid">
-                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
-                    <div class="guarantee-icon">⏱️</div>
-                    <h3>SLA 99.9%</h3>
-                    <p>Гарантируем доступность сервиса. При нарушении — компенсация пропорционально простоям.</p>
-                </div>
-                
-                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
-                    <div class="guarantee-icon">💰</div>
-                    <h3>Финансовая ответственность</h3>
-                    <p>В договоре прописана ответственность за утечку данных по нашей вине. Страхование киберрисков.</p>
-                </div>
-                
-                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
-                    <div class="guarantee-icon">🔄</div>
-                    <h3>Возврат средств</h3>
-                    <p>30 дней на тестирование. Если продукт не подойдёт — вернём деньги без вопросов.</p>
-                </div>
-                
-                <div class="security-card" style="text-align: center; border-left-color: #3b82f6;">
-                    <div class="guarantee-icon">📞</div>
-                    <h3>Поддержка 24/7</h3>
-                    <p>Для тарифа «Профи» — выделенный инженер безопасности на связи круглосуточно.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Готовы обеспечить безопасность вашего бизнеса?</h2>
-            <p>Начните использовать AI Seller с полным соответствием требованиям</p>
-            <button class="btn btn-primary btn-lg open-modal-btn">Начать бесплатный период</button>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="../index.html" class="logo">
-                        <i class="fas fa-cube"></i>
-                        <span>AI Seller 1С</span>
-                    </a>
-                    <p>Автоматизация маркетплейсов на базе искусственного интеллекта.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Продукт</h4>
-                    <a href="features.html">Возможности</a>
-                    <a href="integrations.html">Интеграции</a>
-                    <a href="security.html">Безопасность</a>
-                    <a href="../pricing.html">Тарифы</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Документы</h4>
-                    <a href="#">Политика конфиденциальности</a>
-                    <a href="#">Договор оферты</a>
-                    <a href="#">Реквизиты</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Контакты</h4>
-                    <a href="mailto:info@aiseller.ru">info@aiseller.ru</a>
-                    <a href="tel:+79990000000">+7 (999) 000-00-00</a>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AI Seller 1С. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Modal -->
-    <div class="modal" id="trialModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Попробовать бесплатно</h2>
-            <p>Оставьте заявку, и мы подключим вам пробный период на 14 дней.</p>
-            <form class="modal-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Название компании">
-                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
-            </form>
-        </div>
-    </div>
-    <script src="../script.js"></script>
-</body>
-</html>` did not appear verbatim in /workspace/product/security.html.
-Shell
-$ cat > /workspace/product/security.html << 'EOF'
-<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
-    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование TLS 1.3, серверы в РФ, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
-    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
-    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Главная",
-          "item": "https://yamaev-design.github.io/1c/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Продукт",
-          "item": "https://yamaev-design.github.io/1c/product/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Безопасность",
-          "item": "https://yamaev-design.github.io/1c/product/security.html"
-        }
-      ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Безопасность данных в AI Seller 1С | 152-ФЗ, шифрование, сертификация</title>
+  <meta name="description" content="Безопасность ваших данных — наш приоритет. Соответствие 152-ФЗ, шифрование, локализация серверов в РФ, регулярные аудиты. Узнайте, как мы защищаем вашу информацию.">
+  <meta name="keywords" content="безопасность 1С, защита данных, 152-ФЗ, шифрование, локализация, сертификация, аудит безопасности, соответствие">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Безопасность | AI Seller 1С">
+  <meta property="og:description" content="Защита данных на уровне предприятия: 152-ФЗ, шифрование, аудиты">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Безопасность | AI Seller 1С">
+  <meta name="twitter:description" content="Защита данных на уровне предприятия: 152-ФЗ, шифрование, аудиты">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "Продукт", "item": "https://yamaev-design.github.io/1c/product/" },
+      { "@type": "ListItem", "position": 3, "name": "Безопасность", "item": "https://yamaev-design.github.io/1c/product/security.html" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Безопасность данных в AI Seller 1С",
+    "description": "Полная информация о мерах защиты данных, соответствии 152-ФЗ и стандартах безопасности",
+    "author": {
+      "@type": "Organization",
+      "name": "AI Seller",
+      "url": "https://yamaev-design.github.io/1c/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Seller",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yamaev-design.github.io/1c/images/logo.png"
+      }
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-16",
+    "articleSection": "Security",
+    "keywords": ["безопасность", "152-ФЗ", "шифрование", "локализация", "аудит", "сертификация"]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-enterprise: 0 25px 50px rgba(30, 58, 138, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
-    </script>
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Где хранятся данные?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Персональные данные обрабатываются на серверах в РФ (Москва, Яндекс.Облако). Конфиденциальные данные (себестоимость, маржа) не покидают контур вашей 1С."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Соответствуете ли вы 152-ФЗ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да. Мы являемся оператором ПДн, уведомили Роскомнадзор, заключаем ДПД с каждым клиентом. Используем шифрование и разграничение доступа."
-          }
-        }
-      ]
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    </script>
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    code, pre {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: var(--color-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 72px 0 56px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .security-trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    
+    .trust-badge .icon { font-size: 18px; }
+    
+    /* ===== SECURITY HERO CARD ===== */
+    .security-hero {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      margin: 0 0 48px 0;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--color-success);
+      text-align: center;
+    }
+    
+    .security-hero .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .security-hero h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .security-hero p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* ===== SECURITY GRID ===== */
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 56px 0;
+    }
+    
+    .security-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .security-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .security-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .security-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .security-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      flex: 1;
+      line-height: 1.6;
+    }
+    
+    .security-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    .security-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    /* ===== COMPLIANCE SECTION ===== */
+    .compliance-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .compliance-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+    
+    .compliance-item {
+      text-align: center;
+      padding: 24px;
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-success);
+    }
+    
+    .compliance-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .compliance-item h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .compliance-item p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    .compliance-cert {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #d1fae5;
+      color: var(--color-success);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    
+    /* ===== ENCRYPTION SECTION ===== */
+    .encryption-section {
+      margin: 56px 0;
+    }
+    
+    .encryption-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .encryption-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    
+    .encryption-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    
+    .encryption-card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .encryption-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .encryption-card li {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .encryption-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-success);
+      font-weight: bold;
+    }
+    
+    .code-block {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin: 16px 0;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      overflow-x: auto;
+    }
+    
+    /* ===== DATA FLOW SECTION ===== */
+    .dataflow-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+    }
+    
+    .dataflow-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .dataflow-diagram {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--color-border);
+    }
+    
+    .dataflow-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .dataflow-step:last-child {
+      border-bottom: none;
+    }
+    
+    .dataflow-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .dataflow-content h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .dataflow-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    .dataflow-security {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #d1fae5;
+      color: var(--color-success);
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+    
+    /* ===== ACCESS CONTROL SECTION ===== */
+    .access-section {
+      margin: 56px 0;
+    }
+    
+    .access-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .access-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    
+    .access-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    
+    .access-card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    
+    .access-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .access-card li {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .access-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+    
+    /* ===== AUDIT SECTION ===== */
+    .audit-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .audit-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .audit-timeline {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .audit-timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--color-border);
+    }
+    
+    .audit-item {
+      display: flex;
+      gap: 24px;
+      padding-left: 56px;
+      padding-bottom: 32px;
+      position: relative;
+    }
+    
+    .audit-item:last-child {
+      padding-bottom: 0;
+    }
+    
+    .audit-dot {
+      position: absolute;
+      left: 12px;
+      width: 20px;
+      height: 20px;
+      background: var(--color-primary);
+      border: 4px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--color-primary-light);
+    }
+    
+    .audit-item h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--color-text);
+    }
+    
+    .audit-item p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    .audit-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #dbeafe;
+      color: var(--color-primary);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    
+    /* ===== INCIDENT RESPONSE SECTION ===== */
+    .incident-section {
+      margin: 56px 0;
+    }
+    
+    .incident-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .incident-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .incident-step {
+      text-align: center;
+      padding: 24px;
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+    
+    .incident-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    
+    .incident-step h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    
+    .incident-step p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      border: 1px solid var(--color-border);
+    }
+    
+    .faq-section h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      border-color: var(--color-primary-light);
+    }
+    
+    .faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .faq-item summary::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: var(--color-text-muted);
+    }
+    
+    .faq-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px 24px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    
+    .faq-answer a {
+      font-weight: 500;
+    }
+    
+    /* ===== SECURITY CONTACT ===== */
+    .security-contact {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      margin: 56px 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .security-contact h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .security-contact p {
+      opacity: 0.95;
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+    
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .contact-card .icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .contact-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    
+    .contact-card a {
+      color: white;
+      font-weight: 500;
+    }
+    
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+    
+    .security-report-btn {
+      background: white;
+      color: var(--color-primary);
+      padding: 14px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      font-size: 15px;
+    }
+    
+    .security-report-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .security-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 56px 0;
+      color: white;
+    }
+    
+    .security-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .security-cta p {
+      opacity: 0.95;
+      margin-bottom: 32px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .compliance-section,
+      .dataflow-section,
+      .audit-section,
+      .faq-section,
+      .security-contact {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .security-grid,
+      .encryption-grid,
+      .access-grid,
+      .incident-steps,
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+      .dataflow-step {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .audit-item {
+        padding-left: 48px;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="../index.html" class="logo">
-                <i class="fas fa-cube"></i>
-                <span>AI Seller 1С</span>
-            </a>
-            <nav class="nav">
-                <a href="../index.html">Главная</a>
-                <a href="features.html">Возможности</a>
-                <a href="integrations.html">Интеграции</a>
-                <a href="security.html" class="active">Безопасность</a>
-                <a href="../pricing.html">Тарифы</a>
-            </nav>
-            <button class="btn btn-primary open-modal-btn">Попробовать бесплатно</button>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">🔐 Безопасность</span>
+      <h1>Защита ваших данных — наш приоритет</h1>
+      <p class="subtitle">Мы применяем многоуровневую систему защиты: от шифрования данных до регулярных аудитов безопасности. Ваши данные в надёжных руках.</p>
+      
+      <div class="security-trust-badges">
+        <div class="trust-badge">
+          <span class="icon" aria-hidden="true">✅</span>
+          <span>152-ФЗ</span>
         </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="hero security-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Безопасность данных и соответствие 152-ФЗ</h1>
-                <p class="hero-subtitle">Ваши данные под надежной защитой: шифрование, серверы в РФ, юридическая ответственность.</p>
-                <div class="hero-buttons">
-                    <a href="#compliance" class="btn btn-primary">Узнать о соответствии</a>
-                    <a href="#docs" class="btn btn-outline">Скачать документы</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="security-badge-large">
-                    <i class="fas fa-shield-halved"></i>
-                    <span>Защищено</span>
-                </div>
-            </div>
+        <div class="trust-badge">
+          <span class="icon" aria-hidden="true">🇷🇺</span>
+          <span>Серверы в РФ</span>
         </div>
-    </section>
-    <!-- Data Flow Diagram -->
-    <section class="section bg-light" id="data-flow">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Как защищаются ваши данные</h2>
-                <p>Прозрачная схема обработки: что остаётся у вас, что уходит в облако</p>
-            </div>
-            
-            <div class="data-flow-wrapper">
-                <div class="flow-card local">
-                    <div class="flow-icon"><i class="fas fa-server"></i></div>
-                    <h3>Локально в 1С</h3>
-                    <ul>
-                        <li>Себестоимость и маржа</li>
-                        <li>Контакты клиентов (ПДн)</li>
-                        <li>Финансовые отчеты</li>
-                        <li>Пароли и ключи</li>
-                    </ul>
-                    <span class="badge badge-green">Не передается</span>
-                </div>
-                
-                <div class="flow-arrow">
-                    <i class="fas fa-lock"></i>
-                    <span>TLS 1.3</span>
-                </div>
-                
-                <div class="flow-card cloud">
-                    <div class="flow-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Облако РФ</h3>
-                    <ul>
-                        <li>Публичные описания товаров</li>
-                        <li>Тексты отзывов (без ПДн)</li>
-                        <li>Аналитика продаж</li>
-                    </ul>
-                    <span class="badge badge-blue">Шифруется</span>
-                </div>
-                
-                <div class="flow-arrow">
-                    <i class="fas fa-microchip"></i>
-                    <span>AI Processing</span>
-                </div>
-                
-                <div class="flow-card result">
-                    <div class="flow-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Результат в 1С</h3>
-                    <ul>
-                        <li>Готовые карточки</li>
-                        <li>Ответы клиентам</li>
-                        <li>Прогнозы</li>
-                    </ul>
-                    <span class="badge badge-green">Безопасно</span>
-                </div>
-            </div>
-            
-            <div class="alert-box mt-4">
-                <i class="fas fa-info-circle"></i>
-                <strong>Важно:</strong> Мы используем гибридную модель. Чувствительные коммерческие данные и ПДн никогда не покидают периметр вашей 1С без явного согласия.
-            </div>
+        <div class="trust-badge">
+          <span class="icon" aria-hidden="true">🔒</span>
+          <span>TLS 1.3 + AES-256</span>
         </div>
-    </section>
-    <!-- Compliance 152-FZ -->
-    <section class="section" id="compliance">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Соответствие 152-ФЗ</h2>
-                <p>Полный пакет документов и технических мер для работы с персональными данными</p>
-            </div>
-            
-            <div class="grid grid-4">
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Оператор ПДн</h3>
-                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора.</p>
-                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small">Проверить в реестре →</a>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
-                    <h3>Договор (ДПД)</h3>
-                    <p>Заключаем договор обработки ПДн с каждым клиентом.</p>
-                    <a href="#" class="link-small" download>📥 Скачать шаблон ДПД</a>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Локализация</h3>
-                    <p>Серверы находятся в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>Меры защиты</h3>
-                    <p>Шифрование при передаче и хранении. Разграничение прав доступа.</p>
-                </div>
-            </div>
+        <div class="trust-badge">
+          <span class="icon" aria-hidden="true">🛡️</span>
+          <span>Аудит 2× в год</span>
         </div>
-    </section>
-    <!-- Technical Measures -->
-    <section class="section bg-dark text-white" id="tech-measures">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 style="color: white;">Технические меры защиты</h2>
-                <p style="color: rgba(255,255,255,0.7);">Профессиональный уровень безопасности инфраструктуры</p>
-            </div>
-            
-            <div class="grid grid-2">
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-lock"></i> Шифрование</h3>
-                    <ul class="check-list">
-                        <li><strong>При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</li>
-                        <li><strong>При хранении:</strong> AES-256-GCM для чувствительных полей</li>
-                        <li><strong>API-ключи:</strong> Хранятся зашифрованными в 1С</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-users"></i> Контроль доступа</h3>
-                    <ul class="check-list">
-                        <li><strong>RBAC:</strong> Ролевая модель доступа в модуле 1С</li>
-                        <li><strong>MFA:</strong> Двухфакторная аутентификация для админов</li>
-                        <li><strong>Сессии:</strong> JWT с коротким временем жизни</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-clipboard-list"></i> Логирование</h3>
-                    <ul class="check-list">
-                        <li><strong>Аудит:</strong> Запись всех действий (кто, что, когда)</li>
-                        <li><strong>ПДн:</strong> Отдельный журнал доступа к персональным данным</li>
-                        <li><strong>Хранение:</strong> Логи хранятся 3 года</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-server"></i> Инфраструктура</h3>
-                    <ul class="check-list">
-                        <li><strong>Серверы:</strong> Яндекс.Облако (уровень защиты К2)</li>
-                        <li><strong>DDoS:</strong> Защита от атак любого уровня</li>
-                        <li><strong>Backup:</strong> Ежедневное резервное копирование</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Security Docs for Teams -->
-    <section class="section" id="docs">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Документы для службы безопасности</h2>
-                <p>Готовые материалы для внутренней проверки и аудита вашего предприятия</p>
-            </div>
-            
-            <div class="grid grid-2">
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Whitepaper по безопасности</h4>
-                        <p>Архитектура, угрозы, контрмеры, соответствие стандартам (14 стр.)</p>
-                        <span class="doc-meta">PDF • 2.1 MB</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Чек-лист для проверки</h4>
-                        <p>Список вопросов и требований для оценки нашего решения</p>
-                        <span class="doc-meta">PDF • 850 KB</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Шаблон ДПД (152-ФЗ)</h4>
-                        <p>Готовый договор обработки персональных данных</p>
-                        <span class="doc-meta">PDF • Юридически значимый</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Отчёт о пентесте</h4>
-                        <p>Резюме независимого тестирования на проникновение (NDA)</p>
-                        <span class="doc-meta">PDF • Доступ по запросу</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="contact-security text-center mt-5">
-                <h3>Есть вопросы по ИБ?</h3>
-                <p>Наша команда безопасности готова ответить на любые вопросы.</p>
-                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
-                <p class="small text-muted">Поддерживаем программу Bug Bounty. Ответ в течение 24 часов.</p>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ -->
-    <section class="section bg-light" id="faq">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Частые вопросы</h2>
-            </div>
-            
-            <div class="accordion">
-                <details class="accordion-item">
-                    <summary class="accordion-header">Можно ли использовать решение без облака?</summary>
-                    <div class="accordion-body">
-                        <p>Да, для тарифа «Профи» доступна опция локального развёртывания ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Какие данные передаются в ИИ-сервисы?</summary>
-                    <div class="accordion-body">
-                        <p>Только публичные данные: описания товаров, тексты отзывов. Не передаются: себестоимость, маржа, контакты клиентов, финансовые показатели.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Как долго хранятся данные?</summary>
-                    <div class="accordion-body">
-                        <p>Логи обработки — 3 года. Кэш ИИ-ответов — 30 дней. После расторжения договора все данные удаляются в течение 14 дней.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Что происходит при утечке данных?</summary>
-                    <div class="accordion-body">
-                        <p>У нас есть регламент реагирования (IRP). Мы уведомляем вас и РКН в течение 24 часов, проводим расследование и предоставляем отчёт.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-    <!-- Guarantees -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Наши гарантии</h2>
-            </div>
-            
-            <div class="grid grid-4">
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-clock"></i></div>
-                    <h3>SLA 99.9%</h3>
-                    <p>Гарантируем доступность сервиса. Компенсация за простой.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-coins"></i></div>
-                    <h3>Ответственность</h3>
-                    <p>Финансовая ответственность за утечку по нашей вине прописана в договоре.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-undo"></i></div>
-                    <h3>Возврат средств</h3>
-                    <p>30 дней на тестирование. Если не подойдёт — вернём деньги.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
-                    <h3>Поддержка 24/7</h3>
-                    <p>Для тарифа «Профи» — выделенный инженер безопасности.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container text-center">
-            <h2>Готовы начать безопасную автоматизацию?</h2>
-            <p>Подключите AI Seller к вашей 1С уже сегодня</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary btn-lg open-modal-btn">Начать бесплатный период</button>
-                <a href="../contacts.html" class="btn btn-outline btn-lg">Связаться с нами</a>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="../index.html" class="logo">
-                        <i class="fas fa-cube"></i>
-                        <span>AI Seller 1С</span>
-                    </a>
-                    <p>Автоматизация маркетплейсов на базе искусственного интеллекта.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Продукт</h4>
-                    <a href="features.html">Возможности</a>
-                    <a href="integrations.html">Интеграции</a>
-                    <a href="security.html">Безопасность</a>
-                    <a href="../pricing.html">Тарифы</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Документы</h4>
-                    <a href="#">Политика конфиденциальности</a>
-                    <a href="#">Договор оферты</a>
-                    <a href="#">Реквизиты</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Контакты</h4>
-                    <a href="mailto:info@aiseller.ru">info@aiseller.ru</a>
-                    <a href="tel:+79990000000">+7 (999) 000-00-00</a>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AI Seller 1С. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Modal -->
-    <div class="modal" id="trialModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Попробовать бесплатно</h2>
-            <p>Оставьте заявку, и мы подключим вам пробный период на 14 дней.</p>
-            <form class="modal-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Название компании">
-                <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
-            </form>
-        </div>
+      </div>
     </div>
-    <script src="../script.js"></script>
-</body>
-</html>
-EOF
-cat > /workspace/product/security.html << 'EOF'
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Безопасность и 152-ФЗ | Защита данных в AI Seller для 1С</title>
-    <meta name="description" content="Полное соответствие 152-ФЗ: шифрование TLS 1.3, серверы в РФ, ДПД. Ваши данные под защитой. Скачайте документы по безопасности.">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Безопасность данных | AI Seller 1С">
-    <meta property="og:description" content="152-ФЗ, TLS 1.3, серверы в Москве, аудит безопасности. Ваши данные защищены.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yamaev-design.github.io/1c/product/security.html">
-    <meta property="og:image" content="https://yamaev-design.github.io/1c/images/security-og.jpg">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://yamaev-design.github.io/1c/product/security.html">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Главная",
-          "item": "https://yamaev-design.github.io/1c/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Продукт",
-          "item": "https://yamaev-design.github.io/1c/product/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Безопасность",
-          "item": "https://yamaev-design.github.io/1c/product/security.html"
-        }
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Где хранятся данные?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Персональные данные обрабатываются на серверах в РФ (Москва, Яндекс.Облако). Конфиденциальные данные (себестоимость, маржа) не покидают контур вашей 1С."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Соответствуете ли вы 152-ФЗ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да. Мы являемся оператором ПДн, уведомили Роскомнадзор, заключаем ДПД с каждым клиентом. Используем шифрование и разграничение доступа."
-          }
-        }
-      ]
-    }
-    </script>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="../index.html" class="logo">
-                <i class="fas fa-cube"></i>
-                <span>AI Seller 1С</span>
-            </a>
-            <nav class="nav">
-                <a href="../index.html">Главная</a>
-                <a href="features.html">Возможности</a>
-                <a href="integrations.html">Интеграции</a>
-                <a href="security.html" class="active">Безопасность</a>
-                <a href="../pricing.html">Тарифы</a>
-            </nav>
-            <button class="btn btn-primary open-modal-btn">Попробовать бесплатно</button>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="hero security-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Безопасность данных и соответствие 152-ФЗ</h1>
-                <p class="hero-subtitle">Ваши данные под надежной защитой: шифрование, серверы в РФ, юридическая ответственность.</p>
-                <div class="hero-buttons">
-                    <a href="#compliance" class="btn btn-primary">Узнать о соответствии</a>
-                    <a href="#docs" class="btn btn-outline">Скачать документы</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="security-badge-large">
-                    <i class="fas fa-shield-halved"></i>
-                    <span>Защищено</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Data Flow Diagram -->
-    <section class="section bg-light" id="data-flow">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Как защищаются ваши данные</h2>
-                <p>Прозрачная схема обработки: что остаётся у вас, что уходит в облако</p>
-            </div>
-            
-            <div class="data-flow-wrapper">
-                <div class="flow-card local">
-                    <div class="flow-icon"><i class="fas fa-server"></i></div>
-                    <h3>Локально в 1С</h3>
-                    <ul>
-                        <li>Себестоимость и маржа</li>
-                        <li>Контакты клиентов (ПДн)</li>
-                        <li>Финансовые отчеты</li>
-                        <li>Пароли и ключи</li>
-                    </ul>
-                    <span class="badge badge-green">Не передается</span>
-                </div>
-                
-                <div class="flow-arrow">
-                    <i class="fas fa-lock"></i>
-                    <span>TLS 1.3</span>
-                </div>
-                
-                <div class="flow-card cloud">
-                    <div class="flow-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Облако РФ</h3>
-                    <ul>
-                        <li>Публичные описания товаров</li>
-                        <li>Тексты отзывов (без ПДн)</li>
-                        <li>Аналитика продаж</li>
-                    </ul>
-                    <span class="badge badge-blue">Шифруется</span>
-                </div>
-                
-                <div class="flow-arrow">
-                    <i class="fas fa-microchip"></i>
-                    <span>AI Processing</span>
-                </div>
-                
-                <div class="flow-card result">
-                    <div class="flow-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Результат в 1С</h3>
-                    <ul>
-                        <li>Готовые карточки</li>
-                        <li>Ответы клиентам</li>
-                        <li>Прогнозы</li>
-                    </ul>
-                    <span class="badge badge-green">Безопасно</span>
-                </div>
-            </div>
-            
-            <div class="alert-box mt-4">
-                <i class="fas fa-info-circle"></i>
-                <strong>Важно:</strong> Мы используем гибридную модель. Чувствительные коммерческие данные и ПДн никогда не покидают периметр вашей 1С без явного согласия.
-            </div>
-        </div>
-    </section>
-    <!-- Compliance 152-FZ -->
-    <section class="section" id="compliance">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Соответствие 152-ФЗ</h2>
-                <p>Полный пакет документов и технических мер для работы с персональными данными</p>
-            </div>
-            
-            <div class="grid grid-4">
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Оператор ПДн</h3>
-                    <p>ООО «[Название]» внесено в реестр операторов Роскомнадзора.</p>
-                    <a href="https://pd.rkn.gov.ru/operators-registry/" target="_blank" class="link-small">Проверить в реестре →</a>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
-                    <h3>Договор (ДПД)</h3>
-                    <p>Заключаем договор обработки ПДн с каждым клиентом.</p>
-                    <a href="#" class="link-small" download>📥 Скачать шаблон ДПД</a>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Локализация</h3>
-                    <p>Серверы находятся в РФ (Москва, Яндекс.Облако). Трансграничная передача отсутствует.</p>
-                </div>
-                
-                <div class="card feature-card">
-                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>Меры защиты</h3>
-                    <p>Шифрование при передаче и хранении. Разграничение прав доступа.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Technical Measures -->
-    <section class="section bg-dark text-white" id="tech-measures">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 style="color: white;">Технические меры защиты</h2>
-                <p style="color: rgba(255,255,255,0.7);">Профессиональный уровень безопасности инфраструктуры</p>
-            </div>
-            
-            <div class="grid grid-2">
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-lock"></i> Шифрование</h3>
-                    <ul class="check-list">
-                        <li><strong>При передаче:</strong> TLS 1.3, HSTS, Perfect Forward Secrecy</li>
-                        <li><strong>При хранении:</strong> AES-256-GCM для чувствительных полей</li>
-                        <li><strong>API-ключи:</strong> Хранятся зашифрованными в 1С</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-users"></i> Контроль доступа</h3>
-                    <ul class="check-list">
-                        <li><strong>RBAC:</strong> Ролевая модель доступа в модуле 1С</li>
-                        <li><strong>MFA:</strong> Двухфакторная аутентификация для админов</li>
-                        <li><strong>Сессии:</strong> JWT с коротким временем жизни</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-clipboard-list"></i> Логирование</h3>
-                    <ul class="check-list">
-                        <li><strong>Аудит:</strong> Запись всех действий (кто, что, когда)</li>
-                        <li><strong>ПДн:</strong> Отдельный журнал доступа к персональным данным</li>
-                        <li><strong>Хранение:</strong> Логи хранятся 3 года</li>
-                    </ul>
-                </div>
-                
-                <div class="card bg-darker border-blue">
-                    <h3><i class="fas fa-server"></i> Инфраструктура</h3>
-                    <ul class="check-list">
-                        <li><strong>Серверы:</strong> Яндекс.Облако (уровень защиты К2)</li>
-                        <li><strong>DDoS:</strong> Защита от атак любого уровня</li>
-                        <li><strong>Backup:</strong> Ежедневное резервное копирование</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Security Docs for Teams -->
-    <section class="section" id="docs">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Документы для службы безопасности</h2>
-                <p>Готовые материалы для внутренней проверки и аудита вашего предприятия</p>
-            </div>
-            
-            <div class="grid grid-2">
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Whitepaper по безопасности</h4>
-                        <p>Архитектура, угрозы, контрмеры, соответствие стандартам (14 стр.)</p>
-                        <span class="doc-meta">PDF • 2.1 MB</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Чек-лист для проверки</h4>
-                        <p>Список вопросов и требований для оценки нашего решения</p>
-                        <span class="doc-meta">PDF • 850 KB</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Шаблон ДПД (152-ФЗ)</h4>
-                        <p>Готовый договор обработки персональных данных</p>
-                        <span class="doc-meta">PDF • Юридически значимый</span>
-                    </div>
-                </a>
-                
-                <a href="#" class="doc-card card" download>
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-content">
-                        <h4>Отчёт о пентесте</h4>
-                        <p>Резюме независимого тестирования на проникновение (NDA)</p>
-                        <span class="doc-meta">PDF • Доступ по запросу</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="contact-security text-center mt-5">
-                <h3>Есть вопросы по ИБ?</h3>
-                <p>Наша команда безопасности готова ответить на любые вопросы.</p>
-                <a href="mailto:security@aiseller.ru" class="email-link">security@aiseller.ru</a>
-                <p class="small text-muted">Поддерживаем программу Bug Bounty. Ответ в течение 24 часов.</p>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ -->
-    <section class="section bg-light" id="faq">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Частые вопросы</h2>
-            </div>
-            
-            <div class="accordion">
-                <details class="accordion-item">
-                    <summary class="accordion-header">Можно ли использовать решение без облака?</summary>
-                    <div class="accordion-body">
-                        <p>Да, для тарифа «Профи» доступна опция локального развёртывания ИИ-модуля на вашем сервере. В этом случае данные не покидают ваш контур.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Какие данные передаются в ИИ-сервисы?</summary>
-                    <div class="accordion-body">
-                        <p>Только публичные данные: описания товаров, тексты отзывов. Не передаются: себестоимость, маржа, контакты клиентов, финансовые показатели.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Как долго хранятся данные?</summary>
-                    <div class="accordion-body">
-                        <p>Логи обработки — 3 года. Кэш ИИ-ответов — 30 дней. После расторжения договора все данные удаляются в течение 14 дней.</p>
-                    </div>
-                </details>
-                
-                <details class="accordion-item">
-                    <summary class="accordion-header">Что происходит при утечке данных?</summary>
-                    <div class="accordion-body">
-                        <p>У нас есть регламент реагирования (IRP). Мы уведомляем вас и РКН в течение 24 часов, проводим расследование и предоставляем отчёт.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-    <!-- Guarantees -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>Наши гарантии</h2>
-            </div>
-            
-            <div class="grid grid-4">
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-clock"></i></div>
-                    <h3>SLA 99.9%</h3>
-                    <p>Гарантируем доступность сервиса. Компенсация за простой.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-coins"></i></div>
-                    <h3>Ответственность</h3>
-                    <p>Финансовая ответственность за утечку по нашей вине прописана в договоре.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-undo"></i></div>
-                    <h3>Возврат средств</h3>
-                    <p>30 дней на тестирование. Если не подойдёт — вернём деньги.</p>
-                </div>
-                
-                <div class="card guarantee-card text-center">
-                    <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
-                    <h3>Поддержка 24/7</h3>
-                    <p>Для тарифа «Профи» — выделенный инженер безопасности.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CTA Section -->
+  </header>
 
-    <!-- CTA Section -->
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы обеспечить безопасность вашего бизнеса?</h2>
-            <p class="text-xl text-gray-400 mb-8">Начните использовать AI Seller с полным соответствием требованиям 152-ФЗ</p>
-            <button class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                <span>Начать бесплатный период</span>
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </button>
-        </div>
+  <div class="container">
+    
+    <!-- Security Hero Card -->
+    <section class="security-hero" aria-labelledby="hero-heading">
+      <span class="icon" aria-hidden="true">🛡️</span>
+      <h2 id="hero-heading">Enterprise-уровень защиты для каждого клиента</h2>
+      <p>Независимо от тарифа, все клиенты получают одинаковый уровень защиты данных. Безопасность не бывает «базовой» или «премиум».</p>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 bg-navy-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm">Автоматизация маркетплейсов на базе искусственного интеллекта прямо в 1С.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Документы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Контакты</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="mailto:info@aiseller.ru" class="hover:text-gold-400 transition-colors">info@aiseller.ru</a></li>
-                        <li><a href="tel:+79990000000" class="hover:text-gold-400 transition-colors">+7 (999) 000-00-00</a></li>
-                        <li><a href="../about/contacts.html" class="hover:text-gold-400 transition-colors">Все контакты</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
-            </div>
+    <!-- Security Features Grid -->
+    <section class="security-grid" aria-label="Меры безопасности">
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">🔐</span>
+        <h3>Шифрование данных</h3>
+        <p>Все данные шифруются при передаче (TLS 1.3) и хранении (AES-256). Ключи шифрования хранятся отдельно от данных, в защищённом хранилище.</p>
+        <div class="security-meta">
+          <span>🔒 TLS 1.3</span>
+          <span>🗄️ AES-256</span>
         </div>
-    </footer>
+      </article>
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">🇷🇺</span>
+        <h3>Локализация данных</h3>
+        <p>Все серверы расположены в РФ. Ваши данные не покидают территорию страны, что обеспечивает полное соответствие требованиям регуляторов.</p>
+        <div class="security-meta">
+          <span>📍 Москва, СПб</span>
+          <span>🏢 Дата-центры Т3</span>
+        </div>
+      </article>
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">👥</span>
+        <h3>Контроль доступа</h3>
+        <p>Ролевая модель доступа, двухфакторная аутентификация, сессии с таймаутом. Вы контролируете, кто имеет доступ к вашим данным.</p>
+        <div class="security-meta">
+          <span>🔑 2FA</span>
+          <span>🎭 RBAC</span>
+        </div>
+      </article>
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">📋</span>
+        <h3>Аудит и логирование</h3>
+        <p>Все действия пользователей логируются: кто, что и когда сделал. Логи хранятся 90 дней и доступны для экспорта по запросу.</p>
+        <div class="security-meta">
+          <span>📝 Полное логирование</span>
+          <span>📤 Экспорт по запросу</span>
+        </div>
+      </article>
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">🔄</span>
+        <h3>Резервное копирование</h3>
+        <p>Ежедневные бэкапы с хранением в гео-распределённых дата-центрах. Восстановление данных — в течение 4 часов при инциденте.</p>
+        <div class="security-meta">
+          <span>📅 Ежедневно</span>
+          <span>⏱️ RTO: 4 часа</span>
+        </div>
+      </article>
+      
+      <article class="security-card">
+        <span class="security-icon" aria-hidden="true">🔍</span>
+        <h3>Регулярные аудиты</h3>
+        <p>Внешние аудиты безопасности 2 раза в год, пентесты, сканирование уязвимостей. Отчёты доступны по запросу для клиентов Профи и Enterprise.</p>
+        <div class="security-meta">
+          <span>🔎 2× в год</span>
+          <span>🧪 Пентесты</span>
+        </div>
+      </article>
+      
+    </section>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+    <!-- Compliance Section -->
+    <section class="compliance-section" aria-labelledby="compliance-heading">
+      <h2 id="compliance-heading">Соответствие стандартам и регуляторам</h2>
+      
+      <div class="compliance-grid">
         
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">⚖️</span>
+          <h3>152-ФЗ «О персональных данных»</h3>
+          <p>Полное соответствие требованиям закона: уведомление Роскомнадзора, политика обработки ПДн, согласие субъектов.</p>
+          <span class="compliance-cert">✅ Соответствует</span>
+        </div>
+        
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">🌐</span>
+          <h3>Локализация данных (ст. 18 152-ФЗ)</h3>
+          <p>Первичная обработка и хранение персональных данных граждан РФ осуществляются на территории Российской Федерации.</p>
+          <span class="compliance-cert">✅ Серверы в РФ</span>
+        </div>
+        
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">🔐</span>
+          <h3>ГОСТ Р 57580 / ФСТЭК</h3>
+          <p>Применяем меры защиты информации в соответствии с требованиями ФСТЭК для ИСПДн уровня защищённости УЗ-2.</p>
+          <span class="compliance-cert">📋 По запросу</span>
+        </div>
+        
+        <div class="compliance-item">
+          <span class="compliance-icon" aria-hidden="true">🤝</span>
+          <h3>NDA и договоры</h3>
+          <p>Готовы подписать соглашение о неразглашении (NDA) и включить положения о защите данных в договор оферты.</p>
+          <span class="compliance-cert">📄 Доступно</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Encryption Section -->
+    <section class="encryption-section" aria-labelledby="encryption-heading">
+      <h2 id="encryption-heading">Как мы защищаем ваши данные</h2>
+      
+      <div class="encryption-grid">
+        
+        <div class="encryption-card">
+          <h3>🔐 Шифрование при передаче</h3>
+          <ul>
+            <li>TLS 1.3 для всех соединений</li>
+            <li>HSTS для принудительного HTTPS</li>
+            <li>Perfect Forward Secrecy (PFS)</li>
+            <li>Сертификаты от доверенных ЦС</li>
+          </ul>
+          <div class="code-block">
+            <small>Пример заголовка безопасности:</small><br>
+            <code>Strict-Transport-Security: max-age=31536000; includeSubDomains</code>
+          </div>
+        </div>
+        
+        <div class="encryption-card">
+          <h3>🗄️ Шифрование при хранении</h3>
+          <ul>
+            <li>AES-256 для баз данных</li>
+            <li>Отдельное хранение ключей (HSM)</li>
+            <li>Шифрование бэкапов</li>
+            <li>Маскирование ПДн в логах</li>
+          </ul>
+          <div class="code-block">
+            <small>Алгоритм шифрования:</small><br>
+            <code>ENC_AES256_GCM(key_derived_from_KMS, plaintext)</code>
+          </div>
+        </div>
+        
+        <div class="encryption-card">
+          <h3>👤 Защита доступа</h3>
+          <ul>
+            <li>Двухфакторная аутентификация (2FA)</li>
+            <li>Ролевая модель (RBAC)</li>
+            <li>Сессии с таймаутом 30 мин</li>
+            <li>Блокировка после 5 неудачных попыток</li>
+          </ul>
+          <div class="code-block">
+            <small>Пример политики пароля:</small><br>
+            <code>min_length: 12, require_special: true, expire_days: 90</code>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Data Flow Section -->
+    <section class="dataflow-section" aria-labelledby="dataflow-heading">
+      <h2 id="dataflow-heading">Путь ваших данных</h2>
+      
+      <div class="dataflow-diagram">
+        
+        <div class="dataflow-step">
+          <div class="dataflow-number">1</div>
+          <div class="dataflow-content">
+            <h4>Ваша 1С → Наш сервер</h4>
+            <p>Данные передаются по защищённому каналу (TLS 1.3) с аутентификацией по API-ключу.</p>
+            <span class="dataflow-security">🔒 Шифрование в пути</span>
+          </div>
+        </div>
+        
+        <div class="dataflow-step">
+          <div class="dataflow-number">2</div>
+          <div class="dataflow-content">
+            <h4>Обработка в нашем контуре</h4>
+            <p>Данные обрабатываются в изолированном контуре. Доступ имеют только авторизованные сервисы.</p>
+            <span class="dataflow-security">🔐 Изоляция + аудит</span>
+          </div>
+        </div>
+        
+        <div class="dataflow-step">
+          <div class="dataflow-number">3</div>
+          <div class="dataflow-content">
+            <h4>Запрос к ИИ-провайдеру</h4>
+            <p>Только необходимые данные отправляются в ИИ (YandexGPT/GigaChat). ПДн маскируются или удаляются.</p>
+            <span class="dataflow-security">🎭 Маскирование ПДн</span>
+          </div>
+        </div>
+        
+        <div class="dataflow-step">
+          <div class="dataflow-number">4</div>
+          <div class="dataflow-content">
+            <h4>Возврат результата в 1С</h4>
+            <p>Результат передаётся обратно в вашу 1С по тому же защищённому каналу. Исходные данные не сохраняются у нас.</p>
+            <span class="dataflow-security">🔄 End-to-end защита</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Access Control Section -->
+    <section class="access-section" aria-labelledby="access-heading">
+      <h2 id="access-heading">Контроль доступа к вашим данным</h2>
+      
+      <div class="access-grid">
+        
+        <div class="access-card">
+          <h3>👥 Роли и права</h3>
+          <ul>
+            <li><strong>Администратор:</strong> полный доступ к настройкам</li>
+            <li><strong>Менеджер:</strong> работа с карточками, без доступа к ключам</li>
+            <li><strong>Аналитик:</strong> только просмотр отчётов</li>
+            <li><strong>Аудитор:</strong> доступ к логам, без права изменения</li>
+          </ul>
+        </div>
+        
+        <div class="access-card">
+          <h3>🔑 Аутентификация</h3>
+          <ul>
+            <li>Двухфакторная аутентификация (TOTP, SMS)</li>
+            <li>SSO через корпоративные провайдеры (SAML, OIDC)</li>
+            <li>API-ключи с ограничением по IP и правам</li>
+            <li>Автоматический выход после 30 мин неактивности</li>
+          </ul>
+        </div>
+        
+        <div class="access-card">
+          <h3>📋 Аудит действий</h3>
+          <ul>
+            <li>Логирование всех действий: вход, изменения, экспорт</li>
+            <li>Хранение логов: 90 дней (настраивается)</li>
+            <li>Экспорт логов в CSV/JSON по запросу</li>
+            <li>Уведомления о подозрительной активности</li>
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Audit Section -->
+    <section class="audit-section" aria-labelledby="audit-heading">
+      <h2 id="audit-heading">Регулярные проверки безопасности</h2>
+      
+      <div class="audit-timeline">
+        
+        <article class="audit-item">
+          <div class="audit-dot"></div>
+          <div>
+            <h4>Ежедневный мониторинг</h4>
+            <p>Автоматическое сканирование на уязвимости, мониторинг аномальной активности, проверка целостности файлов.</p>
+            <span class="audit-badge">Автоматически</span>
+          </div>
+        </article>
+        
+        <article class="audit-item">
+          <div class="audit-dot"></div>
+          <div>
+            <h4>Ежеквартальный пентест</h4>
+            <p>Внешние специалисты проводят тестирование на проникновение, проверяют конфигурации и политики доступа.</p>
+            <span class="audit-badge">Отчёт по запросу</span>
+          </div>
+        </article>
+        
+        <article class="audit-item">
+          <div class="audit-dot"></div>
+          <div>
+            <h4>Полугодовой аудит</h4>
+            <p>Комплексная проверка соответствия 152-ФЗ, ГОСТ, внутренним политикам. Результаты — в личном кабинете.</p>
+            <span class="audit-badge">Для Профи+</span>
+          </div>
+        </article>
+        
+        <article class="audit-item">
+          <div class="audit-dot"></div>
+          <div>
+            <h4>Годовой отчёт о безопасности</h4>
+            <p>Публичный отчёт о мерах безопасности, инцидентах (если были), улучшениях. Прозрачность — наш принцип.</p>
+            <span class="audit-badge">Публично</span>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Incident Response Section -->
+    <section class="incident-section" aria-labelledby="incident-heading">
+      <h2 id="incident-heading">Реагирование на инциденты</h2>
+      
+      <div class="incident-steps">
+        
+        <article class="incident-step">
+          <div class="incident-number">1</div>
+          <h4>Обнаружение</h4>
+          <p>Мониторинг 24/7, алерты при аномалиях, отчёты пользователей</p>
+        </article>
+        
+        <article class="incident-step">
+          <div class="incident-number">2</div>
+          <h4>Изоляция</h4>
+          <p>Автоматическая блокировка подозрительных сессий, ограничение доступа</p>
+        </article>
+        
+        <article class="incident-step">
+          <div class="incident-number">3</div>
+          <h4>Расследование</h4>
+          <p>Анализ логов, определение масштаба, привлечение экспертов при необходимости</p>
+        </article>
+        
+        <article class="incident-step">
+          <div class="incident-number">4</div>
+          <h4>Уведомление</h4>
+          <p>Информирование затронутых клиентов в течение 24 часов, отчёт о мерах</p>
+        </article>
+        
+      </div>
+      
+      <p style="text-align: center; margin-top: 32px; font-size: 14px; color: var(--color-text-muted);">
+        <small>📞 Экстренный контакт по безопасности: <a href="mailto:security@aiseller.ru" style="color: var(--color-primary); font-weight: 500;">security@aiseller.ru</a></small>
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">❓ Частые вопросы о безопасности</h2>
+      
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Где хранятся мои данные?</summary>
+          <div class="faq-answer">
+            <p>Все данные хранятся на серверах в Российской Федерации (Москва, Санкт-Петербург) в дата-центрах уровня Tier III. Мы не передаём данные третьим лицам и не используем их в маркетинговых целях.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Как вы соблюдаете 152-ФЗ?</summary>
+          <div class="faq-answer">
+            <p>Мы являемся оператором персональных данных, уведомили Роскомнадзор, разработали политику обработки ПДн, получаем согласие субъектов, применяем технические меры защиты в соответствии с приказами ФСТЭК.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Что происходит с данными при расторжении договора?</summary>
+          <div class="faq-answer">
+            <p>По вашему запросу мы полностью удаляем все ваши данные из наших систем в течение 30 дней. Предоставляем акт об уничтожении. Вы также можете экспортировать данные в любой момент через личный кабинет.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Можно ли провести собственный аудит?</summary>
+          <div class="faq-answer">
+            <p>Да, для клиентов тарифа «Профи» и Enterprise мы предоставляем доступ к отчётам об аудите, политикам безопасности и при необходимости организуем встречу с нашим CISO для обсуждения мер защиты.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Как сообщить об уязвимости?</summary>
+          <div class="faq-answer">
+            <p>Мы ценим ответственное раскрытие уязвимостей. Напишите на <a href="mailto:security@aiseller.ru">security@aiseller.ru</a> с описанием проблемы. Мы отвечаем в течение 24 часов и благодарим за помощь в улучшении безопасности.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Security Contact -->
+    <section class="security-contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Вопросы по безопасности?</h2>
+      <p>Наша команда безопасности готова ответить на вопросы, предоставить документацию или организовать встречу.</p>
+      
+      <div class="contact-cards">
+        <div class="contact-card">
+          <span class="icon" aria-hidden="true">📧</span>
+          <strong>Общие вопросы</strong>
+          <a href="mailto:support@aiseller.ru">support@aiseller.ru</a>
+        </div>
+        <div class="contact-card">
+          <span class="icon" aria-hidden="true">🔐</span>
+          <strong>Инциденты / уязвимости</strong>
+          <a href="mailto:security@aiseller.ru">security@aiseller.ru</a>
+        </div>
+        <div class="contact-card">
+          <span class="icon" aria-hidden="true">📋</span>
+          <strong>Запрос документации</strong>
+          <a href="mailto:compliance@aiseller.ru">compliance@aiseller.ru</a>
+        </div>
+      </div>
+      
+      <a href="mailto:security@aiseller.ru" class="security-report-btn">
+        <span>📤</span>
+        <span>Сообщить об инциденте</span>
+      </a>
+    </section>
+
+  </div> <!-- /container -->
+
+  <!-- CTA Section -->
+  <section class="security-cta">
+    <div class="container">
+      <h2>Готовы начать с безопасной автоматизации?</h2>
+      <p>14 дней бесплатно • Защита данных с первого дня • Соответствие 152-ФЗ • Поддержка 24/7</p>
+      
+      <div class="cta-buttons">
+        <a href="/trial" class="btn-primary">
+          <span>🚀</span>
+          <span>Начать бесплатный триал</span>
+        </a>
+        <a href="/contact?dept=sales" class="btn-secondary">
+          <span>💬</span>
+          <span>Обсудить требования безопасности</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== FAQ: Close others when one opens =====
+    $$('.faq-item').forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          $$('.faq-item').forEach(other => {
+            if (other !== this) other.open = false;
+          });
+        }
+      });
+    });
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'product',
+          'event_label': 'security_page',
+          'page_title': 'Безопасность'
         });
-    </script>
+      }
+      
+      // Track security contact clicks
+      $$('a[href^="mailto:security"]').forEach(link => {
+        link.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'security_contact', {
+              'event_category': 'engagement',
+              'event_label': 'security_page'
+            });
+          }
+        });
+      });
+    });
+  </script>
+  
 </body>
 </html>
