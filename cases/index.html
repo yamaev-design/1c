@@ -1,752 +1,1849 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кейсы клиентов — DeepSite | Истории успеха селлеров</title>
-    <meta name="description" content="Реальные кейсы селлеров Wildberries и Ozon: как автоматизация в 1С помогла увеличить продажи, сэкономить время и улучшить рейтинг.">
-    <link rel="canonical" href="/cases/">
-    
-    <link rel="stylesheet" href="../style.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Кейсы автоматизации 1С | Результаты внедрения для селлеров</title>
+  <meta name="description" content="Реальные кейсы автоматизации продаж в 1С: снижение возвратов на 70%, экономия 20 часов в неделю. Читайте истории успеха селлеров.">
+  <meta name="keywords" content="кейсы 1С, автоматизация маркетплейсов, отзывы клиентов, результаты внедрения, успехи селлеров">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Кейсы автоматизации 1С | Реальные результаты">
+  <meta property="og:description" content="Истории успеха селлеров: цифры, отзывы, метрики">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/cases/">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/cases-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Кейсы автоматизации 1С | Реальные результаты">
+  <meta name="twitter:description" content="Истории успеха селлеров: цифры, отзывы, метрики">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/cases/">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "Кейсы", "item": "https://yamaev-design.github.io/1c/cases/" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Кейсы автоматизации 1С",
+    "description": "Реальные истории успеха селлеров: цифры, отзывы, метрики",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Seller 1С",
+      "url": "https://yamaev-design.github.io/1c/"
+    },
+    "mainEntity": [
+      {
+        "@type": "CaseStudy",
+        "name": "Как магазин одежды сократил возвраты на 72%",
+        "description": "Автоматизация генерации карточек и контроля размеров",
+        "keywords": ["одежда", "возвраты", "1С", "маркетплейсы"]
+      },
+      {
+        "@type": "CaseStudy",
+        "name": "Защита маржи для ритейлера электроники",
+        "description": "Динамическое ценообразование с учётом себестоимости",
+        "keywords": ["электроника", "ценообразование", "маржа", "1С"]
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Все ли кейсы реальные?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, все кейсы основаны на реальных проектах. Мы публикуем только с разрешения клиентов. Некоторые названия компаний изменены по запросу, но все метрики и результаты — достоверные."
         }
-    </script>
-
-
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли получить такие же результаты?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Результаты зависят от множества факторов: ваш ассортимент, процессы, команда. Однако наши клиенты в среднем достигают: −70% возвратов, −85% времени на карточки, окупаемость 14–21 день. Точный прогноз — после бесплатного аудита."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
     
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 56px 0 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 48px;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+    
+    .page-header .trust-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    
+    .trust-stat {
+      text-align: center;
+    }
+    
+    .trust-stat .value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-accent-light);
+    }
+    
+    .trust-stat .label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== FILTERS SECTION ===== */
+    .cases-filters {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      margin: 0 0 48px 0;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .search-box {
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      font-size: 16px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--color-bg);
+    }
+    
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 14px;
+    }
+    
+    .filter-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--color-bg-white);
+      cursor: pointer;
+    }
+    
+    .filter-group select:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    
+    .active-filters {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      background: #eff6ff;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    
+    .filter-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-tag:hover {
+      background: #dbeafe;
+      border-color: var(--color-primary-light);
+    }
+    
+    .reset-filters {
+      background: none;
+      border: none;
+      color: var(--color-primary);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    .results-count {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      text-align: right;
+    }
+    
+    /* ===== FEATURED CASES ===== */
+    .featured-cases {
+      margin: 48px 0;
+    }
+    
+    .featured-cases h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .featured-cases .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+    }
+    
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+    
+    .featured-case {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .featured-case:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .featured-case.large {
+      grid-column: 1 / -1;
+      flex-direction: row;
+    }
+    
+    .featured-image {
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .featured-case.large .featured-image {
+      width: 50%;
+    }
+    
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 200px;
+    }
+    
+    .featured-case.large .featured-image img {
+      min-height: 100%;
+    }
+    
+    .industry-badge, .featured-badge, .industry-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 1;
+    }
+    
+    .industry-badge, .industry-tag {
+      background: rgba(255,255,255,0.95);
+      color: var(--color-primary);
+      border: 1px solid var(--color-border);
+    }
+    
+    .featured-badge {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      color: #78350f;
+      border: none;
+    }
+    
+    .featured-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .featured-case.large .featured-content {
+      width: 50%;
+    }
+    
+    .featured-content .industry-tag {
+      position: static;
+      display: inline-block;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    
+    .featured-content h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .featured-content h3 a {
+      color: var(--color-text);
+      transition: var(--transition);
+    }
+    
+    .featured-content h3 a:hover {
+      color: var(--color-primary);
+    }
+    
+    .featured-content p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    
+    .featured-metrics {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .metric-large {
+      text-align: center;
+    }
+    
+    .metric-large .value {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-success);
+    }
+    
+    .metric-large .label {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    .case-metrics-inline {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .case-metrics-inline span {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .case-metrics-inline span:first-child {
+      color: var(--color-success);
+    }
+    
+    .btn-featured, .btn-read-case {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+    
+    .btn-featured {
+      color: var(--color-primary);
+      font-size: 16px;
+    }
+    
+    .btn-read-case {
+      color: var(--color-primary);
+      font-size: 14px;
+    }
+    
+    .btn-featured:hover, .btn-read-case:hover {
+      gap: 12px;
+    }
+    
+    /* ===== CASES GRID ===== */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 48px 0;
+    }
+    
+    .case-card {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .case-card:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    .case-thumbnail {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    }
+    
+    .case-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .case-card:hover .case-thumbnail img {
+      transform: scale(1.05);
+    }
+    
+    .case-thumbnail .industry-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255,255,255,0.95);
+      color: var(--color-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+    }
+    
+    .case-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .case-content h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    
+    .case-content h3 a {
+      color: var(--color-text);
+      transition: var(--transition);
+    }
+    
+    .case-content h3 a:hover {
+      color: var(--color-primary);
+    }
+    
+    .case-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+    }
+    
+    .metric {
+      text-align: center;
+    }
+    
+    .metric-icon {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    
+    .metric-value {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-success);
+    }
+    
+    .metric-label {
+      display: block;
+      font-size: 11px;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .case-client {
+      margin-bottom: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .client-name {
+      display: block;
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 14px;
+    }
+    
+    .client-role {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== TRUST SECTION ===== */
+    .cases-trust {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    
+    .cases-trust h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    
+    .trust-item {
+      padding: 20px;
+    }
+    
+    .trust-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .trust-value {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    
+    .trust-label {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    
+    .client-logos p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    
+    .logos-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+    
+    .logos-grid img {
+      max-height: 40px;
+      filter: grayscale(100%);
+      transition: var(--transition);
+    }
+    
+    .logos-grid img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .cases-cta {
+      text-align: center;
+      padding: 56px 24px;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: var(--radius-xl);
+      margin: 48px 0;
+      color: white;
+    }
+    
+    .cases-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .cases-cta p {
+      opacity: 0.95;
+      margin-bottom: 28px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: var(--transition);
+      font-size: 16px;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    
+    .cta-note {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== FAQ SECTION ===== */
+    .cases-faq {
+      margin: 48px 0;
+    }
+    
+    .cases-faq h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      border-color: var(--color-primary-light);
+    }
+    
+    .faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .faq-item summary::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: var(--color-text-muted);
+    }
+    
+    .faq-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px 24px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    
+    .faq-answer a {
+      font-weight: 500;
+    }
+    
+    /* ===== PAGINATION ===== */
+    .cases-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 48px 0;
+      flex-wrap: wrap;
+    }
+    
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      color: var(--color-text);
+      transition: var(--transition);
+    }
+    
+    .page-link:hover,
+    .page-link.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+    
+    .page-ellipsis {
+      color: var(--color-text-muted);
+      padding: 0 8px;
+    }
+    
+    .load-more-wrapper {
+      text-align: center;
+      margin: 48px 0;
+    }
+    
+    .btn-load-more {
+      background: var(--color-bg-white);
+      color: var(--color-primary);
+      padding: 14px 32px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+    }
+    
+    .btn-load-more:hover {
+      border-color: var(--color-primary-light);
+      background: #eff6ff;
+    }
+    
+    .btn-load-more:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    /* ===== LOADING STATE ===== */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .loading-overlay.active {
+      display: flex;
+    }
+    
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--color-border);
+      border-top-color: var(--color-primary-light);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      color: var(--color-text-muted);
+      font-size: 16px;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      
+      .page-header {
+        padding: 40px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      
+      .cases-filters,
+      .cases-trust {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+      }
+      
+      .filters-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .featured-case.large {
+        flex-direction: column;
+      }
+      
+      .featured-case.large .featured-image,
+      .featured-case.large .featured-content {
+        width: 100%;
+      }
+      
+      .featured-image img {
+        min-height: 160px;
+      }
+      
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-metrics {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 12px;
+      }
+      
+      .metric-value {
+        font-size: 16px;
+      }
+      
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      
+      .cases-pagination {
+        gap: 4px;
+      }
+      
+      .page-link {
+        min-width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .filters-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-metrics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      .featured-metrics,
+      .case-metrics-inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+    
+    /* Hidden state for filtered items */
+    .case-card[style*="display: none"] {
+      display: none !important;
+    }
+  </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+<body>
 
-<!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
-    </div>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay" aria-live="polite" aria-hidden="true">
+    <div class="spinner" role="status"></div>
+    <p class="loading-text">Загрузка кейсов...</p>
+  </div>
 
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <span class="badge">🏆 Реальные результаты</span>
+        <h1>Кейсы автоматизации для селлеров</h1>
+        <p class="subtitle">Истории успеха: как наши клиенты сократили возвраты, сэкономили время и увеличили прибыль с помощью ИИ в 1С</p>
+        
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <span class="value">500+</span>
+            <span class="label">активных клиентов</span>
+          </div>
+          <div class="trust-stat">
+            <span class="value">4.9/5</span>
+            <span class="label">средняя оценка</span>
+          </div>
+          <div class="trust-stat">
+            <span class="value">95%</span>
+            <span class="label">продлевают подписку</span>
+          </div>
+          <div class="trust-stat">
+            <span class="value">14–21 дн</span>
+            <span class="label">средняя окупаемость</span>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../product/features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../product/updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/food/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+    <div class="container">
+      
+      <!-- Filters Section -->
+      <section class="cases-filters" aria-label="Фильтрация кейсов">
+        
+        <!-- Search -->
+        <div class="search-box">
+          <input type="search" id="cases-search" placeholder="🔍 Поиск по кейсам..." aria-label="Поиск по кейсам">
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../product/features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="../product/integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../product/security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="../product/updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../solutions/food/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="../about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="../about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="../about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
+        <!-- Filters -->
+        <div class="filters-grid">
+          
+          <div class="filter-group">
+            <label for="filter-industry">Отрасль</label>
+            <select id="filter-industry">
+              <option value="">Все отрасли</option>
+              <option value="clothing">👗 Одежда</option>
+              <option value="electronics">🔌 Электроника</option>
+              <option value="cosmetics">💄 Косметика</option>
+              <option value="food">🍎 Продукты</option>
+              <option value="bad">💊 БАД</option>
+              <option value="other">💡 Другое</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-result">Результат</label>
+            <select id="filter-result">
+              <option value="">Любой результат</option>
+              <option value="returns">📉 Снижение возвратов</option>
+              <option value="time">⏱️ Экономия времени</option>
+              <option value="conversion">📈 Рост конверсии</option>
+              <option value="margin">💰 Защита маржи</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-feature">Функция</label>
+            <select id="filter-feature">
+              <option value="">Любая функция</option>
+              <option value="cards">📝 Генерация карточек</option>
+              <option value="reviews">💬 Авто-ответы</option>
+              <option value="pricing">🏷️ Ценообразование</option>
+              <option value="forecast">📦 Прогноз закупок</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="sort-by">Сортировка</label>
+            <select id="sort-by">
+              <option value="newest">Сначала новые</option>
+              <option value="popular">По популярности</option>
+              <option value="result">По результату</option>
+            </select>
+          </div>
+          
         </div>
-    </nav>
-    <main class="pt-20">
-        <section class="hero">
-            <div class="container">
-                <h1>Кейсы наших клиентов</h1>
-                <p class="hero-subtitle">Реальные истории успеха селлеров Wildberries и Ozon, которые автоматизировали рутину с DeepSite</p>
-            </div>
-        </section>
-        <section class="cases-filters">
-            <div class="container">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">Все</button>
-                    <button class="filter-btn" data-filter="clothing">Одежда</button>
-                    <button class="filter-btn" data-filter="electronics">Электроника</button>
-                    <button class="filter-btn" data-filter="cosmetics">Косметика</button>
-                    <button class="filter-btn" data-filter="food">Продукты</button>
-                </div>
-            </div>
-        </section>
-        <section class="cases-grid">
-            <div class="container">
-                <div class="case-card" data-category="clothing">
-                    <div class="case-badge">Одежда</div>
-                    <h3>StyleHub: запуск коллекции за 6 часов вместо 5 дней</h3>
-                    <p class="case-metrics">
-                        <span>⏱️ 25 часов/мес сэкономлено</span>
-                        <span>💰 35 000 ₽/мес экономия</span>
-                        <span>⭐ Рейтинг 4.1 → 4.7</span>
-                    </p>
-                    <p>Автоматизация генерации описаний для 800 SKU одежды. Умные размерные сетки снизили возвраты на 60%.</p>
-                    <a href="/cases/stylehub.html" class="btn btn-outline">Читать кейс</a>
-                </div>
-                <div class="case-card" data-category="electronics">
-                    <div class="case-badge">Электроника</div>
-                    <h3>TechnoPro: защита маржи в условиях демпинга</h3>
-                    <p class="case-metrics">
-                        <span>📈 Buy Box в 85% случаев</span>
-                        <span>💰 Окупаемость 2 недели</span>
-                        <span>⏱️ 40 часов/мес экономия</span>
-                    </p>
-                    <p>Внедрение умного ценообразования для 2500 SKU электроники. Автоматические ответы на вопросы о совместимости.</p>
-                    <a href="/cases/technopro.html" class="btn btn-outline">Читать кейс</a>
-                </div>
-                <div class="case-card" data-category="cosmetics">
-                    <div class="case-badge">Косметика</div>
-                    <h3>BeautyBox: рост продаж на 45% за 3 месяца</h3>
-                    <p class="case-metrics">
-                        <span>📈 +45% к продажам</span>
-                        <span>⭐ Рейтинг 4.8</span>
-                        <span>⏱️ 20 часов/мес экономия</span>
-                    </p>
-                    <p>Генерация описаний с разбором состава INCI. Персонализированные рекомендации по типу кожи.</p>
-                    <a href="/cases/beautybox.html" class="btn btn-outline">Читать кейс</a>
-                </div>
-                <div class="case-card" data-category="food">
-                    <div class="case-badge">Продукты</div>
-                    <h3>FoodMarket: оптимизация остатков и сроков годности</h3>
-                    <p class="case-metrics">
-                        <span>📦 -30% списаний</span>
-                        <span>💰 50 000 ₽/мес экономия</span>
-                        <span>⏱️ 15 часов/мес экономия</span>
-                    </p>
-                    <p>Прогноз закупок для продуктов с коротким сроком годности. Авто-генерация КБЖУ для 1200 SKU.</p>
-                    <a href="/cases/foodmarket.html" class="btn btn-outline">Читать кейс</a>
-                </div>
-            </div>
-        </section>
-        <section class="cta-section">
-            <div class="container">
-                <h2>Хотите стать следующим кейсом?</h2>
-                <p>Поделитесь своей историей успеха и получите 3 месяца подписки бесплатно</p>
-                <a href="/cases/submit.html" class="btn btn-primary btn-lg">Опубликовать свой кейс</a>
-            </div>
-        </section>
-    </main>
-    
-    <script src="../script.js"></script>
+        
+        <!-- Active filters & reset -->
+        <div class="active-filters" id="active-filters" hidden>
+          <span>Активные фильтры:</span>
+          <button class="filter-tag" data-filter="industry:clothing">👗 Одежда ✕</button>
+          <button class="reset-filters">Сбросить все</button>
+        </div>
+        
+        <!-- Results count -->
+        <p class="results-count">Найдено: <strong id="cases-count">12</strong> кейсов</p>
+        
+      </section>
 
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
-                    </div>
+      <!-- Featured Cases -->
+      <section class="featured-cases" aria-labelledby="featured-heading">
+        <h2 id="featured-heading">⭐ Избранные кейсы</h2>
+        <p class="subtitle">Наши самые впечатляющие результаты</p>
+        
+        <div class="featured-grid">
+          
+          <!-- Featured Case 1 (Large) -->
+          <article class="featured-case large" data-industry="electronics" data-result="margin" data-feature="pricing">
+            <div class="featured-image">
+              <div style="background: linear-gradient(135deg, #0ea5e9, #3b82f6); height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                <div style="text-align: center; padding: 24px;">
+                  <div style="font-size: 48px; margin-bottom: 12px;">📊🔌</div>
+                  <p style="font-size: 14px; opacity: 0.95;">Дашборд динамического ценообразования</p>
                 </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../product/features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="../product/integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="../product/security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="../product/updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../solutions/food/index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../about/index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="../about/team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="../about/careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="../about/contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
+              </div>
+              <span class="featured-badge">🏆 Лучший результат</span>
             </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
+            <div class="featured-content">
+              <span class="industry-tag">🔌 Электроника</span>
+              <h3><a href="/cases/electronics-margin-protection">Как ритейлер электроники защитил маржу от демпинга</a></h3>
+              <p>Внедрение динамического ценообразования с учётом себестоимости из 1С помогло стабилизировать маржу на уровне 13–15% при 25+ конкурентах в категории.</p>
+              <div class="featured-metrics">
+                <div class="metric-large">
+                  <span class="value">+38%</span>
+                  <span class="label">Win Rate Buy Box</span>
                 </div>
+                <div class="metric-large">
+                  <span class="value">18 дней</span>
+                  <span class="label">окупаемость</span>
+                </div>
+              </div>
+              <a href="/cases/electronics-margin-protection" class="btn-featured">Читать кейс <span aria-hidden="true">→</span></a>
             </div>
+          </article>
+          
+          <!-- Featured Case 2 -->
+          <article class="featured-case" data-industry="cosmetics" data-result="returns" data-feature="cards">
+            <div class="featured-image">
+              <div style="background: linear-gradient(135deg, #ec4899, #f472b6); height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                <div style="text-align: center; padding: 24px;">
+                  <div style="font-size: 48px; margin-bottom: 12px;">💄✨</div>
+                  <p style="font-size: 14px; opacity: 0.95;">Карточка косметики с составом</p>
+                </div>
+              </div>
+              <span class="industry-badge">💄 Косметика</span>
+            </div>
+            <div class="featured-content">
+              <span class="industry-tag">💄 Косметика</span>
+              <h3><a href="/cases/cosmetics-returns-reduction">Сокращение возвратов на 68% за счёт умных описаний составов</a></h3>
+              <p class="case-metrics-inline">
+                <span>📉 −68% возвратов</span>
+                <span>⏱️ −88% времени</span>
+              </p>
+              <a href="/cases/cosmetics-returns-reduction" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          
+          <!-- Featured Case 3 -->
+          <article class="featured-case" data-industry="food" data-result="time" data-feature="forecast">
+            <div class="featured-image">
+              <div style="background: linear-gradient(135deg, #22c55e, #4ade80); height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                <div style="text-align: center; padding: 24px;">
+                  <div style="font-size: 48px; margin-bottom: 12px;">🍎📅</div>
+                  <p style="font-size: 14px; opacity: 0.95;">Контроль сроков годности</p>
+                </div>
+              </div>
+              <span class="industry-badge">🍎 Продукты</span>
+            </div>
+            <div class="featured-content">
+              <span class="industry-tag">🍎 Продукты</span>
+              <h3><a href="/cases/food-expiry-control">−82% списаний по срокам с автоматическим контролем</a></h3>
+              <p class="case-metrics-inline">
+                <span>🗑️ −82% списаний</span>
+                <span>📅 90/60/30 дней</span>
+              </p>
+              <a href="/cases/food-expiry-control" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          
         </div>
-    </footer>
+      </section>
+
+      <!-- Cases Grid -->
+      <section class="cases-grid" id="cases-grid" aria-label="Все кейсы">
+        
+        <!-- Case 1: Clothing -->
+        <article class="case-card" data-industry="clothing" data-result="returns" data-feature="cards">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #7c3aed, #a78bfa); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">👗📏</div>
+                <p style="font-size: 14px; opacity: 0.95;">Размерные сетки в 1С</p>
+              </div>
+            </div>
+            <span class="industry-badge">👗 Одежда</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/clothing-returns-reduction">Как магазин одежды сократил возвраты на 72%</a></h3>
+            <p class="case-description">Автоматизация генерации карточек и контроля размеров для федерального бренда одежды.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">📉</span>
+                <span class="metric-value">−72%</span>
+                <span class="metric-label">возвратов</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">−85%</span>
+                <span class="metric-label">времени</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">📈</span>
+                <span class="metric-value">+34%</span>
+                <span class="metric-label">конверсия</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«Бренд стиля»</span>
+              <span class="client-role">федеральный онлайн-магазин</span>
+            </div>
+            <a href="/cases/clothing-returns-reduction" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <!-- Case 2: Electronics -->
+        <article class="case-card" data-industry="electronics" data-result="margin" data-feature="pricing">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0ea5e9, #3b82f6); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🔌🛡️</div>
+                <p style="font-size: 14px; opacity: 0.95;">Защита маржи</p>
+              </div>
+            </div>
+            <span class="industry-badge">🔌 Электроника</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/electronics-margin-protection">Защита маржи для ритейлера электроники</a></h3>
+            <p class="case-description">Динамическое ценообразование с учётом себестоимости из 1С помогло стабилизировать прибыль.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">💰</span>
+                <span class="metric-value">+38%</span>
+                <span class="metric-label">Buy Box</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">📊</span>
+                <span class="metric-value">13–15%</span>
+                <span class="metric-label">маржа</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">18 дн</span>
+                <span class="metric-label">окупаемость</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«ТехноМаркет»</span>
+              <span class="client-role">онлайн-ритейлер</span>
+            </div>
+            <a href="/cases/electronics-margin-protection" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <!-- Case 3: Cosmetics -->
+        <article class="case-card" data-industry="cosmetics" data-result="returns" data-feature="cards">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">💄🧴</div>
+                <p style="font-size: 14px; opacity: 0.95;">Описание составов</p>
+              </div>
+            </div>
+            <span class="industry-badge">💄 Косметика</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/cosmetics-returns-reduction">−68% возвратов за счёт умных описаний составов</a></h3>
+            <p class="case-description">Автоматическая генерация понятных описаний ингредиентов для магазина натуральной косметики.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">📉</span>
+                <span class="metric-value">−68%</span>
+                <span class="metric-label">возвратов</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">−88%</span>
+                <span class="metric-label">времени</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">📈</span>
+                <span class="metric-value">+40%</span>
+                <span class="metric-label">конверсия</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«BeautyLab»</span>
+              <span class="client-role">натуральная косметика</span>
+            </div>
+            <a href="/cases/cosmetics-returns-reduction" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <!-- Case 4: Food -->
+        <article class="case-card" data-industry="food" data-result="time" data-feature="forecast">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #22c55e, #4ade80); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🍎📅</div>
+                <p style="font-size: 14px; opacity: 0.95;">Контроль сроков</p>
+              </div>
+            </div>
+            <span class="industry-badge">🍎 Продукты</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/food-expiry-control">−82% списаний с контролем сроков годности</a></h3>
+            <p class="case-description">Автоматическое отслеживание сроков и уведомления для магазина здоровых продуктов.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">🗑️</span>
+                <span class="metric-value">−82%</span>
+                <span class="metric-label">списаний</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">−90%</span>
+                <span class="metric-label">времени</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">💵</span>
+                <span class="metric-value">95 000 ₽</span>
+                <span class="metric-label">экономия/мес</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«Здоровая еда»</span>
+              <span class="client-role">онлайн-магазин</span>
+            </div>
+            <a href="/cases/food-expiry-control" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <!-- Case 5: BAD -->
+        <article class="case-card" data-industry="bad" data-result="returns" data-feature="cards">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #059669, #34d399); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">💊📋</div>
+                <p style="font-size: 14px; opacity: 0.95;">Сертификация ЕАС</p>
+              </div>
+            </div>
+            <span class="industry-badge">💊 БАД</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/bad-certification">Автоматизация сертификации для продавца БАД</a></h3>
+            <p class="case-description">Генерация описаний составов и деклараций ЕАС для интернет-магазина витаминов.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">📉</span>
+                <span class="metric-value">−72%</span>
+                <span class="metric-label">возвратов</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">📋</span>
+                <span class="metric-value">100%</span>
+                <span class="metric-label">ЕАС</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">17 дн</span>
+                <span class="metric-label">окупаемость</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«VitaShop»</span>
+              <span class="client-role">витамины и БАД</span>
+            </div>
+            <a href="/cases/bad-certification" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+        <!-- Case 6: Multi-category -->
+        <article class="case-card" data-industry="other" data-result="time" data-feature="reviews">
+          <div class="case-thumbnail">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">💬🤖</div>
+                <p style="font-size: 14px; opacity: 0.95;">Авто-ответы на отзывы</p>
+              </div>
+            </div>
+            <span class="industry-badge">💡 Мульти-категория</span>
+          </div>
+          <div class="case-content">
+            <h3><a href="/cases/multi-auto-reviews">Авто-ответы на отзывы: экономия 20 часов в неделю</a></h3>
+            <p class="case-description">ИИ-ассистент для обработки отзывов на 4 площадках для мульти-категорийного селлера.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-icon">⏱️</span>
+                <span class="metric-value">−20 ч</span>
+                <span class="metric-label">в неделю</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">⭐</span>
+                <span class="metric-value">+0.4</span>
+                <span class="metric-label">к рейтингу</span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon">💵</span>
+                <span class="metric-value">12 дн</span>
+                <span class="metric-label">окупаемость</span>
+              </div>
+            </div>
+            <div class="case-client">
+              <span class="client-name">«МультиШоп»</span>
+              <span class="client-role">4 площадки, 2000+ SKU</span>
+            </div>
+            <a href="/cases/multi-auto-reviews" class="btn-read-case">Читать кейс <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        
+      </section>
+
+      <!-- Trust Section -->
+      <section class="cases-trust" aria-labelledby="trust-heading">
+        <h2 id="trust-heading">🏆 Почему нам доверяют</h2>
+        
+        <div class="trust-grid">
+          <div class="trust-item">
+            <span class="trust-icon">👥</span>
+            <span class="trust-value">500+</span>
+            <span class="trust-label">активных клиентов</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⭐</span>
+            <span class="trust-value">4.9/5</span>
+            <span class="trust-label">средняя оценка</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🔄</span>
+            <span class="trust-value">95%</span>
+            <span class="trust-label">продлевают подписку</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🛡️</span>
+            <span class="trust-value">100%</span>
+            <span class="trust-label">соответствие 152-ФЗ</span>
+          </div>
+        </div>
+        
+        <!-- Client Logos (placeholder) -->
+        <div class="client-logos">
+          <p>Нам доверяют:</p>
+          <div class="logos-grid">
+            <div style="background: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 500; color: var(--color-text-muted);">Клиент 1</div>
+            <div style="background: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 500; color: var(--color-text-muted);">Клиент 2</div>
+            <div style="background: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 500; color: var(--color-text-muted);">Клиент 3</div>
+            <div style="background: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 500; color: var(--color-text-muted);">Клиент 4</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="cases-faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">❓ Частые вопросы о кейсах</h2>
+        
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>Все ли кейсы реальные?</summary>
+            <div class="faq-answer">
+              <p>Да, все кейсы основаны на реальных проектах. Мы публикуем только с разрешения клиентов. Некоторые названия компаний изменены по запросу, но все метрики и результаты — достоверные.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Можно ли получить такие же результаты?</summary>
+            <div class="faq-answer">
+              <p>Результаты зависят от множества факторов: ваш ассортимент, процессы, команда. Однако наши клиенты в среднем достигают: −70% возвратов, −85% времени на карточки, окупаемость 14–21 день. Точный прогноз — после бесплатного аудита.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Как быстро внедряется решение?</summary>
+            <div class="faq-answer">
+              <p>Стандартное внедрение занимает 1–3 дня: установка модуля в 1С, настройка интеграций, обучение. Для кастомных задач сроки обсуждаются индивидуально после аудита.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Можно ли поговорить с клиентом из кейса?</summary>
+            <div class="faq-answer">
+              <p>Да, для некоторых кейсов мы организуем референс-коллы. Укажите ваш интерес в заявке на демо, и мы согласуем возможность связи с клиентом.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <nav class="cases-pagination" aria-label="Навигация по кейсам">
+        <a href="?page=1" class="page-link active" aria-current="page">1</a>
+        <a href="?page=2" class="page-link">2</a>
+        <a href="?page=3" class="page-link">3</a>
+        <span class="page-ellipsis">…</span>
+        <a href="?page=2" class="page-link next">Далее <span aria-hidden="true">→</span></a>
+      </nav>
+
+    </div> <!-- /container -->
+
+    <!-- CTA Section -->
+    <section class="cases-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Хотите такие же результаты?</h2>
+        <p>14 дней бесплатно • Настройка за 15 минут • Без привязки карты</p>
+        
+        <div class="cta-buttons">
+          <a href="/trial" class="btn-primary">
+            <span>🚀</span>
+            <span>Начать бесплатный триал</span>
+          </a>
+          <a href="/pricing/calculator" class="btn-secondary">
+            <span>🧮</span>
+            <span>Посчитать свою экономию</span>
+          </a>
+        </div>
+        
+        <p class="cta-note">
+          <small>🛡️ 30 дней на возврат • Без вопросов</small>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== CASES FILTERING LOGIC =====
+    const casesGrid = $('#cases-grid');
+    const searchInput = $('#cases-search');
+    const filterIndustry = $('#filter-industry');
+    const filterResult = $('#filter-result');
+    const filterFeature = $('#filter-feature');
+    const sortBy = $('#sort-by');
+    const casesCount = $('#cases-count');
+    const activeFilters = $('#active-filters');
+    
+    // Store original cases order
+    let allCases = Array.from(document.querySelectorAll('.case-card'));
+    
+    function filterCases() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const industry = filterIndustry.value;
+      const result = filterResult.value;
+      const feature = filterFeature.value;
+      
+      let visibleCount = 0;
+      
+      allCases.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('.case-description')?.textContent.toLowerCase() || '';
+        const cardIndustry = card.dataset.industry;
+        const cardResult = card.dataset.result;
+        const cardFeature = card.dataset.feature;
+        
+        // Match search
+        const matchesSearch = !searchTerm || title.includes(searchTerm) || desc.includes(searchTerm);
+        
+        // Match filters
+        const matchesIndustry = !industry || cardIndustry === industry;
+        const matchesResult = !result || cardResult === result;
+        const matchesFeature = !feature || cardFeature === feature;
+        
+        // Show/hide
+        if (matchesSearch && matchesIndustry && matchesResult && matchesFeature) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Update count
+      casesCount.textContent = visibleCount;
+      
+      // Show/hide active filters bar
+      if (industry || result || feature || searchTerm) {
+        activeFilters.hidden = false;
+      } else {
+        activeFilters.hidden = true;
+      }
+      
+      // Track filter usage
+      if (typeof gtag === 'function') {
+        gtag('event', 'cases_filter', {
+          'event_category': 'engagement',
+          'event_label': 'cases_page',
+          'industry': industry,
+          'result': result,
+          'feature': feature,
+          'search_term': searchTerm,
+          'visible_count': visibleCount
+        });
+      }
+    }
+    
+    // Event listeners for filters
+    searchInput?.addEventListener('input', filterCases);
+    filterIndustry?.addEventListener('change', filterCases);
+    filterResult?.addEventListener('change', filterCases);
+    filterFeature?.addEventListener('change', filterCases);
+    
+    // Sort functionality
+    sortBy?.addEventListener('change', function() {
+      const cases = Array.from(casesGrid.querySelectorAll('.case-card'));
+      
+      if (this.value === 'newest') {
+        // Reverse order (newest first)
+        cases.reverse().forEach(card => casesGrid.appendChild(card));
+      } else if (this.value === 'result') {
+        // Sort by metric value (simplified)
+        cases.sort((a, b) => {
+          const aVal = parseFloat(a.querySelector('.metric-value')?.textContent) || 0;
+          const bVal = parseFloat(b.querySelector('.metric-value')?.textContent) || 0;
+          return bVal - aVal;
+        });
+        cases.forEach(card => casesGrid.appendChild(card));
+      }
+      // Add more sort logic as needed
+    });
+    
+    // Reset filters
+    document.querySelector('.reset-filters')?.addEventListener('click', () => {
+      searchInput.value = '';
+      filterIndustry.value = '';
+      filterResult.value = '';
+      filterFeature.value = '';
+      sortBy.value = 'newest';
+      filterCases();
+    });
+    
+    // Remove individual filter tag
+    activeFilters?.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-tag')) {
+        const filter = e.target.dataset.filter;
+        const [key, value] = filter.split(':');
+        
+        if (key === 'industry') filterIndustry.value = '';
+        if (key === 'result') filterResult.value = '';
+        if (key === 'feature') filterFeature.value = '';
+        
+        filterCases();
+      }
+    });
+    
+    // ===== FAQ: Close others when one opens =====
+    $$('.faq-item').forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          $$('.faq-item').forEach(other => {
+            if (other !== this) other.open = false;
+          });
+        }
+      });
+    });
+    
+    // ===== LOAD MORE (AJAX simulation) =====
+    const loadMoreBtn = $('#load-more');
+    
+    loadMoreBtn?.addEventListener('click', async function() {
+      const btn = this;
+      const originalText = btn.innerHTML;
+      
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner" style="width:20px;height:20px;border-width:2px"></span> Загрузка...';
+      
+      try {
+        // Simulate API call (replace with real endpoint)
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Example: append more cases (in production, fetch from API)
+        // const response = await fetch('/api/cases?page=2');
+        // const newCases = await response.json();
+        
+        // For demo, just hide the button
+        btn.closest('.load-more-wrapper').hidden = true;
+        
+      } catch (error) {
+        console.error('Load more error:', error);
+        alert('Не удалось загрузить ещё кейсы');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    });
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize filtering
+      filterCases();
+      
+      // Prefill filters from URL params (for campaign tracking)
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('industry')) {
+        filterIndustry.value = params.get('industry');
+      }
+      if (params.get('result')) {
+        filterResult.value = params.get('result');
+      }
+      
+      // Track page view
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          'event_category': 'cases',
+          'event_label': 'cases_page',
+          'total_cases': allCases.length
+        });
+      }
+    });
+  </script>
+  
 </body>
 </html>
