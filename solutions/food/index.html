@@ -1,708 +1,1564 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для продуктов и товаров повседневного спроса — DeepSite</title>
-    <meta name="description" content="Решение для селлеров продуктов питания. Генерация описаний с учётом КБЖУ, сроков годности, авто-ответы на вопросы о составе и хранении.">
-    <link rel="canonical" href="/solutions/food/">
-    
-    <link rel="stylesheet" href="../style.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#0a0f1c',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotateX(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotateX(5deg)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' },
-                            '50%': { opacity: .8, boxShadow: '0 0 40px rgba(251, 191, 36, 0.8)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>ИИ для селлеров продуктов в 1С | КБЖУ, сроки, маркировка</title>
+  <meta name="description" content="Автоматизация для магазинов продуктов: КБЖУ, контроль сроков, маркировка «Меркурий». Сократите списания на 80%. Попробуйте 14 дней бесплатно.">
+  <meta name="keywords" content="1С продукты, автоматизация маркетплейсов продукты, ИИ для селлеров, КБЖУ, маркировка Меркурий, сроки годности продукты">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="ИИ для селлеров продуктов в 1С | Автоматизация карточек">
+  <meta property="og:description" content="Генерация описаний, контроль сроков, маркировка для продуктов питания">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yamaev-design.github.io/1c/solutions/food/">
+  <meta property="og:image" content="https://yamaev-design.github.io/1c/images/solutions-food-og.jpg">
+  <meta property="og:site_name" content="AI Seller 1С">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ИИ для селлеров продуктов в 1С">
+  <meta name="twitter:description" content="Автоматизация КБЖУ, контроль сроков, маркировка для продуктов питания">
+  
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://yamaev-design.github.io/1c/solutions/food/">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yamaev-design.github.io/1c/" },
+      { "@type": "ListItem", "position": 2, "name": "Решения", "item": "https://yamaev-design.github.io/1c/solutions/" },
+      { "@type": "ListItem", "position": 3, "name": "Продукты питания", "item": "https://yamaev-design.github.io/1c/solutions/food/" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Seller 1С: Решение для продуктов питания",
+    "serviceType": "E-commerce Automation",
+    "provider": { "@type": "Organization", "name": "AI Seller", "url": "https://yamaev-design.github.io/1c/" },
+    "areaServed": "RU",
+    "audience": {
+      "@type": "BusinessAudience",
+      "businessType": ["GroceryStore", "FoodStore", "OrganicFoodStore"]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "1490",
+      "priceCurrency": "RUB",
+      "description": "От 1 490 ₽/мес, 14 дней бесплатно"
+    },
+    "serviceOutput": [
+      { "@type": "Text", "text": "Генерация описаний с КБЖУ и пищевой ценностью" },
+      { "@type": "Text", "text": "Контроль сроков годности и интеграция с «Меркурий»" },
+      { "@type": "Text", "text": "Прогноз спроса на сезонные продукты" }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как ИИ помогает с описанием КБЖУ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Модуль автоматически извлекает данные о калорийности, белках, жирах и углеводах из 1С и форматирует их по требованиям маркетплейсов. Это ускоряет заполнение карточек в 10 раз и снижает ошибки."
         }
-    </script>
-
-
+      },
+      {
+        "@type": "Question",
+        "name": "Поддерживает ли решение интеграцию с «Меркурий»?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, модуль интегрируется с ФГИС «Меркурий»: автоматическая выгрузка ВСД, контроль остатков, формирование документов. Поддерживаются все категории продуктов, подлежащие ветеринарному контролю."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как работает контроль сроков годности?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Модуль отслеживает сроки годности из 1С и автоматически скрывает товары с истекающим сроком из выгрузки на маркетплейсы. Также формирует уведомления для менеджеров за 30/14/7 дней до истечения срока."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES & RESET ===== */
+    :root {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-border-strong: #cbd5e1;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --niche-color: #22c55e; /* Green for food niche */
+      --niche-color-light: #4ade80;
+      --niche-color-dark: #166534;
+    }
     
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== ANCHOR NAVIGATION ===== */
+    .solution-nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .solution-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    
+    .solution-nav a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+    
+    .solution-nav a:hover,
+    .solution-nav a.active {
+      color: var(--color-primary);
+      background: #eff6ff;
+    }
+    
+    .nav-cta {
+      background: var(--niche-color);
+      color: white !important;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    
+    .nav-cta:hover {
+      background: var(--niche-color-light);
+    }
+    
+    @media (max-width: 768px) {
+      .solution-nav ul { gap: 12px; font-size: 13px; }
+      .solution-nav { padding: 10px 0; }
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .page-header {
+      padding: 64px 0 48px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--niche-color) 0%, var(--niche-color-light) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .page-header .badge {
+      display: inline-block;
+      padding: 6px 20px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .page-header h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      opacity: 0.95;
+      background: rgba(255,255,255,0.15);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .trust-badge .icon { font-size: 18px; }
+    
+    /* ===== NICHE INTRO ===== */
+    .niche-intro {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      margin: 0 0 48px 0;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .niche-intro h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    
+    .niche-intro .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .niche-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 24px;
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--niche-color);
+    }
+    
+    .stat-value {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--niche-color);
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== FEATURES SECTION ===== */
+    .niche-features {
+      margin: 48px 0;
+    }
+    
+    .niche-features h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--niche-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    .feature-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+    
+    .feature-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+    
+    .feature-example {
+      background: var(--color-bg);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      font-size: 13px;
+      border-left: 3px solid var(--niche-color);
+    }
+    
+    .feature-example strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--color-text);
+    }
+    
+    .feature-example code {
+      display: block;
+      background: white;
+      padding: 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--niche-color-dark);
+      font-size: 12px;
+    }
+    
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .tag {
+      background: #f0fdf4;
+      color: var(--niche-color-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .feature-result {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+      font-size: 14px;
+    }
+    
+    .result-metric {
+      font-weight: 700;
+      color: var(--color-success);
+      font-size: 18px;
+    }
+    
+    /* ===== CASE STUDY ===== */
+    .case-study {
+      background: linear-gradient(135deg, #f8fafc 0%, #dcfce7 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      margin: 48px 0;
+    }
+    
+    .case-study h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .case-study .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+    }
+    
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .case-content h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    
+    .case-metric {
+      text-align: center;
+      padding: 16px;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    
+    .case-metric .value {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-success);
+      margin-bottom: 4px;
+    }
+    
+    .case-metric .label {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    .case-quote {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--color-text);
+      margin: 24px 0;
+      padding-left: 16px;
+      border-left: 3px solid var(--niche-color);
+    }
+    
+    .case-author {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+    
+    .case-visual {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--color-border);
+      text-align: center;
+    }
+    
+    .case-visual .placeholder {
+      background: linear-gradient(135deg, var(--niche-color), var(--niche-color-light));
+      border-radius: var(--radius-sm);
+      padding: 40px 24px;
+      color: white;
+      margin-bottom: 16px;
+    }
+    
+    .case-visual .placeholder-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    
+    .case-visual p {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    
+    /* ===== CALCULATOR SECTION ===== */
+    .niche-calculator {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      margin: 48px 0;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--niche-color);
+    }
+    
+    .niche-calculator h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .niche-calculator .subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: 32px;
+    }
+    
+    .calc-form {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .calc-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      font-size: 14px;
+    }
+    
+    .calc-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--color-bg-white);
+    }
+    
+    .calc-group input:focus {
+      outline: none;
+      border-color: var(--niche-color);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    }
+    
+    .calc-group .hint {
+      display: block;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+    
+    .btn-calculate {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      margin: 32px auto 0;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--niche-color) 0%, var(--niche-color-light) 100%);
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .btn-calculate:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .calc-results {
+      display: none;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 2px solid var(--color-border);
+      animation: fadeIn 0.4s ease;
+      text-align: center;
+    }
+    
+    .calc-results.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .result-card {
+      background: linear-gradient(135deg, var(--niche-color) 0%, var(--niche-color-light) 100%);
+      color: white;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    
+    .result-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .result-value {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 4px 0;
+      color: var(--color-accent-light);
+    }
+    
+    .result-desc {
+      display: block;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+    
+    /* ===== INTEGRATIONS ===== */
+    .niche-integrations {
+      margin: 48px 0;
+      text-align: center;
+    }
+    
+    .niche-integrations h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    
+    .integrations-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+    
+    .integration-logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      padding: 12px 24px;
+      background: var(--color-bg-white);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+    
+    .integration-logo:hover {
+      opacity: 1;
+      border-color: var(--niche-color);
+      transform: translateY(-2px);
+    }
+    
+    /* ===== FAQ SECTION ===== */
+    .niche-faq {
+      margin: 48px 0;
+    }
+    
+    .niche-faq h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+    
+    .faq-item {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .faq-item:hover {
+      border-color: var(--niche-color);
+    }
+    
+    .faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .faq-item summary::after {
+      content: "▼";
+      font-size: 12px;
+      transition: transform 0.3s;
+      color: var(--color-text-muted);
+    }
+    
+    .faq-item[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 24px 24px 24px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+    
+    .faq-answer a {
+      font-weight: 500;
+    }
+    
+    /* ===== OTHER SOLUTIONS ===== */
+    .other-solutions {
+      background: var(--color-bg);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    
+    .other-solutions h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .solutions-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .solution-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text);
+      transition: var(--transition);
+    }
+    
+    .solution-link:hover {
+      border-color: var(--niche-color);
+      background: #f0fdf4;
+      transform: translateY(-2px);
+    }
+    
+    .solution-link .icon { font-size: 20px; }
+    
+    .solution-link.view-all {
+      background: var(--niche-color);
+      color: white;
+      border-color: var(--niche-color);
+    }
+    
+    .solution-link.view-all:hover {
+      background: var(--niche-color-light);
+    }
+    
+    /* ===== CTA SECTION ===== */
+    .niche-cta {
+      text-align: center;
+      padding: 56px 24px;
+      background: linear-gradient(135deg, var(--niche-color) 0%, var(--niche-color-light) 100%);
+      border-radius: var(--radius-xl);
+      margin: 48px 0;
+      color: white;
+    }
+    
+    .niche-cta h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .niche-cta p {
+      opacity: 0.95;
+      margin-bottom: 28px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+    }
+    
+    .btn-cta-white {
+      background: white;
+      color: var(--niche-color-dark);
+      padding: 18px 44px;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      font-size: 16px;
+    }
+    
+    .btn-cta-white:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .cta-guarantee {
+      margin-top: 24px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* ===== LOADING STATE ===== */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .loading-overlay.active {
+      display: flex;
+    }
+    
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--color-border);
+      border-top-color: var(--niche-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      color: var(--color-text-muted);
+      font-size: 16px;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      
+      .page-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      
+      .niche-intro,
+      .case-study,
+      .niche-calculator,
+      .other-solutions {
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+      }
+      
+      .features-grid,
+      .case-grid,
+      .calc-grid,
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .integrations-logos {
+        gap: 16px;
+      }
+      
+      .integration-logo {
+        font-size: 18px;
+        padding: 10px 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .case-metrics {
+        grid-template-columns: 1fr;
+      }
+      
+      .solutions-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .solution-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--niche-color);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-<body class="bg-navy-900 text-white font-sans antialiased overflow-x-hidden">
+<body>
 
-<!-- Animated Mesh Background -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/30 rounded-full blur-3xl"></div>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay" aria-live="polite" aria-hidden="true">
+    <div class="spinner" role="status"></div>
+    <p class="loading-text">Обработка...</p>
+  </div>
+
+  <!-- Anchor Navigation -->
+  <nav class="solution-nav" aria-label="Навигация по странице">
+    <div class="container">
+      <ul>
+        <li><a href="#features">✨ Возможности</a></li>
+        <li><a href="#case">🏆 Кейс</a></li>
+        <li><a href="#calculator">💰 Калькулятор</a></li>
+        <li><a href="#faq">❓ FAQ</a></li>
+        <li><a href="#cta" class="nav-cta">🚀 Попробовать</a></li>
+      </ul>
     </div>
+  </nav>
 
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="../index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl flex items-center justify-center shadow-lg shadow-gold-500/20">
-                            <i data-lucide="brain-circuit" class="w-6 h-6 text-navy-900"></i>
-                        </div>
-                        <span class="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                            AI Seller 1С
-                        </span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-1">
-                    <!-- Главная -->
-                    <a href="../index.html" class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5">
-                        Главная
-                    </a>
-                    
-                    <!-- Продукт -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Продукт
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../product/features.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все возможности</div>
-                                            <div class="text-xs text-gray-500">Полный обзор функций</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../product/integrations.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="plug" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Интеграции</div>
-                                            <div class="text-xs text-gray-500">1С, маркетплейсы, сервисы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../product/security.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Безопасность</div>
-                                            <div class="text-xs text-gray-500">152-ФЗ и защита данных</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../product/updates.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Обновления</div>
-                                            <div class="text-xs text-gray-500">Ченджлог и дорожная карта</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Тарифы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Тарифы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../pricing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="layers" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Сравнение тарифов</div>
-                                            <div class="text-xs text-gray-500">Выберите подходящий план</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../pricing/calculator.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="calculator" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Калькулятор экономии</div>
-                                            <div class="text-xs text-gray-500">Рассчитайте выгоду</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../pricing/enterprise.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Enterprise</div>
-                                            <div class="text-xs text-gray-500">Для крупного бизнеса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Решения -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Решения
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-80 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../solutions/clothing/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shirt" class="w-5 h-5 text-pink-400"></i>
-                                        <div>
-                                            <div class="font-medium">Одежда и обувь</div>
-                                            <div class="text-xs text-gray-500">Для fashion-селлеров</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../solutions/electronics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Электроника</div>
-                                            <div class="text-xs text-gray-500">Для техники и гаджетов</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../solutions/cosmetics/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Косметика и красота</div>
-                                            <div class="text-xs text-gray-500">Для beauty-бренда</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="apple" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Продукты и FMCG</div>
-                                            <div class="text-xs text-gray-500">Для товаров повседневного спроса</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../solutions/custom/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="settings" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">Индивидуальные сценарии</div>
-                                            <div class="text-xs text-gray-500">Под ваши задачи</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Кейсы -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Кейсы
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../cases/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="folder-open" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все кейсы</div>
-                                            <div class="text-xs text-gray-500">С фильтрами по нишам</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../cases/index.html#submit" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="circle-plus" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Опубликовать кейс</div>
-                                            <div class="text-xs text-gray-500">Поделитесь опытом</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- База знаний -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            База знаний
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../docs/getting-started.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Быстрый старт</div>
-                                            <div class="text-xs text-gray-500">Начните за 15 минут</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../docs/index.html#1c-setup" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="package" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Установка в 1С</div>
-                                            <div class="text-xs text-gray-500">Пошаговая инструкция</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../docs/index.html#marketplaces" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Настройка интеграций</div>
-                                            <div class="text-xs text-gray-500">Wildberries, Ozon</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../docs/index.html#api" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="code" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">API</div>
-                                            <div class="text-xs text-gray-500">Для разработчиков</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../docs/index.html#faq" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="help-circle" class="w-5 h-5 text-gray-400"></i>
-                                        <div>
-                                            <div class="font-medium">FAQ</div>
-                                            <div class="text-xs text-gray-500">Частые вопросы</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Блог -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            Блог
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-72 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../blog/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="newspaper" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">Все статьи</div>
-                                            <div class="text-xs text-gray-500">Последние публикации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../blog/index.html#ai-trends" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Тренды ИИ</div>
-                                            <div class="text-xs text-gray-500">E-commerce инсайты</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../blog/index.html#marketplace-tips" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="lightbulb" class="w-5 h-5 text-yellow-400"></i>
-                                        <div>
-                                            <div class="font-medium">Советы по маркетплейсам</div>
-                                            <div class="text-xs text-gray-500">Практические рекомендации</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../blog/index.html#1c-automation" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400"></i>
-                                        <div>
-                                            <div class="font-medium">Автоматизация в 1С</div>
-                                            <div class="text-xs text-gray-500">Технические гайды</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- О компании -->
-                    <div class="relative group">
-                        <button class="px-4 py-2 text-gray-300 hover:text-gold-400 transition-colors rounded-lg hover:bg-white/5 flex items-center gap-1">
-                            О компании
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-64 bg-navy-800 border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-3 space-y-1">
-                                <a href="../../about/index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="target" class="w-5 h-5 text-gold-400"></i>
-                                        <div>
-                                            <div class="font-medium">О нас</div>
-                                            <div class="text-xs text-gray-500">Миссия и ценности</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../about/team.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                                        <div>
-                                            <div class="font-medium">Команда</div>
-                                            <div class="text-xs text-gray-500">Знакомство с нами</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../about/careers.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
-                                        <div>
-                                            <div class="font-medium">Вакансии</div>
-                                            <div class="text-xs text-gray-500">Присоединяйтесь</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="../../about/contacts.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg transition-colors">
-                                    <div class="flex items-center gap-3">
-                                        <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                                        <div>
-                                            <div class="font-medium">Контакты</div>
-                                            <div class="text-xs text-gray-500">Как нас найти</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
-                    <span>Попробовать бесплатно</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-800 border-b border-white/10 max-h-[80vh] overflow-y-auto">
-            <div class="px-4 py-4 space-y-2">
-                <a href="../index.html" class="block px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">Главная</a>
-                
-                <!-- Продукт -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Продукт</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../product/features.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все возможности</a>
-                        <a href="../../product/integrations.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../../product/security.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Безопасность</a>
-                        <a href="../../product/updates.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Обновления</a>
-                    </div>
-                </div>
-                
-                <!-- Тарифы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Тарифы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../pricing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Сравнение тарифов</a>
-                        <a href="../../pricing/calculator.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Калькулятор</a>
-                        <a href="../../pricing/enterprise.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Enterprise</a>
-                    </div>
-                </div>
-                
-                <!-- Решения -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Решения</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../solutions/clothing/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Одежда и обувь</a>
-                        <a href="../../solutions/electronics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Электроника</a>
-                        <a href="../../solutions/cosmetics/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Косметика</a>
-                        <a href="../index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Продукты</a>
-                        <a href="../../solutions/custom/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Индивидуальные</a>
-                    </div>
-                </div>
-                
-                <!-- Кейсы -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Кейсы</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../cases/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все кейсы</a>
-                        <a href="../../cases/index.html#submit" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Опубликовать кейс</a>
-                    </div>
-                </div>
-                
-                <!-- База знаний -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>База знаний</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../docs/getting-started.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Быстрый старт</a>
-                        <a href="../../docs/index.html#1c-setup" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Установка в 1С</a>
-                        <a href="../../docs/index.html#marketplaces" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Интеграции</a>
-                        <a href="../../docs/index.html#api" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">API</a>
-                        <a href="../../docs/index.html#faq" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">FAQ</a>
-                    </div>
-                </div>
-                
-                <!-- Блог -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>Блог</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../blog/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Все статьи</a>
-                        <a href="../../blog/index.html#ai-trends" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Тренды ИИ</a>
-                        <a href="../../blog/index.html#marketplace-tips" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Советы</a>
-                    </div>
-                </div>
-                
-                <!-- О компании -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
-                        <span>О компании</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
-                    </button>
-                    <div class="mobile-dropdown-content hidden pl-4 space-y-1">
-                        <a href="../../about/index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">О нас</a>
-                        <a href="../../about/team.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Команда</a>
-                        <a href="../../about/careers.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Вакансии</a>
-                        <a href="../../about/contacts.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-gold-400">Контакты</a>
-                    </div>
-                </div>
-                
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
-                    Попробовать бесплатно
-                </button>
-            </div>
-        </div>
-    </nav>
-    <main class="pt-20">
-        <section class="hero solution-hero">
-            <div class="container">
-                <h1>Автоматизация для селлеров продуктов питания</h1>
-                <p class="hero-subtitle">Генерация описаний с КБЖУ, сроками годности, условиями хранения. Авто-ответы на вопросы о составе, аллергенах, сертификации.</p>
-                <div class="hero-cta">
-                    <a href="/trial/" class="btn btn-primary btn-lg">Попробовать бесплатно 14 дней</a>
-                </div>
-            </div>
-        </section>
-        <section class="features-grid">
-            <div class="container">
-                <h2>Специфика работы с продуктами</h2>
-                <div class="features-cards">
-                    <div class="feature-card"><div class="feature-icon">📊</div><h3>КБЖУ и пищевая ценность</h3><p>Автоматический расчёт калорий, белков, жиров, углеводов на 100г и порцию. Форматирование по требованиям маркетплейсов.</p></div>
-                    <div class="feature-card"><div class="feature-icon">⏰</div><h3>Сроки годности и хранение</h3><p>Генерация информации о сроках годности, условиях хранения: "Хранить при температуре от +2°C до +6°C". Ответы на вопросы о свежести.</p></div>
-                    <div class="feature-card"><div class="feature-icon">🌾</div><h3>Аллергены и состав</h3><p>Выделение аллергенов: глютен, лактоза, орехи. Подробный разбор состава с пояснениями: "без ГМО", "без консервантов".</p></div>
-                    <div class="feature-card"><div class="feature-icon">✅</div><h3>Сертификаты качества</h3><p>Упоминание сертификатов: ГОСТ, ТР ТС, Organic, Халяль. Интеграция с системами маркировки "Честный ЗНАК".</p></div>
-                    <div class="feature-card"><div class="feature-icon">🍽️</div><h3>Рецепты и применение</h3><p>Генерация идей использования: рецепты, способы приготовления, сочетания с другими продуктами. SEO под запросы "как приготовить".</p></div>
-                    <div class="feature-card"><div class="feature-icon">📦</div><h3>Прогноз спроса по сезонам</h3><p>Анализ сезонности: новогодние наборы, летние напитки, школьные завтраки. Рекомендации по закупкам к праздникам.</p></div>
-                </div>
-            </div>
-        </section>
-        <section class="cta-section">
-            <div class="container">
-                <h2>Готовы автоматизировать продажи продуктов?</h2>
-                <a href="/trial/" class="btn btn-primary btn-lg">Попробовать бесплатно</a>
-            </div>
-        </section>
-    </main>
+  <!-- Main Content -->
+  <main>
     
-    <script src="../../script.js"></script>
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <span class="badge">🍎 Решение для продуктов питания</span>
+        <h1>Автоматизация для селлеров продуктов в 1С</h1>
+        <p class="subtitle">КБЖУ, контроль сроков, маркировка «Меркурий» — сократите списания на 80% и экономьте 35 часов в неделю</p>
+        
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <span class="icon">🎁</span>
+            <span>14 дней бесплатно</span>
+          </div>
+          <div class="trust-badge">
+            <span class="icon">🗑️</span>
+            <span>−80% списаний</span>
+          </div>
+          <div class="trust-badge">
+            <span class="icon">🏷️</span>
+            <span>Меркурий + Честный ЗНАК</span>
+          </div>
+          <div class="trust-badge">
+            <span class="icon">⭐</span>
+            <span>4.9/5 от селлеров</span>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                <!-- Brand Column -->
-                <div class="col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="brain-circuit" class="w-5 h-5 text-navy-900"></i>
-                        </div>
-                        <span class="font-bold text-lg">AI Seller 1С</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Автоматизация продаж на маркетплейсах с помощью искусственного интеллекта в 1С.
-                    </p>
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="telegram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="youtube" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-gold-400 hover:bg-white/10 transition-all">
-                            <i data-lucide="vk" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Продукт -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Продукт</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../product/features.html" class="hover:text-gold-400 transition-colors">Возможности</a></li>
-                        <li><a href="../../product/integrations.html" class="hover:text-gold-400 transition-colors">Интеграции</a></li>
-                        <li><a href="../../product/security.html" class="hover:text-gold-400 transition-colors">Безопасность</a></li>
-                        <li><a href="../../product/updates.html" class="hover:text-gold-400 transition-colors">Обновления</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Тарифы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Тарифы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../pricing/index.html" class="hover:text-gold-400 transition-colors">Сравнение</a></li>
-                        <li><a href="../../pricing/calculator.html" class="hover:text-gold-400 transition-colors">Калькулятор</a></li>
-                        <li><a href="../../pricing/enterprise.html" class="hover:text-gold-400 transition-colors">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Решения -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Решения</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../solutions/clothing/index.html" class="hover:text-gold-400 transition-colors">Одежда</a></li>
-                        <li><a href="../../solutions/electronics/index.html" class="hover:text-gold-400 transition-colors">Электроника</a></li>
-                        <li><a href="../../solutions/cosmetics/index.html" class="hover:text-gold-400 transition-colors">Косметика</a></li>
-                        <li><a href="../index.html" class="hover:text-gold-400 transition-colors">Продукты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Ресурсы -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Ресурсы</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../docs/index.html" class="hover:text-gold-400 transition-colors">База знаний</a></li>
-                        <li><a href="../../blog/index.html" class="hover:text-gold-400 transition-colors">Блог</a></li>
-                        <li><a href="../../cases/index.html" class="hover:text-gold-400 transition-colors">Кейсы</a></li>
-                        <li><a href="../../docs/getting-started.html" class="hover:text-gold-400 transition-colors">Быстрый старт</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Академия -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Академия</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../academy/courses/index.html" class="hover:text-gold-400 transition-colors">Курсы</a></li>
-                        <li><a href="../../academy/webinars/index.html" class="hover:text-gold-400 transition-colors">Вебинары</a></li>
-                        <li><a href="../../academy/certification/index.html" class="hover:text-gold-400 transition-colors">Сертификация</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Партнёрам -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Партнёрам</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../partners/index.html" class="hover:text-gold-400 transition-colors">Интеграторам 1С</a></li>
-                        <li><a href="../../partners/agencies/index.html" class="hover:text-gold-400 transition-colors">Агентствам</a></li>
-                        <li><a href="../../partners/resources/index.html" class="hover:text-gold-400 transition-colors">Материалы</a></li>
-                        <li><a href="../../partners/join/index.html" class="hover:text-gold-400 transition-colors">Стать партнёром</a></li>
-                    </ul>
-                </div>
-                
-                <!-- О компании -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">О компании</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../../about/index.html" class="hover:text-gold-400 transition-colors">О нас</a></li>
-                        <li><a href="../../about/team.html" class="hover:text-gold-400 transition-colors">Команда</a></li>
-                        <li><a href="../../about/careers.html" class="hover:text-gold-400 transition-colors">Карьера</a></li>
-                        <li><a href="../../about/contacts.html" class="hover:text-gold-400 transition-colors">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Юридическое -->
-                <div>
-                    <h4 class="font-semibold mb-3 text-white">Юридическое</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="../legal/offer/index.html" class="hover:text-gold-400 transition-colors">Оферта</a></li>
-                        <li><a href="../legal/privacy/index.html" class="hover:text-gold-400 transition-colors">Конфиденциальность</a></li>
-                        <li><a href="../legal/152fz/index.html" class="hover:text-gold-400 transition-colors">152-ФЗ</a></li>
-                        <li><a href="../legal/sla/index.html" class="hover:text-gold-400 transition-colors">SLA</a></li>
-                    </ul>
-                </div>
+    <div class="container">
+      
+      <!-- Niche Intro -->
+      <section class="niche-intro" aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Специфика работы с продуктами на маркетплейсах</h2>
+        <p class="subtitle">Мы понимаем ваши боли: сроки годности, КБЖУ, маркировка, сезонный спрос. Наше решение создано специально для фуд-ритейла.</p>
+        
+        <div class="niche-stats">
+          <div class="stat-card">
+            <span class="stat-value">10–25%</span>
+            <span class="stat-label">Списаний по срокам годности</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">50+</span>
+            <span class="stat-label">Параметров КБЖУ на товар</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">2–6 мес</span>
+            <span class="stat-label">Средний срок годности</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="niche-features" aria-labelledby="features-heading">
+        <h2 id="features-heading">✨ Возможности для селлеров продуктов</h2>
+        
+        <div class="features-grid">
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📊</span>
+            <h3>КБЖУ и пищевая ценность</h3>
+            <p>Автоматическое извлечение и форматирование данных о калорийности, белках, жирах, углеводах из 1С. Соответствие требованиям маркетплейсов.</p>
+            <div class="feature-example">
+              <strong>Пример промпта:</strong>
+              <code>"Сформируй КБЖУ для гранолы: 450 ккал, 12г белка, 18г жиров, 58г углеводов на 100г"</code>
+            </div>
+            <div class="feature-tags">
+              <span class="tag">КБЖУ</span>
+              <span class="tag">Нутриенты</span>
+              <span class="tag">SEO-ключи</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">−95%</span>
+              <span>ошибок в пищевой ценности</span>
+            </div>
+          </article>
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📅</span>
+            <h3>Контроль сроков годности</h3>
+            <p>Автоматическое отслеживание сроков из 1С: скрытие товаров с истекающим сроком из выгрузки, уведомления менеджерам за 30/14/7 дней до истечения.</p>
+            <div class="feature-example">
+              <strong>Пример уведомления:</strong>
+              <code>"Гранола с орехами (арт. 12345) истекает через 14 дней — рекомендуется скидка 30%"</code>
+            </div>
+            <div class="feature-tags">
+              <span class="tag">Сроки</span>
+              <span class="tag">Уведомления</span>
+              <span class="tag">Скидки</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">−80%</span>
+              <span>списаний по просрочке</span>
+            </div>
+          </article>
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🏷️</span>
+            <h3>Интеграция с «Меркурий»</h3>
+            <p>Полная интеграция с ФГИС «Меркурий»: автоматическая выгрузка ВСД, контроль остатков, формирование документов для продуктов животного происхождения.</p>
+            <div class="feature-example">
+              <strong>Автоматизация:</strong>
+              <span style="font-size: 12px; color: var(--color-text-muted);">ВСД подтягиваются из 1С → выгружаются в «Меркурий» → отслеживается статус</span>
+            </div>
+            <div class="feature-tags">
+              <span class="tag">ФГИС</span>
+              <span class="tag">ВСД</span>
+              <span class="tag">Документы</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">10 мин</span>
+              <span>на настройку интеграции</span>
+            </div>
+          </article>
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🌿</span>
+            <h3>Описание составов и аллергенов</h3>
+            <p>Автоматическое формирование понятных описаний ингредиентов и предупреждений об аллергенах: «Содержит орехи», «Без глютена», «Веганская».</p>
+            <div class="feature-example">
+              <strong>Пример предупреждения:</strong>
+              <code>"⚠️ Содержит орехи и мёд. Может содержать следы арахиса и сои"</code>
+            </div>
+            <div class="feature-tags">
+              <span class="tag">Аллергены</span>
+              <span class="tag">Состав</span>
+              <span class="tag">Безопасность</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">−70%</span>
+              <span>возвратов из-за аллергенов</span>
+            </div>
+          </article>
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📈</span>
+            <h3>Прогноз спроса на сезонные продукты</h3>
+            <p>ИИ анализирует историю продаж по сезонам, праздникам и погоде. Например, автоматически увеличивает прогноз на мороженое в июне и на мандарины в декабре.</p>
+            <div class="feature-tags">
+              <span class="tag">Сезонность</span>
+              <span class="tag">Праздники</span>
+              <span class="tag">Погода</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">−50%</span>
+              <span>затоваживания сезонными товарами</span>
+            </div>
+          </article>
+          
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🔄</span>
+            <h3>Выгрузка в маркетплейсы</h3>
+            <p>Поддержка Wildberries, Ozon, Яндекс.Маркет с учётом требований к продуктам: обязательные поля, форматы КБЖУ, сертификаты, маркировка.</p>
+            <div class="feature-tags">
+              <span class="tag">WB</span>
+              <span class="tag">Ozon</span>
+              <span class="tag">Я.Маркет</span>
+            </div>
+            <div class="feature-result">
+              <span class="result-metric">5 мин</span>
+              <span>на настройку выгрузки</span>
+            </div>
+          </article>
+          
+        </div>
+      </section>
+
+      <!-- Case Study -->
+      <section id="case" class="case-study" aria-labelledby="case-heading">
+        <h2 id="case-heading">🏆 Кейс: магазин продуктов питания</h2>
+        <p class="subtitle">Как автоматизация в 1С помогла сократить списания и ускорить запуск новинок</p>
+        
+        <div class="case-grid">
+          <div class="case-content">
+            <h3>«Здоровая еда» — онлайн-ритейлер натуральных продуктов</h3>
+            <p><strong>Дано:</strong> 1 500 SKU, 3 площадки (WB, Ozon, Я.Маркет), команда 20 человек, средняя маржа 25%.</p>
+            
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="value">−82%</span>
+                <span class="label">списаний по срокам</span>
+              </div>
+              <div class="case-metric">
+                <span class="value">−90%</span>
+                <span class="label">времени на карточки</span>
+              </div>
+              <div class="case-metric">
+                <span class="value">16 дней</span>
+                <span class="label">окупаемость</span>
+              </div>
             </div>
             
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">© 2024 AI Seller 1С. Все права защищены.</p>
-                <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        Сертифицировано 1С
-                    </span>
-                    <span>•</span>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        152-ФЗ compliant
-                    </span>
-                </div>
+            <p class="case-quote">«Внедрили контроль сроков годности: модуль автоматически скрывает товары с истекающим сроком из выгрузки и уведомляет менеджеров за 14 дней. Списания сократились на 82%. КБЖУ заполняются автоматически — 1 500 карточек за 6 часов вместо 4 дней. Интеграция с «Меркурий» исключила штрафы за нарушения ветеринарного контроля.»</p>
+            
+            <span class="case-author">— Мария Соколова, операционный директор «Здоровая еда»</span>
+            
+            <a href="/trial?solution=food" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: linear-gradient(135deg, var(--niche-color), var(--niche-color-light)); color: white; border: none; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none;">
+              <span>🚀</span>
+              <span>Попробовать для продуктов</span>
+            </a>
+          </div>
+          
+          <div class="case-visual">
+            <div class="placeholder">
+              <div class="placeholder-icon">🍎📊</div>
+              <p>Пример карточки товара, сгенерированной ИИ:<br><strong>Гранола с орехами и мёдом</strong><br>КБЖУ + состав + предупреждение об аллергенах + сертификация</p>
             </div>
+            <p style="font-size: 13px; color: var(--color-text-muted);">
+              <strong>Результат:</strong> карточка с полным КБЖУ, составом и предупреждениями — за 30 секунд
+            </p>
+          </div>
         </div>
-    </footer>
+      </section>
+
+      <!-- Calculator Section -->
+      <section id="calculator" class="niche-calculator" aria-labelledby="calc-heading">
+        <h2 id="calc-heading">💰 Посчитайте экономию для вашего магазина продуктов</h2>
+        <p class="subtitle">Введите параметры — узнайте, сколько списаний и денег сэкономит автоматизация</p>
+        
+        <form class="calc-form" id="food-roi-calculator">
+          <div class="calc-grid">
+            <div class="calc-group">
+              <label for="sku-count">Товаров в ассортименте</label>
+              <input type="number" id="sku-count" min="50" max="5000" value="500">
+              <span class="hint">Уникальные модели (без учёта вариаций)</span>
+            </div>
+            <div class="calc-group">
+              <label for="writeoff-rate">Списаний по срокам (%)</label>
+              <input type="number" id="writeoff-rate" min="0" max="30" value="15">
+              <span class="hint">Средний по отрасли: 10–25%</span>
+            </div>
+            <div class="calc-group">
+              <label for="avg-check">Средний чек (₽)</label>
+              <input type="number" id="avg-check" min="200" max="5000" value="800">
+            </div>
+          </div>
+          <button type="submit" class="btn-calculate">
+            <span>🧮</span>
+            <span>Рассчитать экономию</span>
+          </button>
+        </form>
+        
+        <div class="calc-results" id="food-results" aria-live="polite">
+          <div class="results-grid">
+            <div class="result-card">
+              <span class="result-icon">🗑️</span>
+              <span class="result-value" id="writeoff-reduced">−80%</span>
+              <span class="result-desc">Снижение списаний</span>
+            </div>
+            <div class="result-card">
+              <span class="result-icon">💵</span>
+              <span class="result-value" id="money-saved">95 000 ₽</span>
+              <span class="result-desc">Экономия в месяц</span>
+            </div>
+            <div class="result-card">
+              <span class="result-icon">⏱️</span>
+              <span class="result-value" id="time-saved">35 ч</span>
+              <span class="result-desc">Экономия времени</span>
+            </div>
+          </div>
+          <a href="/trial?solution=food" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: linear-gradient(135deg, var(--niche-color), var(--niche-color-light)); color: white; border: none; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none;">
+            <span>🚀</span>
+            <span>Начать бесплатный триал</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Integrations -->
+      <section class="niche-integrations" aria-labelledby="integrations-heading">
+        <h2 id="integrations-heading">🔗 Работает с вашей инфраструктурой</h2>
+        
+        <div class="integrations-logos">
+          <span class="integration-logo">1С:УТ</span>
+          <span class="integration-logo">1С:УНФ</span>
+          <span class="integration-logo">Wildberries</span>
+          <span class="integration-logo">Ozon</span>
+          <span class="integration-logo">Яндекс.Маркет</span>
+          <span class="integration-logo">Меркурий</span>
+          <span class="integration-logo">Честный ЗНАК</span>
+          <span class="integration-logo">YandexGPT</span>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="niche-faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">❓ Частые вопросы селлеров продуктов</h2>
+        
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>Как ИИ помогает с описанием КБЖУ?</summary>
+            <div class="faq-answer">
+              <p>Модуль автоматически извлекает данные о калорийности, белках, жирах и углеводах из 1С и форматирует их по требованиям маркетплейсов. Это ускоряет заполнение карточек в 10 раз и снижает ошибки при ручном вводе. Поддерживаются все форматы: на 100г, на порцию, на упаковку.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Поддерживает ли решение интеграцию с «Меркурий»?</summary>
+            <div class="faq-answer">
+              <p>Да, модуль интегрируется с ФГИС «Меркурий»: автоматическая выгрузка ВСД, контроль остатков, формирование документов. Поддерживаются все категории продуктов, подлежащие ветеринарному контролю (мясо, рыба, молоко, яйца). Настройка занимает 10 минут через мастер подключения.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Как работает контроль сроков годности?</summary>
+            <div class="faq-answer">
+              <p>Модуль отслеживает сроки годности из 1С и автоматически скрывает товары с истекающим сроком из выгрузки на маркетплейсы. Также формирует уведомления для менеджеров за 30/14/7 дней до истечения срока, позволяя вовремя сделать скидку или вывести товар из продажи.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Можно ли прогнозировать спрос на сезонные продукты?</summary>
+            <div class="faq-answer">
+              <p>Да, ИИ анализирует историю продаж по сезонам, праздникам и погоде. Например, автоматически увеличивает прогноз на мороженое в июне и на мандарины в декабре. Вы можете настроить сезонные коэффициенты под свою нишу и регион.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Поддерживает ли решение маркировку «Честный ЗНАК»?</summary>
+            <div class="faq-answer">
+              <p>Да, модуль интегрируется с системой маркировки для молочной продукции, воды, БАДов и других категорий: автоматическая выгрузка кодов, контроль остатков, формирование документов. Настройка занимает 10 минут через мастер подключения.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Other Solutions -->
+      <section class="other-solutions" aria-labelledby="other-heading">
+        <h3 id="other-heading">Также автоматизируем:</h3>
+        <div class="solutions-links">
+          <a href="/solutions/clothing" class="solution-link">
+            <span class="icon">👗</span>
+            <span>Одежда</span>
+          </a>
+          <a href="/solutions/electronics" class="solution-link">
+            <span class="icon">🔌</span>
+            <span>Электроника</span>
+          </a>
+          <a href="/solutions/cosmetics" class="solution-link">
+            <span class="icon">💄</span>
+            <span>Косметика</span>
+          </a>
+          <a href="/solutions" class="solution-link view-all">
+            <span>Все решения →</span>
+          </a>
+        </div>
+      </section>
+
+    </div> <!-- /container -->
+
+    <!-- CTA Section -->
+    <section id="cta" class="niche-cta">
+      <div class="container">
+        <h2>Готовы сократить списания и ускорить запуск новинок?</h2>
+        <p>14 дней бесплатно • Настройка за 15 минут • Без привязки карты • Специальные шаблоны для продуктов</p>
+        <a href="/trial?solution=food" class="btn-cta-white">
+          <span>✨</span>
+          <span>Попробовать для продуктов</span>
+        </a>
+        <p class="cta-guarantee">🛡️ 30 дней на возврат • Без вопросов</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== UTILITY FUNCTIONS =====
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    
+    // ===== CALCULATOR LOGIC =====
+    function calculateFoodROI(formData) {
+      const skuCount = parseInt(formData.skuCount);
+      const writeoffRate = parseInt(formData.writeoffRate);
+      const avgCheck = parseInt(formData.avgCheck);
+      
+      // Baseline metrics for food niche
+      const avgWriteoffsPerMonth = skuCount * 0.4 * (writeoffRate / 100);
+      const revenueLostToWriteoffs = avgWriteoffsPerMonth * avgCheck;
+      
+      // AI impact: reduce writeoffs by 70-90%, save time on KBZhU entries
+      const writeoffReduction = 0.80; // 80% average reduction
+      const timeSavedPerItem = 35; // minutes per item for manual KBZhU + expiry entry
+      const itemsPerMonth = Math.ceil(skuCount / 6); // new/updated items monthly
+      
+      const writeoffsSaved = Math.round(avgWriteoffsPerMonth * writeoffReduction);
+      const moneySaved = Math.round(writeoffsSaved * avgCheck * 0.9); // 90% of lost revenue recovered
+      const timeSavedHours = Math.round((itemsPerMonth * timeSavedPerItem) / 60);
+      
+      return {
+        writeoffReduction: Math.round(writeoffReduction * 100),
+        moneySaved,
+        timeSavedHours
+      };
+    }
+    
+    // Calculator form submission
+    $('#food-roi-calculator')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        skuCount: $('#sku-count').value,
+        writeoffRate: $('#writeoff-rate').value,
+        avgCheck: $('#avg-check').value
+      };
+      
+      const result = calculateFoodROI(formData);
+      
+      // Update results
+      $('#writeoff-reduced').textContent = `−${result.writeoffReduction}%`;
+      $('#money-saved').textContent = `${result.moneySaved.toLocaleString('ru-RU')} ₽`;
+      $('#time-saved').textContent = `${result.timeSavedHours} ч`;
+      
+      // Show results with animation
+      const results = $('#food-results');
+      results.classList.add('active');
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Track event for analytics
+      if (typeof gtag === 'function') {
+        gtag('event', 'niche_calculator_complete', {
+          'event_category': 'engagement',
+          'event_label': 'food_solution',
+          'value': result.moneySaved,
+          'sku_count': formData.skuCount,
+          'writeoff_rate': formData.writeoffRate,
+          'avg_check': formData.avgCheck
+        });
+      }
+    });
+    
+    // ===== FAQ: Close others when one opens =====
+    $$('.faq-item').forEach(item => {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          $$('.faq-item').forEach(other => {
+            if (other !== this) other.open = false;
+          });
+        }
+      });
+    });
+    
+    // ===== Anchor Navigation: Active state on scroll =====
+    const navLinks = $$('.solution-nav a[href^="#"]');
+    const sections = $$('.solution-nav a[href^="#"]').map(link => $(link.getAttribute('href'))).filter(s => s);
+    
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Smooth scroll for anchor links
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = $(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // ===== ANALYTICS STUB =====
+    window.gtag = window.gtag || function() {
+      // Placeholder for Google Analytics / Яндекс.Метрика
+      console.log('Analytics:', arguments);
+    };
+    
+    // ===== INIT =====
+    document.addEventListener('DOMContentLoaded', () => {
+      // Prefill calculator from URL params (for campaign tracking)
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('skus')) {
+        $('#sku-count').value = params.get('skus');
+      }
+      if (params.get('writeoff')) {
+        $('#writeoff-rate').value = params.get('writeoff');
+      }
+      
+      // Highlight CTA if coming from quiz/calculator
+      if (params.get('calc') === '1' || params.get('quiz') === '1') {
+        const cta = $('#cta');
+        if (cta) {
+          cta.scrollIntoView({ behavior: 'smooth' });
+          cta.style.borderColor = 'var(--color-accent)';
+          setTimeout(() => cta.style.borderColor = '', 2000);
+        }
+      }
+    });
+  </script>
+  
 </body>
 </html>
