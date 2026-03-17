@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('active');
         });
@@ -20,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.mobile-dropdown-btn');
         if (btn) {
+            e.stopPropagation();
             const content = btn.nextElementSibling;
-            const icon = btn.querySelector('i');
+            const icon = btn.querySelector('[data-lucide="chevron-down"]');
             
             if (content && icon) {
                 content.classList.toggle('hidden');

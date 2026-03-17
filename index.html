@@ -484,13 +484,13 @@
                 </div>
 
                 <!-- CTA Button -->
-                <button class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
+                <button type="button" class="trial-btn hidden lg:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all transform hover:scale-105">
                     <span>Попробовать бесплатно</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                <button type="button" class="lg:hidden p-2" id="mobile-menu-btn">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -503,7 +503,7 @@
                 
                 <!-- Продукт -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>Продукт</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -517,7 +517,7 @@
                 
                 <!-- Тарифы -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>Тарифы</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -530,7 +530,7 @@
                 
                 <!-- Решения -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>Решения</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -545,7 +545,7 @@
                 
                 <!-- Кейсы -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>Кейсы</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -557,7 +557,7 @@
                 
                 <!-- База знаний -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>База знаний</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -572,7 +572,7 @@
                 
                 <!-- Блог -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>Блог</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -585,7 +585,7 @@
                 
                 <!-- О компании -->
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
+                    <button type="button" class="mobile-dropdown-btn w-full flex justify-between items-center px-4 py-3 text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg">
                         <span>О компании</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
                     </button>
@@ -597,7 +597,7 @@
                     </div>
                 </div>
                 
-                <button class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
+                <button type="button" class="trial-btn w-full mt-4 px-6 py-3 bg-gradient-to-r from-gold-400 to-gold-600 text-navy-900 font-bold rounded-full">
                     Попробовать бесплатно
                 </button>
             </div>
@@ -2271,9 +2271,12 @@
     <!-- Footer -->
     
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script>
-        lucide.createIcons();
+        // Initialize Lucide icons after DOM is ready
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
     </script>
     
     <!-- Modal for trial signup -->
