@@ -1,1 +1,1 @@
-Nothing should be ignored based on the provided file changes, as only source files (`index.html`, `script.js`) were modified and no build artifacts, dependencies, or temporary files were present in the changes.
+Nothing should be ignored based on the provided file changes. The modified files (`index.html` and `script.js`) are source code files that should not be added to `.gitignore`. Since there are no build artifacts, dependencies, or temporary files in the change list, no additional ignore rules are needed.

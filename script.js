@@ -22,12 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = e.target.closest('.mobile-dropdown-btn');
         if (btn) {
             e.stopPropagation();
+            e.preventDefault();
             const content = btn.nextElementSibling;
-            const icon = btn.querySelector('[data-lucide="chevron-down"]');
             
-            if (content && icon) {
+            if (content) {
                 content.classList.toggle('hidden');
-                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                
+                // Re-initialize Lucide icons after toggling to ensure chevron rotates correctly
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
             }
         }
     });
