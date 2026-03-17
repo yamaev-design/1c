@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Динамическое ценообразование: полное руководство для селлеров | Блог projmo.ru</title>
+  <meta name="description" content="Как настроить динамическое ценообразование на Wildberries и Ozon. Стратегии, формулы, кейсы. Увеличьте маржу на 15-25% с помощью автоматического изменения цен.">
+  <meta name="keywords" content="динамическое ценообразование, автоматическое ценообразование, pricing strategy, Wildberries цены, Ozon цены, repricing, маржа, демпинг">
+  <meta name="author" content="Дмитрий Соколов">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Динамическое ценообразование: полное руководство для селлеров">
+  <meta property="og:description" content="Научитесь автоматически менять цены на маркетплейсах и защитите маржу от демпинга">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://projmo.ru/blog/dynamic-pricing-guide.html">
+  <meta property="og:image" content="https://projmo.ru/images/blog/dynamic-pricing-og.jpg">
+  <meta property="og:site_name" content="projmo | AI Seller">
+  <meta property="article:published_time" content="2026-03-12T10:00:00+03:00">
+  <meta property="article:author" content="Дмитрий Соколов">
+  <meta property="article:tag" content="ценообразование">
+  <meta property="article:tag" content="маржа">
+  <meta property="article:tag" content="repricing">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Динамическое ценообразование: полное руководство">
+  <meta name="twitter:description" content="Автоматическое изменение цен на маркетплейсах">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://projmo.ru/blog/dynamic-pricing-guide.html">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Динамическое ценообразование: полное руководство для селлеров",
+    "description": "Стратегии и инструменты автоматического изменения цен на маркетплейсах",
+    "image": "https://projmo.ru/images/blog/dynamic-pricing-og.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Дмитрий Соколов",
+      "jobTitle": "Product Manager",
+      "url": "https://projmo.ru/authors/dmitry-sokolov"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "projmo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://projmo.ru/images/logo.svg"
+      }
+    },
+    "datePublished": "2026-03-12T10:00:00+03:00",
+    "dateModified": "2026-03-16T11:00:00+03:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://projmo.ru/blog/dynamic-pricing-guide.html"
+    }
+  }
+  </script>
+  
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://projmo.ru/" },
+      { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://projmo.ru/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Динамическое ценообразование", "item": "https://projmo.ru/blog/dynamic-pricing-guide.html" }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --color-primary: #1e40af;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #0f172a;
+      --color-accent: #f59e0b;
+      --color-accent-light: #fbbf24;
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-danger: #ef4444;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-bg: #f8fafc;
+      --color-bg-white: #ffffff;
+      --color-border: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --transition: all 0.2s ease;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    img { max-width: 100%; height: auto; display: block; }
+    
+    a { color: var(--color-primary-light); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--color-primary); }
+    
+    code, pre {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: var(--color-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+    
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== PAGE HEADER ===== */
+    .article-header {
+      padding: 64px 0 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      margin-bottom: 48px;
+    }
+    
+    .article-category {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+    
+    .article-header h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    /* ===== ARTICLE CONTENT ===== */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      margin-bottom: 64px;
+    }
+    
+    .article-content {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .article-content h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 40px 0 20px;
+      color: var(--color-text);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--color-border);
+    }
+    
+    .article-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 32px 0 16px;
+      color: var(--color-text);
+    }
+    
+    .article-content p {
+      margin-bottom: 16px;
+      color: var(--color-text);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    .article-content ul,
+    .article-content ol {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+    
+    .article-content li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    
+    .article-content strong {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    
+    .article-content blockquote {
+      margin: 24px 0;
+      padding: 20px 24px;
+      background: #eff6ff;
+      border-left: 4px solid var(--color-primary-light);
+      border-radius: var(--radius-sm);
+      font-style: italic;
+      color: var(--color-text);
+    }
+    
+    .article-content blockquote p {
+      margin: 0;
+    }
+    
+    /* ===== CODE BLOCKS ===== */
+    .code-block {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin: 24px 0;
+      overflow: hidden;
+    }
+    
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: var(--color-border);
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    
+    .btn-copy {
+      background: none;
+      border: none;
+      color: var(--color-primary);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: var(--transition);
+    }
+    
+    .btn-copy:hover {
+      color: var(--color-primary-light);
+    }
+    
+    .code-block pre {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+    }
+    
+    /* ===== IMAGES ===== */
+    .article-image {
+      margin: 32px 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .article-image img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .image-caption {
+      text-align: center;
+      padding: 12px;
+      background: var(--color-bg);
+      font-size: 14px;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+    
+    /* ===== STATS BOX ===== */
+    .stats-box {
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      border: 2px solid var(--color-primary-light);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin: 32px 0;
+    }
+    
+    .stats-box h3 {
+      margin: 0 0 16px 0;
+      color: var(--color-primary);
+      font-size: 18px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 12px;
+      background: white;
+      border-radius: var(--radius-sm);
+    }
+    
+    .stat-value {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    
+    /* ===== ALERT BOX ===== */
+    .alert-box {
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin: 24px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    .alert-box.warning {
+      background: #fef3c7;
+      border-left: 4px solid var(--color-warning);
+    }
+    
+    .alert-box.info {
+      background: #dbeafe;
+      border-left: 4px solid var(--color-primary-light);
+    }
+    
+    .alert-box.success {
+      background: #d1fae5;
+      border-left: 4px solid var(--color-success);
+    }
+    
+    .alert-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .alert-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    /* ===== SIDEBAR ===== */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    
+    .sidebar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .sidebar-card h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    
+    .sidebar-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar-card li {
+      margin-bottom: 10px;
+    }
+    
+    .sidebar-card a {
+      color: var(--color-text-muted);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .sidebar-card a:hover {
+      color: var(--color-primary);
+    }
+    
+    /* ===== CTA BOX ===== */
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: white;
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta-box h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    
+    .cta-box p {
+      opacity: 0.95;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+    
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--color-primary);
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* ===== RELATED ARTICLES ===== */
+    .related-articles {
+      background: var(--color-bg-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 48px 0;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .related-articles h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .related-card {
+      padding: 20px;
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+    
+    .related-card:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+    
+    .related-card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .related-card a {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+    
+    /* ===== SHARE BUTTONS ===== */
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      margin: 32px 0;
+      padding: 20px 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      color: var(--color-text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .share-btn:hover {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-sidebar {
+        position: static;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .article-header {
+        padding: 48px 0 32px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      }
+      .article-content {
+        padding: 24px;
+      }
+      .article-content h2 {
+        font-size: 20px;
+      }
+      .related-articles {
+        padding: 24px;
+      }
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--color-primary-light);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header-container"></div>
+  
+  <script>
+    fetch('/includes/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('header-container').innerHTML = html)
+      .catch(e => console.error('Header load error:', e));
+  </script>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="container">
+        <span class="article-category">💰 Ценообразование</span>
+        <h1>Динамическое ценообразование: полное руководство для селлеров</h1>
+        <div class="article-meta">
+          <span>📅 12 марта 2026</span>
+          <span>⏱️ 15 мин чтения</span>
+          <span>👤 Дмитрий Соколов</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="article-layout">
+        
+        <!-- Article Content -->
+        <article class="article-content">
+          
+          <!-- Lead -->
+          <p class="lead" style="font-size: 18px; font-weight: 500; color: var(--color-text); line-height: 1.8; margin-bottom: 24px;">
+            Динамическое ценообразование — это не просто «следовать за конкурентами». 
+            Это стратегия, которая увеличивает маржу на 15-25% и защищает от демпинга. 
+            Разбираем, как настроить автоматическое изменение цен на Wildberries и Ozon.
+          </p>
+          
+          <div class="article-image">
+            <div style="background: linear-gradient(135deg, #f59e0b, #fbbf24); height: 400px; display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">📊💹</div>
+                <p style="font-size: 18px; opacity: 0.95;">Динамическое ценообразование</p>
+              </div>
+            </div>
+            <p class="image-caption">Автоматическая корректировка цен на основе конкурентов, спроса и маржи</p>
+          </div>
+
+          <!-- Section 1 -->
+          <h2>Что такое динамическое ценообразование и зачем оно нужно</h2>
+          
+          <p>
+            <strong>Динамическое ценообразование (repricing)</strong> — это автоматическое изменение цен 
+            на товары в зависимости от:
+          </p>
+          
+          <ul>
+            <li>Цен конкурентов на маркетплейсе</li>
+            <li>Вашей себестоимости и желаемой маржи</li>
+            <li>Уровня спроса и остатков на складе</li>
+            <li>Позиции в выдаче (Buy Box)</li>
+            <li>Сезонности и акций</li>
+          </ul>
+          
+          <div class="alert-box info">
+            <span class="alert-icon">💡</span>
+            <p><strong>Факт:</strong> На Wildberries цена влияет на позицию в выдаче на 40%. 
+            Правильная стратегия repricing может увеличить продажи на 30-50% без дополнительных вложений в рекламу.</p>
+          </div>
+          
+          <h3>Проблемы, которые решает динамическое ценообразование</h3>
+          
+          <ol>
+            <li><strong>Демпинг конкурентов:</strong> кто-то постоянно ставит цену ниже, вы теряете продажи</li>
+            <li><strong>Ручное обновление:</strong> 200 товаров × 5 минут = 16 часов в неделю</li>
+            <li><strong>Продажа в минус:</strong> забыли учесть комиссию и логистику</li>
+            <li><strong>Упущенная прибыль:</strong> могли бы продать дороже, но не знали</li>
+          </ol>
+          
+          <blockquote>
+            <p>«После внедрения repricing маржа стабилизировалась на 13-15%, при этом мы выигрываем 
+            Buy Box на 38% чаще. Раньше постоянно продавали в минус, не замечая.»</p>
+            <p style="margin-top: 12px; font-style: normal; font-weight: 600;">— Сергей М., магазин электроники, 5000 SKU</p>
+          </blockquote>
+
+          <!-- Stats Box -->
+          <div class="stats-box">
+            <h3>📊 Результаты внедрения динамического ценообразования</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">+38%</span>
+                <span class="stat-label">Win Rate Buy Box</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">13-15%</span>
+                <span class="stat-label">стабильная маржа</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">−95%</span>
+                <span class="stat-label">времени на цены</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">18 дн</span>
+                <span class="stat-label">окупаемость</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <h2>Стратегии динамического ценообразования</h2>
+          
+          <h3>1. Follow the Leader (следование за лидером)</h3>
+          
+          <p>
+            <strong>Как работает:</strong> автоматически ставите цену на X% ниже лидера категории
+          </p>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span>Формула</span>
+              <button class="btn-copy" onclick="copyToClipboard('Цена = min(цена_конкурента) - 1₽')">📋 Копировать</button>
+            </div>
+            <pre><code>Если лидер стоит 1000₽:
+Ваша цена = 1000 - 1 = 999₽
+
+Но с ограничением:
+Минимальная цена = себестоимость × 1.15 (маржа 15%)</code></pre>
+          </div>
+          
+          <div class="alert-box warning">
+            <span class="alert-icon">⚠️</span>
+            <p><strong>Риск:</strong> гонка на понижение может привести к продаже в минус. 
+            Всегда устанавливайте минимальную маржу!</p>
+          </div>
+          
+          <h3>2. Buy Box Optimization (оптимизация для Buy Box)</h3>
+          
+          <p>
+            <strong>Как работает:</strong> алгоритм анализирует, какая цена нужна для победы в Buy Box, 
+            учитывая не только цену, но и рейтинг, скорость доставки, отзывы.
+          </p>
+          
+          <ul>
+            <li>Если у вас высокий рейтинг (4.8+) — можно ставить на 2-3% выше конкурентов</li>
+            <li>Если рейтинг ниже — нужно быть на 1-2% дешевле</li>
+            <li>Если вы в топ-3 по продажам — можно держать цену выше</li>
+          </ul>
+          
+          <h3>3. Margin Protection (защита маржи)</h3>
+          
+          <p>
+            <strong>Как работает:</strong> система рассчитывает минимальную цену на основе:
+          </p>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span>Расчёт минимальной цены</span>
+              <button class="btn-copy" onclick="copyToClipboard('Мин_цена = (себестоимость + логистика) / (1 - комиссия - желаемая_маржа)')">📋 Копировать</button>
+            </div>
+            <pre><code>Пример для Wildberries:
+Себестоимость: 500₽
+Логистика: 50₽
+Комиссия WB: 19%
+Желаемая маржа: 15%
+
+Мин_цена = (500 + 50) / (1 - 0.19 - 0.15)
+Мин_цена = 550 / 0.66 = 833₽
+
+Если конкуренты ставят 800₽ — система НЕ снижает цену,
+потому что это ниже минимальной (продажа в минус)</code></pre>
+          </div>
+          
+          <h3>4. Demand-Based Pricing (на основе спроса)</h3>
+          
+          <p>
+            <strong>Как работает:</strong> повышаете цену, когда спрос растёт, и снижаете, когда падают продажи:
+          </p>
+          
+          <ul>
+            <li>Если продажи > 10 шт/день → +5% к цене</li>
+            <li>Если продажи < 2 шт/день → −5% к цене</li>
+            <li>Если остаток < 20 шт → +10% (дефицит)</li>
+            <li>Если остаток > 200 шт → −10% (распродажа)</li>
+          </ul>
+
+          <!-- Section 3 -->
+          <h2>Как настроить динамическое ценообразование в AI Seller</h2>
+          
+          <h3>Шаг 1: Подключите интеграцию с маркетплейсом</h3>
+          
+          <ol>
+            <li>Перейдите в раздел <strong>«Интеграции»</strong></li>
+            <li>Выберите Wildberries или Ozon</li>
+            <li>Введите API-ключ (инструкция <a href="/docs/integrations/wildberries">здесь</a>)</li>
+            <li>Включите синхронизацию цен</li>
+          </ol>
+          
+          <h3>Шаг 2: Настройте правила ценообразования</h3>
+          
+          <p>
+            В разделе <strong>«Ценообразование»</strong> создайте правило:
+          </p>
+          
+          <div class="article-image">
+            <div style="background: linear-gradient(135deg, #3b82f6, #1e40af); height: 350px; display: flex; align-items: center; justify-content: center; color: white;">
+              <div style="text-align: center; padding: 24px;">
+                <div style="font-size: 48px; margin-bottom: 16px;">⚙️</div>
+                <p style="font-size: 16px; opacity: 0.95;">Конструктор правил ценообразования</p>
+              </div>
+            </div>
+            <p class="image-caption">Настройка правил: минимальная маржа, шаг изменения, частота обновления</p>
+          </div>
+          
+          <h3>Основные параметры:</h3>
+          
+          <ul>
+            <li><strong>Минимальная маржа:</strong> 10-15% (ниже не опускаться)</li>
+            <li><strong>Максимальная маржа:</strong> 30-40% (выше не подниматься)</li>
+            <li><strong>Шаг изменения:</strong> 1-5₽ или 1-3%</li>
+            <li><strong>Частота обновления:</strong> каждые 15-60 минут</li>
+            <li><strong>Игнорировать конкурентов:</strong> с рейтингом ниже 4.0</li>
+          </ul>
+          
+          <h3>Шаг 3: Установите исключения</h3>
+          
+          <p>
+            Какие товары НЕ изменять автоматически:
+          </p>
+          
+          <ul>
+            <li>Новинки (первые 7 дней после добавления)</li>
+            <li>Товары с остатком < 5 штук</li>
+            <li>Участники акций маркетплейса</li>
+            <li>Эксклюзивные товары (нет конкурентов)</li>
+          </ul>
+          
+          <h3>Шаг 4: Запустите и контролируйте</h3>
+          
+          <p>
+            Первые 3-5 дней работайте в режиме <strong>«Только уведомления»</strong>:
+          </p>
+          
+          <ul>
+            <li>Система присылает рекомендации по изменению цен</li>
+            <li>Вы одобряете или отклоняете каждое изменение</li>
+            <li>После настройки — включайте автоматический режим</li>
+          </ul>
+          
+          <div class="alert-box success">
+            <span class="alert-icon">✅</span>
+            <p><strong>Совет:</strong> Настройте уведомления в Telegram — будете получать оповещения 
+            о критических изменениях цен конкурентов.</p>
+          </div>
+
+          <!-- Section 4 -->
+          <h2>Расчёт минимальной цены: формулы и примеры</h2>
+          
+          <h3>Для Wildberries</h3>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span>Формула расчёта</span>
+              <button class="btn-copy" onclick="copyToClipboard('Мин_цена = (себестоимость + логистика_до_клиента + логистика_возврата × %возвратов) / (1 - комиссия_WB - %маржа)')">📋 Копировать</button>
+            </div>
+            <pre><code>Пример:
+Себестоимость: 600₽
+Логистика до клиента: 50₽
+Логистика возврата: 50₽
+Процент возвратов: 10%
+Комиссия WB: 19%
+Желаемая маржа: 15%
+
+Мин_цена = (600 + 50 + 50×0.1) / (1 - 0.19 - 0.15)
+Мин_цена = (600 + 50 + 5) / 0.66
+Мин_цена = 655 / 0.66 = 992₽
+
+Округляем до 990₽ или 999₽</code></pre>
+          </div>
+          
+          <h3>Для Ozon</h3>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span>Формула расчёта</span>
+              <button class="btn-copy" onclick="copyToClipboard('Мин_цена = (себестоимость + логистика_Ozon + эквайринг) / (1 - комиссия_Ozon - %маржа)')">📋 Копировать</button>
+            </div>
+            <pre><code>Пример:
+Себестоимость: 600₽
+Логистика Ozon FBO: 60₽
+Эквайринг: 1.5%
+Комиссия Ozon: 15%
+Желаемая маржа: 15%
+
+Мин_цена = (600 + 60) / (1 - 0.15 - 0.015 - 0.15)
+Мин_цена = 660 / 0.685 = 963₽
+
+Округляем до 969₽ или 979₽</code></pre>
+          </div>
+          
+          <div class="alert-box info">
+            <span class="alert-icon">📊</span>
+            <p><strong>Важно:</strong> В AI Seller эти расчёты происходят автоматически. 
+            Система подтягивает актуальные тарифы маркетплейсов и считает минимальную цену для каждого товара.</p>
+          </div>
+
+          <!-- Section 5 -->
+          <h2>Типичные ошибки и как их избежать</h2>
+          
+          <h3>❌ Ошибка 1: Слишком агрессивное снижение</h3>
+          
+          <p>
+            <strong>Проблема:</strong> система снижает цену на 10₽ каждые 15 минут, 
+            за час цена упала на 40₽, маржа отрицательная.
+          </p>
+          
+          <p>
+            <strong>Решение:</strong> установите лимиты:
+          </p>
+          
+          <ul>
+            <li>Максимальное снижение за день: 10-15%</li>
+            <li>Минимальная маржа: 10-15%</li>
+            <li>Пауза между изменениями: 2-4 часа</li>
+          </ul>
+          
+          <h3>❌ Ошибка 2: Игнорирование логистики</h3>
+          
+          <p>
+            <strong>Проблема:</strong> считали только себестоимость, забыли про логистику и комиссию, 
+            продавали в минус 3 недели.
+          </p>
+          
+          <p>
+            <strong>Решение:</strong> используйте формулу полной стоимости (см. выше) или 
+            доверьте расчёт AI Seller — система автоматически учитывает все расходы.
+          </p>
+          
+          <h3>❌ Ошибка 3: Отсутствие анализа конкурентов</h3>
+          
+          <p>
+            <strong>Проблема:</strong> система сравнивает вашу цену с продавцом, у которого 
+            рейтинг 3.2 и 50% негативных отзывов.
+          </p>
+          
+          <p>
+            <strong>Решение:</strong> настройте фильтры:
+          </p>
+          
+          <ul>
+            <li>Игнорировать продавцов с рейтингом < 4.0</li>
+            <li>Игнорировать продавцов с < 10 отзывами</li>
+            <li>Сравнивать только с топ-10 по продажам</li>
+          </ul>
+          
+          <h3>❌ Ошибка 4: Ручные изменения поверх автоматических</h3>
+          
+          <p>
+            <strong>Проблема:</strong> менеджер вручную поставил цену 999₽, 
+            система через 15 минут изменила на 1050₽, продажи встали.
+          </p>
+          
+          <p>
+            <strong>Решение:</strong> установите правила:
+          </p>
+          
+          <ul>
+            <li>Ручные изменения действуют 24-48 часов</li>
+            <li>После этого система снова берёт контроль</li>
+            <li>Или создайте «защищённые товары» для ручного управления</li>
+          </ul>
+
+          <!-- CTA Box -->
+          <div class="cta-box">
+            <h3>🚀 Попробуйте динамическое ценообразование</h3>
+            <p>14 дней бесплатного доступа ко всем функциям repricing. Настройка за 15 минут.</p>
+            <a href="/trial?feature=dynamic-pricing" class="btn-cta">
+              <span>🎁</span>
+              <span>Начать бесплатный триал</span>
+            </a>
+          </div>
+
+          <!-- Section 6 -->
+          <h2>Кейсы: результаты наших клиентов</h2>
+          
+          <blockquote>
+            <p>«До внедрения repricing тратили 18 часов в неделю на ручное обновление цен. 
+            Маржа скакала от 5% до 25%. Сейчас маржа стабильно 13-15%, на цены трачу 30 минут в неделю — 
+            просто проверяю отчёты. Win Rate в Buy Box вырос с 22% до 60%.»</p>
+            <p style="margin-top: 12px; font-style: normal; font-weight: 600;">— Алексей В., магазин электроники, 3000 SKU, Ozon + WB</p>
+          </blockquote>
+          
+          <blockquote>
+            <p>«Раньше постоянно продавали в минус, не замечая. После настройки защиты маржи 
+            система заблокировала 127 товаров, которые мы продавали ниже себестоимости. 
+            За первый месяц сэкономили 180 000₽.»</p>
+            <p style="margin-top: 12px; font-style: normal; font-weight: 600;">— Марина К., магазин косметики, 800 SKU, Wildberries</p>
+          </blockquote>
+
+          <!-- Share Buttons -->
+          <div class="share-buttons">
+            <span style="font-weight: 600; margin-right: 8px;">Поделиться:</span>
+            <a href="https://t.me/share/url?url=https://projmo.ru/blog/dynamic-pricing-guide.html&text=Динамическое ценообразование: полное руководство" class="share-btn" target="_blank" rel="noopener">
+              <span>✈️</span> Telegram
+            </a>
+            <a href="https://vk.com/share.php?url=https://projmo.ru/blog/dynamic-pricing-guide.html&title=Динамическое ценообразование" class="share-btn" target="_blank" rel="noopener">
+              <span>📘</span> ВКонтакте
+            </a>
+            <a href="mailto:?subject=Динамическое ценообразование: полное руководство&body=https://projmo.ru/blog/dynamic-pricing-guide.html" class="share-btn">
+              <span>✉️</span> Email
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          
+          <!-- Author Card -->
+          <div class="sidebar-card">
+            <h3>👤 Об авторе</h3>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">Ӝ</div>
+              <div>
+                <strong>Дмитрий Соколов</strong><br>
+                <span style="font-size: 13px; color: var(--color-text-muted);">Product Manager</span>
+              </div>
+            </div>
+            <p style="font-size: 14px; color: var(--color-text-muted); margin: 0;">
+              Эксперт по ценообразованию и аналитике. Помог селлерам увеличить маржу на 20%+.
+            </p>
+          </div>
+          
+          <!-- Table of Contents -->
+          <div class="sidebar-card">
+            <h3>📋 Содержание</h3>
+            <ul>
+              <li><a href="#what-is">Что такое repricing</a></li>
+              <li><a href="#strategies">Стратегии ценообразования</a></li>
+              <li><a href="#setup">Настройка в AI Seller</a></li>
+              <li><a href="#formulas">Формулы расчёта</a></li>
+              <li><a href="#mistakes">Типичные ошибки</a></li>
+              <li><a href="#cases">Кейсы клиентов</a></li>
+            </ul>
+          </div>
+          
+          <!-- Related Resources -->
+          <div class="sidebar-card">
+            <h3>📚 Полезные ресурсы</h3>
+            <ul>
+              <li><a href="/docs/features/dynamic-pricing">📖 Документация</a></li>
+              <li><a href="/product/pricing">💰 Тарифы</a></li>
+              <li><a href="/cases">🏆 Кейсы клиентов</a></li>
+              <li><a href="/blog">📝 Другие статьи</a></li>
+            </ul>
+          </div>
+          
+        </aside>
+        
+      </div>
+
+      <!-- Related Articles -->
+      <section class="related-articles">
+        <h2>📖 Читайте также</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <h4><a href="/blog/auto-reviews-responses.html">Авто-ответы на отзывы →</a></h4>
+            <p style="font-size: 14px; color: var(--color-text-muted); margin: 8px 0 0 0;">Как ИИ экономит 20 часов в неделю</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/blog/generate-cards-30sec.html">Генерация карточек за 30 сек →</a></h4>
+            <p style="font-size: 14px; color: var(--color-text-muted); margin: 8px 0 0 0;">ИИ создаёт продающие описания</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/blog/forecast-purchases.html">Прогноз закупок с ИИ →</a></h4>
+            <p style="font-size: 14px; color: var(--color-text-muted); margin: 8px 0 0 0;">Как избежать затоваривания</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+  
+  <script>
+    fetch('/includes/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('footer-container').innerHTML = html)
+      .catch(e => console.error('Footer load error:', e));
+  </script>
+
+  <!-- Article JavaScript -->
+  <script>
+    // ===== Copy to Clipboard =====
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Скопировано в буфер обмена!');
+      }).catch(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('Скопировано!');
+      });
+    }
+    
+    // ===== Toast Notification =====
+    function showToast(message, duration = 2000) {
+      const toast = document.createElement('div');
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: #1e293b;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 10000;
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      `;
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => toast.style.transform = 'translateX(-50%) translateY(0)', 10);
+      setTimeout(() => {
+        toast.style.transform = 'translateX(-50%) translateY(100px)';
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+    
+    // ===== Table of Contents Scroll Spy =====
+    const tocLinks = document.querySelectorAll('.sidebar-card ul a[href^="#"]');
+    const sections = document.querySelectorAll('.article-content h2, .article-content h3');
+    
+    function updateActiveToc() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id') || section.textContent.toLowerCase().replace(/\s+/g, '-');
+        }
+      });
+      
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateActiveToc);
+    
+    // ===== Analytics =====
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        'event_category': 'blog',
+        'event_label': 'dynamic-pricing-guide',
+        'page_title': 'Динамическое ценообразование'
+      });
+    }
+  </script>
+  
+</body>
+</html>
