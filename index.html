@@ -2280,10 +2280,10 @@
     </script>
     
     <!-- Modal for trial signup -->
-    <div id="trial-modal" class="fixed inset-0 z-50 hidden">
+    <div id="trial-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
         <div class="absolute inset-0 bg-navy-900/80 backdrop-blur-sm modal-overlay"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
-            <div class="relative bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl border border-white/10 shadow-2xl shadow-gold-500/20 overflow-hidden">
+        <div class="flex items-center justify-center min-h-screen px-4 py-8">
+            <div class="relative w-full max-w-md bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl border border-white/10 shadow-2xl shadow-gold-500/20 overflow-hidden">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 to-gold-600"></div>
                 
                 <!-- Close button -->
@@ -2368,7 +2368,20 @@
             </div>
         </div>
     </div>
-<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+    <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+
+    <!-- Mobile modal styles -->
+    <style>
+        @media (max-width: 640px) {
+            #trial-modal .relative {
+                max-height: calc(100vh - 4rem);
+                overflow-y: auto;
+            }
+            #trial-modal form {
+                max-height: none;
+            }
+        }
+    </style>
 
     <footer class="bg-navy-800/50 border-t border-white/5 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
